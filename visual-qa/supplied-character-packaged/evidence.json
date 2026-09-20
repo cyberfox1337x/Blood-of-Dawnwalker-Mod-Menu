@@ -1,0 +1,12 @@
+{
+  "errors": [],
+  "checks": [
+    "Custom color picker changes actual render",
+    "Model loads from production file URL; color changes rendered pixels; restore matches original pixels within one 8-bit level",
+    "Wheel zoom changes render; leaving and returning to Visuals reloads exactly one canvas",
+    "Full-body/portrait framing and mouse orbit exercised; 1100x650 layout captured"
+  ],
+  "screenshots": [],
+  "gameplayVerified": false,
+  "maximumRestoreChannelDelta": 1
+}

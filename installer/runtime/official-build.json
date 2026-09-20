@@ -1,0 +1,133 @@
+{
+ "cyberfox1337x": "function(dawnwalker_official_build_contract)",
+ "schemaVersion": 1,
+ "capturedAtUtc": "2026-09-03T22:03:39Z",
+ "purpose": "Fail-closed identity and payload contract for read-only Dawnwalker reflection discovery. Re-pinned 2026-09-03 after Steam updated the install from CL-256181/build 25014996 to CL-256914/build 25107392; all live pilot evidence captured from 2026-09-03T21:30Z onward was observed on the CL-256914 build.",
+ "steam": {
+  "appId": "3751260",
+  "name": "The Blood of Dawnwalker",
+  "buildId": "25107392",
+  "stateFlags": "4",
+  "installDirName": "The Blood of Dawnwalker",
+  "sizeOnDisk": 58335567755,
+  "bytesToDownload": 2107472416,
+  "bytesDownloaded": 2107472416,
+  "bytesToStage": 54525784262,
+  "bytesStaged": 54525784262,
+  "depotId": "3751261",
+  "depotManifest": "116071877880222957"
+ },
+ "executable": {
+  "relativePath": "Dawnwalker/Binaries/Win64/Dawnwalker.exe",
+  "bytes": 176998264,
+  "sha256": "45B7C2949F519ED3E45F7FBDB7127A03373FE44B34ABB58E3C987C5054E2409E",
+  "rawFileVersion": "5.5.4.0",
+  "rawProductVersion": "5.5.4.0",
+  "productVersion": "dw1-pc-256914-shipping-patch2-all-CL-256914",
+  "originalFilename": "Dawnwalker-Win64-Shipping.exe",
+  "signatureStatus": "Valid",
+  "signerSubjectContains": "Rebel Wolves"
+ },
+ "engine": {
+  "name": "Unreal Engine",
+  "version": "5.5.4",
+  "evidence": "Signed executable version plus standard UE IoStore layout"
+ },
+ "containers": [
+  {
+   "relativePath": "Dawnwalker/Content/Paks/Dawnwalker-Windows.pak",
+   "bytes": 10732398744,
+   "policy": "locked-read-only"
+  },
+  {
+   "relativePath": "Dawnwalker/Content/Paks/Dawnwalker-Windows.ucas",
+   "bytes": 43519434240,
+   "policy": "locked-read-only"
+  },
+  {
+   "relativePath": "Dawnwalker/Content/Paks/Dawnwalker-Windows.utoc",
+   "bytes": 70078134,
+   "policy": "locked-read-only"
+  },
+  {
+   "relativePath": "Dawnwalker/Content/Paks/global.ucas",
+   "bytes": 3837360,
+   "policy": "locked-read-only"
+  },
+  {
+   "relativePath": "Dawnwalker/Content/Paks/global.utoc",
+   "bytes": 374,
+   "policy": "locked-read-only"
+  }
+ ],
+ "ue4ss": {
+  "archiveRelativePath": "vendor/zDEV-UE4SS_v3.0.1-1111-g97b7e501.zip",
+  "archiveBytes": 44605660,
+  "archiveSha256": "8C2E28BB1479CBEA7BF5A3C16E027580D9E71D21606971B5BD103A20BA94C617",
+  "release": "v3.0.1-1111-g97b7e501",
+  "channel": "official-experimental-zDEV",
+  "source": "https://github.com/UE4SS-RE/RE-UE4SS/releases/tag/experimental-latest",
+  "requiredEntries": [
+   "dwmapi.dll",
+   "ue4ss/UE4SS.dll",
+   "ue4ss/UE4SS-settings.ini",
+   "ue4ss/Mods/mods.txt",
+   "ue4ss/Mods/Keybinds/Scripts/main.lua"
+  ]
+ },
+ "safety": {
+  "processNames": [
+   "Dawnwalker"
+  ],
+  "conflictingProxyNames": [
+   "xinput1_3.dll",
+   "version.dll",
+   "winmm.dll",
+   "dxgi.dll",
+   "dinput8.dll"
+  ],
+  "repackMarkers": [
+   "steam_emu.ini",
+   "cream_api.ini",
+   "fitgirl.md5",
+   "codex.ini",
+   "coldclientloader.ini",
+   "steam_api64.rne",
+   "goldberg"
+  ],
+  "protectionMarkers": [
+   "EasyAntiCheat",
+   "EasyAntiCheat_EOS",
+   "BattlEye",
+   "BEService",
+   "XIGNCODE",
+   "xhunter",
+   "GameGuard",
+   "nProtect",
+   "ACE-Base",
+   "Ricochet",
+   "anticheat"
+  ],
+  "allowedWriteTargetsRelativeToWin64": [
+   "dwmapi.dll",
+   "ue4ss"
+  ],
+  "forbiddenWriteRootFragments": [
+   "Dawnwalker/Content/Paks",
+   "Content/Paks",
+   "Engine/Content/Paks"
+  ]
+ },
+ "knownCurrentState": {
+  "gameWasRunningAtCapture": true,
+  "processIdAtCapture": 25544,
+  "ue4ssWasInstalled": false,
+  "antiCheatFilenameMatchFound": false,
+  "antiCheatModuleMatchFound": false,
+  "limitations": [
+   "Process identifiers and running state are point-in-time observations.",
+   "No known anti-cheat marker is not proof that no protection exists.",
+   "The zDEV build is official but experimental and is not yet proven compatible with Dawnwalker."
+  ]
+ }
+}

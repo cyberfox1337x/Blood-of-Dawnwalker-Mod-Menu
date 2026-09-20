@@ -1,0 +1,30 @@
+{
+  "cyberfox1337x": "function(dawnwalker_native_desktop_shell_proof)",
+  "schemaVersion": 1,
+  "checkedAtUtc": "2026-09-03T01:43:09.4538276Z",
+  "scope": "Built Electron desktop shell only; the game was not running or touched by this check.",
+  "artifacts": {
+    "distElectronMainSha256": "71005DC14B49A9A03F77D9A8C9D794BF38595AEEA4EDE72DE83349061F27C908",
+    "distCssSha256": "29936F535B1E4286519C8488925B73452A61BACA56B66AD213663E176B5A8EFD"
+  },
+  "window": {
+    "pid": 40416,
+    "hwnd": "0xB00D6C",
+    "dragStripHitTest": 2,
+    "dragStripHitTestName": "HTCAPTION",
+    "before": { "left": 116, "top": 45, "right": 1804, "bottom": 994 },
+    "after": { "left": 183, "top": 80, "right": 1871, "bottom": 1029 },
+    "dragDelta": { "x": 67, "y": 35 }
+  },
+  "hotkey": {
+    "key": "F10",
+    "firstPressMinimized": true,
+    "secondPressRestored": true,
+    "secondPressVisible": true
+  },
+  "cleanup": {
+    "processExitedCleanly": true,
+    "forcedCleanup": false
+  },
+  "passed": true
+}

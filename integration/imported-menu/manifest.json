@@ -1,0 +1,439 @@
+{
+  "schema": 1,
+  "buildId": "25232147",
+  "source": "User-supplied Dawnwalker menu v3.2",
+  "files": [
+    {
+      "path": "Scripts/CombatAttributeInspection.lua",
+      "sha256": "70FDF3A47F889CC269D9DE0EF47D68DA2800612EC29F8D13A0D72893A8DA0AA5",
+      "bytes": 8891
+    },
+    {
+      "path": "FORM_TOGGLE_LICENSE.txt",
+      "sha256": "90F4C4A3A12C3F8BC24F4267442E686D4F3EC5A4756A2AB9F679B9D2E40E4FAF",
+      "bytes": 1093
+    },
+    {
+      "path": "PROVENANCE.md",
+      "sha256": "855E76587CF94B2767B50E2C008E22F872EFD38DC88165563A7D448D74B00098",
+      "bytes": 3203
+    },
+    {
+      "path": "Scripts/BloodSegmentControl.lua",
+      "sha256": "14170639B601D41C26F909C7A0104374348535C5D92F23426A9FFA6FFD04DE52",
+      "bytes": 6226
+    },
+    {
+      "path": "Scripts/ClockControl.lua",
+      "sha256": "3D6851BD46D2A462B12631892127A2022834A3AEEDF19AEB065F7F56B61850E6",
+      "bytes": 9120
+    },
+    {
+      "path": "Scripts/CorePlayerControl.lua",
+      "sha256": "418687E27B57058747F7941A7039E0204505A32FA208C4C1519EC610811901EA",
+      "bytes": 17292
+    },
+    {
+      "path": "Scripts/CourtAlertControl.lua",
+      "sha256": "CBF3E5E10E9AFEC88F3350BCBE509D15ED013148E7A43C36307A54246C256BB8",
+      "bytes": 10038
+    },
+    {
+      "path": "Scripts/CraftingControl.lua",
+      "sha256": "F031413F40225984EC76065899BD3172016E5A89F58BDED1CA352DD6DE48155F",
+      "bytes": 8202
+    },
+    {
+      "path": "Scripts/DawnwalkerSuperJumpDescriptorReadOnlyProbe.lua",
+      "sha256": "3767C63D7F5F95A5EA0A1FC37F908CCD60A5BB89D58D08887C728B8A7874E159",
+      "bytes": 22140
+    },
+    {
+      "path": "Scripts/DawnwalkerXPAwardObservation.lua",
+      "sha256": "90F81D083CA32C28F006AE6F21BCB32310D0B880F2C4A72A44FBE994C5E840FD",
+      "bytes": 8968
+    },
+    {
+      "path": "Scripts/DifficultyControl.lua",
+      "sha256": "8A67B9EA97165BCB1D73B5603F6605F95B815384B3643AC81EF657F639145376",
+      "bytes": 36414
+    },
+    {
+      "path": "Scripts/EquipmentLoadoutControl.lua",
+      "sha256": "DAFD744674453CB262BEDFF975F25A1F2E1864A05FB067AE72B61A9941B0D25A",
+      "bytes": 8821
+    },
+    {
+      "path": "Scripts/EyeColorBindings.lua",
+      "sha256": "3F4C1761EFA82B6304ED4CFB986AA1CEBA45440756FEED8102060D8B9637EE0E",
+      "bytes": 22848
+    },
+    {
+      "path": "Scripts/EyeColorControl.lua",
+      "sha256": "85864E99764D75A8DC569B7C56157C2D8911C3D7F4DD0AEBA3E9FB318B1ADCF2",
+      "bytes": 12024
+    },
+    {
+      "path": "Scripts/EyeMaterialObservation.lua",
+      "sha256": "3B4248C7A65E63E4747F05E979C41518F5FE084386A0649DCD73C2DF42C34B08",
+      "bytes": 13039
+    },
+    {
+      "path": "Scripts/HairColorControl.lua",
+      "sha256": "1895CFF5936B255AF4E8AD05D8BE953905366CD596B511E7C82A0632DA746D2D",
+      "bytes": 25611
+    },
+    {
+      "path": "Scripts/FallDamageObservation.lua",
+      "sha256": "31797BC3C278627BA1EA2AF1D727D170D51DC9FE35A067690C98513A13049C33",
+      "bytes": 3907
+    },
+    {
+      "path": "Scripts/FallDamageReadback.lua",
+      "sha256": "ABB2E21F8193BF09D148DAB84924FCDBACF39FA6CC11FC1CC6678B5125E3B18D",
+      "bytes": 4966
+    },
+    {
+      "path": "Scripts/FallDropDiagnostic.lua",
+      "sha256": "85EEF8FB720F3D5DBCA5A572EB26DAAE944963675071FFED937B752491EFD80E",
+      "bytes": 7302
+    },
+    {
+      "path": "Scripts/FormToggleControl.lua",
+      "sha256": "57B87F363A79CEC25CFFAA1512BA5E153D8A30C2A842CF0D4157F502261705EB",
+      "bytes": 19900
+    },
+    {
+      "path": "Scripts/HubTabControl.lua",
+      "sha256": "32F12CB6C0CE6ABD52FBD049FD3FD9B2ABE639219202DB59D70C8C01E64BED4A",
+      "bytes": 9445
+    },
+    {
+      "path": "Scripts/HubTagProbe.lua",
+      "sha256": "B1306FCDFF5E4DAF39925DB3E14F82D02B4A52D9723ED48CE8F6E6F69F21B081",
+      "bytes": 22241
+    },
+    {
+      "path": "Scripts/ImportedMenuFacade.lua",
+      "sha256": "E23E056B701EB857D2E698668B4481238E8E936C55A7A09100013EE4199368E9",
+      "bytes": 18977
+    },
+    {
+      "path": "Scripts/ImportedSourceLoader.lua",
+      "sha256": "0C3BD310EBFD12ED0E5BA65D25FAFD00A9AC69F06E914F9E03EB363F23B362E1",
+      "bytes": 1244
+    },
+    {
+      "path": "Scripts/JumpDescriptorReadback.lua",
+      "sha256": "765327EFEB6D75D9BAC0187A40C3CBD356A89C66B9D129CAFBC77AB456FE64BA",
+      "bytes": 6737
+    },
+    {
+      "path": "Scripts/JumpTrajectoryDiagnostic.lua",
+      "sha256": "26EEDC5610D2B42FF8A553325AF0FF6B1474EE39CAD52B1151494685C574730A",
+      "bytes": 10568
+    },
+    {
+      "path": "Scripts/PhotoCameraControl.lua",
+      "sha256": "9AD14E91E0BCC0ADBC29D69731419D7F6298AF2063A5CD943B3CCF7C9BB06058",
+      "bytes": 5092
+    },
+    {
+      "path": "Scripts/PlayerResolver.lua",
+      "sha256": "16944A8BCFDEC30C7D122128A4BC35FFC7D2209BA14F6526AE5C6C8D2D94973D",
+      "bytes": 5392
+    },
+    {
+      "path": "Scripts/TraitPointControl.lua",
+      "sha256": "9E4B0A513368B209A2FE0DE43D1C433B0CE16EFF3F6740568C510AED3C43A23D",
+      "bytes": 6174
+    },
+    {
+      "path": "Scripts/TutorialDismissControl.lua",
+      "sha256": "A71EF003493AF2191C98884B0D744FF42C5B671BA33F2D86572A278DE7762F61",
+      "bytes": 20549
+    },
+    {
+      "path": "Scripts/XPMultiplierControl.lua",
+      "sha256": "F8D7C88BD6AB5787E8430581BF92D68178AF3047ED03955671812724338FA06D",
+      "bytes": 9174
+    },
+    {
+      "path": "Scripts/main.lua",
+      "sha256": "30D994D2A95B0A07BB4DF1C2D91FDEF90E2D380D6235F2E01FE95C07EB5AFF49",
+      "bytes": 67686
+    },
+    {
+      "path": "Scripts/MovementEffectReadback.lua",
+      "sha256": "B60E4502E03A95659A78AAC6BB893F20D92AA76BD6FA650A5232C2088C680E59",
+      "bytes": 9458
+    },
+    {
+      "path": "Scripts/NoClipFlightInput.lua",
+      "sha256": "9ED196FF41F47F959428EEC1233F7F9235D0127491174FD70F3350E0845610CA",
+      "bytes": 6687
+    },
+    {
+      "path": "Scripts/NoClipPilot.lua",
+      "sha256": "61DC876D0249B0DBCBD56B9E44ADBAC9E13746BDD0B7B4821144C5F161557AD3",
+      "bytes": 10494
+    },
+    {
+      "path": "Scripts/PlayerLevelControl.lua",
+      "sha256": "3425F0E8282BD1AD5CD9599A14D06B0906042A9445C75538C0DF5A9DC9AEEC8C",
+      "bytes": 7752
+    },
+    {
+      "path": "Scripts/PlayerMovementReadback.lua",
+      "sha256": "05D2475CB314EC250F36C38D1F7A1E798FD1EB7782D9E80E7B7445BBDF7E410E",
+      "bytes": 4496
+    },
+    {
+      "path": "Scripts/QuestReadback.lua",
+      "sha256": "5843B0EE685C818D9A4B3D3048F6AF425ED126474E70ADD574B29222F2539AC3",
+      "bytes": 16411
+    },
+    {
+      "path": "Scripts/SavedLocationControl.lua",
+      "sha256": "6B2BE249322EB813A2108E56CBD454C1E2442C11C75644D5BDCC6F7E6CA83EB0",
+      "bytes": 6480
+    },
+    {
+      "path": "Scripts/Source/ActivationControl.lua",
+      "sha256": "3B5D5394300F9694C1FA3085EAD37C0E4237FDFBA3DB7A0939BC6E41E0181284",
+      "bytes": 7116
+    },
+    {
+      "path": "Scripts/Source/CombatControls.lua",
+      "sha256": "EF2668EB04A23686CE908D8A92A90CC2316B5CB23ED0B76C94E668B5B421EB45",
+      "bytes": 17823
+    },
+    {
+      "path": "Scripts/Source/CooldownControl.lua",
+      "sha256": "B1ED278ADC55AA6AC646F7A04CD029B009DF1B18C9DDD124F1E70125F9EAFA43",
+      "bytes": 3667
+    },
+    {
+      "path": "Scripts/Source/CorruptionLevelControl.lua",
+      "sha256": "4D8EFAE53428EC7C4049A712326AB48A2D77665A9CBE9D100D4D59073332B956",
+      "bytes": 15916
+    },
+    {
+      "path": "Scripts/Source/GameplayMenu.lua",
+      "sha256": "0A95B11F2778319E1ADB0B095C9287C620D36E1B07EC192426EB1432F15A5E37",
+      "bytes": 49692
+    },
+    {
+      "path": "Scripts/Source/GodMode.lua",
+      "sha256": "258C1B8ED22041BA56276F0E9FB10C7E956DB873B6A5741E6FBFADBD447D7E9B",
+      "bytes": 5745
+    },
+    {
+      "path": "Scripts/Source/InfamyControl.lua",
+      "sha256": "3898A552A151BC1A944C92559D84619B1D26888A42CD543FA0879E365341DAC4",
+      "bytes": 4356
+    },
+    {
+      "path": "Scripts/Source/ParryAssist.lua",
+      "sha256": "333FC4BC4ADCDA8405AA8A43428956BE2F99207B1A7060BE4D37664A6721A73B",
+      "bytes": 6041
+    },
+    {
+      "path": "Scripts/Source/ProtectedRespec.lua",
+      "sha256": "D0B3873A1D92CDB0A3CCCB8DF4DCACDFE4C227DB2647FD9BDFB39FC8CD6EF227",
+      "bytes": 15804
+    },
+    {
+      "path": "Scripts/Source/TimeControl.lua",
+      "sha256": "4322F310DB6285532B438A75A907633725A3D579809589B5A04DADEC6B2CE179",
+      "bytes": 8726
+    },
+    {
+      "path": "Scripts/Source/TraitGrant.lua",
+      "sha256": "D7DD0A9DE992834F4886D3F124EDA7F913B6717382FC098D86C2A5E760A7F9F3",
+      "bytes": 9583
+    },
+    {
+      "path": "Scripts/Source/UltimateResearch.lua",
+      "sha256": "69B430757CCB1C104C2B4C501A7D8834715EF6ECB1BFEDA62698E68BB17E9773",
+      "bytes": 8895
+    },
+    {
+      "path": "Scripts/SpeedControl.lua",
+      "sha256": "B1D2F7FB21BAEB2C418B11A3DFF4092D6B6D794E7E430F8E8E781C46E0B1CC9E",
+      "bytes": 10505
+    },
+    {
+      "path": "Scripts/SpeedDescriptorReadback.lua",
+      "sha256": "2974EA5BB71DE3A581A382C6E66F4443087A099DACD3DB09EA1A1872E1B993A8",
+      "bytes": 6298
+    },
+    {
+      "path": "Scripts/SpeedProfilePilot.lua",
+      "sha256": "AADF0413B334C4972B463AFF486EFC522DB0E6C13AEEA8DCC8EB954265C36786",
+      "bytes": 11048
+    },
+    {
+      "path": "Scripts/StorySettingsControl.lua",
+      "sha256": "6165165F37AFE5590E9241271D27126EBB9B5FC6BFF91A1090BD6BAAAF91EBDE",
+      "bytes": 11385
+    },
+    {
+      "path": "Scripts/StoryTimerControl.lua",
+      "sha256": "E4E7BB1EC22CA5BC06B7CB1C672613C59C2C69433DA26838C508C1ACCF01EFCE",
+      "bytes": 11892
+    },
+    {
+      "path": "Scripts/SuperJumpControl.lua",
+      "sha256": "5EA6398EDD6551A866AE45C5F14AA2F0D740B442697ED62341133628C1258134",
+      "bytes": 3462
+    },
+    {
+      "path": "Scripts/SuperJumpEffectPilot.lua",
+      "sha256": "98BA4D718A0FD1429451A5E3C941B97057FD67E980CB2E34C6581CCC7566FB1F",
+      "bytes": 16583
+    },
+    {
+      "path": "Scripts/WorldControl.lua",
+      "sha256": "CFA0062B3EF93B9D0F91EE7074B5FF6872C59BA624E5102950715C2968157A0C",
+      "bytes": 5806
+    },
+    {
+      "path": "Scripts/XPAwardObservationControl.lua",
+      "sha256": "E4B6A1C5E59EF7711859480A22CA4A4A18F8C9353ED4997AB3F5B0FF24EB2349",
+      "bytes": 8862
+    },
+    {
+      "path": "Scripts/XPRewardControl.lua",
+      "sha256": "23B90C07F37F3EBD26267867A9EF39D020F29216C097D0450EC670B5D214C954",
+      "bytes": 10908
+    },
+    {
+      "path": "Scripts/XPRewardReadback.lua",
+      "sha256": "237A29E2827DB60755D21528550BF3EC6DDADB81AA6F0F054E2980E640DC7220",
+      "bytes": 6473
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "sha256": "1CAA1617EF724D32913A78A2704F85B2F99E27A3740A7A9CBA64871FDD6A9CD8",
+      "bytes": 1955
+    },
+    {
+      "path": "Scripts/CombatDiscovery.lua",
+      "sha256": "FFC2B32909700E66FF9A1614B041D6617562459CB80F25E451748BE5DCF0D160",
+      "bytes": 22093
+    },
+    {
+      "path": "Scripts/AttackSpeedEffectPilot.lua",
+      "sha256": "4930320495A6578D1D4B3FC7B8882EFDC01293B00278451B0E687C61DC63C628",
+      "bytes": 16885
+    },
+    {
+      "path": "Scripts/AttackRateObservation.lua",
+      "sha256": "719D1EF72847AEF2CEB66B775448EDEFC0AAF8C0F86C0C02CEA241CF83C78AEF",
+      "bytes": 12149
+    },
+    {
+      "path": "Scripts/PersonalFlyControl.lua",
+      "sha256": "229FFA0AEF0C258CA98EAC56614D188EC6981A3AD7A017557DB135C49E7997B3",
+      "bytes": 11311
+    },
+    {
+      "path": "Scripts/CarryWeightCheck.lua",
+      "sha256": "91AE1F13811344BB59D91271339DCAB0C60ABBBEB04849DEE6CF81ABCA527F89",
+      "bytes": 7695
+    },
+    {
+      "path": "Scripts/CarryCapacityReadOnlyProbe.lua",
+      "sha256": "A8C038E00A3F0605A9266425619C2F058E540221AFD584E4FDF74931928923F5",
+      "bytes": 24975
+    },
+    {
+      "path": "Scripts/CarryCapacityEffectPilot.lua",
+      "sha256": "ABB3A3C81DEC030A4F8468397AD8B90EBB3053005C97EA19CAD13AF582B061DA",
+      "bytes": 28786
+    },
+    {
+      "path": "Scripts/ItemAmountControl.lua",
+      "sha256": "3B7CEE32CECA094F71519D4DE22805D8CF0AAB4232680CAE8B00B023F0322A9D",
+      "bytes": 18818
+    },
+    {
+      "path": "Scripts/SuperDamageEffectPilot.lua",
+      "sha256": "B91AAB3122E9063FD1530DE297945F809E65E0A22D14245CA91D284141E2F4F9",
+      "bytes": 26140
+    },
+    {
+      "path": "Scripts/SuperDamageControl.lua",
+      "sha256": "2AD4763D5D96824208A2F6D93992F43FBA5FEBBE7D37FCF4AACADA7E3C7C76C1",
+      "bytes": 5159
+    },
+    {
+      "path": "Scripts/FreeCraftingControl.lua",
+      "sha256": "51981592BD994DDA33201F3D83B430C996F0DAC84B835FBB491FA456F32443D5",
+      "bytes": 8297
+    },
+    {
+      "path": "Scripts/SkinTintControl.lua",
+      "sha256": "F70889A6DC49BB57E939917F5D4EF4B6F75C90DECBAD9F87DD51783F806E618D",
+      "bytes": 11575
+    },
+    {
+      "path": "Scripts/TimelessCourtControl.lua",
+      "sha256": "ECCA95F11149C6980CB7EFCECCD96C0DDC57E99D1F50AC3A3BE7E007BA976988",
+      "bytes": 14062
+    }
+  ],
+  "originalSourceFiles": [
+    {
+      "file": "ActivationControl.lua",
+      "sha256": "7B3A805B723A4BC270B4368AB0B5325F7A3EB51B510B56AE1CF13EB8B1F94846"
+    },
+    {
+      "file": "CombatControls.lua",
+      "sha256": "B531774FAE8C3BFEF426BE8B91E0E320B8DF3F374C0510FE2CB54AF44F849F08"
+    },
+    {
+      "file": "CooldownControl.lua",
+      "sha256": "9F5017BDFA4D1F1752E5D5C32745E3EDB70DA45D87CE6FCA08DA5614AA8EA296"
+    },
+    {
+      "file": "CorruptionLevelControl.lua",
+      "sha256": "CAE217145917FF52FC51AE3BB6705D3289E3D2D050D315A3E0DE71412FE33B6D"
+    },
+    {
+      "file": "GodMode.lua",
+      "sha256": "A0AE6B2FAA96C1E9B0E7666F7E25FF1C66628B88118EDC098ECE4C04F720441E"
+    },
+    {
+      "file": "InfamyControl.lua",
+      "sha256": "77DCE24E19129F3CCDB7856D101532B6FF3D9B8135B35FEBD6CFB2341495A9D3"
+    },
+    {
+      "file": "main.lua",
+      "sha256": "3AA1961314B0B42E1646770628B6D599BA87B7CEA3B134C4EA09092FC0B71298"
+    },
+    {
+      "file": "ParryAssist.lua",
+      "sha256": "5F60D69F63CFA6A892D51BFD404BC6AE092CD7442706486670D2DDEEE410BCA9"
+    },
+    {
+      "file": "ProtectedRespec.lua",
+      "sha256": "1D6B885ACDFD06E7BB528F5F56E7DDC060BE1998370B29042AB243947E004FCA"
+    },
+    {
+      "file": "TimeControl.lua",
+      "sha256": "3191446608ABC1DB95C089B8713187A2799C8D74D2585B53BCEE3032C887B58A"
+    },
+    {
+      "file": "TraitGrant.lua",
+      "sha256": "CED2F6B592197AB671D29FDB3072D60CDF097266BF370B6F4785618A1D6929CF"
+    },
+    {
+      "file": "UltimateResearch.lua",
+      "sha256": "9B1858152273FF0AEF0966BECB50D12B1F7DA5B3F0335922C11D8B394CECFFD8"
+    }
+  ],
+  "catalogSha256": "06FEFC0F8834206109BBCE4804F7A13748C36A85D075F2ADF5C0F75ACBC99A77",
+  "gameplayVerified": false
+}

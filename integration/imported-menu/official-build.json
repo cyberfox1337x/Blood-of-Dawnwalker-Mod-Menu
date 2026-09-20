@@ -1,0 +1,28 @@
+{
+  "cyberfox1337x": "function(dawnwalker_imported_menu_build_contract)",
+  "steam": {
+    "buildId": "25232147",
+    "appId": "3751260"
+  },
+  "executable": {
+    "relativePath": "Dawnwalker/Binaries/Win64/Dawnwalker.exe",
+    "sha256": "CB9B7D7BD88A6754C0A9C08318AA64D5013DDFD92D5BADCAE84E1B4EA980DCFC",
+    "bytes": 176305016
+  },
+  "gameVersion": {
+    "version": "1.0.5",
+    "changelist": "258504",
+    "evidence": "User-supplied in-game version screenshot showing 1.0.5 (258504) on 2026-09-11; installed executable ProductVersion dw1-pc-258504-shipping-patch2-all-CL-258504; Steam appmanifest buildid 25232147; SHA-256 read from the installed file. Display only after full executable identity verification."
+  },
+  "purpose": "Exact identity gate for the supplied v3.2 integration. Updated for Steam build 25232147 / CL258504 on 2026-09-11 after Steam patched the game at 16:05 on 2026-09-10 (the previous runtime session's last heartbeat was 16:04:09). Feature acceptance is recorded separately; Marketing version 1.0.5 confirmed from the in-game version screen. Runtime verified live on this build on 2026-09-11: build gate passes, item index 827/50/41, difficulty/player/story/quest readbacks correct. The reflection capture under Dawnwalker_RE is from CL258042.",
+  "previousBuild": {
+    "buildId": "25191761",
+    "sha256": "02D424EDDBD364ED25F3777A7A2FA1B0DFE84690AE18F84EC9EB2997B0828C33",
+    "bytes": 176487800,
+    "gameVersion": {
+      "version": "1.0.4",
+      "changelist": "258042",
+      "evidence": "User-supplied in-game version screenshot showing 1.0.4 (258042) on 2026-09-09; installed executable ProductVersion dw1-pc-258042-shipping-patch2-all-CL-258042; Steam appmanifest buildid 25191761; SHA-256 read from the installed file. Display only after full executable identity verification."
+    }
+  }
+}

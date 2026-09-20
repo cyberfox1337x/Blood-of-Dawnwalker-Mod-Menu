@@ -1,0 +1,51 @@
+# CPU diagnostic checkpoint
+
+The first fresh connected idle sample failed at2.797%machine across4Electron processes. A later60.42second role sample during the parent-controlled exit/restart/hang interval measured main0.5914%,renderer0.0291%,GPU0.0065%,utility0%, about0.627%machine total. It is not a repeat connected acceptance sample: the raw runtime ready=true/session fields were stale after the old game exited. The profiler intentionally recorded raw snapshot identity and does not equate ready=true with fresh liveness.
+
+Normalization is consistent:8logical processors, sum of each process TotalProcessorTime deltas divided by measured wallclock*8*100. Menu RSS is summed working sets (historical method), not private bytes. Child tasklist process CPU is excluded because it is not an Electron process; historical prose attributing CPU to tasklist includes parent spawn overhead but is not direct profiling evidence here.
+
+Source inspection: shared gameProcess cache still6seconds, concurrent normal queries coalesced; fresh:true is supplied only to file-write guard services, not status poll. importedMenuOwner duplicate cache was removed but shared cache remains. Imported snapshot polling750ms visible/3000ms hidden; runtime integrity revalidation every2seconds checks74file fingerprints; unchanged digests cached. The renderer projection already excludes heartbeat-only changes. No clear unintended fresh-process loop was found.
+
+The connected/unavailable contrast suggests connected payload validation/transport/renderer-update work needs profiling before a patch. It does not yet prove which component accounts for the excess. Source edits are withheld. Prefer a connected per-process profile with current tab/visibility documented, then isolated verifier/transport CPU measurements; preserve fresh write guards and fail-closed runtime identity checks. Parent-owned live trial has priority; no UI mutation performed by profiler.
+
+## Isolated component timing
+
+`profile_components.mjs` executed100warm-cache calls per compiled backend component, outside the running menu using a copied historical snapshot and read-only installed runtime files. Payload verifier5.63msCPU/call, game identity1.1ms, snapshot transport1.24ms. At nominal2second verifier cadence,5.63ms is about0.035%of8-core machine capacity; far smaller than the observed2.797%total. These values cannot prove Electron's actual call cadence or process overhead, but do not support removing integrity checks or weakening write guards. A fresh connected per-process sample is required to isolate the excess.
+
+## Connected main-process attribution
+
+VisiblePlayer fresh connected old-package role sample60seconds isolated main2.581%machine,renderer0.094%,GPU0.074%,utility0%. Concurrent tests make that diagnostic-only, but it reproduces the earlier aggregate excess. Exact Electron44.1.1 in run-as-Node mode incurred298.4ms parentCPU per fresh tasklist query; nominal6second cache accounts for about0.622%machine, matching disconnected main, not connected2.58%.
+
+A temporary127.0.0.1:9229 Inspector CPU profile on the new fixed app (mainPID14076, foregroundPlayer) sampled60seconds:59.307seconds marked JavaScript idle, parseState15ms, spawn24ms. Simultaneous40.038second native processCPU delta8.296875seconds =2.590%machine. Thus the expensive work is not demonstrated on the profiled JS main thread; native/otherElectron main-process threads need attribution before proposing a performance patch. Profile artifacts stay local in main-inspector-profile. Inspector is temporary and parent closes/relaunches without the flag after this diagnostic.
+
+## Native thread and process-query cadence
+
+A normal launch with no Inspector (main PID 31964) was sampled for 30 seconds in `performance-thread-profile.json`. CrBrowserMain consumed 3.625 CPU seconds (1.506% of the eight-core machine); two unnamed threads consumed another 1.0 second, while libuv workers together used about 0.094 second. This sample points toward native browser-main work rather than heavy asynchronous file hashing in that interval. It does not rule out separate cold-cache costs.
+
+`performance-child-cadence.json` observed five tasklist children at roughly 6.57–6.65 second intervals, consistent with the shared six-second cache plus query time. There is no observed high-frequency process-query bypass.
+
+No accessibility switches or explicit accessibility calls were found in `electron`, `src`, or `package.json`. Computer Use UIAutomation observation could still activate Chromium accessibility implicitly; this is an unproved observer-effect hypothesis. The next comparison is a fresh normal launch with no Computer Use state/accessibility inspection until a bounded CPU sample finishes. No production accessibility behavior is changed.
+
+The first no-get_window_state comparison (PID 18024, current package) measured 60.484 seconds and 10.734375 aggregate CPU seconds, or 2.2184% machine capacity; peak aggregate RSS was 483,614,720 bytes. Main process averaged about 2.05%, renderer 0.10%, GPU 0.065%. All 12 checkpoints had fresh ready state for the expected session. Other control calls were used to launch, list, obtain and activate the window; this is not a claim of zero computer-control API use. The excess persists without explicit state-tree inspection. A paired same-process sample after inspection is needed before attributing any difference to accessibility, and neither comparison changes the production accessibility settings.
+
+The paired same-PID post-inspection sample measured 60.543 seconds, 10.71875 CPU seconds, and 2.2130% machine capacity: effectively unchanged from 2.2184% before inspection. This does not support get_window_state as the CPU cause. Peak summed working sets increased to 513,589,248 bytes. No further aggregate CPU sampling is justified without a new discriminating hypothesis.
+
+Historical RSS units: preserved `historical-regression/soak.py` lines 29–31 explicitly divide summed WorkingSet64 by PowerShell `1MB`, meaning 1,048,576 bytes. Thus the recorded historical soak values labeled MB are actually MiB. The original standalone P-3 sampler has not been found, so this proves the soak convention, not a silently revised P-3 limit. Current post-inspection peak is 489.80 MiB / 513.59 decimal MB: below 500 MiB, above 500,000,000 bytes. Keep that distinction explicit.
+
+No recurring setAlwaysOnTop/setIgnoreMouseEvents loop exists. Position changes are drag-driven; invalidate calls are show/restore/focus or GPU recovery events. backgroundThrottling=false preserves an earlier demonstrated black-window recovery and is not changed based on this CPU investigation.
+
+## Native capture conclusion
+
+Three bounded noninvasive menu snapshots were unwound offline and resolved against exact official Electron 44.1.1 Breakpad symbols, hash-checked against the official release checksum. All three CrBrowserMain samples were normal MessagePumpForUI::WaitForWork waits. Sparse snapshots did not capture the expensive execution. See `menu-native-snapshots-noninvasive/README.md` and the three `resolved-functions.txt` logs. CPU remains above target; no speculative source optimization or weakened integrity/liveness guard was made.
+
+## User/kernel attribution
+
+Normal main PID 18024 was sampled for 15 seconds disconnected and again after positively loaded Quicksave2, foreground Player, fresh session 1789836763-298873-1. CrBrowserMain increased from 0.3125 user / 0.421875 kernel CPU seconds disconnected to 2.03125 user / 0.65625 kernel seconds connected. Its connected total was 2.238% machine; two unnamed threads contributed another approximately 0.612%, with negligible libuv-worker time. The increase is predominantly user-mode native work, not only kernel message handling. This further justifies the supported local native tracing capture rather than speculation about asynchronous file hashing. Raw artifacts are `performance-thread-split-disconnected.json` and `performance-thread-split-connected.json`.
+
+The lossless native trace finally captured the active path: 46 of 506 post-startup main-thread samples include UIAutomationCore, with incoming Chromium bounding rectangle and text provider calls through COM/RPC. 432 samples were idle waits. This supports accessibility servicing, not asynchronous integrity validation, as a major native contributor. Caller identity is not established. See `main-native-trace/README.md`; the temporary disabled-accessibility comparison is diagnosis only, never a shipping change.
+
+The temporary disabled-accessibility control (main20952) measured 4.703125 aggregate CPU seconds over60.538seconds, or0.9711%machine, and peak RSS461,918,208bytes. This is markedly below normal samples2.21–2.80% and supports accessibility-work attribution. The flag was diagnostic only; parent closes that instance and returns to a no-argument launch. A normal sample with zero Computer Use API calls after launch is next; actual foreground is unobserved during measurement. Source only guarantees guarded show() on ready-to-show/did-finish-load, not a separately proved Windows foreground state.
+
+Normal no-CUA launch result: 0.73219% machine CPU, peak summed working sets482,717,696bytes,60.553seconds,12fresh-ready checkpoints. No diagnostic flags. However, the first post-sample screenshot showed the game occluding the menu. Therefore this supports background/unobserved-foreground idle performance only; it does not close visible-foreground acceptance. A fresh supported keyboard foreground transition comparison is needed before making that claim. All prior overhead and observer findings remain valid within their stated conditions.
+
+The follow-up normal build used supported F10 input to the game window, letting the app's own global hotkey restore/show/focus the menu without querying the menu through Computer Use. Its strict60s sample still measured approximately2.1065%machine, above2%. Thus the background0.732% result must not be promoted to a foreground pass. Native stacks and the disabled-accessibility control establish a large accessibility contribution, but no specific external caller is identified. No further equivalent CPU repetitions or speculative production changes are warranted.

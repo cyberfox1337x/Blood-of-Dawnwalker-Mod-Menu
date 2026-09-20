@@ -1,0 +1,140 @@
+/* cyberfox1337x.function("dawnwalker_eye_appearance_native_viewer_styles") */
+.character-eye-workflow { grid-column: 1 / -1; min-width: 0; }
+.character-model-surface { height: clamp(320px, 48vh, 570px); position: relative; overflow: hidden; border: 1px solid #4f3b34; background: #090b0a; }
+.character-canvas-host { width: 100%; height: 100%; }
+.character-model-surface canvas { display: block; width: 100%; height: 100%; touch-action: none; cursor: grab; }
+.character-model-surface canvas:active { cursor: grabbing; }
+.character-model-surface.is-move-mode canvas { cursor: move !important; }
+.character-model-surface canvas:focus-visible { outline: 2px solid #e18064; outline-offset: -3px; }
+.character-manipulation-actions { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 10px; }
+.character-model-surface .eye-frame-empty { position: absolute; inset: 0; margin: auto; height: fit-content; z-index: 1; }
+.character-view-actions { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+.eye-appearance {
+  grid-column: 1 / -1;
+  min-width: 0;
+  border: 1px solid #50312c;
+  border-left: 3px solid #962923;
+  border-radius: 4px;
+  background: linear-gradient(130deg, #170d0c, #080a09 62%);
+  color: var(--bone, #dfd5c8);
+  padding: 20px;
+}
+.eye-heading { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; padding-bottom: 18px; border-bottom: 1px solid #3e2824; }
+.eye-kicker { display: block; margin-bottom: 5px; color: #bca68c; font-size: 12px; letter-spacing: .11em; text-transform: uppercase; }
+.eye-heading h3 { margin: 0; font-family: "Cinzel", serif; font-weight: 500; font-size: 21px; }
+.eye-application-status { display: inline-flex; align-items: center; gap: 8px; padding: 7px 10px; border: 1px solid #584031; color: #dcb98e; font-size: 14px; line-height: 1.3; }
+.eye-application-status > span { width: 6px; height: 6px; flex: 0 0 6px; border-radius: 50%; background: #b68a53; }
+.eye-application-status.is-applied { border-color: #4d5948; color: #cbd7bd; }
+.eye-application-status.is-applied > span { background: #b3c294; }
+.eye-workspace { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(255px, 1fr); gap: 22px; padding-top: 20px; }
+.eye-preview-panel, .eye-controls-panel { min-width: 0; }
+.eye-preview-topline { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 7px 12px; padding: 0 2px 10px; color: #b3a89b; font-size: 13px; }
+.eye-preview-surface { position: relative; display: grid; place-items: center; width: 100%; aspect-ratio: 1.05; min-height: 280px; overflow: hidden; border: 1px solid #4f3b34; background: #080a09; cursor: grab; touch-action: pan-y; user-select: none; }
+.eye-preview-surface:active { cursor: grabbing; }
+.eye-preview-surface canvas { display: block; width: 100%; height: 100%; object-fit: contain; }
+.eye-preview-surface canvas[hidden] { display: none; }
+.eye-frame-empty { max-width: 30ch; padding: 28px; text-align: center; color: #bbb0a1; font-size: 16px; line-height: 1.5; }
+.eye-frame-progress { position: absolute; bottom: 12px; left: 12px; padding: 5px 8px; border: 1px solid #5e4435; background: #10100ef2; color: #dabc93; font-size: 13px; }
+.eye-rotation { display: grid; grid-template-columns: 44px minmax(0, 1fr) 44px; gap: 12px; align-items: center; margin-top: 12px; }
+.eye-rotation > div { display: grid; justify-items: center; gap: 4px; }
+.eye-rotation output { font-size: 17px; font-variant-numeric: tabular-nums; color: #eee0ca; }
+.eye-rotation > div > span { display: flex; align-items: center; gap: 12px; width: min(100%, 210px); color: #b0a293; font-size: 12px; }
+.eye-rotation i { height: 1px; background: #5f3329; flex: 1; }
+.eye-appearance button { display: inline-flex; justify-content: center; align-items: center; gap: 8px; min-height: 37px; min-width: 0; padding: 8px 12px; border: 1px solid #64433a; border-radius: 3px; color: #e0d3c1; background: #12110f; font: inherit; font-size: 14px; line-height: 1.35; cursor: pointer; }
+.eye-appearance button:hover:not(:disabled) { border-color: #b34b3d; background: #28120f; }
+.eye-appearance button[aria-pressed="true"] { border-color: #be6250; background: #381712; color: #f6e6d0; }
+.eye-appearance button:disabled, .eye-appearance fieldset:disabled button { color: #a69d91; border-color: #3f3930; background: #111310; cursor: not-allowed; }
+.eye-appearance :is(button, input, summary, .eye-preview-surface):focus-visible { outline: 2px solid #e18064; outline-offset: 3px; }
+.eye-view-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 12px; }
+.eye-zoom { display: flex; align-items: center; gap: 16px; margin: 17px 0 0; font-size: 14px; color: #c9bba8; }
+.eye-zoom input { min-width: 0; width: 100%; accent-color: #a4392d; cursor: pointer; }
+.eye-input-help { color: #ada395; font-size: 13px; line-height: 1.5; margin: 11px 0 0; }
+.eye-controls-panel { display: flex; flex-direction: column; align-items: stretch; gap: 18px; padding-top: 1px; }
+.eye-live-toggle { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-bottom: 16px; border-bottom: 1px solid #3c2b25; }
+.eye-live-toggle > span { display: grid; gap: 5px; }
+.eye-live-toggle strong { color: #e0d1ba; font-size: 16px; font-weight: 600; }
+.eye-live-toggle small, .eye-mode-note, .eye-restore-block p, .eye-creator-note { margin: 0; color: #b2a797; font-size: 13px; line-height: 1.5; }
+.eye-live-toggle input { appearance: none; position: relative; width: 42px; height: 23px; flex: 0 0 42px; margin: 0; border: 1px solid #6d4b3d; border-radius: 13px; background: #151713; cursor: pointer; }
+.eye-live-toggle input::after { content: ""; position: absolute; top: 3px; left: 4px; width: 15px; height: 15px; border-radius: 50%; background: #aaa18c; }
+.eye-live-toggle input:checked { border-color: #ac5c48; background: #6c241c; }
+.eye-live-toggle input:checked::after { left: 21px; background: #efcfaa; }
+.eye-live-toggle input:disabled { cursor: not-allowed; }
+.eye-mode-note { padding-left: 10px; border-left: 2px solid #665039; }
+.eye-presets { min-width: 0; border: 0; padding: 0; margin: 0; }
+.eye-presets legend { padding: 0; margin-bottom: 10px; color: #d5c2a9; font-size: 15px; }
+.eye-presets > div { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; }
+.eye-presets button { justify-content: flex-start; text-align: left; overflow-wrap: anywhere; }
+.eye-color-swatch { display: inline-block; width: 14px; height: 14px; flex: 0 0 14px; border-radius: 50%; border: 1px solid #d4c0c266; }
+.eye-appearance button[data-neon="true"] { border-color: color-mix(in srgb, currentColor 45%, #754c43); }
+.eye-appearance button[data-neon="true"]:hover:not(:disabled), .eye-appearance button[data-neon="true"][aria-pressed="true"] { box-shadow: 0 0 12px color-mix(in srgb, currentColor 42%, transparent), inset 0 0 10px color-mix(in srgb, currentColor 14%, transparent); }
+.eye-appearance button[data-neon="true"] .eye-color-swatch { filter: saturate(1.25); }
+.eye-glow-field { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; font-size: 15px; color: #d5c2a9; }
+.eye-glow-field > span:last-child { display: flex; align-items: center; gap: 10px; padding: 5px 8px; border: 1px solid #584034; background: #0d0f0c; }
+.eye-glow-field input { width: 150px; accent-color: #b52c35; cursor: pointer; }
+.eye-glow-field input:disabled { cursor: default; opacity: .45; }
+.eye-glow-field output { min-width: 2.2em; text-align: right; font-variant-numeric: tabular-nums; }
+.eye-color-field { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; font-size: 15px; color: #d5c2a9; }
+.eye-color-field > span:last-child { display: flex; align-items: center; gap: 10px; padding: 5px 8px; border: 1px solid #584034; background: #0d0f0c; }
+.eye-color-field input { width: 34px; height: 28px; padding: 0; border: 0; background: transparent; cursor: pointer; }
+.eye-color-field output { min-width: 7ch; font-size: 13px; font-variant-numeric: tabular-nums; letter-spacing: .035em; color: #d1c0a8; }
+.eye-color-field small { flex-basis: 100%; font-size: 13px; color: #b5a998; }
+.eye-restore-block { padding-top: 18px; border-top: 1px solid #3c2b25; }
+.eye-restore-button { width: 100%; }
+.eye-restore-block p { margin-top: 8px; }
+.eye-creator-note { margin-top: auto; padding-top: 8px; }
+.eye-pending { margin: 0; color: #dabb91; font-size: 14px; line-height: 1.5; }
+.eye-error { margin: 0; padding: 10px; border-left: 2px solid #b74e3e; background: #29130f; color: #ebc4ad; font-size: 14px; line-height: 1.5; overflow-wrap: anywhere; }
+[data-compact] .eye-workspace { grid-template-columns: minmax(0, 1fr); gap: 25px; }
+[data-compact] .eye-preview-surface { aspect-ratio: 1.2; }
+[data-compact] .eye-appearance :is(p, button, label, strong, small, legend, output, .eye-preview-topline, .eye-application-status, .eye-frame-progress) { font-size: calc(14px * var(--content-text-scale, 1)); line-height: 1.45; }
+[data-compact] .eye-heading h3 { font-size: calc(20px * var(--content-text-scale, 1)); }
+[data-compact] .eye-kicker, [data-compact] .eye-rotation > div > span { font-size: calc(12px * var(--content-text-scale, 1)); }
+[data-compact] .eye-view-actions, [data-compact] .eye-presets > div { gap: 12px; }
+[data-compact] .eye-appearance button { min-height: calc(35px * var(--content-text-scale, 1)); }
+@media (max-width: 700px) {
+  .eye-workspace { grid-template-columns: minmax(0, 1fr); }
+  .eye-heading { align-items: flex-start; }
+}
+
+/* Fit the supplied-character workspace to the fixed desktop panel at every app scale. */
+.category-view .panel-visuals .panel-content { display: block; padding: 10px 12px; overflow: visible; }
+.panel-visuals .character-eye-workflow { position: relative; height: 100%; min-height: 0; display: grid; grid-template-rows: auto auto; gap: 6px; }
+.panel-visuals .character-eye-preview { display: flex; flex-direction: column; min-height: 0; padding: 12px; }
+.panel-visuals .character-eye-preview .eye-heading { gap: 8px; padding-bottom: 8px; }
+.panel-visuals .character-eye-preview .eye-workspace { flex: 1; min-height: 0; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 14px; padding-top: 10px; }
+.panel-visuals .character-eye-preview .eye-preview-panel { display: grid; min-height: 0; grid-template-rows: auto minmax(0, 1fr) auto; }
+.panel-visuals .character-eye-preview .character-model-surface { height: 100%; min-height: 400px; }
+.panel-visuals .character-eye-preview .eye-preview-topline { padding-bottom: 6px; }
+.panel-visuals .character-eye-preview .eye-input-help { margin-top: 6px; }
+.panel-visuals .character-eye-preview .eye-controls-panel { gap: 8px; }
+.panel-visuals .character-eye-preview .eye-view-actions,
+.panel-visuals .character-eye-preview .character-manipulation-actions { gap: 6px; margin: 0; }
+.panel-visuals .character-eye-preview button { min-height: 33px; padding: 5px 8px; }
+.panel-visuals .character-eye-preview .eye-presets > div { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+.panel-visuals .character-eye-preview .eye-presets legend { margin-bottom: 6px; }
+.panel-visuals .character-eye-preview .eye-presets button { gap: 6px; }
+.panel-visuals .character-eye-preview .eye-color-field { gap: 6px; }
+.panel-visuals .character-eye-preview .eye-restore-block { padding-top: 8px; }
+.panel-visuals .character-eye-preview .eye-restore-block p { margin: 5px 0 0; }
+[data-compact] .panel-visuals .character-eye-preview :is(p, button, label, strong, small, legend, output, .eye-preview-topline, .eye-application-status) { font-size: calc(13px * var(--content-text-scale, 1)); line-height: 1.25; }
+[data-compact] .panel-visuals .character-eye-preview button { min-height: calc(30px * var(--content-text-scale, 1)); }
+[data-compact] .panel-visuals .character-eye-preview .eye-heading h3 { font-size: calc(17px * var(--content-text-scale, 1)); }
+[data-compact] .panel-visuals .character-eye-preview .eye-kicker { font-size: calc(10px * var(--content-text-scale, 1)); }
+
+.character-game-controls-button { justify-self: start; margin: 0; }
+
+/* Hair colour: the same card language as the eye panel, but a short strip - the game
+   itself is the preview (the change applies live on the player). */
+.hair-color-panel { margin-top: 10px; }
+.hair-color-panel .hair-color-live > div { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+[data-compact] .hair-color-panel .hair-color-live > div { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.skin-tint-panel { margin-top: 10px; }
+.skin-tint-controls { display: grid; grid-template-columns: minmax(150px, .7fr) minmax(260px, 1.3fr); gap: 18px; align-items: stretch; }
+.skin-tint-picker { display: grid; gap: 8px; color: #d5c2a9; font-size: 15px; }
+.skin-tint-picker input { width: 100%; min-height: 92px; padding: 4px; border: 1px solid #50312c; background: #090b0a; cursor: pointer; }
+.skin-tint-sliders { display: grid; gap: 8px; }
+.skin-tint-sliders > label { display: grid; gap: 3px; color: #d5c2a9; font-size: 14px; }
+.skin-tint-sliders > label > span { display: grid; grid-template-columns: minmax(0, 1fr) 34px; gap: 9px; align-items: center; }
+.skin-tint-sliders input { width: 100%; accent-color: #a9392d; }
+.skin-tint-sliders output { color: #f0ddd0; text-align: right; font-variant-numeric: tabular-nums; }
+@media (max-width: 760px) { .skin-tint-controls { grid-template-columns: 1fr; } }

@@ -1,0 +1,8 @@
+{
+  "cyberfox1337x": "function(tsconfig_root)",
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./electron/tsconfig.json" }
+  ]
+}

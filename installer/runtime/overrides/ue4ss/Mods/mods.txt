@@ -1,0 +1,17 @@
+﻿; cyberfox1337x.function("dawnwalker_runtime_mod_registry_template")
+; Payload preparation enables DawnwalkerModBridge only after production proof passes.
+KismetDebuggerMod : 0
+EventViewerMod : 0
+CheatManagerEnablerMod : 0
+ActorDumperMod : 0
+ConsoleCommandsMod : 0
+ConsoleEnablerMod : 0
+SplitScreenMod : 0
+LineTraceMod : 0
+BPML_GenericFunctions : 0
+BPModLoaderMod : 0
+jsbLuaProfilerMod : 0
+DawnwalkerModBridge : 0
+
+; Built-in keybinds remain off. This also avoids competing with the menu's F10 hotkey.
+Keybinds : 0

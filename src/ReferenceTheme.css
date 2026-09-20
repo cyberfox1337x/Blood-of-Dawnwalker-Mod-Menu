@@ -1,0 +1,616 @@
+/* cyberfox1337x.function("reference_menu_theme") — CSS has no executable function construct.
+   Final appearance layer: game commands, feature availability and scale remain owned
+   by their existing components. The supplied reference defines this palette. */
+:root {
+  --reference-border: #343432;
+  --reference-surface: linear-gradient(125deg, #131514, #0c0e0d 75%);
+  --reference-heading: #bb4946;
+  --reference-text: #c8c7c2;
+  --reference-muted: #a19f98;
+  --dropdown-border: #393a37;
+  --dropdown-surface: #0c0e0d;
+  --dropdown-text: #d0cec7;
+  --toggle-confirmed-off: linear-gradient(#383a38, #252725);
+  --toggle-confirmed-on: linear-gradient(#82372c, #592019);
+  --toggle-unavailable: #222523;
+}
+
+/* The reference pairs engraved headings with legible, quiet control text. */
+.app-stage { font-family: "Segoe UI", sans-serif; }
+.panel, .panel-emphasized { border-color: var(--reference-border); background: var(--reference-surface); box-shadow: inset 0 1px #ffffff04, 0 1px 3px #0008; animation: none; }
+.panel-title { height: 38px; padding-inline: 13px; color: var(--reference-heading); border-bottom-color: #34343285; background: linear-gradient(90deg, #17191780, transparent); }
+.panel-title h2 { font-size: 16px; letter-spacing: .045em; }
+.panel-content { height: calc(100% - 38px); }
+.category-view .panel-content { padding: 10px 12px; gap: 6px 10px; }
+.panel-title svg { color: var(--reference-heading); }
+.category-section-heading h3 { color: var(--reference-heading); }
+.category-section { border-top-color: #343432; }
+.left-rail button { font-family: "Cinzel", serif; }
+.hotkey-bar { font-family: "Segoe UI", sans-serif; }
+
+.imported-menu { gap: 6px; margin-top: 0; --readable-control-size: calc(13px * var(--content-text-scale, 1)); }
+.imported-menu-toolbar { min-height: 30px; gap: 8px; }
+.imported-menu-heading { color: var(--reference-muted); font-family: "Cinzel", serif; font-size: 13px; font-weight: 500; }
+.imported-menu-cards { column-gap: 6px; }
+.imported-menu-cards > :is(.imported-menu-group, .imported-menu-direct) { margin-bottom: 6px; }
+.imported-menu :is(.imported-menu-group, .imported-menu-direct),
+#panel-player :is(.player-core-controls, .player-level-controls) {
+  border: 1px solid var(--reference-border);
+  border-radius: 4px;
+  background: var(--reference-surface);
+  box-shadow: inset 0 1px #ffffff05, 0 1px 2px #0005;
+}
+.imported-menu :is(.imported-menu-group, .imported-menu-direct) > h4,
+#panel-player :is(.player-core-controls, .player-level-controls) > h3 {
+  margin: 0;
+  padding: 8px 10px 7px;
+  border-bottom: 1px solid #34343285;
+  color: var(--reference-heading);
+  font: 500 calc(14px * var(--content-text-scale, 1))/1.3 "Cinzel", serif;
+  letter-spacing: .02em;
+}
+.imported-menu .imported-menu-items { gap: 5px; padding: 7px 10px 9px; }
+.imported-menu :is(.imported-menu-label, .imported-menu-toggle-status) { color: var(--reference-muted); font-size: calc(12px * var(--content-text-scale, 1)); line-height: 1.4; }
+.imported-menu :is(.imported-menu-field, .imported-menu-switch-row) { color: var(--reference-text); min-height: 28px; gap: 8px; }
+.imported-menu .imported-menu-field > span:first-child { min-width: 75px; }
+.imported-menu :is(input, select) { min-height: 28px; padding-block: 4px; box-shadow: inset 0 1px 3px #0008; }
+.imported-menu .imported-menu-switch-control { gap: 5px; }
+.imported-menu .imported-menu-switch-control strong { min-width: 2.1em; color: #b8b6af; font-size: calc(11px * var(--content-text-scale, 1)); font-weight: 400; }
+
+/* Dark inset buttons leave the red accent for selected and active states. */
+.app-stage :is(.small-button, .wide-action, .outlined-button),
+.imported-menu button,
+.imported-menu-dialog button,
+.eye-appearance button {
+  color: var(--reference-text);
+  border: 1px solid #3b3c38;
+  border-radius: 3px;
+  background: linear-gradient(#1c1e1c, #121412);
+  box-shadow: inset 0 1px #ffffff06, 0 1px 2px #0008;
+  font-family: "Segoe UI", sans-serif;
+  font-weight: 400;
+}
+.app-stage :is(.small-button, .wide-action, .outlined-button):not(:disabled):hover,
+.imported-menu button:not(:disabled):hover,
+.imported-menu-dialog button:not(:disabled):hover,
+.eye-appearance button:not(:disabled):hover {
+  color: #ede7df;
+  border-color: #885048;
+  background: linear-gradient(#32201c, #201715);
+  box-shadow: inset 0 1px #ffffff08;
+}
+.imported-menu button { min-height: calc(29px * var(--content-text-scale, 1)); padding: 4px 9px; }
+.app-stage :is(.small-button, .wide-action, .outlined-button):disabled,
+.imported-menu button:disabled { color: #8e8f87; background: #151715; border-color: #30332f; box-shadow: none; }
+.imported-menu button[data-variant="danger"] { border-color: #673b34; background: linear-gradient(#35201c, #211512); }
+/* Warning buttons carry their caution in the label and the text beneath them; the
+   reddish border made ordinary controls look like errors, so it matches the rest. */
+.imported-menu button[data-variant="warning"] { border-color: var(--reference-border); }
+
+/* Settings sub-tabs: a compact icon tab row, not full-height columns. The panel lays
+   its children out in a stretching column, so both the row and its buttons have to opt
+   out of that or they grow to the height of the whole panel. */
+.settings-subtabs {
+  /* The panel body is a two-column grid, so the tab row has to claim a full row of its
+     own or it becomes a single cell and pushes the settings into the other column. */
+  grid-column: 1 / -1;
+  justify-self: start;
+  align-self: start;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 0;
+  margin: 0;
+}
+
+/* The panes are grouping elements for the tab semantics only. Without display:contents
+   each pane would be one grid cell and every setting inside it would stack in that one
+   column instead of laying out the way it did before the tabs existed. */
+#settings-pane-general, #settings-pane-dev, #settings-pane-credits { display: contents; }
+#settings-pane-general[hidden], #settings-pane-dev[hidden], #settings-pane-credits[hidden] { display: none; }
+/* The save editor is one wide tool, not a card: it takes the whole panel width. */
+#settings-pane-save-editor { grid-column: 1 / -1; min-width: 0; }
+#settings-pane-save-editor[hidden] { display: none; }
+
+/* These are the left rail's plaques at 0.7 scale, so a sub-tab is the same object as a
+   category button rather than a second kind of tab. Every number below is the rail's
+   value multiplied by that factor, including the two ornament sprites, which are
+   positioned against a proportionally scaled copy of the reference sheet. */
+.settings-subtabs button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  flex: 0 0 auto;
+  height: 36px;
+  min-height: 0;
+  padding: 0 20px;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  color: #aba7a0;
+  background: linear-gradient(105deg, #0a0c0b, #050606);
+  font-family: "Cinzel", serif;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-align: left;
+  cursor: pointer;
+  transition: color 160ms ease, background 160ms ease;
+}
+.settings-subtabs button svg { flex: 0 0 auto; stroke-width: 1.55; color: #a6a49f; }
+.settings-subtabs button:hover:not([aria-selected="true"]) { color: #f1eee9; background: #23090b; }
+.settings-subtabs button:hover:not([aria-selected="true"]) svg { color: #ded9ce; }
+.settings-subtabs button[aria-selected="true"] {
+  color: #e7e0d7;
+  background: radial-gradient(ellipse at 25% 50%, #72121899, transparent 70%), linear-gradient(105deg, #2d070b, #160607);
+  border: 1px solid #721d24;
+  box-shadow: inset 0 0 10px #0009;
+  text-shadow: 0 0 12px #dc261f30;
+}
+.settings-subtabs button[aria-selected="true"] svg { color: #ded9ce; }
+
+.settings-subtab-note { grid-column: 1 / -1; margin: 0; color: #98918a; font-size: 12px; line-height: 1.5; }
+
+/* The panel body is a two-column grid and these cards have very different natural
+   heights, so left to auto-placement they came out ragged. Giving them their own even
+   track set keeps every card the same width and top-aligned. */
+/* No nested grid here. The panel body is already a working grid and Menu Size proves it
+   by spanning correctly, so the wrapper steps out of the way with display:contents and
+   each card claims a full row of that grid. Every card then has the same width, which a
+   nested track set kept failing to deliver at this app's scaled viewport. */
+.settings-general-tools { display: contents; }
+#settings-pane-general > .tooltip-settings,
+#settings-pane-general .settings-general-tools > * {
+  grid-column: 1 / -1;
+  width: auto;
+  min-width: 0;
+  box-sizing: border-box;
+  margin: 0;
+  align-self: start;
+}
+/* The action bar is content-width by default, which left it visibly narrower than the
+   two cards above it. Stretching it makes the group read as one block. */
+#settings-pane-general .settings-general-tools > .wide-action { width: 100%; max-width: none; justify-self: stretch; }
+.eye-appearance button[aria-pressed="true"] { color: #eee2d5; border-color: #925044; background: linear-gradient(#54251e, #321a16); }
+
+/* Thumb position and the existing ON/OFF text both communicate switch state. */
+.toggle:not(:disabled), .imported-menu-switch-control input:not(:disabled) + .imported-menu-switch-track { border-color: #51534f; background: var(--toggle-confirmed-off); }
+.toggle.toggle-on:not(:disabled), .imported-menu-switch-control input:checked:not(:disabled) + .imported-menu-switch-track { border-color: #a35443; background: var(--toggle-confirmed-on); box-shadow: inset 0 0 5px #a9402520; }
+.toggle:not(:disabled) span, .imported-menu-switch-control input:not(:disabled) + .imported-menu-switch-track::before { background: #e4e3dd; box-shadow: 0 1px 3px #0008; }
+/* Reflect the requested state at once; aria-busy and Applying still mark confirmation. */
+.toggle[aria-busy="true"]:disabled,
+.imported-menu-switch-control input[aria-busy="true"]:disabled + .imported-menu-switch-track { background: var(--toggle-confirmed-off); border-color: #a35443; }
+.toggle.toggle-on[aria-busy="true"]:disabled,
+.imported-menu-switch-control input:checked[aria-busy="true"]:disabled + .imported-menu-switch-track { background: var(--toggle-confirmed-on); }
+.toggle[aria-busy="true"]:disabled span,
+.imported-menu-switch-control input[aria-busy="true"]:disabled + .imported-menu-switch-track::before { background: #e4e3dd; }
+.toggle, .toggle span, .imported-menu-switch-track, .imported-menu-switch-track::before { transition: none; }
+/* The Player state word names the requested ON/OFF the moment the switch is clicked, so
+   it must not look like a confirmed reading while the game is still answering. The warm
+   tone is the only difference between the two; the switch itself already carries
+   aria-busy and the .control-pending glow. */
+#panel-player .player-toggle-state[data-pending="true"] { color: #cfa46a; }
+.toggle, [data-compact] .toggle { width: calc(38px * var(--content-text-scale, 1)); height: calc(21px * var(--content-text-scale, 1)); min-height: 0; padding: calc(2px * var(--content-text-scale, 1)); }
+.toggle span, [data-compact] .toggle span { width: calc(15px * var(--content-text-scale, 1)); height: calc(15px * var(--content-text-scale, 1)); }
+.toggle-on span, [data-compact] .toggle-on span { transform: translateX(calc(17px * var(--content-text-scale, 1))); }
+.imported-menu .imported-menu-switch-control input,
+.imported-menu-switch-track,
+[data-compact] .imported-menu .imported-menu-switch-control input,
+[data-compact] .imported-menu-switch-track { width: calc(38px * var(--content-text-scale, 1)); height: calc(21px * var(--content-text-scale, 1)); }
+.imported-menu-switch-track::before, [data-compact] .imported-menu-switch-track::before { width: calc(15px * var(--content-text-scale, 1)); height: calc(15px * var(--content-text-scale, 1)); margin: calc(2px * var(--content-text-scale, 1)); }
+.imported-menu-switch-control input:checked + .imported-menu-switch-track::before,
+[data-compact] .imported-menu-switch-control input:checked + .imported-menu-switch-track::before { transform: translateX(calc(17px * var(--content-text-scale, 1))); }
+.imported-menu .imported-menu-switch-control input { min-height: 0; box-shadow: none; }
+
+#panel-player .panel-content { padding: 8px 10px; gap: 6px; }
+#panel-player :is(.player-core-controls, .player-level-controls) { padding: 0; margin: 0; width: 100%; min-width: 0; }
+#panel-player .player-core-controls > h3 small { display: block; margin: 3px 0 0; color: var(--reference-muted); font: 11px/1.35 "Segoe UI", sans-serif; letter-spacing: 0; }
+#panel-player .player-core-controls .player-secondary-grid { grid-template-columns: minmax(0, 1fr); padding: 6px 10px 9px; gap: 5px; }
+#panel-player .player-core-controls .player-control-group-heading { grid-column: 1 / -1; margin: 4px 0 0; padding-top: 5px; border-top: 1px solid #34343285; color: var(--reference-muted); font: 500 calc(11px * var(--content-text-scale, 1))/1.3 "Cinzel", serif; letter-spacing: .08em; text-transform: uppercase; }
+#panel-player .player-core-controls .player-control-group-heading:first-of-type { margin-top: 0; padding-top: 0; border-top: 0; }
+#panel-player .player-core-controls .control-row { min-height: 28px; align-items: center; flex-wrap: nowrap; }
+#panel-player .player-toggle-label { gap: 3px; }
+#panel-player .player-toggle-label small { max-width: none; color: var(--reference-muted); font-size: calc(11px * var(--content-text-scale, 1)); }
+#panel-player .player-toggle-state { font-size: calc(11px * var(--content-text-scale, 1)); color: #b8b6af; }
+#panel-player .player-level-fields { padding: 7px 10px 0; }
+#panel-player .player-level-actions { padding: 0 10px; margin-top: 6px; }
+#panel-player .player-level-controls > p { padding: 0 10px 8px; margin-bottom: 0; color: var(--reference-muted); font-size: calc(12px * var(--content-text-scale, 1)); }
+#panel-player .category-section { padding-top: 7px; margin-top: 1px; gap: 6px; }
+.capability-notice, .feature-tools { border-color: #3b3732; background: linear-gradient(120deg, #171412, #0d0f0e); }
+.feature-tools p, .capability-notice p { color: #b3b0a7; }
+.slider-row input[type="range"]::-webkit-slider-runnable-track { background: linear-gradient(90deg, #944132 0 var(--range-progress, 0%), #252725 var(--range-progress, 0%) 100%); }
+.slider-row input[type="range"]::-webkit-slider-thumb { background: #a65342; border-color: #cd8b72; }
+
+/* Native zoom remains authoritative; avoid enlarged whitespace around its text. */
+[data-compact] .category-view .panel-content { gap: 8px; padding: 10px 12px; }
+[data-compact] .panel-content .control-row { min-height: calc(28px * var(--content-text-scale, 1)); }
+[data-compact] .panel-content .select-wrap { min-width: 0; }
+.panel-visuals .character-eye-preview { border-color: var(--reference-border); background: var(--reference-surface); }
+.eye-heading h3 { color: var(--reference-heading); }
+.eye-appearance :is(.eye-mode-note, .eye-restore-block) { border-color: #343432; }
+
+@media (prefers-reduced-motion: reduce) {
+  .toggle span, .imported-menu-switch-track::before { transition: none; }
+}
+
+/* Shared row baselines replace masonry. Rows size to their content so descriptions
+   and errors remain readable without clipped controls or fixed-height spacers. */
+.imported-menu-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-auto-flow: row; grid-auto-rows: auto; align-items: stretch; gap: 8px; columns: auto; }
+.imported-menu[data-category="world"] .imported-menu-cards,
+.imported-menu[data-category="teleport"] .imported-menu-cards,
+.imported-menu[data-category="settings"] .imported-menu-cards { columns: auto; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.imported-menu-cards > :is(.imported-menu-group, .imported-menu-direct),
+.imported-menu .imported-menu-cards > [data-imported-section="DWRespec"] { display: flex; flex-direction: column; grid-column: auto; align-self: stretch; width: 100%; min-width: 0; margin: 0; border-radius: 3px; }
+.imported-menu-cards > :is(.imported-menu-group, .imported-menu-direct) > h4 { display: flex; align-items: center; min-height: 39px; box-sizing: border-box; }
+.imported-menu .imported-menu-items { display: flex; flex-direction: column; align-items: stretch; justify-content: flex-start; min-width: 0; }
+.imported-menu .imported-menu-field { display: grid; grid-template-columns: minmax(0, 1fr) minmax(90px, 1fr); align-items: center; }
+.imported-menu .imported-menu-field > :is(input, select) { width: 100%; min-width: 0; box-sizing: border-box; }
+.imported-menu .imported-menu-field[data-meter] { grid-template-columns: minmax(70px, 1fr) minmax(50px, 1fr) auto; }
+.imported-menu .imported-menu-field > span:first-child { min-width: 0; }
+.imported-menu .imported-menu-picker > input { width: 100%; box-sizing: border-box; }
+.imported-menu .imported-menu-switch-row > span:first-child { min-width: 0; }
+.imported-menu .imported-menu-row { display: flex; flex-wrap: wrap; gap: 5px; }
+.imported-menu .imported-menu-row > * { flex: 1 1 110px; min-width: 0; }
+.imported-menu .imported-menu-row > button { flex-basis: 80px; }
+
+.category-view .panel-content,
+#panel-player .panel-content:has(> .player-level-controls) { align-items: stretch; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+#panel-player .panel-content > .player-core-controls,
+#panel-player .panel-content:has(> .player-level-controls) > .player-core-controls,
+#panel-player .panel-content > .player-level-controls { grid-column: auto; align-self: stretch; }
+#panel-player .category-section { align-items: stretch; gap: 8px; }
+#panel-player .player-combat-section > .capability-notice:last-child { grid-column: auto; }
+#panel-player .player-level-fields { grid-template-columns: minmax(0, 1fr); }
+#panel-player .player-level-actions { padding-bottom: 8px; }
+
+/* Non-imported workflows follow the same rectangular card and field rhythm. */
+.category-view :is(.feature-tools, .capability-notice, .saved-location-tools, .quest-entry, .credit-entry, .reference-feature-card) { border: 1px solid var(--reference-border); border-radius: 3px; background: var(--reference-surface); min-width: 0; box-sizing: border-box; }
+.category-view :is(.feature-tools, .capability-notice, .reference-feature-card) { padding: 12px; margin: 0; }
+.category-view :is(.feature-title, .quest-entry > header, .reference-feature-card > h3) { border-bottom: 1px solid #34343285; padding-bottom: 8px; margin: 0 0 8px; }
+.category-view :is(.feature-tools h3, .quest-entry h3, .reference-feature-card > h3) { color: var(--reference-heading); }
+.reference-feature-card { display: grid; align-content: start; gap: 8px; }
+.reference-feature-card > h3 { font: 500 14px/1.3 "Cinzel", serif; }
+.category-view .quest-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; align-items: stretch; }
+.category-view .quest-entry { margin: 0; }
+.category-view .credit-grid { gap: 8px; align-items: stretch; }
+#panel-teleport .saved-location-tools { width: 100%; max-width: none; padding: 12px; }
+#panel-teleport .imported-menu-cards > [data-imported-section="DWShrines"] { grid-column: 1 / -1; }
+.save-editor .feature-fields { gap: 8px; }
+.save-editor .feature-fields > label { padding: 10px; border: 1px solid var(--reference-border); border-radius: 3px; background: #111310; min-width: 0; }
+@media (max-width: 1200px) { .imported-menu-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 760px) {
+  .imported-menu-cards,
+  .imported-menu[data-category="world"] .imported-menu-cards,
+  .imported-menu[data-category="teleport"] .imported-menu-cards,
+  .imported-menu[data-category="settings"] .imported-menu-cards,
+  .category-view .panel-content,
+  #panel-player .panel-content:has(> .player-level-controls),
+  #panel-player .player-combat-section,
+  .category-view .quest-list { grid-template-columns: minmax(0, 1fr); }
+}
+/* Adjacent World workflows share a row instead of leaving an isolated slider. */
+#panel-world .story-day-configuration { grid-column: auto; }
+#panel-world .world-speed-card .split-action { display: flex; flex-wrap: wrap; }
+#panel-world .world-speed-card .split-action > span { flex-basis: 100%; }
+#panel-world .world-speed-card .split-action > button { flex: 1 1 140px; }
+
+/* Category navigation stays inside the same reference dashboard. The category
+   panel is a content container; its feature cards own the visible borders. */
+.reference-category .dashboard-layout { align-items: start; flex: none; }
+.reference-category .dashboard-main { display: block; }
+.reference-category .dashboard-category-content { min-width: 0; display: grid; gap: 8px; }
+.reference-category {
+  --category-title-height: 30px;
+  --category-content-top: 4px;
+}
+/* The main column starts with the category title strip; the sidebar has no title, so
+   without this offset its first card sits above the first card beside it. Player Info
+   now lines up exactly with Player controls. */
+.reference-category .dashboard-sidebar {
+  position: sticky; top: 0; grid-template-rows: auto auto;
+  margin-top: calc(var(--category-title-height) + var(--category-content-top));
+}
+/* Player Info lines up with the Player card itself, not with the content inside it.
+   The offset above exists because every other category leads with a transparent title
+   strip and only then its first card, so the sidebar has to skip that strip. The merged
+   Player card owns its title as its own header, so on Player that same offset pushes
+   Player Info exactly one header height below the card it sits beside - the misalignment
+   this rule removes. */
+[data-reference-category="player"] .dashboard-sidebar { margin-top: 0; }
+.reference-category .panel { height: auto; min-height: 0; overflow: visible; border: 0; background: transparent; box-shadow: none; }
+.reference-category .panel::after { display: none; }
+.reference-category .panel-title { height: var(--category-title-height); padding: 0 10px; border: 1px solid var(--reference-border); background: var(--reference-surface); border-radius: 3px; }
+.reference-category .panel-title h2 { font-size: 14px; }
+.reference-category .panel-content,
+.reference-category #panel-player .panel-content { height: auto; overflow: visible; padding: 8px 0 0; gap: 8px; }
+.reference-category .imported-menu-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.reference-category .imported-menu :is(.imported-menu-group, .imported-menu-direct) > h4 { min-height: 30px; padding: 6px 8px; font-size: calc(14px * var(--content-text-scale, 1)); }
+.reference-category .imported-menu .imported-menu-items { padding: 6px 8px; gap: 4px; }
+.reference-category .imported-menu :is(.imported-menu-field, .imported-menu-switch-row) { min-height: 25px; }
+.reference-category .imported-menu :is(button, input, select) { min-height: 25px; }
+.reference-category .imported-menu .imported-menu-switch-control input { min-height: 0; }
+.reference-category .imported-menu :is(.imported-menu-label, .imported-menu-toggle-status) { font-size: calc(11px * var(--content-text-scale, 1)); }
+.dashboard-category-placeholders { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.dashboard-category-placeholders:empty { display: none; }
+/* Sized by content: the card's control column grew (glow slider, hair colour), and a
+   fixed height let it overflow onto the status line beneath. The model view keeps its
+   own minimum so the canvas never collapses. */
+.reference-category .panel-visuals .character-eye-workflow { min-height: 560px; height: auto; }
+[data-compact] .reference-category .panel-visuals .character-eye-workflow { height: auto; min-height: 720px; }
+[data-compact] .reference-category .dashboard-sidebar { position: static; }
+@media (max-width: 760px) {
+  .reference-category .dashboard-sidebar { position: static; }
+  .reference-category .imported-menu-cards,
+  .dashboard-category-placeholders { grid-template-columns: minmax(0, 1fr); }
+}
+.dashboard-category-content[hidden] { display: none; }
+.dashboard-option-status { margin: 0; color: var(--reference-muted); font: calc(10px * var(--content-text-scale, 1))/1.3 "Segoe UI", sans-serif; }
+.reference-category .dashboard-category-footer .imported-menu-cards { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+[data-compact] .reference-category .dashboard-category-footer .imported-menu-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.dashboard-sidebar .dashboard-player-status { display: block; margin: 0; }
+.dashboard-sidebar .dashboard-player-status .imported-menu-items { display: flex; flex-direction: column; padding: 0; gap: 4px; }
+.dashboard-sidebar .dashboard-player-status .imported-menu-field { grid-template-columns: minmax(65px, 1fr) minmax(45px, 1fr) auto; min-height: 20px; font-size: 11px; }
+.dashboard-sidebar .dashboard-player-status .imported-menu-field > span:first-child { min-width: 0; }
+.dashboard-sidebar .dashboard-player-status .imported-menu-label { font-size: 10px; line-height: 1.3; }
+.dashboard-sidebar .dashboard-player-status button { min-height: 25px; font-size: 10px; }
+.dashboard-sidebar .dashboard-player-status .imported-menu-field[data-meter] { grid-template-columns: minmax(0, 1fr) auto; gap: 3px 5px; }
+.dashboard-sidebar .dashboard-player-status .imported-menu-field[data-meter] meter { grid-column: 1 / -1; grid-row: 2; width: 100%; height: 7px; }
+.dashboard-sidebar .dashboard-player-status .imported-menu-field[data-meter] output { grid-column: 2; grid-row: 1; }
+
+/* Real category controls share the overview's card grid. Legacy group wrappers
+   must not create a second layout or reserve a full row between small cards. */
+.reference-category .panel-title { border: 0; padding: 0 2px; background: transparent; }
+.reference-category .panel-content,
+.reference-category #panel-player .panel-content,
+.reference-category #panel-player .panel-content:has(> .player-level-controls) {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-rows: max-content; align-items: stretch; gap: 8px; padding-top: var(--category-content-top);
+}
+.reference-category .panel-content > .imported-menu,
+.reference-category .panel-content > .imported-menu > .imported-menu-cards {
+  display: contents;
+}
+.reference-category .panel-content > .imported-menu > .imported-menu-toolbar {
+  grid-column: 1 / -1; order: 1; min-height: 25px;
+}
+.reference-category .panel-content > .imported-menu > :is(.imported-menu-status, .imported-menu-action-error) {
+  grid-column: 1 / -1; order: 1;
+}
+.reference-category #panel-player :is(.player-core-controls, .player-level-controls) {
+  min-height: 0; height: auto; align-self: stretch; border-radius: 3px;
+}
+.reference-category #panel-player :is(.player-core-controls, .player-level-controls) > h3,
+.reference-category .imported-menu .dashboard-card > h4 {
+  min-height: 34px; box-sizing: border-box; padding: 7px 10px;
+  font: 500 14px/1.3 "Cinzel", serif; letter-spacing: .035em;
+}
+.reference-category #panel-player .player-core-controls > h3 small { font-size: 10px; }
+.reference-category #panel-player .player-toggle-label small {
+  position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden;
+  clip-path: inset(50%); white-space: nowrap;
+}
+.reference-category #panel-player .player-level-fields { padding: 7px 10px 0; gap: 4px; }
+.reference-category #panel-player .player-level-actions { gap: 5px; }
+.reference-category #panel-player .player-level-actions button { padding: 3px 5px; min-height: 25px; }
+.reference-category #panel-player .category-section { order: 2; }
+.reference-category .imported-menu .dashboard-card { border-radius: 3px; min-height: 0; }
+.reference-category .imported-menu :is(.imported-menu-field, .imported-menu-switch-row) { font-size: 12px; }
+.reference-category .imported-menu .imported-menu-switch-control strong { font-size: 10px; }
+.reference-category .imported-menu .imported-menu-items { padding: 7px 10px 9px; }
+.reference-category .imported-menu .imported-menu-label { line-height: 1.3; }
+.dashboard-corruption-controls.imported-menu { width: 100%; grid-template-columns: minmax(0, 1fr); }
+.dashboard-corruption-controls.imported-menu > .imported-menu-items { min-width: 0; padding: 0; gap: 4px; }
+.dashboard-corruption-controls.imported-menu .imported-menu-field { display: grid; grid-template-columns: minmax(0, 1fr) 76px; gap: 8px; }
+.dashboard-corruption-controls.imported-menu .imported-menu-field input { width: 100%; box-sizing: border-box; }
+.dashboard-corruption-controls.imported-menu button { width: 100%; min-height: 27px; padding: 3px 7px; }
+.reference-category #panel-player .panel-content > .player-level-controls { order: 1; }
+.reference-category #panel-player .panel-content > .imported-menu > .imported-menu-cards > .dashboard-card { order: 2; }
+.reference-category #panel-player [data-imported-section="DWCombatControls"],
+.reference-category #panel-player [data-imported-section="DWFormToggle"] { order: 0 !important; }
+.reference-category #panel-player [data-imported-section="DWPlayer"],
+.reference-category #panel-player [data-imported-section="DWSkills"] { order: 1 !important; }
+.reference-category #panel-player .panel-content > .imported-menu > :is(.imported-menu-toolbar, .imported-menu-status, .imported-menu-action-error) { order: 3; }
+.reference-category #panel-player .category-section { order: 4; }
+.reference-category :is(.feature-tools, .capability-notice, .reference-feature-card) { padding: 8px 10px; gap: 4px; }
+.reference-category :is(.feature-tools, .capability-notice, .reference-feature-card) :is(p, label, span, li) {
+  font-size: calc(11px * var(--content-text-scale, 1)); line-height: 1.35;
+}
+.reference-category :is(.feature-tools, .capability-notice, .reference-feature-card) p { margin: 4px 0; }
+.reference-category :is(.feature-tools, .capability-notice, .reference-feature-card) :is(h3, h4) { font-size: 14px; margin-block: 0 5px; }
+.reference-category .imported-menu-switch-track { width: 36px; height: 20px; }
+.reference-category .imported-menu-switch-track::before { width: 14px; height: 14px; margin: 2px; background: #e4e3dd; }
+.reference-category .imported-menu-switch-control input:checked + .imported-menu-switch-track::before { transform: translateX(16px); }
+.reference-category .dashboard-category-placeholders { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+[data-compact] .reference-category .panel-content,
+[data-compact] .reference-category #panel-player .panel-content,
+[data-compact] .reference-category #panel-player .panel-content:has(> .player-level-controls),
+[data-compact] .reference-category .dashboard-category-placeholders { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+[data-compact] .reference-category #panel-player :is(.player-core-controls, .player-level-controls) > h3,
+[data-compact] .reference-category .imported-menu .dashboard-card > h4 { font-size: calc(14px * var(--content-text-scale, 1)); }
+@media (max-width: 760px) {
+  .reference-category .panel-content,
+  .reference-category #panel-player .panel-content,
+  .reference-category #panel-player .panel-content:has(> .player-level-controls),
+  .reference-category .dashboard-category-placeholders { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* Player panel: one full-width card per row.
+   Side by side, the tall Player level card (which now carries every progression
+   control) sat next to the much shorter Player controls card, and the difference
+   showed as a large empty block under the shorter one. Giving each card the full
+   width and letting its own contents flow into as many columns as fit removes the
+   mismatch instead of papering over it, and keeps both cards edge-aligned. */
+#panel-player .panel-content:has(> .player-level-controls) { grid-template-columns: minmax(0, 1fr); }
+/* The category view sets its own three-across card grid, and with the progression
+   cards now living inside Player level there were only two cards to fill it, leaving
+   a permanently empty third column. These repeat that override at the specificity the
+   category rules use, including the compact scale. */
+.reference-category #panel-player .panel-content,
+.reference-category #panel-player .panel-content:has(> .player-level-controls),
+[data-compact] .reference-category #panel-player .panel-content,
+[data-compact] .reference-category #panel-player .panel-content:has(> .player-level-controls) { grid-template-columns: minmax(0, 1fr); }
+
+/* auto-fit rather than a fixed count: the last row stretches to the full width, so
+   no column is left half-empty at any window size or interface scale. */
+#panel-player .player-core-controls .player-secondary-grid,
+#panel-player .player-level-fields { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); column-gap: 16px; }
+#panel-player .player-level-actions { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
+
+/* Progression controls (skill points, XP, Corruption, perk grants, Ultimate unlocks)
+   render inside the Player level card. One grid for the whole block so the Corruption
+   and XP-reward controls line up with the section cards instead of stretching across
+   the card as full-width strips. */
+#panel-player .player-level-progression {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  align-items: start; gap: 8px; padding: 0 10px 8px;
+}
+#panel-player .player-level-progression .imported-menu { padding: 0; border: 0; background: none; }
+/* The panel wrapper and its card grid dissolve into the grid above, so the Corruption
+   and XP-reward blocks and the section cards are cells of the same grid. One row
+   rhythm, and the cards flow up into the space beside them instead of starting a new
+   half-empty row of their own. */
+#panel-player .player-level-progression > .imported-menu:not(.dashboard-corruption-controls),
+#panel-player .player-level-progression .imported-menu-cards { display: contents; }
+#panel-player .player-level-progression :is(.imported-menu-toolbar, .imported-menu-status, .imported-menu-action-error) { grid-column: 1 / -1; }
+#panel-player .player-level-progression .imported-menu-toolbar { padding: 0 0 6px; }
+/* Category rules give every .imported-menu a full row; inside this card the Corruption
+   and XP-reward blocks are ordinary cells so they line up with the section cards. */
+#panel-player .player-level-progression > .imported-menu.dashboard-corruption-controls { grid-column: auto; }
+#panel-player .player-level-progression .dashboard-corruption-controls { padding: 0; border: 0; background: none; }
+
+/* The page-level ordering rules below were written when these sections were top-level
+   cards; inside the level card they push Skill Points behind everything else. The
+   sort in ImportedMenuPanel already orders them, so clear the override here. */
+#panel-player .player-level-progression [data-imported-section] { order: 0 !important; }
+
+/* One option = one cell. The control, its action button and its status line stay
+   together in any column count, so a multi-column card cannot orphan a status line
+   under an unrelated control. */
+.dashboard-option-group { display: grid; align-content: start; gap: 3px; min-width: 0; }
+#panel-player .player-secondary-grid > .dashboard-option-group { align-self: start; }
+
+/* Objective reminder switch in Settings, aligned with the other settings cards. */
+.quest-reminder-settings > h3 { display: flex; align-items: center; gap: 7px; }
+.quest-reminder-settings .control-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 30px; }
+.quest-reminder-settings .player-toggle-label { display: grid; gap: 3px; min-width: 0; }
+.quest-reminder-settings .player-toggle-label small { color: var(--reference-muted); font-size: calc(11px * var(--content-text-scale, 1)); }
+
+#settings-pane-general .player-toggle-label small { max-width: none; }
+
+/* cyberfox1337x.function("unified_player_controls_card")
+   The Player category reads as one continuous "Player controls" card. The category
+   content wrapper draws the only outline, the panel title is its header, and every
+   former card, group and notice keeps its native sections, headings, order and
+   handlers while giving up its own outline. Gaps between those former cards are gone,
+   so a heading closes with a divider and a notice opens with one: sections stay
+   legible without a box and without an empty strip around each of them. */
+[data-reference-category="player"] .dashboard-category-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0;
+  border: 1px solid var(--reference-border);
+  border-radius: 4px;
+  background: var(--reference-surface);
+  box-shadow: inset 0 1px #ffffff05, 0 1px 2px #0005;
+}
+[data-reference-category="player"] .dashboard-category-content > #panel-player { border: 0; background: none; box-shadow: none; }
+[data-reference-category="player"] #panel-player .panel-title {
+  height: auto; min-height: 30px; box-sizing: border-box;
+  padding: 6px 12px; border: 0; border-bottom: 1px solid #34343285; background: none;
+}
+/* One column, no gap. The single-column grid is kept rather than plain block flow so
+   the existing order: rules for the relocated Combat Controls and Form Toggle groups
+   keep placing them where the verified Player layout puts them. The :has() branch is
+   spelled out because the theme reaches this container through the same :has() at the
+   same specificity, and this rule has to come out on top of it. */
+[data-reference-category="player"] #panel-player .panel-content,
+[data-reference-category="player"] #panel-player .panel-content:has(> .player-level-controls) {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-auto-rows: max-content;
+  align-items: stretch;
+  height: auto; padding: 0; gap: 0; overflow: visible;
+}
+/* Every inner box becomes a plain section of the one card. The id is required here:
+   the theme's own card rule reaches the core and level cards through #panel-player, so
+   a class-only override would lose to it. */
+[data-reference-category="player"] #panel-player .panel-content :is(
+  .dashboard-card, .imported-menu, .imported-menu-cards, .imported-menu-group, .imported-menu-direct,
+  .category-section, .player-combat-section, .player-secondary-controls, .player-core-controls,
+  .player-level-controls, .player-secondary-grid, .player-movement-controls, .player-level-progression,
+  .capability-notice, .feature-tools, .reference-feature-card),
+[data-reference-category="player"] .dashboard-category-footer :is(
+  .imported-menu, .imported-menu-cards, .imported-menu-group, .imported-menu-direct, .dashboard-card) {
+  border: 0; border-radius: 0; background: none; box-shadow: none; margin: 0; min-width: 0;
+}
+[data-reference-category="player"] #panel-player .panel-content > :is(section, .imported-menu, .category-section) {
+  padding: 0; margin: 0; gap: 0;
+}
+[data-reference-category="player"] .player-core-controls { width: 100%; min-width: 0; max-width: none; }
+/* Uniform header rows replace the per-card header strips. */
+[data-reference-category="player"] #panel-player .panel-content :is(h3, h4),
+[data-reference-category="player"] .dashboard-category-footer :is(h3, h4) {
+  border: 0; border-bottom: 1px solid #34343285;
+  margin: 0; padding: 8px 12px 7px; background: none;
+}
+[data-reference-category="player"] .dashboard-category-content :is(.capability-notice, .feature-tools) {
+  border-top: 1px solid #34343285; padding: 8px 12px;
+}
+/* The supplied sections, the level fields and the movement list share one gutter. */
+[data-reference-category="player"] #panel-player .panel-content :is(
+  .player-secondary-grid, .player-level-fields,
+  .player-level-actions, .imported-menu-items) { padding-inline: 12px; }
+/* The movement block is itself a cell of the core grid, so it must not inset its own
+   rows a second time; the Combat section's loose rows are not inside a padded wrapper,
+   so they take the gutter directly. */
+[data-reference-category="player"] .player-combat-section > .control-row { padding-inline: 12px; }
+/* Combat notices read as sections of the card too. Their own card padding plus the heading's
+   own inset put the title 22px in and drew the rule from 10px further left than every other
+   rule in the card, so the block looked crooked against the work above and below it. The
+   block now owns no horizontal inset: the rule spans the card like the other section rules,
+   and the title, the body and the detail list share the one 12px gutter. */
+[data-reference-category="player"] #panel-player .player-combat-section :is(.feature-tools, .capability-notice) {
+  padding: 0 0 9px; margin: 0; border: 0; border-top: 1px solid #34343285;
+}
+[data-reference-category="player"] #panel-player .player-combat-section :is(.feature-tools, .capability-notice) > :is(p, ul, ol, details, .capability-details) {
+  padding-inline: 12px; margin-inline: 0;
+}
+[data-reference-category="player"] #panel-player .player-combat-section .capability-notice > strong {
+  display: block; padding: 8px 12px 7px;
+}
+
+/* One control, one row. The former per-block grids packed four to a row, so any block
+   with a single control in it left the rest of its row blank - Infinite Health, Infinite
+   Blood Energy and Blood Energy each sat alone in a four-wide row, the Player level pair
+   left an empty middle, and its two buttons stretched to half the card each. A single
+   label-left/control-right row per control fills the card at every width, and an action
+   button keeps its own size instead of being stretched across the row. The flight row and
+   the card grids join in for the same reason: a spanning row creates a second, uneven
+   implicit column, and a two-card grid leaves a blank third cell. */
+[data-reference-category="player"] #panel-player .panel-content :is(
+  .player-secondary-grid, .player-movement-grid, .player-flight-row, .player-level-fields,
+  .player-level-progression, .player-combat-section, .imported-menu, .imported-menu-cards) {
+  grid-template-columns: minmax(0, 1fr); column-gap: 0;
+}
+[data-reference-category="player"] #panel-player .panel-content :is(.player-flight-row, .imported-menu, .imported-menu-cards) { grid-column: auto; gap: 0; }
+[data-reference-category="player"] #panel-player .panel-content .dashboard-option-group {
+  display: grid; grid-template-columns: minmax(0, 1fr); gap: 3px;
+}
+[data-reference-category="player"] #panel-player .panel-content .dashboard-option-group > .dashboard-action,
+[data-reference-category="player"] #panel-player .player-level-actions .small-button {
+  justify-self: start; width: auto; min-width: 0; padding-inline: 14px;
+}
+[data-reference-category="player"] #panel-player .panel-content :is(.dashboard-row, .control-row) { min-height: 30px; }
+[data-reference-category="player"] #panel-player .player-level-actions {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 6px;
+  padding: 0 12px 8px; margin-top: 0;
+}
+/* One gutter, no double insets. A block that already sits inside a padded wrapper keeps
+   its own text flush, and a block that owns no wrapper takes the 12px gutter itself -
+   otherwise the sub-headings and the progression cards land 12px deeper than the rows
+   beside them, and the wrapper-less paragraphs land 12px shallower. */
+[data-reference-category="player"] #panel-player .panel-content .player-secondary-grid :is(h3, h4),
+[data-reference-category="player"] #panel-player .player-movement-heading { padding-inline: 0; }
+[data-reference-category="player"] #panel-player .player-level-progression { padding-inline: 0; }
+[data-reference-category="player"] #panel-player .player-level-controls > p,
+[data-reference-category="player"] #panel-player .panel-content .imported-menu > p { padding-inline: 12px; }

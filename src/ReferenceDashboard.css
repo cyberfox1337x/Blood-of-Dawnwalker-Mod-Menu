@@ -1,0 +1,121 @@
+/* cyberfox1337x.function("reference_dashboard_styles") — CSS only supports a comment marker. */
+.reference-dashboard { min-height: 0; height: 100%; overflow-y: auto; padding: 0 2px 6px; display: flex; flex-direction: column; gap: 6px; font-family: "Segoe UI", sans-serif; }
+.dashboard-layout { display: grid; grid-template-columns: minmax(0, 1fr) 230px; gap: 8px; min-height: 0; flex: 1; }
+.dashboard-layout[data-sidebar="false"] { grid-template-columns: minmax(0, 1fr); }
+.dashboard-main { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: minmax(min-content, 1.25fr) minmax(min-content, 1fr); gap: 8px; min-width: 0; align-items: stretch; }
+.dashboard-sidebar { display: grid; grid-template-rows: auto auto; align-content: start; gap: 8px; min-width: 0; }
+.dashboard-card { min-width: 0; border: 1px solid #343432; border-radius: 3px; background: linear-gradient(125deg, #131514, #0b0d0c 75%); box-shadow: inset 0 1px #ffffff05, 0 1px 2px #000a; display: flex; flex-direction: column; }
+.dashboard-card > header { min-height: 34px; display: flex; align-items: center; gap: 8px; padding: 0 10px; color: #aa413d; border-bottom: 1px solid #34343285; }
+.dashboard-card h2 { margin: 0; font: 500 14px/1.3 "Cinzel", serif; text-transform: uppercase; letter-spacing: .035em; }
+.dashboard-card-body { display: flex; flex-direction: column; gap: 4px; padding: 7px 10px 9px; flex: 1; min-width: 0; }
+.reference-dashboard button, .reference-dashboard select { font-family: "Segoe UI", sans-serif; font-size: 11px; color: #c6c5bf; }
+.reference-dashboard button:not(.toggle), .reference-dashboard select { border: 1px solid #363934; border-radius: 3px; background-color: #121412; box-shadow: inset 0 1px #ffffff04; min-height: 25px; padding: 3px 8px; }
+.reference-dashboard button:not(:disabled):hover { border-color: #895049; background-color: #251a17; }
+.reference-dashboard button:disabled, .reference-dashboard select:disabled, .reference-dashboard input:disabled { opacity: .6; cursor: not-allowed; }
+.reference-dashboard button.dashboard-more { margin-left: auto; padding: 0; min-height: 20px; border: 0; background: transparent; box-shadow: none; color: #99968c; font-size: 9px; white-space: nowrap; }
+.dashboard-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 23px; font-size: 12px; color: #c3c2bd; }
+.dashboard-row > span:first-child { flex: 1 1 auto; min-width: 0; }
+.dashboard-row select { width: 51%; min-width: 0; padding-right: 24px; }
+.dashboard-row .toggle { flex: 0 0 auto; width: 36px; height: 20px; min-height: 0; padding: 2px; }
+.dashboard-row .toggle span { width: 14px; height: 14px; }
+.dashboard-row .toggle-on span { transform: translateX(16px); }
+.dashboard-placeholder-mark { font-size: 9px; color: #797a73; padding-left: 4px; }
+.dashboard-slider { display: flex; align-items: center; gap: 6px; width: 55%; min-width: 0; flex: 0 1 55%; }
+.dashboard-slider input { min-width: 0; width: 100%; height: 14px; margin: 0; accent-color: #a94c3a; }
+.dashboard-slider output { flex: 0 0 auto; min-width: 4ch; text-align: right; font-size: 11px; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.dashboard-slider .movement-speed-range { appearance: none; background: transparent; cursor: pointer; }
+.movement-speed-range::-webkit-slider-runnable-track { height: 6px; border: 1px solid #44403a; border-radius: 3px; background: #171b18; }
+.movement-speed-range::-webkit-slider-thumb { appearance: none; width: 13px; height: 13px; margin-top: -4.5px; border: 1px solid #c98468; border-radius: 50%; background: #a94c3a; }
+.movement-speed-range::-moz-range-track { height: 4px; border: 1px solid #44403a; border-radius: 3px; background: #171b18; }
+.movement-speed-range::-moz-range-thumb { width: 11px; height: 11px; border: 1px solid #c98468; border-radius: 50%; background: #a94c3a; }
+.movement-speed-range:focus-visible { outline: 1px solid #c98468; outline-offset: 3px; }
+.dashboard-stepper { display: flex; width: 54%; align-items: center; justify-content: space-between; border: 1px solid #30332f; border-radius: 3px; }
+.dashboard-stepper button { width: 28px; }
+.dashboard-stepper output { text-align: center; flex: 1; }
+.reference-dashboard .dashboard-action { display: flex; align-items: center; justify-content: center; gap: 7px; min-height: 29px; width: 100%; }
+.dashboard-row .dashboard-action { width: auto; min-width: 82px; }
+.dashboard-card-body > .dashboard-action:last-child { margin-top: auto; }
+.reference-dashboard .dashboard-value-button { min-width: 45%; text-align: center; }
+.dashboard-sidebar .dashboard-card > header { justify-content: center; min-height: 31px; }
+.dashboard-sidebar .dashboard-card h2 { font-size: 12px; }
+.dashboard-sidebar .dashboard-card > header > svg { display: none; }
+.dashboard-sidebar .dashboard-card-body { gap: 6px; }
+.dashboard-sidebar .dashboard-action { justify-content: flex-start; min-height: 32px; font-size: 10px; }
+.dashboard-identity { display: flex; align-items: center; gap: 12px; padding: 6px 0 12px; color: #aaa89e; }
+.dashboard-identity > div { display: flex; flex-direction: column; gap: 4px; }
+.dashboard-identity strong { font: 16px "Cinzel", serif; color: #c4bfb0; }
+.dashboard-identity span { font-size: 11px; }
+.dashboard-identity small { color: #b34a43; }
+.dashboard-resource { margin-bottom: 7px; }
+.dashboard-resource > div { display: flex; align-items: center; gap: 5px; font-size: 10px; color: #b6b4aa; }
+.dashboard-resource output { margin-left: auto; }
+.dashboard-resource meter { display: block; width: 100%; height: 9px; margin-top: 4px; }
+.dashboard-resource meter::-webkit-meter-bar { background: #1a1d19; border: 1px solid #34372f; }
+.dashboard-resource meter::-webkit-meter-optimum-value { background: #86352a; }
+.dashboard-resource-stamina meter::-webkit-meter-optimum-value { background: #8e7648; }
+.dashboard-location { display: flex; flex-direction: column; gap: 15px; padding: 6px 0 12px; text-align: center; }
+.dashboard-location strong { font: 13px "Cinzel", serif; color: #aa5147; }
+.dashboard-location span { font-size: 10px; color: #aaa79d; overflow-wrap: anywhere; }
+.dashboard-feedback { margin: 0; font-size: 12px; color: #e1b29e; }
+@media (max-width: 1000px) { .dashboard-layout { grid-template-columns: minmax(0, 1fr) 190px; } .dashboard-card > header { padding-inline: 7px; } .dashboard-card-body { padding-inline: 7px; } .dashboard-row { font-size: 11px; } .dashboard-more { display: none; } }
+@media (max-width: 760px) { .dashboard-layout { grid-template-columns: minmax(0, 1fr); } .dashboard-main { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: auto; } .dashboard-sidebar { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: auto; margin-top: 0; } }
+.reference-dashboard .dashboard-stepper input { width: 48px; flex: 1; min-width: 0; padding: 0; border: 0; background: transparent; text-align: center; color: #c6c5bf; font: inherit; appearance: textfield; }
+.reference-dashboard .dashboard-stepper input::-webkit-inner-spin-button { appearance: none; }
+.reference-dashboard .dashboard-gold .dashboard-action { min-width: 0; width: 36px; padding-inline: 4px; }
+.dashboard-inline-action { display: flex; gap: 5px; align-items: center; min-height: 25px; }
+.dashboard-inline-action .dashboard-row { flex: 1; min-width: 0; }
+.dashboard-inline-action .dashboard-row select { width: 50%; }
+.reference-dashboard .dashboard-inline-action > .dashboard-action { width: auto; min-height: 25px; padding-inline: 6px; flex-shrink: 0; }
+.reference-dashboard .dashboard-save input { width: 36%; min-width: 0; padding: 4px 6px; font: 11px "Segoe UI", sans-serif; }
+.dashboard-number { display: flex; flex-direction: column; width: 54%; }
+.dashboard-number .dashboard-stepper { width: 100%; }
+.dashboard-number small { font-size: 9px; color: #ddb09d; }
+/* Twelve player rows and the lower tool row fit the established desktop frame. */
+.dashboard-card > header { min-height: 30px; }
+.dashboard-card-body { gap: 2px; padding: 6px 8px; }
+.dashboard-row { min-height: 21px; }
+.reference-dashboard button:not(.toggle), .reference-dashboard select { min-height: 22px; padding-block: 2px; }
+.reference-dashboard .dashboard-action { min-height: 26px; }
+.dashboard-inline-action { min-height: 22px; }
+.reference-dashboard .dashboard-inline-action > .dashboard-action { min-height: 22px; }
+.dashboard-sidebar .dashboard-action { min-height: 29px; }
+
+/* The shell scales a fixed design canvas. Compact mode, not viewport media queries,
+   compensates typography and reflows cards before that transform makes text tiny. */
+[data-compact] .dashboard-layout { grid-template-columns: minmax(0, 1fr) 300px; flex: none; align-items: start; }
+[data-compact] .dashboard-main { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: auto; }
+[data-compact] .dashboard-sidebar { grid-template-rows: auto; }
+[data-compact] .dashboard-card > header { min-height: calc(30px * var(--content-text-scale, 1)); }
+[data-compact] .dashboard-card h2 { font-size: calc(14px * var(--content-text-scale, 1)); }
+[data-compact] .dashboard-card-body { gap: 5px; padding: 10px; }
+[data-compact] .dashboard-row { min-height: calc(25px * var(--content-text-scale, 1)); font-size: calc(13px * var(--content-text-scale, 1)); }
+[data-compact] .reference-dashboard :is(button, select, input),
+[data-compact] .dashboard-slider output { font-size: calc(12px * var(--content-text-scale, 1)); }
+[data-compact] .reference-dashboard button:not(.toggle),
+[data-compact] .reference-dashboard select { min-height: calc(25px * var(--content-text-scale, 1)); }
+[data-compact] .reference-dashboard .dashboard-action { min-height: calc(29px * var(--content-text-scale, 1)); }
+[data-compact] .dashboard-more { display: none; }
+[data-compact] .dashboard-placeholder-mark { font-size: calc(10px * var(--content-text-scale, 1)); }
+[data-compact] .dashboard-stepper button { width: calc(27px * var(--content-text-scale, 1)); }
+[data-compact] .dashboard-identity strong { font-size: calc(16px * var(--content-text-scale, 1)); }
+[data-compact] :is(.dashboard-identity span, .dashboard-identity small, .dashboard-resource > div, .dashboard-location span, .dashboard-number small) { font-size: calc(11px * var(--content-text-scale, 1)); }
+[data-compact] .dashboard-location strong { font-size: calc(13px * var(--content-text-scale, 1)); }
+[data-compact] .dashboard-resource { margin-bottom: 12px; }
+/* One labeled movement block holding Super Jump, No Clip and the Fly + speed pair.
+   Fly and the Speed Multiplier slider share a row inside this block, so a different
+   outer column count can no longer push the slider onto a full-width row of its own
+   away from Fly. It spans the grid, so a short window keeps it intact instead of
+   splitting its cells across unrelated rows. */
+.player-movement-controls { grid-column: 1 / -1; gap: 5px; }
+.player-movement-heading { margin: 0; font: 500 11px/1.3 "Cinzel", serif; text-transform: uppercase; letter-spacing: .06em; color: #8f8c82; }
+.player-movement-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 4px 16px; align-items: start; }
+.player-flight-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 3px 12px; align-items: start; grid-column: span 2; }
+
+/* Edit Item Amount: owned-item picker, count box and Set on one line. */
+.player-item-amount-controls { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.player-item-amount-controls select { max-width: 260px; min-width: 160px; }
+/* The amount field wears the same chrome as the select and buttons beside it; the browser's
+   default white number box read as a broken control against the dark row. */
+.reference-dashboard .player-item-amount-controls input { width: 72px; min-height: 25px; padding: 3px 8px; border: 1px solid #363934; border-radius: 3px; background-color: #121412; box-shadow: inset 0 1px #ffffff04; color: #c6c5bf; font: inherit; font-family: "Segoe UI", sans-serif; font-size: 11px; text-align: right; appearance: textfield; }
+.reference-dashboard .player-item-amount-controls input::-webkit-inner-spin-button, .reference-dashboard .player-item-amount-controls input::-webkit-outer-spin-button { appearance: none; margin: 0; }
+.reference-dashboard .player-item-amount-controls input:focus { outline: none; border-color: #895049; }

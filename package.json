@@ -1,0 +1,144 @@
+{
+  "name": "blood-of-dawnwalker-mod-menu",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Offline single-player desktop and runtime mod menu for The Blood of Dawnwalker.",
+  "author": "cyberfox1337x",
+  "type": "module",
+  "main": "dist-electron/main.js",
+  "cyberfox1337x": "function(package_manifest)",
+  "scripts": {
+    "dev": "npm run build:electron && concurrently -k \"vite --host 127.0.0.1 --port 5173\" \"wait-on http-get://127.0.0.1:5173/ && cross-env DAWNWALKER_DEV_URL=http://127.0.0.1:5173 electron .\"",
+    "start": "npm run build && electron .",
+    "build:renderer": "tsc -b tsconfig.app.json && vite build",
+    "build:electron": "tsc -p electron/tsconfig.json",
+    "build": "npm run build:renderer && npm run build:electron",
+    "lint": "eslint . --max-warnings 0",
+    "test": "vitest run && node --test qa/player-current-build/numeric-roundtrip.test.mjs qa/player-current-build/resource-roundtrip.test.mjs",
+    "test:signatures": "node scripts/Assert-FirstPartySignatures.mjs && node --test scripts/Assert-FirstPartySignatures.Tests.mjs",
+    "test:lua": "powershell -NoLogo -NoProfile -NonInteractive -ExecutionPolicy Bypass -File scripts/Test-DawnwalkerLua.ps1",
+    "test:lua:qa": "powershell -NoLogo -NoProfile -NonInteractive -ExecutionPolicy Bypass -File scripts/Test-DawnwalkerLua.ps1 -BridgeSourcePath installer/templates/ue4ss/Mods/DawnwalkerModBridge/Scripts/main.lua",
+    "test:lua:qa:source": "powershell -NoLogo -NoProfile -NonInteractive -ExecutionPolicy Bypass -File scripts/Test-DawnwalkerLua.ps1 -BridgeSourcePath installer/templates/ue4ss/Mods/DawnwalkerModBridge/Scripts/main.lua -SourceOnly",
+    "test:pilot": "powershell -NoLogo -NoProfile -NonInteractive -ExecutionPolicy Bypass -File analysis/dawnwalker-uue4ss/tests/BridgePilotPromotion.Tests.ps1",
+    "test:carry-capacity:lua": "lua analysis/dawnwalker-uue4ss/tests/DawnwalkerCarryCapacityReadOnlyProbe.Tests.lua analysis/dawnwalker-uue4ss/probes/DawnwalkerCarryCapacityReadOnlyProbe.lua",
+    "test:carry-capacity": "powershell -NoLogo -NoProfile -NonInteractive -ExecutionPolicy Bypass -File analysis/dawnwalker-uue4ss/tests/DawnwalkerCarryCapacityFeasibility.Tests.ps1 && npm run test:carry-capacity:lua",
+    "test:add-item": "lua analysis/dawnwalker-uue4ss/tests/DawnwalkerAddItemPilot.Tests.lua integration/uue4ss/Mods/DawnwalkerModBridge/Scripts/main.lua",
+    "test:add-level": "lua analysis/dawnwalker-uue4ss/tests/DawnwalkerAddLevelPilot.Tests.lua integration/uue4ss/Mods/DawnwalkerModBridge/Scripts/main.lua",
+    "test:unlock-all-skills": "lua analysis/dawnwalker-uue4ss/tests/DawnwalkerUnlockAllSkillsPlanner.Tests.lua analysis/dawnwalker-uue4ss/probes/DawnwalkerUnlockAllSkillsPlanner.lua",
+    "test:package-contract": "powershell -NoLogo -NoProfile -NonInteractive -ExecutionPolicy Bypass -File scripts/DawnwalkerPackagingContract.Tests.ps1",
+    "test:runtime-installer": "powershell -NoLogo -NoProfile -NonInteractive -ExecutionPolicy Bypass -File installer/DawnwalkerRuntimeInstaller.Tests.ps1",
+    "test:release-gate": "powershell -NoLogo -NoProfile -NonInteractive -ExecutionPolicy Bypass -File scripts/Assert-DawnwalkerReleaseReady.Tests.ps1",
+    "verify:release-ready": "powershell -NoLogo -NoProfile -NonInteractive -ExecutionPolicy Bypass -File scripts/Assert-DawnwalkerReleaseReady.ps1",
+    "verify:packaged-installer": "powershell -NoLogo -NoProfile -NonInteractive -ExecutionPolicy Bypass -File scripts/Assert-DawnwalkerPackagedInstaller.ps1 -ExpectedPhase production",
+    "verify:packaged-installer:qa": "powershell -NoLogo -NoProfile -NonInteractive -ExecutionPolicy Bypass -File scripts/Assert-DawnwalkerPackagedInstaller.ps1 -ReleaseDirectory release-qa -ExpectedPhase discovery",
+    "bridge:status": "npm run build:electron && node scripts/Invoke-DawnwalkerBridgePilot.mjs",
+    "bridge:pilot": "npm run build:electron && node scripts/Invoke-DawnwalkerBridgePilot.mjs",
+    "prepare:runtime": "powershell -NoLogo -NoProfile -NonInteractive -ExecutionPolicy Bypass -File scripts/Prepare-DawnwalkerRuntimePayload.ps1 -PayloadPhase production",
+    "prepare:runtime:qa": "powershell -NoLogo -NoProfile -NonInteractive -ExecutionPolicy Bypass -File scripts/Prepare-DawnwalkerRuntimePayload.ps1 -PayloadPhase discovery",
+    "capture:ui": "npm run build && cross-env DAWNWALKER_CAPTURE_PATH=visual-qa/dawnwalker-ui.png electron .",
+    "package:qa": "npm run lint && npm test && npm run test:package-contract && npm run prepare:runtime:qa && npm run test:lua:qa && npm run test:runtime-installer && npm run test:release-gate && npm run build && electron-builder --win nsis --config.directories.output=release-qa && npm run verify:packaged-installer:qa",
+    "package:win": "npm run lint && npm test && npm run test:package-contract && npm run prepare:runtime && npm run test:lua && npm run test:runtime-installer && npm run test:release-gate && npm run build && npm run verify:release-ready && electron-builder --win nsis && npm run verify:packaged-installer",
+    "prepare:runtime:current": "powershell -NoLogo -NoProfile -NonInteractive -ExecutionPolicy Bypass -File scripts/Prepare-DawnwalkerImportedRuntime.ps1",
+    "test:runtime:current": "powershell -NoLogo -NoProfile -NonInteractive -ExecutionPolicy Bypass -File installer/DawnwalkerImportedRuntimeInstaller.Tests.ps1",
+    "test:release:current": "node --test scripts/Assert-DawnwalkerImportedReleaseReady.Tests.mjs",
+    "verify:release:current": "node scripts/Assert-DawnwalkerImportedReleaseReady.mjs",
+    "verify:installer:current": "node scripts/Assert-DawnwalkerImportedInstaller.mjs release-final",
+    "package:current": "npm run test:signatures && npm run lint && npm test && npm run prepare:runtime:current && npm run test:runtime:current && npm run test:release:current && npm run build && npm run verify:release:current && electron-builder --win nsis --config installer/current-build.mjs && npm run verify:installer:current"
+  },
+  "dependencies": {
+    "@fontsource/cinzel": "^5.2.8",
+    "@fontsource/cormorant-garamond": "^5.2.8",
+    "lucide-react": "^0.544.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "three": "^0.185.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.34.0",
+    "@testing-library/jest-dom": "^6.8.0",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/node": "^24.3.0",
+    "@types/react": "^19.1.12",
+    "@types/react-dom": "^19.1.9",
+    "@types/three": "^0.185.4",
+    "@vitejs/plugin-react": "^5.0.2",
+    "concurrently": "^9.2.1",
+    "cross-env": "^10.0.0",
+    "electron": "^44.0.0",
+    "electron-builder": "^26.15.3",
+    "eslint": "^9.34.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "globals": "^16.3.0",
+    "jsdom": "^26.1.0",
+    "typescript": "~5.8.3",
+    "typescript-eslint": "^8.41.0",
+    "vite": "^7.1.3",
+    "vitest": "^3.2.4",
+    "wait-on": "^8.0.4"
+  },
+  "build": {
+    "appId": "com.cyberfox1337x.dawnwalker.modmenu",
+    "productName": "Blood of Dawnwalker Mod Menu",
+    "asar": true,
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "dist-electron/**/*",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "integration/imported-menu",
+        "to": "imported-menu",
+        "filter": [
+          "Mods/**/*",
+          "!Mods/DawnwalkerImportedMenu/Scripts/CarryWeightPilot.lua",
+          "!Mods/DawnwalkerImportedMenu/Scripts/SuperJumpPilot.lua",
+          "catalog.json",
+          "manifest.json",
+          "official-build.json",
+          "*.md"
+        ]
+      },
+      {
+        "from": "build-assets/icon.png",
+        "to": "notification-icon.png"
+      },
+      {
+        "from": "installer/UE4SS-LICENSE.txt",
+        "to": "UE4SS-LICENSE.txt"
+      },
+      {
+        "from": "installer/DawnwalkerRuntimeInstaller.ps1",
+        "to": "dawnwalker-runtime/DawnwalkerRuntimeInstaller.ps1"
+      },
+      {
+        "from": "installer/runtime",
+        "to": "dawnwalker-runtime"
+      }
+    ],
+    "win": {
+      "icon": "build-assets/icon.png",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "artifactName": "${productName}-Setup-${version}-${arch}.${ext}",
+      "oneClick": true,
+      "perMachine": true,
+      "include": "installer/installer.nsh",
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  }
+}

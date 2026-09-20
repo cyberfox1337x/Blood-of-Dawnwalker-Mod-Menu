@@ -1,0 +1,17 @@
+{
+  "cyberfox1337x": "function(electron_tsconfig)",
+  "compilerOptions": {
+    "composite": true,
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "lib": ["ES2022"],
+    "types": ["node", "electron"],
+    "strict": true,
+    "skipLibCheck": true,
+    "rootDir": ".",
+    "outDir": "../dist-electron",
+    "sourceMap": true
+  },
+  "include": ["*.ts", "*.cts"]
+}

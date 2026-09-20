@@ -1,0 +1,189 @@
+/* cyberfox1337x.function("imported_menu_styles") — CSS has no executable functions. */
+.imported-menu { display: grid; grid-column: 1 / -1; grid-template-columns: repeat(2, minmax(0, 1fr)); min-width: 0; }
+.imported-menu > :is(h3, p, button) { grid-column: 1 / -1; }
+.imported-menu > button { justify-self: start; }
+.imported-menu-diagnostics { grid-column: 1 / -1; color: #a7a198; font-size: 12px; }
+.imported-menu-diagnostics > summary { cursor: pointer; }
+.imported-menu-heading { margin: 0; font-size: 15px; color: #d5c59f; }
+.imported-menu-status { margin: 0; color: #a7a198; font-size: 12px; line-height: 1.5; }
+.imported-menu-group { border: 1px solid #353730; border-radius: 4px; background: #101210; }
+.imported-menu-group > h4 { margin: 0; padding: 10px 12px; color: #d3cbbd; font-size: 15px; font-weight: 500; }
+.imported-menu-direct { grid-column: 1 / -1; border: 1px solid #514731; border-left: 3px solid #8d2923; border-radius: 4px; background: #101210; }
+.imported-menu-direct h4 { margin: 0; padding: 12px 14px 7px; color: #dbcba6; font-size: 15px; }
+.imported-menu-direct .imported-menu-label { font-size: 13px; }
+.imported-menu-direct .imported-menu-items { padding: 8px 14px 10px; gap: 3px; }
+.imported-menu-toggle-status { margin: 0; color: #a9a38f; }
+.imported-menu-toggle-notes { color: #a79a7c; font-size: 11px; line-height: 1.5; }
+.imported-menu-toggle-notes summary { cursor: pointer; }
+.imported-menu-switch-row { display: flex; justify-content: space-between; align-items: center; color: #e0d8c9; cursor: pointer; }
+.imported-menu-switch-control { position: relative; display: flex; align-items: center; flex-shrink: 0; }
+.imported-menu .imported-menu-switch-control input { position: absolute; width: 48px; height: 28px; margin: 0; padding: 0; appearance: none; border: 0; background: transparent; z-index: 1; cursor: pointer; }
+.imported-menu-switch-track { width: 48px; height: 26px; border: 1px solid #6a6659; border-radius: 20px; background: #292d27; }
+.imported-menu-switch-track::before { content: ""; display: block; width: 18px; height: 18px; margin: 3px; border-radius: 50%; background: #a39c8d; transition: transform .15s; }
+.imported-menu-switch-control input:checked + .imported-menu-switch-track { background: #74312a; border-color: #c49a55; }
+.imported-menu-switch-control input:checked + .imported-menu-switch-track::before { transform: translateX(22px); background: #edcf8e; }
+.imported-menu-switch-control input:focus-visible + .imported-menu-switch-track { outline: 2px solid var(--focus-ring); outline-offset: 3px; }
+.imported-menu-switch-control strong { min-width: 30px; font-size: 12px; color: #c6b990; }
+.player-secondary-controls { grid-column: 1 / -1; border: 1px solid #373a32; color: #aea696; }
+.player-secondary-controls > h3 { margin: 0; font-size: 14px; font-weight: 500; }
+.player-secondary-controls > h3 small { margin-left: 12px; font-size: 11px; color: #827e72; }
+.player-secondary-grid { display: grid; }
+.player-secondary-grid > .capability-notice { grid-column: 1 / -1; }
+.imported-menu-items { display: grid; gap: 9px; padding: 4px 12px 12px; }
+.imported-menu-label { margin: 0; color: #aca79d; font-size: 12px; line-height: 1.5; white-space: pre-wrap; overflow-wrap: anywhere; }
+.imported-menu-row { display: flex; flex-wrap: wrap; align-items: center; }
+.imported-menu-field { display: flex; flex-wrap: wrap; align-items: center; color: #c6bfb2; }
+.imported-menu-field > span:first-child { flex: 1; }
+.imported-menu input, .imported-menu select { color: var(--dropdown-text); border: 1px solid var(--dropdown-border); border-radius: var(--dropdown-radius); background: var(--dropdown-surface); max-width: 100%; min-width: 0; }
+.imported-menu button, .imported-menu-dialog button { cursor: pointer; }
+.imported-menu button:disabled, .imported-menu input:disabled, .imported-menu select:disabled { opacity: .45; cursor: not-allowed; }
+.imported-menu button:focus-visible, .imported-menu input:focus-visible, .imported-menu select:focus-visible, .imported-menu summary:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+/* Resource bars. The track is always drawn; the coloured fill only appears once the
+   runtime reports a value, so an unconnected meter stays an empty trough. */
+.imported-menu meter { width: min(100%, 240px); height: 11px; appearance: none; border: 1px solid #46372e; border-radius: 6px; background: #100d0c; overflow: hidden; }
+.imported-menu meter::-webkit-meter-inner-element { border-radius: 6px; }
+.imported-menu meter::-webkit-meter-bar { border: 0; border-radius: 6px; background: #100d0c; }
+.imported-menu meter::-webkit-meter-optimum-value,
+.imported-menu meter::-webkit-meter-suboptimum-value,
+.imported-menu meter::-webkit-meter-even-less-good-value { border-radius: 6px; background: linear-gradient(180deg, #b9a173, #7d6842); }
+.imported-menu-field[data-meter="health"] meter::-webkit-meter-optimum-value,
+.imported-menu-field[data-meter="health"] meter::-webkit-meter-suboptimum-value,
+.imported-menu-field[data-meter="health"] meter::-webkit-meter-even-less-good-value { background: linear-gradient(180deg, #d94b3d, #8c1d18); }
+.imported-menu-field[data-meter="staminaMeter"] meter::-webkit-meter-optimum-value,
+.imported-menu-field[data-meter="staminaMeter"] meter::-webkit-meter-suboptimum-value,
+.imported-menu-field[data-meter="staminaMeter"] meter::-webkit-meter-even-less-good-value { background: linear-gradient(180deg, #62c06d, #2d7a37); }
+.imported-menu-picker { display: grid; gap: 6px; }
+.imported-menu-dialog-backdrop { position: fixed; inset: 0; z-index: 1000; background: #000b; display: grid; place-items: center; padding: 24px; }
+.imported-menu-dialog { width: min(620px, 90vw); max-height: 85vh; overflow-y: auto; padding: 22px; background: #141711; border: 1px solid #8a7951; color: #d5cdbf; border-radius: 5px; box-shadow: 0 15px 60px #0009; }
+.imported-menu-dialog h2 { margin: 0 0 12px; font-size: calc(18px * var(--content-text-scale, 1)); }
+.imported-menu-dialog p { white-space: pre-wrap; overflow-wrap: anywhere; line-height: 1.55; font-size: calc(14px * var(--content-text-scale, 1)); }
+.imported-menu-dialog footer { display: flex; gap: 12px; justify-content: flex-end; }
+
+/* Dense, visible control cards retain the menu's burgundy and antique gold palette. */
+.imported-menu { margin-top: 4px; gap: 5px; align-items: stretch; }
+.imported-menu-toolbar { grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.imported-menu[data-category="player"] { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.imported-menu[data-category="player"] .imported-menu-direct { grid-column: auto; }
+.imported-menu :is(.imported-menu-group, .imported-menu-direct) { min-width: 0; align-self: stretch; display: flex; flex-direction: column; justify-content: flex-start; background: linear-gradient(135deg, #171310, #100e0d); border-color: #49372c; }
+.imported-menu :is(.imported-menu-group, .imported-menu-direct) > h4 { padding: 7px 9px 4px; font-size: 14px; line-height: 1.25; color: #d9bc85; }
+.imported-menu .imported-menu-items { padding: 5px 9px 9px; gap: 5px; }
+.imported-menu-label, .imported-menu-direct .imported-menu-label { font-size: 12px; line-height: 1.35; }
+.imported-menu-switch-row { gap: 8px; min-height: 32px; font-size: 14px; }
+.imported-menu-switch-control { gap: 6px; }
+.imported-menu-toggle-status { font-size: 12px; line-height: 1.3; }
+.imported-menu-field { gap: 5px; font-size: 13px; }
+.imported-menu-field > span:first-child { min-width: 90px; }
+.imported-menu input, .imported-menu select { padding: 4px 6px; font-size: 13px; }
+/* Dense padding above; restated here so the shared chevron keeps its gutter
+   and the shorthand fill from the grouped rule cannot drop the arrow. */
+.imported-menu select { width: min(100%, 230px); flex: 1; padding-right: var(--dropdown-arrow-gap); background-color: var(--dropdown-surface); background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23bfa98c' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 8px center; cursor: pointer; }
+.imported-menu input[type="number"] { width: 74px; }
+.imported-menu-row { gap: 5px; }
+.imported-menu [data-imported-section="DWRespec"] { grid-column: span 2; }
+.imported-menu button, .imported-menu-dialog button { min-height: 28px; padding: 5px 10px; color: #f1dfbd; border: 1px solid #88613c; border-radius: 3px; background: linear-gradient(#642623, #351716); box-shadow: inset 0 1px #ffffff0c, 0 1px 3px #0005; font-size: 12px; font-weight: 500; line-height: 1.3; transition: background .15s, border-color .15s, box-shadow .15s; }
+.imported-menu button:not(:disabled):hover, .imported-menu-dialog button:not(:disabled):hover { background: linear-gradient(#80332b, #4d201c); border-color: #d0a75f; box-shadow: inset 0 1px #ffffff14, 0 0 8px #aa55221f; }
+.imported-menu button:not(:disabled):active, .imported-menu-dialog button:not(:disabled):active { background: #351716; box-shadow: inset 0 2px 4px #0008; }
+.imported-menu button[data-variant="danger"] { background: linear-gradient(#7b231f, #441411); border-color: #b46044; color: #ffe1c7; }
+.imported-menu button[data-variant="warning"] { border-color: #885048; }
+.imported-menu button:disabled, .imported-menu-dialog button:disabled { opacity: 1; background: #251d19; border-color: #514237; color: #968372; box-shadow: none; cursor: not-allowed; }
+.imported-menu-dialog button:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 3px; }
+#panel-player .panel-content { padding: 10px 14px; gap: 7px 12px; }
+/* The Combat section inside Player keeps the three-column card rhythm. The id
+   prefix is required: a bare class ties with .category-section and loses on order. */
+#panel-player .player-combat-section { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+#panel-player .category-section { margin-top: 3px; padding-top: 7px; gap: 7px 12px; }
+#panel-player .category-section-heading { min-height: 23px; }
+.player-secondary-controls { padding: 7px 9px; margin-top: 5px; }
+.player-secondary-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 7px 12px; padding-top: 8px; }
+#panel-player .capability-notice, #panel-player .feature-tools { padding: 8px 10px; margin: 0; }
+#panel-player .capability-notice p, #panel-player .feature-tools p { margin: 4px 0 0; font-size: 13px; line-height: 1.35; }
+#panel-player .capability-notice strong, #panel-player .feature-tools h3 { font-size: 13px; margin: 0; }
+#panel-player .player-combat-section > .capability-notice { grid-column: auto; }
+#panel-player .player-combat-section > .capability-notice:last-child { grid-column: 1 / -1; }
+#panel-player .player-combat-section > .feature-tools { grid-column: 1 / -1; }
+.player-combat-section .control-row { min-height: 30px; gap: 7px; font-size: 13px; }
+.player-combat-section .control-row .select-wrap { min-width: 0; width: 160px; max-width: 62%; }
+.player-combat-section .control-row select { min-width: 0; width: 100%; font-size: 13px; }
+
+/* Content-height columns keep short cards together without stretching their interiors. */
+.imported-menu-cards { grid-column: 1 / -1; column-count: 3; column-gap: 6px; }
+.imported-menu-cards > :is(.imported-menu-group, .imported-menu-direct) { display: block; width: 100%; box-sizing: border-box; break-inside: avoid-column; margin: 0 0 6px; align-self: auto; }
+.imported-menu [data-imported-section="DWRespec"] .imported-menu-items { grid-template-columns: minmax(0, 1fr); }
+.imported-menu[data-category="world"] .imported-menu-cards { column-count: 2; }
+.imported-menu[data-category="teleport"] .imported-menu-cards, .imported-menu[data-category="settings"] .imported-menu-cards { column-count: 1; }
+#panel-player, .imported-menu { --readable-control-size: calc(14px * var(--content-text-scale, 1)); }
+.imported-menu :is(p, label, button, input, select, output, .imported-menu-switch-control strong),
+#panel-player :is(.control-row, .control-row input, .control-row select, .small-button, .player-toggle-label small, .player-toggle-state, .capability-notice p),
+.player-combat-section :is(.control-row, .control-row input, .control-row select, .capability-notice p, .feature-tools p) { font-family: "Segoe UI", sans-serif; font-size: var(--readable-control-size); line-height: 1.4; }
+.imported-menu :is(.imported-menu-direct, .imported-menu-group) > h4 { font-size: calc(15px * var(--content-text-scale, 1)); }
+.imported-menu .imported-menu-field { flex-wrap: wrap; }
+.imported-menu .imported-menu-field > span:first-child { min-width: 100px; }
+.imported-menu button { min-height: calc(30px * var(--content-text-scale, 1)); }
+.imported-menu .imported-menu-switch-control strong { min-width: 2.5em; }
+#panel-player .player-secondary-grid { align-items: start; }
+#panel-player .player-secondary-controls:first-child { margin-top: 0; }
+/* Only God Mode and Sprint No Drain remain in the core box, so it hugs its two rows
+   instead of stretching a label and its switch to opposite edges of the panel. The
+   switches align to the first line of each label, keeping both rows level even though
+   God Mode carries a two-line description and Sprint No Drain does not. */
+.player-core-controls { width: fit-content; min-width: min(100%, 430px); max-width: 100%; }
+.player-core-controls .player-secondary-grid { grid-template-columns: minmax(0, 1fr); gap: 2px; padding-top: 6px; }
+/* The Speed Multiplier slider lives in the Movement block's flight row beside Fly.
+   The block, not the Player grid, decides that position, so the slider cannot be
+   pushed onto a full-width row of its own when the outer column count changes. */
+.player-core-controls .player-movement-controls, #panel-player .player-movement-controls { grid-column: 1 / -1; }
+.player-core-controls .control-row { align-items: flex-start; min-height: 26px; padding: 3px 0; }
+.player-core-controls .player-toggle-label small { max-width: 34ch; }
+.player-core-controls .player-toggle-state { color: #b6a894; }
+#panel-player .control-row .select-wrap { min-width: 0; max-width: 65%; }
+#panel-player .control-row { flex-wrap: wrap; }
+@media (max-width: 1200px) {
+  .imported-menu-cards { column-count: 2; }
+  #panel-player .player-secondary-grid, #panel-player .player-combat-section { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+/* Toggle rows may lead with a small glyph; keep it on the label's first line. */
+.toggle-title { display: inline-flex; align-items: center; gap: 8px; }
+.toggle-title svg { flex: 0 0 auto; color: #cfa46a; }
+.toggle-title[data-tone="health"] svg { color: #e2564a; }
+.toggle-title[data-tone="stamina"] svg { color: #6ac876; }
+.control-row[data-control-state="locked"] .toggle-title svg { opacity: .72; }
+
+/* The supplied runtime prefixes each card title and status row with a decorative symbol.
+   Colour it by symbol so a card is identifiable before its words are read; hearts and
+   lightning reuse the health and stamina meter palette. */
+.imported-menu-glyph { margin-right: .45em; color: #d9bc85; }
+.imported-menu-glyph[data-glyph="\2661"] { color: #e2564a; }
+.imported-menu-glyph[data-glyph="\03DF"] { color: #6ac876; }
+.imported-menu-glyph[data-glyph="\0021"] { color: #e0803f; }
+.imported-menu-glyph[data-glyph="\2726"] { color: #e0b45f; }
+.imported-menu-glyph[data-glyph="\2606"] { color: #9db6d6; }
+.imported-menu-glyph[data-glyph="\2740"] { color: #cf8fc4; }
+.imported-menu-glyph[data-glyph="\273F"] { color: #63bfa8; }
+
+.imported-menu-action-error { margin: 4px 0; color: #edb8a9; font: inherit; font-size: 14px; line-height: 1.4; overflow-wrap: anywhere; }
+
+/* cyberfox1337x.function("shared_confirmed_toggle_colors") */
+:root { --toggle-confirmed-on: #284b36; --toggle-confirmed-off: #642623; --toggle-unavailable: #303431; --toggle-pending: #4a2a27; }
+.toggle:not(:disabled) { background: var(--toggle-confirmed-off); border-color: #88613c; box-shadow: none; }
+.toggle.toggle-on:not(:disabled) { background: var(--toggle-confirmed-on); }
+.toggle:not(:disabled) span { background: #fff7e8; }
+.toggle:disabled, .toggle:disabled:hover { background: var(--toggle-unavailable); border-color: #595d57; box-shadow: none; }
+.toggle[aria-busy="true"]:disabled { background: var(--toggle-pending); border-color: #a35443; }
+.imported-menu-switch-control input:not(:disabled) + .imported-menu-switch-track { background: var(--toggle-confirmed-off); border-color: #88613c; }
+.imported-menu-switch-control input:checked:not(:disabled) + .imported-menu-switch-track { background: var(--toggle-confirmed-on); }
+.imported-menu-switch-control input:not(:disabled) + .imported-menu-switch-track::before { background: #fff7e8; }
+.imported-menu-switch-control input:disabled + .imported-menu-switch-track { background: var(--toggle-unavailable); border-color: #595d57; opacity: 1; }
+.imported-menu-switch-control input[aria-busy="true"]:disabled + .imported-menu-switch-track { background: var(--toggle-pending); border-color: #a35443; }
+.eye-live-toggle input:not(:disabled) { background: var(--toggle-confirmed-off); border-color: #51534f; }
+.eye-live-toggle input:checked:not(:disabled) { background: var(--toggle-confirmed-on); }
+.eye-live-toggle input:not(:disabled)::after { background: #fff7e8; }
+.eye-live-toggle input:disabled { background: var(--toggle-unavailable); border-color: #595d57; }
+.eye-live-toggle input[aria-busy="true"]:disabled { background: var(--toggle-pending); border-color: #a35443; }
+
+/* Keep confirmation actions and switch hit targets legible in the scaled frame. */
+.imported-menu-dialog button { font-size: calc(14px * var(--content-text-scale, 1)); min-height: calc(32px * var(--content-text-scale, 1)); }
+[data-compact] .imported-menu-switch-control { --switch-scale: var(--content-text-scale); }
+[data-compact] .imported-menu .imported-menu-switch-control input,
+[data-compact] .imported-menu-switch-track { width: calc(48px * var(--switch-scale)); height: calc(26px * var(--switch-scale)); border-radius: 24px; }
+[data-compact] .imported-menu-switch-track::before { width: calc(18px * var(--switch-scale)); height: calc(18px * var(--switch-scale)); margin: calc(3px * var(--switch-scale)); }
+[data-compact] .imported-menu-switch-control input:checked + .imported-menu-switch-track::before { transform: translateX(calc(22px * var(--switch-scale))); }

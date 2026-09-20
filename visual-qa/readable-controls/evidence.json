@@ -1,0 +1,2481 @@
+{
+  "errors": [],
+  "categories": [
+    {
+      "name": "Player",
+      "count": 16,
+      "controls": 49,
+      "viewport": [
+        1672,
+        941
+      ],
+      "client": [
+        1381,
+        583
+      ],
+      "scroll": [
+        1381,
+        2121
+      ],
+      "readability": {
+        "viewport": [
+          1672,
+          941
+        ],
+        "scale": 1,
+        "cards": [
+          {
+            "id": "DWCombatControls",
+            "container": "player",
+            "left": 278,
+            "top": 488.359375,
+            "bottom": 615.296875,
+            "internalGap": 10
+          },
+          {
+            "id": "DWPlayer",
+            "container": "player",
+            "left": 278,
+            "top": 621.296875,
+            "bottom": 858.203125,
+            "internalGap": 10
+          },
+          {
+            "id": "DWSkills",
+            "container": "player",
+            "left": 278,
+            "top": 864.203125,
+            "bottom": 1037.328125,
+            "internalGap": 10
+          },
+          {
+            "id": "DWXP",
+            "container": "player",
+            "left": 278,
+            "top": 1043.328125,
+            "bottom": 1179.859375,
+            "internalGap": 10
+          },
+          {
+            "id": "DWMutation",
+            "container": "player",
+            "left": 731,
+            "top": 488.359375,
+            "bottom": 882.234375,
+            "internalGap": 10
+          },
+          {
+            "id": "DWTraitGrant",
+            "container": "player",
+            "left": 731,
+            "top": 888.234375,
+            "bottom": 1095.953125,
+            "internalGap": 10
+          },
+          {
+            "id": "DWUltimateControls",
+            "container": "player",
+            "left": 731,
+            "top": 1101.953125,
+            "bottom": 1298.078125,
+            "internalGap": 10
+          },
+          {
+            "id": "DWRespec",
+            "container": "player",
+            "left": 1184,
+            "top": 488.359375,
+            "bottom": 1104.765625,
+            "internalGap": 10
+          },
+          {
+            "id": "DWActivationControl",
+            "container": "combat",
+            "left": 278,
+            "top": 1397.671875,
+            "bottom": 1544.203125,
+            "internalGap": 10
+          },
+          {
+            "id": "DWCooldownControl",
+            "container": "combat",
+            "left": 731,
+            "top": 1397.671875,
+            "bottom": 1524.609375,
+            "internalGap": 10
+          },
+          {
+            "id": "DWParryAssist",
+            "container": "combat",
+            "left": 1184,
+            "top": 1397.671875,
+            "bottom": 1588.390625,
+            "internalGap": 10
+          },
+          {
+            "id": "DWCurrency",
+            "container": "inventory",
+            "left": 278,
+            "top": 1961.859375,
+            "bottom": 2098.390625,
+            "internalGap": 10
+          },
+          {
+            "id": "DWMaterials",
+            "container": "inventory",
+            "left": 278,
+            "top": 2104.390625,
+            "bottom": 2275.515625,
+            "internalGap": 10
+          },
+          {
+            "id": "DWManuals",
+            "container": "inventory",
+            "left": 731,
+            "top": 1961.859375,
+            "bottom": 2167.171875,
+            "internalGap": 10
+          },
+          {
+            "id": "DWKeys",
+            "container": "inventory",
+            "left": 731,
+            "top": 2173.171875,
+            "bottom": 2378.484375,
+            "internalGap": 10
+          },
+          {
+            "id": "DWItems",
+            "container": "inventory",
+            "left": 1184,
+            "top": 1961.859375,
+            "bottom": 2248.359375,
+            "internalGap": 10
+          }
+        ],
+        "gaps": [
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6
+        ],
+        "minimumFont": 14,
+        "fonts": [
+          {
+            "text": "God ModeKeeps health, stamina and blood energy full.Una",
+            "pixels": 14
+          },
+          {
+            "text": "Sprint No DrainUnavailable",
+            "pixels": 14
+          },
+          {
+            "text": "Refresh game lists & status",
+            "pixels": 14
+          },
+          {
+            "text": "Start the compatible game runtime and load a save to us",
+            "pixels": 14
+          },
+          {
+            "text": "Rapid stamina refillOFF",
+            "pixels": 14
+          },
+          {
+            "text": "Stamina refill: OFF",
+            "pixels": 14
+          },
+          {
+            "text": "Continuously refills stamina. Re-enable after respawnin",
+            "pixels": 14
+          },
+          {
+            "text": "Load a save to view player status",
+            "pixels": 14
+          },
+          {
+            "text": "♡Health—",
+            "pixels": 14
+          },
+          {
+            "text": "ϟ  Stamina—",
+            "pixels": 14
+          },
+          {
+            "text": "❀Activation Charge—",
+            "pixels": 14
+          },
+          {
+            "text": "✿  Level    —",
+            "pixels": 14
+          },
+          {
+            "text": "Refill stamina now",
+            "pixels": 14
+          },
+          {
+            "text": "Refresh status",
+            "pixels": 14
+          },
+          {
+            "text": "Available skill points: load a save first",
+            "pixels": 14
+          },
+          {
+            "text": "Skill point amount",
+            "pixels": 14
+          },
+          {
+            "text": "Add",
+            "pixels": 14
+          },
+          {
+            "text": "Remove",
+            "pixels": 14
+          },
+          {
+            "text": "Clear available points",
+            "pixels": 14
+          },
+          {
+            "text": "Add an XP reward using the game's reward sizes.",
+            "pixels": 14
+          },
+          {
+            "text": "Reward sizeSelect…Very smallSmallMediumLargeVery large",
+            "pixels": 14
+          },
+          {
+            "text": "Select…Very smallSmallMediumLargeVery large",
+            "pixels": 14
+          },
+          {
+            "text": "Add XP",
+            "pixels": 14
+          },
+          {
+            "text": "Corruption: load a save first",
+            "pixels": 14
+          },
+          {
+            "text": "Corruption level",
+            "pixels": 14
+          },
+          {
+            "text": "Set exact Corruption level",
+            "pixels": 14
+          },
+          {
+            "text": "IMPORTANT: after setting a level, press +1 raw charge (",
+            "pixels": 14
+          },
+          {
+            "text": "Raw charge controls adjust progress within the current ",
+            "pixels": 14
+          },
+          {
+            "text": "Corruption amount (raw units)",
+            "pixels": 14
+          },
+          {
+            "text": "Increase corruption",
+            "pixels": 14
+          },
+          {
+            "text": "Reduce corruption charges",
+            "pixels": 14
+          },
+          {
+            "text": "+1 raw charge",
+            "pixels": 14
+          },
+          {
+            "text": "-1 raw charge",
+            "pixels": 14
+          },
+          {
+            "text": "No corruption changes made this session",
+            "pixels": 14
+          },
+          {
+            "text": "Refresh corruption status",
+            "pixels": 14
+          },
+          {
+            "text": "Load a save to index the perk database.",
+            "pixels": 14
+          },
+          {
+            "text": "PerkSelect…Perks scan after loading a save",
+            "pixels": 14
+          },
+          {
+            "text": "Select…Perks scan after loading a save",
+            "pixels": 14
+          },
+          {
+            "text": "Target rank",
+            "pixels": 14
+          },
+          {
+            "text": "Grant selected perk",
+            "pixels": 14
+          },
+          {
+            "text": "Refresh perk list",
+            "pixels": 14
+          },
+          {
+            "text": "Targeted Ultimate grants and Bulk Unlock are separate o",
+            "pixels": 14
+          },
+          {
+            "text": "Ultimate to grantSelect…Witchcraft — Aether CascadeWitc",
+            "pixels": 14
+          },
+          {
+            "text": "Select…Witchcraft — Aether CascadeWitchcraft — Entwined",
+            "pixels": 14
+          },
+          {
+            "text": "Grant selected Ultimate",
+            "pixels": 14
+          },
+          {
+            "text": "Unlock Everything / Max All Traits",
+            "pixels": 14
+          },
+          {
+            "text": "Light keeps Ultimates and earned protected abilities. M",
+            "pixels": 14
+          },
+          {
+            "text": "All modes preserve trait unlock-access bookkeeping. Ful",
+            "pixels": 14
+          },
+          {
+            "text": "Before starting: create a separate manual save, leave c",
+            "pixels": 14
+          },
+          {
+            "text": "Refund policy: current costs of removed ranks only. Pro",
+            "pixels": 14
+          },
+          {
+            "text": "Ready to preview. No skills change until you confirm.",
+            "pixels": 14
+          },
+          {
+            "text": "Protected abilities: generate a preview to see your lis",
+            "pixels": 14
+          },
+          {
+            "text": "Preview Light Respec",
+            "pixels": 14
+          },
+          {
+            "text": "Preview Medium Respec",
+            "pixels": 14
+          },
+          {
+            "text": "Preview Full Respec",
+            "pixels": 14
+          },
+          {
+            "text": "Confirm respec (changes skills)",
+            "pixels": 14
+          },
+          {
+            "text": "Cancel preview",
+            "pixels": 14
+          },
+          {
+            "text": "If verification fails: do NOT save or retry. Reload you",
+            "pixels": 14
+          },
+          {
+            "text": "Successful respecs may be repeated. An unverified mutat",
+            "pixels": 14
+          },
+          {
+            "text": "Start the compatible game runtime and load a save to us",
+            "pixels": 14
+          },
+          {
+            "text": "Quick fill activation chargeOFF",
+            "pixels": 14
+          },
+          {
+            "text": "Activation charge refill: OFF",
+            "pixels": 14
+          },
+          {
+            "text": "Keeps activation charges full during combat, up to your",
+            "pixels": 14
+          },
+          {
+            "text": "No ability cooldown (quick reset)OFF",
+            "pixels": 14
+          },
+          {
+            "text": "Cooldown reset: OFF",
+            "pixels": 14
+          },
+          {
+            "text": "Quickly clears cooldowns. Charge, blood and item costs ",
+            "pixels": 14
+          },
+          {
+            "text": "Auto parry while blockingOFF",
+            "pixels": 14
+          },
+          {
+            "text": "OFF. Enable to assist eligible blocks; disable to relea",
+            "pixels": 14
+          },
+          {
+            "text": "Hold right mouse to block. WASD controls are unchanged.",
+            "pixels": 14
+          },
+          {
+            "text": "Turn OFF before saving, loading or reloading scripts. S",
+            "pixels": 14
+          },
+          {
+            "text": "Start the compatible game runtime and load a save to us",
+            "pixels": 14
+          },
+          {
+            "text": "Coins: load a save first",
+            "pixels": 14
+          },
+          {
+            "text": "Coin amount",
+            "pixels": 14
+          },
+          {
+            "text": "Add coins",
+            "pixels": 14
+          },
+          {
+            "text": "Remove coins",
+            "pixels": 14
+          },
+          {
+            "text": "MaterialSelect…Items scan when menu opens",
+            "pixels": 14
+          },
+          {
+            "text": "Select…Items scan when menu opens",
+            "pixels": 14
+          },
+          {
+            "text": "Quantity",
+            "pixels": 14
+          },
+          {
+            "text": "Add material",
+            "pixels": 14
+          },
+          {
+            "text": "Choose a material, then add it",
+            "pixels": 14
+          },
+          {
+            "text": "Scanning loaded skill manuals...",
+            "pixels": 14
+          },
+          {
+            "text": "Adds the physical manual only. Read or use it normally ",
+            "pixels": 14
+          },
+          {
+            "text": "ManualSelect…Manuals scan when menu opens",
+            "pixels": 14
+          },
+          {
+            "text": "Select…Manuals scan when menu opens",
+            "pixels": 14
+          },
+          {
+            "text": "Give selected manual",
+            "pixels": 14
+          },
+          {
+            "text": "Choose a manual, then give it",
+            "pixels": 14
+          },
+          {
+            "text": "Scanning loaded key items...",
+            "pixels": 14
+          },
+          {
+            "text": "Quest state is not advanced. Wrong or duplicate keys ca",
+            "pixels": 14
+          },
+          {
+            "text": "Key itemSelect…Keys scan when menu opens",
+            "pixels": 14
+          },
+          {
+            "text": "Select…Keys scan when menu opens",
+            "pixels": 14
+          },
+          {
+            "text": "Give selected key",
+            "pixels": 14
+          },
+          {
+            "text": "Choose a key item, then give it",
+            "pixels": 14
+          },
+          {
+            "text": "Scanning safe item assets...",
+            "pixels": 14
+          },
+          {
+            "text": "CategorySelect…AllWeaponsClothingConsumablesMaterialsRe",
+            "pixels": 14
+          },
+          {
+            "text": "Select…AllWeaponsClothingConsumablesMaterialsRecipesJun",
+            "pixels": 14
+          },
+          {
+            "text": "ItemSelect…Items scan when menu opens",
+            "pixels": 14
+          },
+          {
+            "text": "Select…Items scan when menu opens",
+            "pixels": 14
+          },
+          {
+            "text": "Quantity",
+            "pixels": 14
+          },
+          {
+            "text": "Item level",
+            "pixels": 14
+          },
+          {
+            "text": "Give selected item",
+            "pixels": 14
+          },
+          {
+            "text": "Give all Weapons + Clothing (one each)",
+            "pixels": 14
+          },
+          {
+            "text": "Quest/readable items are excluded; manuals and keys hav",
+            "pixels": 14
+          }
+        ]
+      }
+    },
+    {
+      "name": "World",
+      "count": 3,
+      "controls": 7,
+      "viewport": [
+        1672,
+        941
+      ],
+      "client": [
+        1128,
+        583
+      ],
+      "scroll": [
+        1128,
+        680
+      ]
+    },
+    {
+      "name": "Teleport",
+      "count": 1,
+      "controls": 2,
+      "viewport": [
+        1672,
+        941
+      ],
+      "client": [
+        1391,
+        583
+      ],
+      "scroll": [
+        1391,
+        583
+      ]
+    },
+    {
+      "name": "Settings",
+      "count": 0,
+      "controls": 0,
+      "viewport": [
+        1672,
+        941
+      ],
+      "client": [
+        1391,
+        583
+      ],
+      "scroll": [
+        1391,
+        583
+      ]
+    }
+  ],
+  "expandedLayouts": [
+    {
+      "width": 1366,
+      "height": 768,
+      "category": "player",
+      "readability": {
+        "viewport": [
+          1366,
+          768
+        ],
+        "scale": 0.8161530563135466,
+        "cards": [
+          {
+            "id": "DWCombatControls",
+            "container": "player",
+            "left": 278.8423653450421,
+            "top": 537.8125015878173,
+            "bottom": 701.8281557667557,
+            "internalGap": 10.000036139616283
+          },
+          {
+            "id": "DWPlayer",
+            "container": "player",
+            "left": 278.8423653450421,
+            "top": 707.8281475369421,
+            "bottom": 981.3750046963611,
+            "internalGap": 10.000036139616283
+          },
+          {
+            "id": "DWSkills",
+            "container": "player",
+            "left": 278.8423653450421,
+            "top": 987.3749964665475,
+            "bottom": 1183.8750073799958,
+            "internalGap": 10.000036139616283
+          },
+          {
+            "id": "DWXP",
+            "container": "player",
+            "left": 278.8423653450421,
+            "top": 1189.8749991501822,
+            "bottom": 1344.624995661457,
+            "internalGap": 9.999961355657836
+          },
+          {
+            "id": "DWMutation",
+            "container": "player",
+            "left": 731.8423235697926,
+            "top": 537.8125015878173,
+            "bottom": 1015.9219030048481,
+            "internalGap": 10.000036139616283
+          },
+          {
+            "id": "DWTraitGrant",
+            "container": "player",
+            "left": 731.8423235697926,
+            "top": 1021.9218947750345,
+            "bottom": 1257.4375194339893,
+            "internalGap": 10.000036139616283
+          },
+          {
+            "id": "DWUltimateControls",
+            "container": "player",
+            "left": 731.8423235697926,
+            "top": 1263.4374364202172,
+            "bottom": 1533.343810482421,
+            "internalGap": 10.00011092357473
+          },
+          {
+            "id": "DWRespec",
+            "container": "player",
+            "left": 1184.8423378825119,
+            "top": 537.8125015878173,
+            "bottom": 1359.8749404680332,
+            "internalGap": 9.999961355657836
+          },
+          {
+            "id": "DWActivationControl",
+            "container": "combat",
+            "left": 278.8423653450421,
+            "top": 1642.781309162967,
+            "bottom": 1806.796888557947,
+            "internalGap": 9.999961355657836
+          },
+          {
+            "id": "DWCooldownControl",
+            "container": "combat",
+            "left": 731.8423235697926,
+            "top": 1642.781309162967,
+            "bottom": 1806.796888557947,
+            "internalGap": 9.999961355657836
+          },
+          {
+            "id": "DWParryAssist",
+            "container": "combat",
+            "left": 1184.8423378825119,
+            "top": 1642.781309162967,
+            "bottom": 1907.8593317319787,
+            "internalGap": 9.999961355657836
+          },
+          {
+            "id": "DWCurrency",
+            "container": "inventory",
+            "left": 278.8423653450421,
+            "top": 2333.9687546180885,
+            "bottom": 2488.718751129363,
+            "internalGap": 9.999961355657836
+          },
+          {
+            "id": "DWMaterials",
+            "container": "inventory",
+            "left": 278.8423653450421,
+            "top": 2494.718668115591,
+            "bottom": 2688.4842035884135,
+            "internalGap": 9.999811787740942
+          },
+          {
+            "id": "DWManuals",
+            "container": "inventory",
+            "left": 731.8423235697926,
+            "top": 2333.9687546180885,
+            "bottom": 2570.7655780531627,
+            "internalGap": 10.00011092357473
+          },
+          {
+            "id": "DWKeys",
+            "container": "inventory",
+            "left": 731.8423235697926,
+            "top": 2576.7656446073074,
+            "bottom": 2813.5624680423816,
+            "internalGap": 10.00011092357473
+          },
+          {
+            "id": "DWItems",
+            "container": "inventory",
+            "left": 1184.8423378825119,
+            "top": 2333.9687546180885,
+            "bottom": 2661.5311675565003,
+            "internalGap": 9.999811787740942
+          }
+        ],
+        "gaps": [
+          5.999991770186398,
+          5.999991770186398,
+          5.999991770186398,
+          5.999991770186398,
+          5.999916986227845,
+          5.999916986227618,
+          6.000066554144723
+        ],
+        "minimumFont": 13.999963066780055,
+        "fonts": [
+          {
+            "text": "God ModeKeeps health, stamina and blood energy full.Una",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Sprint No DrainUnavailable",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Refresh game lists & status",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Start the compatible game runtime and load a save to us",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Rapid stamina refillOFF",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Stamina refill: OFF",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Continuously refills stamina. Re-enable after respawnin",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Load a save to view player status",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "♡Health—",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "ϟ  Stamina—",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "❀Activation Charge—",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "✿  Level    —",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Refill stamina now",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Refresh status",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Available skill points: load a save first",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Skill point amount",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Add",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Remove",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Clear available points",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Add an XP reward using the game's reward sizes.",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Reward sizeSelect…Very smallSmallMediumLargeVery large",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Select…Very smallSmallMediumLargeVery large",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Add XP",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Corruption: load a save first",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Corruption level",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Set exact Corruption level",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "IMPORTANT: after setting a level, press +1 raw charge (",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Raw charge controls adjust progress within the current ",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Corruption amount (raw units)",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Increase corruption",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Reduce corruption charges",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "+1 raw charge",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "-1 raw charge",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "No corruption changes made this session",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Refresh corruption status",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Load a save to index the perk database.",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "PerkSelect…Perks scan after loading a save",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Select…Perks scan after loading a save",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Target rank",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Grant selected perk",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Refresh perk list",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Targeted Ultimate grants and Bulk Unlock are separate o",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Ultimate to grantSelect…Witchcraft — Aether CascadeWitc",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Select…Witchcraft — Aether CascadeWitchcraft — Entwined",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Grant selected Ultimate",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Unlock Everything / Max All Traits",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Light keeps Ultimates and earned protected abilities. M",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "All modes preserve trait unlock-access bookkeeping. Ful",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Before starting: create a separate manual save, leave c",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Refund policy: current costs of removed ranks only. Pro",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Ready to preview. No skills change until you confirm.",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Protected abilities: generate a preview to see your lis",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Preview Light Respec",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Preview Medium Respec",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Preview Full Respec",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Confirm respec (changes skills)",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Cancel preview",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "If verification fails: do NOT save or retry. Reload you",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Successful respecs may be repeated. An unverified mutat",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Start the compatible game runtime and load a save to us",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Quick fill activation chargeOFF",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Activation charge refill: OFF",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Keeps activation charges full during combat, up to your",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "No ability cooldown (quick reset)OFF",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Cooldown reset: OFF",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Quickly clears cooldowns. Charge, blood and item costs ",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Auto parry while blockingOFF",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "OFF. Enable to assist eligible blocks; disable to relea",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Hold right mouse to block. WASD controls are unchanged.",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Turn OFF before saving, loading or reloading scripts. S",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Start the compatible game runtime and load a save to us",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Coins: load a save first",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Coin amount",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Add coins",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Remove coins",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "MaterialSelect…Items scan when menu opens",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Select…Items scan when menu opens",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Quantity",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Add material",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Choose a material, then add it",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Scanning loaded skill manuals...",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Adds the physical manual only. Read or use it normally ",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "ManualSelect…Manuals scan when menu opens",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Select…Manuals scan when menu opens",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Give selected manual",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Choose a manual, then give it",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Scanning loaded key items...",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Quest state is not advanced. Wrong or duplicate keys ca",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Key itemSelect…Keys scan when menu opens",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Select…Keys scan when menu opens",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Give selected key",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Choose a key item, then give it",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Scanning safe item assets...",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "CategorySelect…AllWeaponsClothingConsumablesMaterialsRe",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Select…AllWeaponsClothingConsumablesMaterialsRecipesJun",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "ItemSelect…Items scan when menu opens",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Select…Items scan when menu opens",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Quantity",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Item level",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Give selected item",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Give all Weapons + Clothing (one each)",
+            "pixels": 13.999963066780055
+          },
+          {
+            "text": "Quest/readable items are excluded; manuals and keys hav",
+            "pixels": 13.999963066780055
+          }
+        ]
+      }
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "viewport": [
+        1366,
+        768
+      ],
+      "client": [
+        1381,
+        583
+      ],
+      "scroll": [
+        1381,
+        2557
+      ],
+      "sectionId": "DWCombatControls",
+      "clipped": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "viewport": [
+        1366,
+        768
+      ],
+      "client": [
+        1381,
+        583
+      ],
+      "scroll": [
+        1381,
+        2557
+      ],
+      "sectionId": "DWPlayer",
+      "clipped": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "viewport": [
+        1366,
+        768
+      ],
+      "client": [
+        1381,
+        583
+      ],
+      "scroll": [
+        1381,
+        2557
+      ],
+      "sectionId": "DWSkills",
+      "clipped": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "viewport": [
+        1366,
+        768
+      ],
+      "client": [
+        1381,
+        583
+      ],
+      "scroll": [
+        1381,
+        2557
+      ],
+      "sectionId": "DWXP",
+      "clipped": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "viewport": [
+        1366,
+        768
+      ],
+      "client": [
+        1381,
+        583
+      ],
+      "scroll": [
+        1381,
+        2557
+      ],
+      "sectionId": "DWMutation",
+      "clipped": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "viewport": [
+        1366,
+        768
+      ],
+      "client": [
+        1381,
+        583
+      ],
+      "scroll": [
+        1381,
+        2557
+      ],
+      "sectionId": "DWTraitGrant",
+      "clipped": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "viewport": [
+        1366,
+        768
+      ],
+      "client": [
+        1381,
+        583
+      ],
+      "scroll": [
+        1381,
+        2557
+      ],
+      "sectionId": "DWUltimateControls",
+      "clipped": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "viewport": [
+        1366,
+        768
+      ],
+      "client": [
+        1381,
+        583
+      ],
+      "scroll": [
+        1381,
+        2557
+      ],
+      "sectionId": "DWRespec",
+      "clipped": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "viewport": [
+        1366,
+        768
+      ],
+      "client": [
+        1381,
+        583
+      ],
+      "scroll": [
+        1381,
+        2557
+      ],
+      "sectionId": "DWActivationControl",
+      "clipped": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "viewport": [
+        1366,
+        768
+      ],
+      "client": [
+        1381,
+        583
+      ],
+      "scroll": [
+        1381,
+        2557
+      ],
+      "sectionId": "DWCooldownControl",
+      "clipped": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "viewport": [
+        1366,
+        768
+      ],
+      "client": [
+        1381,
+        583
+      ],
+      "scroll": [
+        1381,
+        2557
+      ],
+      "sectionId": "DWParryAssist",
+      "clipped": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "viewport": [
+        1366,
+        768
+      ],
+      "client": [
+        1381,
+        583
+      ],
+      "scroll": [
+        1381,
+        2557
+      ],
+      "sectionId": "DWCurrency",
+      "clipped": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "viewport": [
+        1366,
+        768
+      ],
+      "client": [
+        1381,
+        583
+      ],
+      "scroll": [
+        1381,
+        2557
+      ],
+      "sectionId": "DWMaterials",
+      "clipped": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "viewport": [
+        1366,
+        768
+      ],
+      "client": [
+        1381,
+        583
+      ],
+      "scroll": [
+        1381,
+        2557
+      ],
+      "sectionId": "DWManuals",
+      "clipped": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "viewport": [
+        1366,
+        768
+      ],
+      "client": [
+        1381,
+        583
+      ],
+      "scroll": [
+        1381,
+        2557
+      ],
+      "sectionId": "DWKeys",
+      "clipped": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "viewport": [
+        1366,
+        768
+      ],
+      "client": [
+        1381,
+        583
+      ],
+      "scroll": [
+        1381,
+        2557
+      ],
+      "sectionId": "DWItems",
+      "clipped": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "viewport": [
+        1366,
+        768
+      ],
+      "client": [
+        1128,
+        583
+      ],
+      "scroll": [
+        1128,
+        884
+      ],
+      "sectionId": "DWInfamyControl",
+      "clipped": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "viewport": [
+        1366,
+        768
+      ],
+      "client": [
+        1128,
+        583
+      ],
+      "scroll": [
+        1128,
+        884
+      ],
+      "sectionId": "DWTimeControl",
+      "clipped": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "viewport": [
+        1366,
+        768
+      ],
+      "client": [
+        1128,
+        583
+      ],
+      "scroll": [
+        1128,
+        884
+      ],
+      "sectionId": "DWStoryTimer",
+      "clipped": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "viewport": [
+        1366,
+        768
+      ],
+      "client": [
+        1391,
+        583
+      ],
+      "scroll": [
+        1391,
+        583
+      ],
+      "sectionId": "DWShrines",
+      "clipped": []
+    },
+    {
+      "width": 1100,
+      "height": 620,
+      "category": "player",
+      "readability": {
+        "viewport": [
+          1100,
+          620
+        ],
+        "scale": 0.6578947368421053,
+        "cards": [
+          {
+            "id": "DWCombatControls",
+            "container": "player",
+            "left": 277.99998901367184,
+            "top": -1503.462392578125,
+            "bottom": -1346.415517578125,
+            "internalGap": 9.9999560546875
+          },
+          {
+            "id": "DWPlayer",
+            "container": "player",
+            "left": 277.99998901367184,
+            "top": -1340.41548828125,
+            "bottom": -1014.8374072265624,
+            "internalGap": 9.9999560546875
+          },
+          {
+            "id": "DWSkills",
+            "container": "player",
+            "left": 277.99998901367184,
+            "top": -1008.8373779296875,
+            "bottom": -777.6029248046874,
+            "internalGap": 10.000048828125
+          },
+          {
+            "id": "DWXP",
+            "container": "player",
+            "left": 277.99998901367184,
+            "top": -771.6029418945312,
+            "bottom": -590.9622973632812,
+            "internalGap": 10.000002441406249
+          },
+          {
+            "id": "DWMutation",
+            "container": "player",
+            "left": 277.99998901367184,
+            "top": -584.9623144531249,
+            "bottom": -43.852937011718744,
+            "internalGap": 9.999996643066405
+          },
+          {
+            "id": "DWTraitGrant",
+            "container": "player",
+            "left": 957.4999902343749,
+            "top": -1503.462392578125,
+            "bottom": -1227.4467578125,
+            "internalGap": 9.9999560546875
+          },
+          {
+            "id": "DWUltimateControls",
+            "container": "player",
+            "left": 957.4999902343749,
+            "top": -1221.446728515625,
+            "bottom": -960.4310742187499,
+            "internalGap": 10.000048828125
+          },
+          {
+            "id": "DWRespec",
+            "container": "player",
+            "left": 957.4999902343749,
+            "top": -954.4311376953125,
+            "bottom": -74.915478515625,
+            "internalGap": 9.9999560546875
+          },
+          {
+            "id": "DWActivationControl",
+            "container": "combat",
+            "left": 277.99998901367184,
+            "top": 78.17831451416015,
+            "bottom": 265.0064370727539,
+            "internalGap": 9.999996643066405
+          },
+          {
+            "id": "DWCooldownControl",
+            "container": "combat",
+            "left": 277.99998901367184,
+            "top": 271.00642578124996,
+            "bottom": 428.05330078124996,
+            "internalGap": 10.000002441406249
+          },
+          {
+            "id": "DWParryAssist",
+            "container": "combat",
+            "left": 957.4999902343749,
+            "top": 78.17831451416015,
+            "bottom": 329.5689334106445,
+            "internalGap": 9.999996643066405
+          },
+          {
+            "id": "DWCurrency",
+            "container": "inventory",
+            "left": 277.99998901367184,
+            "top": 991.4595214843749,
+            "bottom": 1172.1000732421874,
+            "internalGap": 9.9999560546875
+          },
+          {
+            "id": "DWMaterials",
+            "container": "inventory",
+            "left": 277.99998901367184,
+            "top": 1178.1001025390624,
+            "bottom": 1403.5220214843748,
+            "internalGap": 10.000048828125
+          },
+          {
+            "id": "DWManuals",
+            "container": "inventory",
+            "left": 277.99998901367184,
+            "top": 1409.5219580078124,
+            "bottom": 1689.5063476562498,
+            "internalGap": 10.000048828125
+          },
+          {
+            "id": "DWKeys",
+            "container": "inventory",
+            "left": 957.4999902343749,
+            "top": 991.4595214843749,
+            "bottom": 1271.4439111328124,
+            "internalGap": 10.000048828125
+          },
+          {
+            "id": "DWItems",
+            "container": "inventory",
+            "left": 957.4999902343749,
+            "top": 1277.44384765625,
+            "bottom": 1662.80318359375,
+            "internalGap": 9.999863281249999
+          }
+        ],
+        "gaps": [
+          6.000029296875027,
+          6.000029296874914,
+          5.999982910156177,
+          5.999982910156291,
+          6.000029296875027,
+          5.999936523437441,
+          5.999988708496062,
+          6.000029296875027,
+          5.999936523437555,
+          5.999936523437555
+        ],
+        "minimumFont": 14.000000000000002,
+        "fonts": [
+          {
+            "text": "God ModeKeeps health, stamina and blood energy full.Una",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Sprint No DrainUnavailable",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Refresh game lists & status",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Start the compatible game runtime and load a save to us",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Rapid stamina refillOFF",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Stamina refill: OFF",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Continuously refills stamina. Re-enable after respawnin",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Load a save to view player status",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "♡Health—",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "ϟ  Stamina—",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "❀Activation Charge—",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "✿  Level    —",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Refill stamina now",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Refresh status",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Available skill points: load a save first",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Skill point amount",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Add",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Remove",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Clear available points",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Add an XP reward using the game's reward sizes.",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Reward sizeSelect…Very smallSmallMediumLargeVery large",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Select…Very smallSmallMediumLargeVery large",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Add XP",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Corruption: load a save first",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Corruption level",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Set exact Corruption level",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "IMPORTANT: after setting a level, press +1 raw charge (",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Raw charge controls adjust progress within the current ",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Corruption amount (raw units)",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Increase corruption",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Reduce corruption charges",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "+1 raw charge",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "-1 raw charge",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "No corruption changes made this session",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Refresh corruption status",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Load a save to index the perk database.",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "PerkSelect…Perks scan after loading a save",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Select…Perks scan after loading a save",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Target rank",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Grant selected perk",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Refresh perk list",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Targeted Ultimate grants and Bulk Unlock are separate o",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Ultimate to grantSelect…Witchcraft — Aether CascadeWitc",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Select…Witchcraft — Aether CascadeWitchcraft — Entwined",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Grant selected Ultimate",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Unlock Everything / Max All Traits",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Light keeps Ultimates and earned protected abilities. M",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "All modes preserve trait unlock-access bookkeeping. Ful",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Before starting: create a separate manual save, leave c",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Refund policy: current costs of removed ranks only. Pro",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Ready to preview. No skills change until you confirm.",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Protected abilities: generate a preview to see your lis",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Preview Light Respec",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Preview Medium Respec",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Preview Full Respec",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Confirm respec (changes skills)",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Cancel preview",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "If verification fails: do NOT save or retry. Reload you",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Successful respecs may be repeated. An unverified mutat",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Start the compatible game runtime and load a save to us",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Quick fill activation chargeOFF",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Activation charge refill: OFF",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Keeps activation charges full during combat, up to your",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "No ability cooldown (quick reset)OFF",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Cooldown reset: OFF",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Quickly clears cooldowns. Charge, blood and item costs ",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Auto parry while blockingOFF",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "OFF. Enable to assist eligible blocks; disable to relea",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Hold right mouse to block. WASD controls are unchanged.",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Turn OFF before saving, loading or reloading scripts. S",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Start the compatible game runtime and load a save to us",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Coins: load a save first",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Coin amount",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Add coins",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Remove coins",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "MaterialSelect…Items scan when menu opens",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Select…Items scan when menu opens",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Quantity",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Add material",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Choose a material, then add it",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Scanning loaded skill manuals...",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Adds the physical manual only. Read or use it normally ",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "ManualSelect…Manuals scan when menu opens",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Select…Manuals scan when menu opens",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Give selected manual",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Choose a manual, then give it",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Scanning loaded key items...",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Quest state is not advanced. Wrong or duplicate keys ca",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Key itemSelect…Keys scan when menu opens",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Select…Keys scan when menu opens",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Give selected key",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Choose a key item, then give it",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Scanning safe item assets...",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "CategorySelect…AllWeaponsClothingConsumablesMaterialsRe",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Select…AllWeaponsClothingConsumablesMaterialsRecipesJun",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "ItemSelect…Items scan when menu opens",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Select…Items scan when menu opens",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Quantity",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Item level",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Give selected item",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Give all Weapons + Clothing (one each)",
+            "pixels": 14.000000000000002
+          },
+          {
+            "text": "Quest/readable items are excluded; manuals and keys hav",
+            "pixels": 14.000000000000002
+          }
+        ]
+      }
+    },
+    {
+      "width": 1100,
+      "height": 620,
+      "viewport": [
+        1100,
+        620
+      ],
+      "client": [
+        1381,
+        583
+      ],
+      "scroll": [
+        1381,
+        3449
+      ],
+      "sectionId": "DWCombatControls",
+      "clipped": []
+    },
+    {
+      "width": 1100,
+      "height": 620,
+      "viewport": [
+        1100,
+        620
+      ],
+      "client": [
+        1381,
+        583
+      ],
+      "scroll": [
+        1381,
+        3449
+      ],
+      "sectionId": "DWPlayer",
+      "clipped": []
+    },
+    {
+      "width": 1100,
+      "height": 620,
+      "viewport": [
+        1100,
+        620
+      ],
+      "client": [
+        1381,
+        583
+      ],
+      "scroll": [
+        1381,
+        3449
+      ],
+      "sectionId": "DWSkills",
+      "clipped": []
+    },
+    {
+      "width": 1100,
+      "height": 620,
+      "viewport": [
+        1100,
+        620
+      ],
+      "client": [
+        1381,
+        583
+      ],
+      "scroll": [
+        1381,
+        3449
+      ],
+      "sectionId": "DWXP",
+      "clipped": []
+    },
+    {
+      "width": 1100,
+      "height": 620,
+      "viewport": [
+        1100,
+        620
+      ],
+      "client": [
+        1381,
+        583
+      ],
+      "scroll": [
+        1381,
+        3449
+      ],
+      "sectionId": "DWMutation",
+      "clipped": []
+    },
+    {
+      "width": 1100,
+      "height": 620,
+      "viewport": [
+        1100,
+        620
+      ],
+      "client": [
+        1381,
+        583
+      ],
+      "scroll": [
+        1381,
+        3449
+      ],
+      "sectionId": "DWTraitGrant",
+      "clipped": []
+    },
+    {
+      "width": 1100,
+      "height": 620,
+      "viewport": [
+        1100,
+        620
+      ],
+      "client": [
+        1381,
+        583
+      ],
+      "scroll": [
+        1381,
+        3449
+      ],
+      "sectionId": "DWUltimateControls",
+      "clipped": []
+    },
+    {
+      "width": 1100,
+      "height": 620,
+      "viewport": [
+        1100,
+        620
+      ],
+      "client": [
+        1381,
+        583
+      ],
+      "scroll": [
+        1381,
+        3449
+      ],
+      "sectionId": "DWRespec",
+      "clipped": []
+    },
+    {
+      "width": 1100,
+      "height": 620,
+      "viewport": [
+        1100,
+        620
+      ],
+      "client": [
+        1381,
+        583
+      ],
+      "scroll": [
+        1381,
+        3449
+      ],
+      "sectionId": "DWActivationControl",
+      "clipped": []
+    },
+    {
+      "width": 1100,
+      "height": 620,
+      "viewport": [
+        1100,
+        620
+      ],
+      "client": [
+        1381,
+        583
+      ],
+      "scroll": [
+        1381,
+        3449
+      ],
+      "sectionId": "DWCooldownControl",
+      "clipped": []
+    },
+    {
+      "width": 1100,
+      "height": 620,
+      "viewport": [
+        1100,
+        620
+      ],
+      "client": [
+        1381,
+        583
+      ],
+      "scroll": [
+        1381,
+        3449
+      ],
+      "sectionId": "DWParryAssist",
+      "clipped": []
+    },
+    {
+      "width": 1100,
+      "height": 620,
+      "viewport": [
+        1100,
+        620
+      ],
+      "client": [
+        1381,
+        583
+      ],
+      "scroll": [
+        1381,
+        3449
+      ],
+      "sectionId": "DWCurrency",
+      "clipped": []
+    },
+    {
+      "width": 1100,
+      "height": 620,
+      "viewport": [
+        1100,
+        620
+      ],
+      "client": [
+        1381,
+        583
+      ],
+      "scroll": [
+        1381,
+        3449
+      ],
+      "sectionId": "DWMaterials",
+      "clipped": []
+    },
+    {
+      "width": 1100,
+      "height": 620,
+      "viewport": [
+        1100,
+        620
+      ],
+      "client": [
+        1381,
+        583
+      ],
+      "scroll": [
+        1381,
+        3449
+      ],
+      "sectionId": "DWManuals",
+      "clipped": []
+    },
+    {
+      "width": 1100,
+      "height": 620,
+      "viewport": [
+        1100,
+        620
+      ],
+      "client": [
+        1381,
+        583
+      ],
+      "scroll": [
+        1381,
+        3449
+      ],
+      "sectionId": "DWKeys",
+      "clipped": []
+    },
+    {
+      "width": 1100,
+      "height": 620,
+      "viewport": [
+        1100,
+        620
+      ],
+      "client": [
+        1381,
+        583
+      ],
+      "scroll": [
+        1381,
+        3449
+      ],
+      "sectionId": "DWItems",
+      "clipped": []
+    },
+    {
+      "width": 1100,
+      "height": 620,
+      "viewport": [
+        1100,
+        620
+      ],
+      "client": [
+        1128,
+        583
+      ],
+      "scroll": [
+        1128,
+        1028
+      ],
+      "sectionId": "DWInfamyControl",
+      "clipped": []
+    },
+    {
+      "width": 1100,
+      "height": 620,
+      "viewport": [
+        1100,
+        620
+      ],
+      "client": [
+        1128,
+        583
+      ],
+      "scroll": [
+        1128,
+        1028
+      ],
+      "sectionId": "DWTimeControl",
+      "clipped": []
+    },
+    {
+      "width": 1100,
+      "height": 620,
+      "viewport": [
+        1100,
+        620
+      ],
+      "client": [
+        1128,
+        583
+      ],
+      "scroll": [
+        1128,
+        1028
+      ],
+      "sectionId": "DWStoryTimer",
+      "clipped": []
+    },
+    {
+      "width": 1100,
+      "height": 620,
+      "viewport": [
+        1100,
+        620
+      ],
+      "client": [
+        1391,
+        583
+      ],
+      "scroll": [
+        1391,
+        583
+      ],
+      "sectionId": "DWShrines",
+      "clipped": []
+    }
+  ],
+  "playerCoreVisible": true,
+  "liveConnection": false
+}

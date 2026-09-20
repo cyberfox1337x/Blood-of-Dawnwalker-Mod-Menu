@@ -1,0 +1,1287 @@
+{
+  "cyberfox1337x": "function(dawnwalker_feature_contract_matrix)",
+  "schemaVersion": 1,
+  "gameBuildContract": "official-build.json",
+  "policy": {
+    "mode": "offline-single-player-only",
+    "defaultGameFeatureStatus": "pending-reflection",
+    "allowedStatuses": [
+      "pending-reflection",
+      "pilot-static-only",
+      "pilot-live-verified",
+      "unsupported-concept",
+      "blocked-missing-asset-pair",
+      "local-only"
+    ],
+    "liveGate": {
+      "rule": "A pending-reflection feature may become live only when every requiredEvidence field is populated from the pinned build's runtime reflection output and its offline test passes.",
+      "requiredEvidence": [
+        "exactTargetObjectOrClass",
+        "exactSetterFunctionPropertyOrHook",
+        "readbackOrObservablePostcondition",
+        "disableOrRollbackPath",
+        "offlineTestCase"
+      ],
+      "forbiddenShortcuts": [
+        "guessing offsets from names or strings",
+        "writing encrypted IoStore archives",
+        "patching the signed executable",
+        "bypassing DRM, licensing, anti-cheat, or online protections",
+        "claiming a UI state change is a game effect"
+      ]
+    },
+    "blankRuntimeContract": {
+      "exactTargetObjectOrClass": null,
+      "exactSetterFunctionPropertyOrHook": null,
+      "readbackOrObservablePostcondition": null,
+      "disableOrRollbackPath": null,
+      "offlineTestCase": null
+    }
+  },
+  "bridgePilot": {
+    "version": "0.3.21-pilot",
+    "phase": "pilot",
+    "source": "integration/uue4ss/Mods/DawnwalkerModBridge/Scripts/main.lua",
+    "capabilityCount": 19,
+    "verification": {
+      "staticContractReviewed": true,
+      "oneHookTransportSmokeObserved": true,
+      "smokedBridgeVersion": "0.3.21-pilot",
+      "currentSourceLoaded": true,
+      "playablePawnReached": true,
+      "liveCapabilityTestsRun": true,
+      "liveRollbackTestsRun": true,
+      "productionVerified": false,
+      "candidateUnlimitedWeightLiveCycleRun": false,
+      "questJournalLiveReadAttempted": true,
+      "questJournalLiveReadRun": true,
+      "addGoldPersistenceVerified": true,
+      "traitPointsPersistenceVerified": true,
+      "addGoldGlobalHotkeyStaticReviewed": true,
+      "addGoldGlobalHotkeyLiveRun": true,
+      "difficultyTwoAxisStaticReviewed": true,
+      "difficultyTwoAxisLiveRun": true,
+      "teardownFailureStateRetentionStaticReviewed": true,
+      "teardownFailureRetryLiveRun": false,
+      "releaseDisposition": "Keep unverified game-facing controls release-locked. The promoted 0.3.19-pilot source was probed live on boot 1788472141-542542: Add Level completed a bounded one-way level-1-to-2 cycle with an independent player-info readback of level 2 (blood_max 300 -> 342 and trait_points 22 -> 23 confirmed a real gameplay postcondition), and the closed-game 89-file pretest save tree was restored with zero differences; that evidence is pinned at qa/pilot-evidence/dawnwalker-add-level-live-20260903T215316Z.json. The same session proved the 0.3.19 FName crash fix holds (a raw request string was rejected without an access violation) but exposed the roster-unwrap bug: live GetAllTraits() entries arrive wrapped on the table and numeric container shapes, so resolve_trait_id rejected every trait id with 'a trait roster entry was no longer valid' and Unblock Trait could not function. Version 0.3.20-pilot unwrapped every container entry before validation on all three read shapes; after its promotion and smoke launch it was probed live, and that session proved roster resolution works end to end (112 real traits enumerated; unknown ids rejected cleanly) and that UnblockTraitToLevel really commits to the requested level for active-tree traits -- but exactly one game beat late, so the same-dispatch readback stayed stale and the 0.3.20 handler reported failure on calls that actually succeeded. Version 0.3.21-pilot fixes that by deferring the verdict: a commit-pending unblock is re-read on later bridge ticks (bounded at 40, ~6 s at the 150 ms poll cadence) and only answered once the committed level is observable. The 0.3.21 promotion and live probe then passed end to end on boot 1788474671-718541 (Add Level 1 -> 2 with exact setter and read-only query readbacks, Unblock Trait Human_ToughSkin|1 committed to level 1 through the deferred later-tick verification and confirmed by the repeat dispatch, and the closed-game 91-file pretest save tree restored with zero differences; evidence qa/pilot-evidence/dawnwalker-add-level-unblock-trait-live-20260903T223408Z.json). addLevelLiveRun and unblockTraitLiveRun are both true. Historical 0.3.16 evidence (read-only and safe-reversible suites, Trait Points persistence) remains pinned at qa/pilot-evidence/dawnwalker-live-pilot-qa-20260903T082032Z.json, qa/pilot-evidence/dawnwalker-live-pilot-qa-20260903T082038Z.json, and qa/pilot-evidence/dawnwalker-trait-points-live-persistence-20260903T084603Z.json. This remains pilot evidence, not all-feature production proof.",
+      "addItemLiveRun": true,
+      "addLevelLiveRun": true,
+      "unblockTraitLiveRun": true
+    },
+    "capabilities": [
+      {
+        "id": "player:infinite-health",
+        "label": "Infinite Health",
+        "status": "pilot-live-verified",
+        "exactTargetObjectOrClass": "ADawnwalkerPlayerCharacter.CombatComponent -> UCombatComponentBase",
+        "exactSetterFunctionPropertyOrHook": "SetHealthPercent(1.0), LockHealth(), UnlockHealth()",
+        "readbackOrObservablePostcondition": "GetHealthPercentage()",
+        "staticEvidence": [
+          "CXXHeaderDump/DogwoodCombat.hpp:1188,1196,1225,1247",
+          "main.lua:342-355"
+        ],
+        "liveControlCycleEvidence": [
+          "qa/pilot-evidence/dawnwalker-resource-lock-settled-qa-20260903T030008Z.json (SHA256 8B1CFD5E3E3EA637844C0E0EB032D328E3D0C77B88F4E071289662068A8D3C72)"
+        ],
+        "liveControlCycleVerified": true,
+        "gameplayEnduranceVerified": false,
+        "disableOrRollbackPath": "The bridge snapshots the first owner's percentage, unlocks health, and restores that percentage when the final health-lock owner is disabled.",
+        "rollbackLimit": "A live enable, owner-state, readback, disable, and exact-baseline restoration cycle passed. Because the baseline was already 100 percent, sustained protection under controlled damage still requires a disposable-save gameplay test before the full Infinite Health promise is verified.",
+        "offlineTestCase": "BridgePilotPromotion.Tests.ps1 verifies the exact promoted capability contract, and qa/DawnwalkerPilotEvidence.test.mjs pins the control-cycle artifact; gameplay endurance proof remains intentionally open."
+      },
+      {
+        "id": "player:unlimited-stamina",
+        "label": "Unlimited Stamina",
+        "status": "pilot-live-verified",
+        "exactTargetObjectOrClass": "ADawnwalkerPlayerCharacter.CombatComponent -> UCombatComponentBase",
+        "exactSetterFunctionPropertyOrHook": "SetStaminaPercent(1.0), LockStamina(), UnlockStamina()",
+        "readbackOrObservablePostcondition": "GetStaminaPercentage()",
+        "staticEvidence": [
+          "CXXHeaderDump/DogwoodCombat.hpp:1187,1193,1224,1242",
+          "main.lua:358-371"
+        ],
+        "liveControlCycleEvidence": [
+          "qa/pilot-evidence/dawnwalker-resource-lock-settled-qa-20260903T030008Z.json (SHA256 8B1CFD5E3E3EA637844C0E0EB032D328E3D0C77B88F4E071289662068A8D3C72)"
+        ],
+        "liveControlCycleVerified": true,
+        "gameplayEnduranceVerified": false,
+        "disableOrRollbackPath": "The bridge snapshots the first owner's percentage, unlocks stamina, and restores that percentage when the final stamina-lock owner is disabled.",
+        "rollbackLimit": "A live enable, owner-state, readback, disable, and exact-baseline restoration cycle passed. Normal out-of-combat sprint costs zero stamina on the pinned build, so sustained protection still requires a calibrated combat dodge, combat sprint, attack, or block consumption test before the full Unlimited Stamina promise is verified.",
+        "offlineTestCase": "BridgePilotPromotion.Tests.ps1 verifies the exact promoted capability contract, qa/DawnwalkerPilotEvidence.test.mjs pins the control-cycle artifact, and GAMEPLAY-CONTRACT-RESEARCH.md defines the required baseline-enabled-disabled combat endurance proof."
+      },
+      {
+        "id": "player:sprint-no-drain",
+        "label": "Sprint No Drain",
+        "status": "pilot-static-only",
+        "exactTargetObjectOrClass": "ADawnwalkerPlayerCharacter.CharacterAttributeSet -> UPlayerAttributeSet.SprintStaminaCostMultiplier (FloatProperty)",
+        "exactSetterFunctionPropertyOrHook": "DawnwalkerSprintStaminaController.lua: apply(true) writes 0, apply(false)/restore writes the captured original; no combat-component lock.",
+        "readbackOrObservablePostcondition": "SprintStaminaCostMultiplier readback equals 0 while active and equals the captured original after restore; a refused write fails closed.",
+        "staticEvidence": [
+          "probes/DawnwalkerRequestedFeaturesReadOnlyProbe.lua (read-only discovery of SprintStaminaCostMultiplier)",
+          "probes/DawnwalkerSprintStaminaController.lua"
+        ],
+        "liveControlCycleEvidence": [],
+        "liveControlCycleVerified": false,
+        "gameplayEnduranceVerified": false,
+        "disableOrRollbackPath": "The controller snapshots the player's original SprintStaminaCostMultiplier on first enable, writes 0, and restores the captured value on disable or restore; a refused restore write fails closed instead of reporting success.",
+        "rollbackLimit": "The controller and its 17 offline fixture groups pass, but no live in-game enable, owner-state, readback, disable, and exact-baseline-restoration cycle has been run on the pinned build. The menu toggle stays locked until that cycle passes and an acceptance record exists.",
+        "offlineTestCase": "analysis/dawnwalker-uue4ss/tests/DawnwalkerSprintStaminaController.Tests.lua (17 groups) against probes/DawnwalkerSprintStaminaController.lua."
+      },
+      {
+        "id": "player:blood-energy",
+        "label": "Blood Energy",
+        "status": "pilot-static-only",
+        "exactTargetObjectOrClass": "ADawnwalkerPlayerCharacter.BloodBar -> UBloodBarComponent",
+        "exactSetterFunctionPropertyOrHook": "SetBloodPercent(float)",
+        "readbackOrObservablePostcondition": "GetBlood() / GetBloodBarLength()",
+        "staticEvidence": [
+          "CXXHeaderDump/Dawnwalker.hpp:1478",
+          "CXXHeaderDump/DogwoodStats.hpp:201,215,230-231",
+          "main.lua:374-384"
+        ],
+        "disableOrRollbackPath": "A caller can explicitly set the previously read percentage.",
+        "rollbackLimit": "This one-shot setter does not snapshot the previous value automatically and may affect save-backed state; no live test or save restore has been performed.",
+        "offlineTestCase": null
+      },
+      {
+        "id": "player:god-mode",
+        "label": "God Mode",
+        "status": "pilot-static-only",
+        "exactTargetObjectOrClass": "ADawnwalkerPlayerCharacter CombatComponent and BloodBar",
+        "exactSetterFunctionPropertyOrHook": "Shared health, stamina, and blood setters plus Lock/Unlock methods",
+        "readbackOrObservablePostcondition": "Health, stamina, and blood must each read at least 99.9 percent when enabled.",
+        "staticEvidence": [
+          "CXXHeaderDump/DogwoodCombat.hpp:1187-1188,1193,1196,1224-1225,1242,1247",
+          "CXXHeaderDump/DogwoodStats.hpp:214-215,219,230-231",
+          "main.lua:432-465"
+        ],
+        "liveControlCycleEvidence": [
+          "qa/pilot-evidence/dawnwalker-resource-lock-settled-qa-20260903T030008Z.json (SHA256 8B1CFD5E3E3EA637844C0E0EB032D328E3D0C77B88F4E071289662068A8D3C72)"
+        ],
+        "liveControlCycleVerified": true,
+        "gameplayEnduranceVerified": false,
+        "disableOrRollbackPath": "Owner-aware resource locks restore each captured baseline only after the final owner releases that resource.",
+        "rollbackLimit": "A live composite enable, owner-state, all-resource readback, disable, and exact-baseline restoration cycle passed. Sustained protection under controlled combat damage and resource consumption still requires a disposable-save gameplay test before the full God Mode promise is verified.",
+        "offlineTestCase": "BridgePilotPromotion.Tests.ps1 verifies the exact promoted capability contract, and qa/DawnwalkerPilotEvidence.test.mjs pins the control-cycle artifact; gameplay endurance proof remains intentionally open."
+      },
+      {
+        "id": "player:player-info",
+        "label": "Player Info readback",
+        "status": "pilot-live-verified",
+        "exactTargetObjectOrClass": "ADawnwalkerPlayerCharacter, UCombatComponentBase, UBloodBarComponent, UCharacterDevelopmentSubsystem",
+        "exactSetterFunctionPropertyOrHook": "Read-only: IsAlive(), health/stamina/blood getters, GetCurrentLevel(), GetTraitPointAmount()",
+        "readbackOrObservablePostcondition": "Semicolon-delimited alive, health_percent, stamina_percent, blood, blood_max, and optional level/trait_points values.",
+        "staticEvidence": [
+          "CXXHeaderDump/DogwoodCharacterDevelopment.hpp:264,291",
+          "main.lua:402-429"
+        ],
+        "liveEvidence": [
+          "qa/pilot-evidence/dawnwalker-live-pilot-qa-20260903T024853Z.json (SHA256 84171415ED8E153ECC653B2907A2D62E60E3E8AB18F8C6F081D7706C93444D2B)"
+        ],
+        "disableOrRollbackPath": "None required because the handler is read-only.",
+        "rollbackLimit": "Read-only Player Info was exercised on a live playable pawn in the pinned build; the evidence remains pilot-only and is not production proof.",
+        "offlineTestCase": "scripts/Run-DawnwalkerLivePilotQa.test.mjs validates read-only Player Info parsing, and qa/DawnwalkerPilotEvidence.test.mjs pins the immutable live artifact."
+      },
+      {
+        "id": "player:trait-points",
+        "label": "Trait Points",
+        "status": "pilot-live-verified",
+        "exactTargetObjectOrClass": "UCharacterDevelopmentSubsystem (game-instance subsystem)",
+        "exactSetterFunctionPropertyOrHook": "SetTraitPointsAmount(int32)",
+        "readbackOrObservablePostcondition": "GetTraitPointAmount() must equal the requested whole number.",
+        "staticEvidence": [
+          "CXXHeaderDump/DogwoodCharacterDevelopment.hpp:152,225,264",
+          "UE4SS_ObjectDump.txt:183941",
+          "main.lua:468-480"
+        ],
+        "liveControlCycleEvidence": [
+          "qa/pilot-evidence/dawnwalker-trait-points-live-persistence-20260903T084603Z.json (SHA256 9332B897BBE1C60DBF2B2423EA8AE25C8C52F681E80F4AA0E499158CFE54F373): Computer-use UI mutation 0 -> 1, exact Player Info readback, normal-save reload at 1, UI restoration 1 -> 0, second normal-save reload at 0, and exact 76-file pre-test save-tree restoration"
+        ],
+        "liveControlCycleVerified": true,
+        "liveVerified": true,
+        "persistenceVerified": true,
+        "disableOrRollbackPath": "Record the exact original value, restore it through SetTraitPointsAmount on the same live subsystem, require GetTraitPointAmount to equal the baseline, save normally, reload that exact save, and retain a closed-game full save-tree backup for recovery.",
+        "rollbackLimit": "Current 0.3.16 passed only the bounded 0 -> 1 -> 0 persistence cycle. The handler retains a baseline only for a failed or mismatched mutation, so every successful mutation remains potentially save-backed until the operator explicitly restores it. Extreme values and downstream trait-purchase behavior remain untested.",
+        "offlineTestCase": "Renderer and bridge tests verify capability gating, whole-number bounds, exact readback, and failed-mutation behavior. qa/DawnwalkerPilotEvidence.test.mjs pins the current live UI, persistence, restoration, and closed-game save-tree recovery artifact."
+      },
+      {
+        "id": "player:add-gold",
+        "label": "Add Gold",
+        "status": "pilot-live-verified",
+        "exactTargetObjectOrClass": "ADawnwalkerPlayerCharacter.GetInventoryComponent() -> UInventoryComponent; independently UInventorySubsystem.GetPlayerInventoryComponent() -> the same exact UObject address",
+        "exactSetterFunctionPropertyOrHook": "UInventoryComponent.AddCurrency(ECurrencyType::Coin=0, signed int32 delta). The reflected EInventoryResult return is deliberately ignored because pinned native inspection shows it is unreliable.",
+        "readbackOrObservablePostcondition": "UInventoryComponent.GetCurrencyQuantity(ECurrencyType::Coin=0) must return an exact nonnegative int32 and equal baseline plus the requested signed delta. Per-command absolute magnitude is limited to 10,000 and positive overflow/negative underflow are rejected before mutation.",
+        "staticEvidence": [
+          "JMAP:1647871-1647892: /Script/DogwoodInventory.ECurrencyType::Coin = 0",
+          "JMAP:1383354-1383380 and UHTHeaderDump/Dawnwalker/Public/DawnwalkerCharacterBase.h:209-211: GetInventoryComponent()",
+          "JMAP:1654160-1654186 and UHTHeaderDump/DogwoodInventory/Public/InventorySubsystem.h:137-141: GetPlayerInventoryComponent() independent identity route",
+          "JMAP:1650262-1650327 and UHTHeaderDump/DogwoodInventory/Public/InventoryComponent.h:239-240: AddCurrency(ECurrencyType, int32)",
+          "JMAP:1650625-1650670 and UHTHeaderDump/DogwoodInventory/Public/InventoryComponent.h:209-210: GetCurrencyQuantity(ECurrencyType) const",
+          "Pinned executable native inspection: AddCurrency consumes the signed delta but returns Success unconditionally; exact readback is authoritative",
+          "integration/uue4ss/Mods/DawnwalkerModBridge/Scripts/main.lua: handle_add_gold"
+        ],
+        "liveControlCycleEvidence": [
+          "qa/pilot-evidence/dawnwalker-live-pilot-qa-20260903T062333Z.json (SHA256 71DF3D8B64C2C34E2EE82AE74557E904F3854B0EEDD2614E55AD98CBD36B919A): automated 0 -> 1 -> 0 exact-readback cycle on 0.3.8-pilot boot 1788416226-130670 with an empty final active set",
+          "qa/pilot-evidence/dawnwalker-add-gold-live-persistence-20260903T064209Z.json (SHA256 21AE16140B8B05C29DE252169B724844C857351777BB67BA6DCE3FB626056F49): Computer-use 0 -> 10000 UI action and exact 10000 -> 0 bridge restoration; +1 persisted through a normal save/reload, -1 restored baseline 0, and baseline persisted through a second save/reload across three boot identities"
+        ],
+        "liveControlCycleVerified": true,
+        "liveVerified": true,
+        "persistenceVerified": true,
+        "disableOrRollbackPath": "On mismatched readback, issue the inverse of only the exact observed bounded delta when player, world, inventory, and both component getter identities remain unchanged; require an exact baseline readback after inverse. Otherwise fail closed and require restore from the closed-game save backup.",
+        "rollbackLimit": "Historical 0.3.8 passed in-memory +1/-1 exact restoration, the 10000 UI action and exact inverse, and normal-save persistence/restoration across three stable boot identities. The complete post-test save tree is retained under qa/save-posttests/gold-persistence-posttest-20260903T064209Z; the original qa/save-backups/gold-pretest-20260903T055722Z tree was restored while the game was closed with 61/61 files and zero relative-path, length, or SHA-256 differences. Current source-only 0.3.10 retains the unrun 0.3.9 teardown retry fix and adds the F9 event binding; both still require their own live proof.",
+        "offlineTestCase": "DawnwalkerAddGoldPilot.Tests.lua validates query, signed +1/-1 restoration, 10,000 magnitude and int32 bounds, unreliable return handling, same-component identity, exact partial-delta inverse, and fail-closed cases. Renderer tests keep the UI positive-only and route global F9 to the same authorized Add Gold action with a fixed 10,000 delta. qa/DawnwalkerPilotEvidence.test.mjs pins both historical 0.3.8 artifacts, including normal-save persistence and exact save-tree recovery, without treating them as all-feature production proof."
+      },
+      {
+        "id": "inventory:add-item",
+        "label": "Add Item",
+        "status": "pilot-live-verified",
+        "exactTargetObjectOrClass": "ADawnwalkerPlayerCharacter.GetInventoryComponent() -> UInventoryComponent; independently UInventorySubsystem.GetPlayerInventoryComponent() -> the same exact UObject address",
+        "exactSetterFunctionPropertyOrHook": "UInventoryComponent.TryAddItem(FItemHandle, int32 Quantity, bSkipNewItemCheck=true) and UInventoryComponent.RemoveItem(FItemHandle, int32 Quantity). The FItemHandle is built only through InventoryBlueprintFunctionLibrary.GetItemHandle(WorldContext, UItemBaseDataAsset, ItemLevel); the struct exposes no constructible fields. The reflected EInventoryResult return is ignored exactly as Add Gold ignores its own.",
+        "readbackOrObservablePostcondition": "UInventoryComponent.GetItemQuantity(handle, bMatchAssetOnly=false) must return an exact nonnegative int32 equal to baseline plus the requested signed delta. Per-command absolute quantity is capped at 100.",
+        "staticEvidence": [
+          "UHTHeaderDump/DogwoodInventory/Public/InventoryComponent.h:120,138,192",
+          "UHTHeaderDump/DogwoodInventory/Public/InventoryBlueprintFunctionLibrary.h:50",
+          "UHTHeaderDump/DogwoodInventory/Public/ItemHandle.h: the struct exposes no public fields",
+          "UE4SS_ObjectDump.txt:53850,53882-53886,53962-53966,54272",
+          "UE4SS_ObjectDump.txt:154332: Default__InventoryBlueprintFunctionLibrary is loaded",
+          "1650 loaded ITM_ assets under /Game/_Dawnwalker/Inventory/Items/",
+          "integration/uue4ss/Mods/DawnwalkerModBridge/Scripts/main.lua: handle_add_item"
+        ],
+        "liveControlCycleVerified": true,
+        "liveVerified": true,
+        "visibleInRelease": false,
+        "disableOrRollbackPath": "Exact inverse: RemoveItem reverses TryAddItem and vice versa. On a mismatched readback the bridge inverses only the exact observed bounded delta, after re-resolving the asset and rebuilding the handle and confirming player, world, inventory, and asset identity are unchanged; otherwise it fails closed and directs the operator to the closed-game save backup.",
+        "rollbackLimit": "The 0.3.17 live cycle proved an exact inverse at quantity 1 on a non-quest clothing item, and all seven guards rejected without mutation. Larger quantities, stackable consumables, equipped items, and save persistence across a reload are still unproven. Inventory is save-backed, so a closed-game save backup remains mandatory.",
+        "offlineTestCase": "DawnwalkerAddItemPilot.Tests.lua covers read-only query, exact add and inverse, malformed and out-of-range requests, quest-item refusal, unloaded-asset refusal, wrong-class refusal, underflow, no-op detection, exact partial inverse, out-of-bounds refusal, and divergent inventory identity. Run with npm run test:add-item.",
+        "liveControlCycleEvidence": [
+          "Live boot 1788460416-158410 on 0.3.17-pilot: exact 0 -> 1 -> 0 cycle on ITM_Clothing_ChestCommon1. Baseline query 0; TryAddItem +1 returned \"Added 1; quantity is 1.\"; independent query verified 1; RemoveItem -1 returned \"Removed 1; quantity is 0.\"; independent query verified exact baseline 0; final active set empty.",
+          "Live guard verification on the same boot: quest item refused, asset outside the item root refused, quantity 101 refused, zero quantity refused, fractional quantity refused, unloaded asset refused, and remove-below-zero refused. Quantity remained exactly 0 after all seven rejections."
+        ]
+      },
+      {
+        "id": "player:add-level",
+        "label": "Add Level",
+        "status": "pilot-live-verified",
+        "exactTargetObjectOrClass": "UCharacterDevelopmentSubsystem (game-instance subsystem), the same live object already verified for player:trait-points",
+        "exactSetterFunctionPropertyOrHook": "UCharacterDevelopmentSubsystem.ForceLevelUpTo(int32 Level, bool bReceiveTraitPoints=true). CharacterDevelopmentSubsystem.h:442.",
+        "readbackOrObservablePostcondition": "GetCurrentLevel() must equal the requested target exactly. Targets at or below the current level are refused because the call is forward-only.",
+        "staticEvidence": [
+          "UHTHeaderDump/DogwoodCharacterDevelopment/Public/CharacterDevelopmentSubsystem.h:442,445 (ForceLevelUpTo, ForceLevelUp)",
+          "CharacterDevelopmentSubsystem.h:403,418,364,412,415 (GetCurrentXP, GetCurrentLevel, GetNextLevel, GetCurrentLevelXPRequirement, GetCurrentLevelXPPercentage)",
+          "OnLevelUpDelegate.h:5: FOnLevelUp broadcasts TraitPointsGained, so levelling grants trait points",
+          "integration/uue4ss/Mods/DawnwalkerModBridge/Scripts/main.lua: handle_add_level"
+        ],
+        "liveControlCycleVerified": false,
+        "liveVerified": true,
+        "visibleInRelease": false,
+        "disableOrRollbackPath": "NONE. The pinned build exposes no ForceLevelDown, SetCurrentLevel, or equivalent inverse. The closed-game save backup is the only recovery path.",
+        "rollbackLimit": "One-way and save-backed through ISaveGameInterface. The handler refuses any target at or below the current level so a mistaken lower target can never be silently ignored, and it verifies the exact resulting level. There is no XP setter in this build: GetCurrentXP is read-only, so levels are the only write route into character progression.",
+        "offlineTestCase": "DawnwalkerAddLevelPilot.Tests.lua covers query, forward-only refusal, range bounds, exact readback, identity drift, and no-op detection. Run with npm run test:add-level.",
+        "liveEvidence": "qa/pilot-evidence/dawnwalker-add-level-live-20260903T215316Z.json (0.3.19-pilot live probe, boot 1788472141-542542: level 1 -> 2 via ForceLevelUpTo(2, true), independent player-info and add-level query readbacks both returned 2, blood_max 300 -> 342, trait_points 22 -> 23, closed-game 89-file pretest tree restored with zero differences)"
+      },
+      {
+        "id": "player:unblock-trait",
+        "label": "Unblock Trait",
+        "status": "pilot-live-verified",
+        "exactTargetObjectOrClass": "UCharacterDevelopmentSubsystem (game-instance subsystem), the same live object already verified for player:trait-points",
+        "exactSetterFunctionPropertyOrHook": "UCharacterDevelopmentSubsystem.UnblockTraitToLevel(FName InTraitID, int32 TargetLevel, bCanShowVideo=false, bShowNotification=false). CharacterDevelopmentSubsystem.h:191.",
+        "readbackOrObservablePostcondition": "GetTraitUnblockedLevel(InTraitID) must be at least the requested target level. The trait must first resolve through GetTrait(InTraitID); an unknown id is refused rather than silently unblocking nothing.",
+        "staticEvidence": [
+          "UHTHeaderDump/DogwoodCharacterDevelopment/Public/CharacterDevelopmentSubsystem.h:191 (UnblockTraitToLevel)",
+          "CharacterDevelopmentSubsystem.h:334 (GetTraitUnblockedLevel), :349 (GetTrait), :316,319 (HasTraitUnblockBeenViewed/Discovered)",
+          "Dawnwalker/Public/ETraitUnblockType.h: AddLevels, SetLevel, ToMaxLevel",
+          "integration/uue4ss/Mods/DawnwalkerModBridge/Scripts/main.lua: handle_unblock_trait"
+        ],
+        "liveControlCycleVerified": false,
+        "liveVerified": true,
+        "visibleInRelease": false,
+        "disableOrRollbackPath": "NONE. The pinned build exposes no BlockTrait or re-block inverse. The closed-game save backup is the only recovery path.",
+        "rollbackLimit": "One-way and save-backed. This is the in-game 'FIND OR BUY A MANUAL TO MAKE AVAILABLE' gate; unblocking is what makes a trait purchasable with trait points. An already-unblocked trait reports success without calling the setter again. A live 0.3.18-pilot probe crashed the game with an access violation before any save was written: GetTrait, GetTraitUnblockedLevel, and UnblockTraitToLevel all take const FName&, and the pinned UE4SS build does not marshal a raw Lua string into that parameter. The 0.3.19-pilot handler resolves the id against the GetAllTraits() roster and only ever passes the matched trait's own Skill_ID value. The 0.3.20 live probe proved that resolution works (112 traits enumerated; unknown ids rejected cleanly) and that UnblockTraitToLevel commits the requested level one game beat late, so version 0.3.21 defers the readback verdict to later ticks and a succeeded call is never reported as a failure. The 0.3.21 live probe then completed the cycle on boot 1788474671-718541: Human_ToughSkin|1 committed to level 1 with exact readback, the repeat dispatch confirmed 'already unblocked to level 1', and the closed-game pretest tree was restored with zero differences.",
+        "offlineTestCase": "DawnwalkerAddLevelPilot.Tests.lua also covers unblock: unknown trait id refusal, malformed id refusal, level bounds, already-unblocked no-op, exact readback, identity drift, roster resolution failures (unreadable, oversized, wrong-class, and duplicate rosters), wrapped remote roster entries (0.3.20), deferred-verification semantics (0.3.21): success reported only after the commit beat, supersession by a newer command, and bounded-window rejection for a level that never commits. It asserts that no raw request string ever reaches an FName-typed engine call. Run with npm run test:add-level.",
+        "liveEvidence": "qa/pilot-evidence/dawnwalker-add-level-unblock-trait-live-20260903T223408Z.json (0.3.21-pilot live probe, boot 1788474671-718541 on CL-256914/build 25107392: Add Level baseline 1 -> 2 with exact setter and read-only query readbacks, Unblock Trait Human_ToughSkin|1 committed to level 1 through the deferred later-tick verification, the repeat dispatch confirmed 'already unblocked to level 1', the active set stayed empty, and the closed-game 91-file pretest save tree was restored with zero differences per the embedded saveSafety record)"
+      },
+      {
+        "id": "player:unlimited-weight",
+        "label": "Unlimited Weight",
+        "status": "pending-reflection",
+        "disposition": "withdrawn-feasibility-probe",
+        "visibleInRelease": false,
+        "exactTargetObjectOrClass": "ADawnwalkerPlayerCharacter.GetInventoryComponent() -> UInventoryComponent.WeightLimit/GetWeightLimit/GetCurrentWeight/bWeightExceeded; ADawnwalkerPlayerCharacter.CharDevAttributeSet -> UCharDevAttributeSet.CarryWeightCapacityModifier; ADawnwalkerPlayerCharacter.AbilitySystemComponent -> UDawnwalkerAbilitySystemComponent",
+        "exactSetterFunctionPropertyOrHook": "Candidate only, not authorized: /Script/DogwoodCombat.CombatBlueprintFunctionLibrary:SetAttributeValue(UAbilitySystemComponent*, UPARAM(Ref) FGameplayAttribute&, float), using the exact CarryWeightCapacityModifier descriptor borrowed read-only from GE_Trait_Shared_StrongBack_Level_1_C.Modifiers[1].Attribute.",
+        "readbackOrObservablePostcondition": "Before any future mutation, snapshot exact GameplayAttributeData BaseValue/CurrentValue, raw WeightLimit, GetWeightLimit(), GetCurrentWeight(), and bWeightExceeded on one stable player/world/inventory/ASC/attribute-set identity. A future set must produce the predicted base/current/effective limit and derived bool; disable must restore and verify the exact captured baseline through the same GAS setter.",
+        "staticEvidence": [
+          "CXXHeaderDump/DogwoodInventory.hpp:704,724-725,731,753,766,774",
+          "CXXHeaderDump/DogwoodStats.hpp:245",
+          "CXXHeaderDump/DogwoodCombat.hpp:1018",
+          "CXXHeaderDump/GameplayAbilities.hpp:286-299,1409",
+          "UHTHeaderDump/DogwoodCombat/Public/CombatBlueprintFunctionLibrary.h:39-40",
+          "UE4SS_ObjectDump.txt:53917,53933,53938,54007,54045,54065,55842-55845,185364-185370,260468-260470",
+          "JMAP:619102-619119,619663-619680,620224-620241,1687888-1687896",
+          "Native: GetWeightLimit 0x142887030; HasWeightLimit 0x142887188; weight-state recalc 0x1428883A4; attribute-change binding 0x142885FFA-0x142886030; callback 0x1421BC564",
+          "CARRY-CAPACITY-FEASIBILITY.md"
+        ],
+        "liveControlCycleVerified": false,
+        "gameplayEnduranceVerified": false,
+        "wrongSemanticTarget": "GE_EnableWeightLimitExceed_C only grants Inventory.CanExceedWeightLimit. The observed normal playable pawn already owns one instance. It permits adding items beyond a positive cap but does not change GetWeightLimit, clear bWeightExceeded, or remove encumbrance. Never remove the game-owned effect or infer Unlimited Weight state from its count/CanExceedWeightLimit().",
+        "disableOrRollbackPath": "No mutation is currently allowed. A future pilot may own only its exact GAS base-value change: capture BaseValue and all derived readbacks, set through SetAttributeValue, restore the exact BaseValue through the same setter, and verify CurrentValue/effective limit/bWeightExceeded on the same identity before clearing ownership.",
+        "rollbackLimit": "The read-only probe source is ready but has not been run in the pinned game. UE4SS documentation supports struct userdata, yet the borrowed nested FGameplayAttribute must pass the exact read-only calls live before a mutation pilot is considered. Direct WeightLimit, GameplayAttributeData, or bWeightExceeded writes are prohibited because they can bypass GAS aggregation or the inventory recalculation/delegate path.",
+        "offlineTestCase": "DawnwalkerCarryCapacityReadOnlyProbe.Tests.lua validates exact setter metadata, Strong Back descriptor identity, complete snapshot invariants, read-only struct pass behavior, and fail-closed rejection. The analysis probe always reports mutation_authorized=0."
+      },
+      {
+        "id": "combat:infinite-blood-energy",
+        "label": "Infinite Blood Energy",
+        "status": "pilot-live-verified",
+        "exactTargetObjectOrClass": "ADawnwalkerPlayerCharacter.BloodBar -> UBloodBarComponent",
+        "exactSetterFunctionPropertyOrHook": "SetBloodPercent(1.0), LockBlood(), UnlockBlood()",
+        "readbackOrObservablePostcondition": "GetBlood() / GetBloodBarLength()",
+        "staticEvidence": [
+          "CXXHeaderDump/DogwoodStats.hpp:214-215,219,230-231",
+          "main.lua:387-399"
+        ],
+        "liveControlCycleEvidence": [
+          "qa/pilot-evidence/dawnwalker-resource-lock-settled-qa-20260903T030008Z.json (SHA256 8B1CFD5E3E3EA637844C0E0EB032D328E3D0C77B88F4E071289662068A8D3C72)"
+        ],
+        "liveControlCycleVerified": true,
+        "gameplayEnduranceVerified": false,
+        "disableOrRollbackPath": "The bridge snapshots the first owner's percentage, unlocks blood, and restores that percentage when the final blood-lock owner is disabled.",
+        "rollbackLimit": "A live 75-to-100-to-75 percent cycle passed with exclusive owner-state publication and exact restoration. Sustained protection during blood consumption still requires a gameplay consumption test before the full Infinite Blood Energy promise is verified.",
+        "offlineTestCase": "BridgePilotPromotion.Tests.ps1 verifies the exact promoted capability contract, and qa/DawnwalkerPilotEvidence.test.mjs pins the control-cycle artifact; gameplay endurance proof remains intentionally open."
+      },
+      {
+        "id": "combat:rpg-difficulty",
+        "label": "RPG Difficulty",
+        "status": "pilot-live-verified",
+        "exactTargetObjectOrClass": "The live /Script/DogwoodCombat.CombatSubsystem resolved from the playable player's current UWorld, with its assigned /Script/DogwoodStats.DifficultyConfig and the non-CDO URebelGameUserSettings singleton",
+        "exactSetterFunctionPropertyOrHook": "UCombatSubsystem.SetRPGDifficulty(ERebelGameDifficulty), accepting only Story=0, Normal=1, Immersive=2, or Nightmare=3 after DifficultyConfig.RPGDifficulties.Contains(value); MAX=4 and every other value are rejected",
+        "readbackOrObservablePostcondition": "The reflected RPGDifficultyLevel property must equal the requested enum; GetRPGDifficultySettings() must exactly match the assigned config-map entry's three finite multipliers; Action Difficulty, both user-settings owner values (settings 69/70), object identities, and all config fingerprints must remain unchanged",
+        "staticEvidence": [
+          "UHTHeaderDump/DogwoodCombat/Public/CombatSubsystem.h:98-119,163-167",
+          "UHTHeaderDump/RebelSettings/Public/ERebelGameDifficulty.h:5-13",
+          "UHTHeaderDump/RebelSettings/Public/RebelGameUserSettings.h:288-298,327-328",
+          "UHTHeaderDump/DogwoodStats/Public/DifficultyConfig.h:11-30",
+          "UHTHeaderDump/DogwoodStats/Public/DogwoodRPGDifficulty.h:5-18",
+          "JMAP:1593912-1593940,1594277-1594303,1594614-1594650,1696923-1696997,1697177-1697219,3239600-3239634,3243041-3243067,3243739-3243808",
+          "integration/uue4ss/Mods/DawnwalkerModBridge/Scripts/main.lua: handle_rpg_difficulty"
+        ],
+        "liveControlCycleEvidence": [
+          "qa/pilot-evidence/dawnwalker-live-pilot-qa-20260903T082038Z.json (SHA256 91739704BDDFED2DB94BC933828BCFF3BBD7D58B6780ED21809AB07D1139006D): Story 0 -> Normal 1 -> Story 0 with mutation verification, exact config and owner readback, and an empty final active set"
+        ],
+        "liveVerified": true,
+        "visibleInRelease": false,
+        "disableOrRollbackPath": "A shared two-axis snapshot retains player, world, CombatSubsystem, DifficultyConfig, and RebelGameUserSettings identities; both baseline enum levels, both owner values, and stable fingerprints for all four Action/RPG config entries. Same-world rollback attempts RPG and Action restoration independently, verifies exact level/settings/config/owner postconditions, and retains unresolved state for retry after any failure.",
+        "rollbackLimit": "The 0.3.16 live cycle passed on the pinned build. If another owner changes settings 69/70, the bridge never overwrites it; it relinquishes ownership only when the live subsystem already matches the new owner values. World drift forbids stale-object setters. An unresolved partial restore disables further difficulty mutations until an exact same-world retry succeeds. This remains pilot-only until the production release gate is satisfied.",
+        "offlineTestCase": "DawnwalkerDifficultyPilot.Tests.lua covers query, enum bounds, independent axes, same-world identity, config and owner noninterference, exact restoration, owner reclaim, fingerprint mismatch rollback, world-drift rejection, and retained partial-rollback retry. qa/DawnwalkerPilotEvidence.test.mjs pins the successful 0.3.16 live reversible cycle."
+      },
+      {
+        "id": "combat:action-difficulty",
+        "label": "Action Difficulty",
+        "status": "pilot-live-verified",
+        "exactTargetObjectOrClass": "The live /Script/DogwoodCombat.CombatSubsystem resolved from the playable player's current UWorld, with its assigned /Script/DogwoodStats.DifficultyConfig and the non-CDO URebelGameUserSettings singleton",
+        "exactSetterFunctionPropertyOrHook": "UCombatSubsystem.SetActionDifficulty(ERebelGameDifficulty), accepting only Story=0, Normal=1, Immersive=2, or Nightmare=3 after DifficultyConfig.ActionDifficulties.Contains(value); MAX=4 and every other value are rejected",
+        "readbackOrObservablePostcondition": "GetActionDifficultyLevel() and the reflected ActionDifficultyLevel property must agree with the requested enum; GetActionDifficultySettings() must exactly match every semantic field in the assigned config-map entry; RPG Difficulty, both user-settings owner values (settings 69/70), object identities, and all config fingerprints must remain unchanged",
+        "staticEvidence": [
+          "UHTHeaderDump/DogwoodCombat/Public/CombatSubsystem.h:98-119,163-167",
+          "UHTHeaderDump/RebelSettings/Public/ERebelGameDifficulty.h:5-13",
+          "UHTHeaderDump/RebelSettings/Public/RebelGameUserSettings.h:288-298,327-328",
+          "UHTHeaderDump/DogwoodStats/Public/DifficultyConfig.h:11-30",
+          "UHTHeaderDump/DogwoodStats/Public/DogwoodActionDifficulty.h:7-47",
+          "JMAP:1593892-1593940,1594060-1594124,1594576-1594612,1696923-1697176,3239600-3239634,3243041-3243067,3243739-3243808",
+          "integration/uue4ss/Mods/DawnwalkerModBridge/Scripts/main.lua: handle_action_difficulty"
+        ],
+        "liveControlCycleEvidence": [
+          "qa/pilot-evidence/dawnwalker-live-pilot-qa-20260903T082038Z.json (SHA256 91739704BDDFED2DB94BC933828BCFF3BBD7D58B6780ED21809AB07D1139006D): Story 0 -> Normal 1 -> Story 0 with mutation verification, exact config and owner readback, and an empty final active set"
+        ],
+        "liveVerified": true,
+        "visibleInRelease": false,
+        "disableOrRollbackPath": "A shared two-axis snapshot retains player, world, CombatSubsystem, DifficultyConfig, and RebelGameUserSettings identities; both baseline enum levels, both owner values, and stable fingerprints for all four Action/RPG config entries. Same-world rollback attempts RPG and Action restoration independently, verifies exact level/settings/config/owner postconditions, and retains unresolved state for retry after any failure.",
+        "rollbackLimit": "The 0.3.16 live cycle passed on the pinned build. If another owner changes settings 69/70, the bridge never overwrites it; it relinquishes ownership only when the live subsystem already matches the new owner values. World drift forbids stale-object setters. An unresolved partial restore disables further difficulty mutations until an exact same-world retry succeeds. This remains pilot-only until the production release gate is satisfied.",
+        "offlineTestCase": "DawnwalkerDifficultyPilot.Tests.lua covers query, enum bounds, independent axes, same-world identity, config and owner noninterference, exact restoration, owner reclaim, fingerprint mismatch rollback, world-drift rejection, and retained partial-rollback retry. qa/DawnwalkerPilotEvidence.test.mjs pins the successful 0.3.16 live reversible cycle."
+      },
+      {
+        "id": "quests:journal-readback",
+        "label": "Quest Journal readback",
+        "status": "pilot-live-verified",
+        "exactTargetObjectOrClass": "ADawnwalkerGameStateBase.QuestJournal -> UJournal.GetOpenedQuests(OutQuests)/GetTrackedQuest() -> UQuest.Title/Objectives/State -> FObjective.Text/State/CurrentCount/MaxCount/bIsOptional",
+        "exactSetterFunctionPropertyOrHook": "Read-only reflected UJournal GetOpenedQuests TArray out-parameter call; pinned UE4SS fills the passed Lua table itself at one-based numeric keys. Remaining property traversal runs on the EngineTick game-thread route; no quest setter, tracking function, event, or hook is called.",
+        "readbackOrObservablePostcondition": "Schema-1 semicolon records containing the finite open/returned counts, truncation flags, percent-encoded titles/objectives, quest and objective states, tracked flag, progress counts, and optional flag. The bridge caps output at 6 quests, 3 objectives per quest, 240 encoded bytes per text field, and 8192 bytes total.",
+        "staticEvidence": [
+          "UHTHeaderDump/Dawnwalker/Public/DawnwalkerGameStateBase.h: ADawnwalkerGameStateBase.QuestJournal",
+          "UHTHeaderDump/Quest/Public/Journal.h:66: UJournal.GetOpenedQuests(TArray<UQuest*>& OutQuests)",
+          "JMAP:3134466-3134501: /Script/Quest.Journal:GetOpenedQuests has sole ArrayProperty OutQuests with CPF_Parm|CPF_OutParm",
+          "Pinned UE4SS LuaUObject.cpp 97b7e501 lines 235-254: FArrayProperty out parameters reuse the passed table instead of adding the reflected parameter-name key",
+          "Pinned UE4SS LuaUObject.cpp 97b7e501 lines 725-760: FArrayProperty GetNonTrivialLocal writes one-based numeric entries directly into that table",
+          "UE4SS issue #920: TArray out parameters populate the passed Lua table directly rather than assigning a named field",
+          "UHTHeaderDump/Quest/Public/Quest.h: UQuest.Title, Objectives, and State",
+          "UHTHeaderDump/Quest/Public/Objective.h: FObjective.Text, State, CurrentCount, MaxCount, and bIsOptional",
+          "integration/uue4ss/Mods/DawnwalkerModBridge/Scripts/main.lua: handle_quest_journal",
+          "qa/pilot-evidence/dawnwalker-quest-journal-live-failure-20260903T051802Z.json: 0.3.4 negative live evidence for the unavailable TArray<FObjective>.ForEach path",
+          "qa/pilot-evidence/dawnwalker-quest-journal-live-failure-20260903T052902Z.json (SHA256 ECA696825A65085A8465A8B27B1E3D1B03D0C167BF950EDA634E2A56A934BFC7): 0.3.5 negative live evidence for the unavailable OpenedQuests-wrapper ForEach path",
+          "qa/pilot-evidence/dawnwalker-live-pilot-qa-20260903T054316Z.json (SHA256 FCDA156660EFC0E670BD6D09E2B803920E01E20B5E89C36CCC3B386E9BD15FC8): 0.3.6 negative live evidence showing six valid unrelated queries and Quest rejection only at the incorrect named OutQuests-field check"
+        ],
+        "liveEvidence": [
+          "qa/pilot-evidence/dawnwalker-live-pilot-qa-20260903T055247Z.json (SHA256 B4123167CA1CE198A92377C08648F795F5D2398AD8C902E8D835E875AF3D4FF4): accepted bounded read-only snapshot of two quests with exact 0.3.7 bridge/build/session identity and empty active set before and after",
+          "qa/pilot-evidence/dawnwalker-quest-journal-live-success-20260903T055441Z.json (SHA256 E679C347A0F1D6F59EAB37A5613D66D85983720E1D34FE0E60E6F5D7A1FCBC25): visible isolated Quests-page rendering of both quests plus F10 hide/restore and normal game exit"
+        ],
+        "liveVerified": true,
+        "disableOrRollbackPath": "None required because the handler rejects values and performs no quest mutation.",
+        "rollbackLimit": "None required because the capability is read-only. The corrected 0.3.7 bridge returned two bounded live quest records on the pinned build, preserved all unrelated readbacks, left the active set empty, and rendered the same quest state in the isolated desktop page. The result remains pilot-only rather than production proof.",
+        "offlineTestCase": "DawnwalkerQuestJournalPilot.Tests.lua uses a live-shaped Journal whose GetOpenedQuests(out) writes remote quest entries directly into one-based numeric keys, with no named OutQuests field, no OpenedQuests property, and no array ForEach. It covers exact object paths, tracked/open/empty journals, delimiter-safe UTF-8 encoding, quest/objective truncation, total-byte bounds, and mutation rejection. src/bridgeScaffoldContract.test.ts forbids all three failed traversal assumptions; src/runtimeReadback.test.ts verifies Quest rejection/throw isolation while Player/control readbacks remain available; src/App.test.tsx covers the read-only Quests page."
+      },
+      {
+        "id": "teleport:save-location",
+        "label": "Save Location",
+        "status": "pilot-live-verified",
+        "exactTargetObjectOrClass": "ADawnwalkerPlayerCharacter through AActor transform getters",
+        "exactSetterFunctionPropertyOrHook": "Read-only K2_GetActorLocation() and K2_GetActorRotation(), stored in bridge memory",
+        "readbackOrObservablePostcondition": "The sanitized location name is returned after its transform is captured.",
+        "staticEvidence": [
+          "CXXHeaderDump/Engine.hpp:9216-9217",
+          "main.lua:503-517"
+        ],
+        "liveEvidence": [
+          "qa/pilot-evidence/dawnwalker-teleport-round-trip-20260903T025428Z.json (SHA256 D6BBD30038E9C5EB5908F4983C522591A665975966B3A9F643869414F1911BD7)"
+        ],
+        "disableOrRollbackPath": "No game rollback is required; saved locations are bridge-session memory and are cleared on pawn/session change.",
+        "rollbackLimit": "Two named locations were captured and read back in one live playable session. Locations intentionally do not persist across bridge/game sessions.",
+        "offlineTestCase": "src/App.test.tsx verifies the exact Save Location dispatch, BridgePilotPromotion.Tests.ps1 verifies the promoted contract, and qa/DawnwalkerPilotEvidence.test.mjs pins the round-trip artifact."
+      },
+      {
+        "id": "teleport:teleport-saved-location",
+        "label": "Teleport to Saved Location",
+        "status": "pilot-live-verified",
+        "exactTargetObjectOrClass": "ADawnwalkerPlayerCharacter through AActor teleport/transform functions",
+        "exactSetterFunctionPropertyOrHook": "K2_TeleportTo(FVector, FRotator)",
+        "readbackOrObservablePostcondition": "K2_GetActorLocation() must be within squared distance 100 of the session-saved destination.",
+        "staticEvidence": [
+          "CXXHeaderDump/Engine.hpp:9203,9216-9217",
+          "main.lua:520-537"
+        ],
+        "liveEvidence": [
+          "qa/pilot-evidence/dawnwalker-teleport-round-trip-20260903T025428Z.json (SHA256 D6BBD30038E9C5EB5908F4983C522591A665975966B3A9F643869414F1911BD7)"
+        ],
+        "disableOrRollbackPath": "The handler captures the origin and immediately teleports back only when destination verification fails; users can save the origin explicitly before a successful teleport.",
+        "rollbackLimit": "A live two-point round trip returned to both destinations with zero coordinate error and ended at the user's moved point. Successful teleports are intentional and are not automatically undone.",
+        "offlineTestCase": "src/App.test.tsx verifies the exact Teleport Saved Location dispatch, BridgePilotPromotion.Tests.ps1 verifies the promoted contract, and qa/DawnwalkerPilotEvidence.test.mjs pins the round-trip artifact."
+      },
+      {
+        "id": "visuals:hud-visible",
+        "label": "HUD Visible",
+        "status": "pilot-live-verified",
+        "exactTargetObjectOrClass": "UHUDManagerSubsystem (world subsystem)",
+        "exactSetterFunctionPropertyOrHook": "SetHUDVisible(bool)",
+        "readbackOrObservablePostcondition": "IsHUDVisible() must equal the requested value.",
+        "staticEvidence": [
+          "CXXHeaderDump/DogwoodUI.hpp:1279,1291,1297",
+          "UE4SS_ObjectDump.txt:370573",
+          "main.lua:540-556"
+        ],
+        "liveEvidence": [
+          "qa/pilot-evidence/dawnwalker-live-pilot-qa-20260903T030302Z.json (SHA256 0BD895C31583718DD885F653457301D541E260275B2EBAD52955495DD848ED37)"
+        ],
+        "disableOrRollbackPath": "The previous value is restored immediately if readback fails; either visible state can otherwise be requested explicitly.",
+        "rollbackLimit": "A live visible-hidden-visible cycle passed with explicit readback after mutation and restoration. Evidence remains pilot-only and not production proof.",
+        "offlineTestCase": "scripts/Run-DawnwalkerLivePilotQa.test.mjs validates HUD mutation, query verification, restoration, and settled active-state handling; qa/DawnwalkerPilotEvidence.test.mjs pins the live artifact."
+      },
+      {
+        "id": "world:game-speed",
+        "label": "Game Speed",
+        "status": "pilot-live-verified",
+        "exactTargetObjectOrClass": "/Script/Engine.Default__GameplayStatics with the live player as WorldContextObject",
+        "exactSetterFunctionPropertyOrHook": "SetGlobalTimeDilation(UObject, float), range 0.1 to 3.0",
+        "readbackOrObservablePostcondition": "GetGlobalTimeDilation(UObject) must match within 0.01.",
+        "staticEvidence": [
+          "CXXHeaderDump/Engine.hpp:15126,15188",
+          "main.lua:559-575"
+        ],
+        "liveEvidence": [
+          "qa/pilot-evidence/dawnwalker-live-pilot-qa-20260903T030302Z.json (SHA256 0BD895C31583718DD885F653457301D541E260275B2EBAD52955495DD848ED37)"
+        ],
+        "disableOrRollbackPath": "The previous dilation is restored immediately if readback fails; 1.0 is the explicit normal-speed reset.",
+        "rollbackLimit": "A live 1.0x to 1.1x to 1.0x cycle passed with explicit readback after mutation and restoration. Evidence remains pilot-only and not production proof.",
+        "offlineTestCase": "scripts/Run-DawnwalkerLivePilotQa.test.mjs validates Game Speed mutation, query verification, restoration, tolerance, and settled active-state handling; qa/DawnwalkerPilotEvidence.test.mjs pins the live artifact."
+      },
+      {
+        "id": "world:location-readback",
+        "label": "Location and coordinates readback",
+        "status": "pilot-live-verified",
+        "exactTargetObjectOrClass": "ADawnwalkerPlayerCharacter through AActor transform getter",
+        "exactSetterFunctionPropertyOrHook": "Read-only K2_GetActorLocation()",
+        "readbackOrObservablePostcondition": "Finite numeric x, y, and z values are returned.",
+        "staticEvidence": [
+          "CXXHeaderDump/Engine.hpp:9217",
+          "main.lua:578-586"
+        ],
+        "liveEvidence": [
+          "qa/pilot-evidence/dawnwalker-live-pilot-qa-20260903T024853Z.json (SHA256 84171415ED8E153ECC653B2907A2D62E60E3E8AB18F8C6F081D7706C93444D2B)",
+          "qa/pilot-evidence/dawnwalker-teleport-round-trip-20260903T025428Z.json (SHA256 D6BBD30038E9C5EB5908F4983C522591A665975966B3A9F643869414F1911BD7)"
+        ],
+        "disableOrRollbackPath": "None required because the handler is read-only.",
+        "rollbackLimit": "Finite live coordinates were read repeatedly before and after movement and both teleports. Evidence remains pilot-only and not production proof.",
+        "offlineTestCase": "scripts/Run-DawnwalkerLivePilotQa.test.mjs validates finite Location readback parsing, and qa/DawnwalkerPilotEvidence.test.mjs pins the immutable live artifacts."
+      }
+    ]
+  },
+  "unverifiedSearchAnchors": {
+    "warning": "These names came from a static UTF-16 scan of the signed executable. They are search leads only, not callable contracts or verified object paths.",
+    "modulesAndTypes": [
+      "/Script/DogwoodAbilitySystem",
+      "/Script/DogwoodCombat",
+      "/Script/DogwoodInventory",
+      "/Script/DogwoodMap",
+      "/Script/DogwoodQuest",
+      "ADawnwalkerPlayerCharacter",
+      "ADawnwalkerPlayerControllerBase",
+      "ADawnwalkerGameStateBase",
+      "ADawnwalkerWorldSettings",
+      "CharacterAttributeSet",
+      "UDawnwalkerAbilitySystemComponent",
+      "UDawnwalkerInventoryProvider",
+      "UDawnwalkerNPCCombatComponent",
+      "UDawnwalkerDialogueSubsystem",
+      "UDawnwalkerXpGrantingSubsystem",
+      "FallDamageComponent",
+      "AFastTravelMarker",
+      "AQuestTeleportPoint",
+      "ARebelRoadsWayPoint",
+      "ASaveActorLocationMarker",
+      "AHumanoidNPCBase",
+      "ARebelHorse"
+    ],
+    "membersAndEvents": [
+      "K2_GetDawnwalkerPlayerController",
+      "GetHealthType",
+      "GetMaxHealth",
+      "GetMaxStamina",
+      "GetHealthPercentage",
+      "GetStaminaPercentage",
+      "SetHealthLocked",
+      "SetHealthPercent",
+      "SetStaminaLocked",
+      "SetStaminaPercent",
+      "AbilitySystem.IgnoreCooldowns",
+      "Immortality",
+      "Invulnerability",
+      "AddCurrencies",
+      "RemoveCurrencies",
+      "ATimeOfDay",
+      "ETimeOfDay",
+      "GetGameTimeInSeconds",
+      "GetWorldTime",
+      "OnChangedWeather",
+      "CombatEnemyLevelDifference",
+      "ParryWindowMultiplier",
+      "OnInventoryContentsChanged",
+      "OnCombatModeChanged",
+      "OnPlayerParriedAttack",
+      "OnQuestAdded",
+      "OnQuestEnded",
+      "OnQuestObjectiveUpdated",
+      "OnQuestTracked",
+      "OnQuestUpdated",
+      "GetCurrencyAmount"
+    ]
+  },
+  "categories": [
+    {
+      "id": "player",
+      "label": "Player",
+      "features": [
+        {
+          "id": "god-mode",
+          "label": "God Mode",
+          "control": "toggle",
+          "status": "pilot-static-only",
+          "capability": "player:god-mode",
+          "liveVerified": false,
+          "liveControlCycleVerified": true,
+          "gameplayEnduranceVerified": false
+        },
+        {
+          "id": "infinite-health",
+          "label": "Infinite Health",
+          "control": "toggle",
+          "status": "pilot-static-only",
+          "capability": "player:infinite-health",
+          "liveVerified": false,
+          "liveControlCycleVerified": true,
+          "gameplayEnduranceVerified": false
+        },
+        {
+          "id": "unlimited-stamina",
+          "label": "Unlimited Stamina",
+          "control": "toggle",
+          "status": "pilot-static-only",
+          "capability": "player:unlimited-stamina",
+          "liveVerified": false,
+          "liveControlCycleVerified": true,
+          "gameplayEnduranceVerified": false
+        },
+        {
+          "id": "blood-energy",
+          "label": "Blood Energy",
+          "control": "slider",
+          "status": "pilot-static-only",
+          "capability": "player:blood-energy",
+          "liveVerified": false
+        },
+        {
+          "id": "trait-points",
+          "label": "Trait Points",
+          "control": "stepper",
+          "status": "pilot-live-verified",
+          "capability": "player:trait-points",
+          "liveVerified": true,
+          "persistenceVerified": true,
+          "note": "Current 0.3.16 passed a visible 0 -> 1 -> 0 cycle with two normal save/reload checks and exact closed-game save-tree restoration. This is the reflected game resource; it replaces the screenshot's unsupported Red Essence concept."
+        },
+        {
+          "id": "humanity",
+          "label": "Humanity",
+          "control": "none",
+          "status": "unsupported-concept",
+          "visibleInRelease": false,
+          "reason": "No exact Humanity gameplay property, function, resource, or readback was found in the pinned-build reflection evidence."
+        },
+        {
+          "id": "unlock-all-skills",
+          "label": "Unlock All Skills",
+          "control": "action",
+          "status": "pending-reflection"
+        },
+        {
+          "id": "level",
+          "label": "Level",
+          "control": "stepper",
+          "status": "pending-reflection"
+        },
+        {
+          "id": "experience-multiplier",
+          "label": "Experience Multiplier",
+          "control": "slider",
+          "status": "pending-reflection"
+        },
+        {
+          "id": "speed-multiplier",
+          "label": "Speed Multiplier",
+          "control": "slider",
+          "status": "pending-reflection"
+        },
+        {
+          "id": "super-jump",
+          "label": "Super Jump",
+          "control": "toggle",
+          "status": "pending-reflection"
+        },
+        {
+          "id": "no-clip",
+          "label": "No Clip",
+          "control": "toggle",
+          "status": "pending-reflection"
+        },
+        {
+          "id": "fall-damage",
+          "label": "Fall Damage",
+          "control": "toggle",
+          "status": "pending-reflection"
+        },
+        {
+          "id": "player-info",
+          "label": "Player Info readback",
+          "control": "readout",
+          "status": "pilot-live-verified",
+          "capability": "player:player-info",
+          "liveVerified": true
+        },
+        {
+          "id": "reset-player",
+          "label": "Reset Player",
+          "control": "hotkey-action",
+          "status": "pending-reflection"
+        }
+      ]
+    },
+    {
+      "id": "combat",
+      "label": "Combat",
+      "features": [
+        {
+          "id": "damage-multiplier",
+          "label": "Damage Multiplier",
+          "control": "slider",
+          "status": "pending-reflection"
+        },
+        {
+          "id": "defense-multiplier",
+          "label": "Defense Multiplier",
+          "control": "slider",
+          "status": "pending-reflection"
+        },
+        {
+          "id": "freeze-enemies",
+          "label": "Freeze Enemies",
+          "control": "toggle",
+          "status": "pending-reflection"
+        },
+        {
+          "id": "one-hit-kill",
+          "label": "One Hit Kill",
+          "control": "toggle",
+          "status": "pending-reflection"
+        },
+        {
+          "id": "infinite-blood-energy",
+          "label": "Infinite Blood Energy",
+          "control": "toggle",
+          "status": "pilot-static-only",
+          "capability": "combat:infinite-blood-energy",
+          "liveVerified": false,
+          "liveControlCycleVerified": true,
+          "gameplayEnduranceVerified": false
+        },
+        {
+          "id": "no-cooldowns",
+          "label": "No Cooldowns",
+          "control": "none",
+          "status": "pending-reflection",
+          "visibleInRelease": false,
+          "liveVerified": false,
+          "reason": "The Focus debug setter/getter failed live and binary inspection proved both shipping functions are stubs. AbilitySystem.IgnoreCooldowns is a separate global candidate that affects player and enemy Gameplay Abilities and remains excluded until exact scope, readback, and rollback pass in game."
+        },
+        {
+          "id": "perfect-parry",
+          "label": "Extended Parry Window",
+          "control": "none",
+          "status": "pending-reflection",
+          "visibleInRelease": false,
+          "candidateEffect": "/Game/_Dawnwalker/Stats/CustomItemModifiers/GE_ParryWindowMultiplier.GE_ParryWindowMultiplier_C",
+          "missingContract": "authoritative Stats.CustomModifier set-by-caller magnitude",
+          "reason": "The pinned build reflects a player-scoped AbilitySystemComponent resolver, the infinite GE_ParryWindowMultiplier_C effect, exact-handle apply/remove functions, effect-count readback, and CharDevAttributeSet.ParryWindowMultiplier readback. The effect magnitude is SetByCaller under Stats.CustomModifier, however, and the captured JMAP, headers, and object dump contain no authoritative enabled magnitude or caller asset that supplies one. Baseline 1.0 and the separate VampireParryWindowMultiplier 1.2 setting do not prove the value this effect expects. Guessing a magnitude would make the control unsafe and misleading, so it is not advertised or interactive."
+        },
+        {
+          "id": "ignore-enemy-level",
+          "label": "Ignore Enemy Level",
+          "control": "toggle",
+          "status": "pending-reflection"
+        },
+        {
+          "id": "rpg-difficulty",
+          "label": "RPG Difficulty",
+          "control": "select",
+          "status": "pilot-live-verified",
+          "capability": "combat:rpg-difficulty",
+          "liveVerified": true,
+          "visibleInRelease": false,
+          "note": "Development-only direct runtime axis. Story, Normal, Immersive, and Nightmare map to the reflected ERebelGameDifficulty values 0 through 3. The 0.3.16 Story-to-Normal-to-Story cycle passed exact config and owner readback; production visibility remains gated."
+        },
+        {
+          "id": "action-difficulty",
+          "label": "Action Difficulty",
+          "control": "select",
+          "status": "pilot-live-verified",
+          "capability": "combat:action-difficulty",
+          "liveVerified": true,
+          "visibleInRelease": false,
+          "note": "Development-only direct runtime axis. Story, Normal, Immersive, and Nightmare map to the reflected ERebelGameDifficulty values 0 through 3. The 0.3.16 Story-to-Normal-to-Story cycle passed exact config and owner readback; production visibility remains gated."
+        },
+        {
+          "id": "game-difficulty",
+          "label": "Set Game Difficulty",
+          "control": "none",
+          "status": "unsupported-concept",
+          "visibleInRelease": false,
+          "reason": "The screenshot's single generic selector falsely conflates the game's separate RPG and Action axes and could imply the broad user-settings preset. It is intentionally replaced by two explicitly labeled development-only controls."
+        },
+        {
+          "id": "kill-all-enemies",
+          "label": "Kill All Enemies",
+          "control": "action",
+          "status": "pending-reflection"
+        }
+      ]
+    },
+    {
+      "id": "world",
+      "label": "World",
+      "features": [
+        {
+          "id": "time-of-day",
+          "label": "Time of Day",
+          "control": "select",
+          "status": "pending-reflection"
+        },
+        {
+          "id": "weather",
+          "label": "Weather",
+          "control": "select",
+          "status": "pending-reflection"
+        },
+        {
+          "id": "season",
+          "label": "Season",
+          "control": "select",
+          "status": "pending-reflection"
+        },
+        {
+          "id": "game-speed",
+          "label": "Game Speed",
+          "control": "slider",
+          "status": "pilot-live-verified",
+          "capability": "world:game-speed",
+          "liveVerified": true
+        },
+        {
+          "id": "lock-time",
+          "label": "Lock Time",
+          "control": "toggle",
+          "status": "pending-reflection"
+        },
+        {
+          "id": "moon-phase",
+          "label": "Moon Phase",
+          "control": "select",
+          "status": "pending-reflection"
+        },
+        {
+          "id": "world-gravity",
+          "label": "World Gravity",
+          "control": "slider",
+          "status": "pending-reflection"
+        },
+        {
+          "id": "no-ambient-damage",
+          "label": "No Ambient Damage",
+          "control": "toggle",
+          "status": "pending-reflection"
+        },
+        {
+          "id": "reveal-map",
+          "label": "Reveal Map",
+          "control": "toggle",
+          "status": "pending-reflection"
+        },
+        {
+          "id": "clear-fog-of-war",
+          "label": "Clear Fog of War",
+          "control": "action",
+          "status": "pending-reflection"
+        },
+        {
+          "id": "location-readback",
+          "label": "Location and coordinates readback",
+          "control": "readout",
+          "status": "pilot-live-verified",
+          "capability": "world:location-readback",
+          "liveVerified": true
+        }
+      ]
+    },
+    {
+      "id": "inventory",
+      "label": "Inventory",
+      "presentationParent": "player",
+      "presentationNote": "Inventory is a section of the isolated Player page, not a standalone navigation tab.",
+      "features": [
+        {
+          "id": "add-gold",
+          "label": "Add Gold",
+          "control": "stepper-action",
+          "status": "pilot-live-verified",
+          "capability": "player:add-gold",
+          "liveVerified": true,
+          "liveControlCycleVerified": true,
+          "persistenceVerified": true,
+          "note": "Historical 0.3.8 passed the automated in-memory 0 -> 1 -> 0 exact-readback cycle, the Computer-use 0 -> 10000 positive UI action with exact 10000 -> 0 bridge inverse, and a +1/save/reload/-1/save/reload persistence cycle that ended at baseline 0 on a third boot. Promoted 0.3.10 separately verified global F9 0 -> 10000 and exact bridge inverse 10000 -> 0; the immutable hotkey artifact is pinned at SHA-256 38616500F68E74E5DC9689BF516435152654A90D5EE450FB347B28E3E2E4D9E2. The Player-page Inventory section accepts only positive UI amounts from 1 through 10,000; signed deltas exist only in the bounded bridge contract for exact reversible QA and recovery. The original 61-file save tree was restored with zero path, length, or SHA-256 differences. Current undeployed 0.3.15 preserves that proven capability while correcting the fail-closed ordered UE4SS iterator ABI used only by the static-only Combat axes; it does not inherit 0.3.10 identity."
+        },
+        {
+          "id": "add-red-essence",
+          "label": "Add Red Essence",
+          "control": "none",
+          "status": "unsupported-concept",
+          "visibleInRelease": false,
+          "reason": "The pinned reflection exposes Coin currency and Trait Points; no Red Essence currency contract was found. Use the Player Trait Points control instead."
+        },
+        {
+          "id": "add-item",
+          "label": "Add Item",
+          "control": "select-action",
+          "status": "pending-reflection"
+        },
+        {
+          "id": "unlimited-weight",
+          "label": "Unlimited Weight",
+          "control": "none",
+          "status": "pending-reflection",
+          "disposition": "withdrawn-feasibility-probe",
+          "visibleInRelease": false,
+          "liveVerified": false,
+          "liveControlCycleVerified": false,
+          "gameplayEnduranceVerified": false,
+          "reason": "GE_EnableWeightLimitExceed is only a pre-existing over-limit pickup permission. The replacement carry-capacity setter is limited to a read-only feasibility probe until descriptor passing and exact GAS rollback are live-proven."
+        },
+        {
+          "id": "no-durability-loss",
+          "label": "No Durability Loss",
+          "control": "none",
+          "status": "unsupported-concept",
+          "visibleInRelease": false,
+          "reason": "No item durability property, mutation function, or durability-loss event was found in the pinned-build inventory reflection evidence."
+        },
+        {
+          "id": "add-crafting-materials",
+          "label": "Add All Crafting Materials",
+          "control": "action",
+          "status": "pending-reflection"
+        }
+      ]
+    },
+    {
+      "id": "teleport",
+      "label": "Teleport",
+      "features": [
+        {
+          "id": "teleport-waypoint",
+          "label": "Teleport to Waypoint",
+          "control": "select-action",
+          "status": "pending-reflection"
+        },
+        {
+          "id": "teleport-marker",
+          "label": "Teleport to Marker",
+          "control": "action",
+          "status": "pending-reflection"
+        },
+        {
+          "id": "save-location",
+          "label": "Save Location",
+          "control": "text-action",
+          "status": "pilot-live-verified",
+          "capability": "teleport:save-location",
+          "liveVerified": true
+        },
+        {
+          "id": "teleport-saved-location",
+          "label": "Saved Locations",
+          "control": "select-action",
+          "status": "pilot-live-verified",
+          "capability": "teleport:teleport-saved-location",
+          "liveVerified": true
+        },
+        {
+          "id": "teleport-player",
+          "label": "Teleport to Player",
+          "control": "none",
+          "status": "unsupported-concept",
+          "visibleInRelease": false,
+          "reason": "This menu is offline single-player only, so there is no second remote player target for this action."
+        }
+      ]
+    },
+    {
+      "id": "npc",
+      "label": "NPC",
+      "features": [
+        {
+          "id": "spawn-npc",
+          "label": "Spawn NPC",
+          "control": "select-action",
+          "status": "pending-reflection"
+        },
+        {
+          "id": "npc-quantity",
+          "label": "NPC Quantity",
+          "control": "stepper",
+          "status": "pending-reflection"
+        },
+        {
+          "id": "friendly-npcs",
+          "label": "Friendly NPCs",
+          "control": "toggle",
+          "status": "pending-reflection"
+        },
+        {
+          "id": "show-npc-info",
+          "label": "Show NPC Info",
+          "control": "toggle",
+          "status": "pending-reflection",
+          "restriction": "offline single-player only"
+        },
+        {
+          "id": "npc-faction",
+          "label": "Set NPC Faction",
+          "control": "select",
+          "status": "pending-reflection"
+        },
+        {
+          "id": "remove-spawned-npcs",
+          "label": "Remove All Spawned NPCs",
+          "control": "action",
+          "status": "pending-reflection"
+        },
+        {
+          "id": "spawn-horse",
+          "label": "Spawn Horse",
+          "control": "quick-action",
+          "status": "pending-reflection"
+        },
+        {
+          "id": "spawn-boat",
+          "label": "Spawn Boat",
+          "control": "none",
+          "status": "blocked-missing-asset-pair",
+          "visibleInRelease": false,
+          "reason": "No exact spawn function plus concrete boat asset/class pair has been established for the pinned build."
+        },
+        {
+          "id": "spawn-vampire-companion",
+          "label": "Spawn Companion (Vampire)",
+          "control": "none",
+          "status": "blocked-missing-asset-pair",
+          "visibleInRelease": false,
+          "reason": "No exact spawn function plus concrete vampire companion asset/class pair has been established for the pinned build."
+        },
+        {
+          "id": "spawn-human-companion",
+          "label": "Spawn Companion (Human)",
+          "control": "none",
+          "status": "blocked-missing-asset-pair",
+          "visibleInRelease": false,
+          "reason": "No exact spawn function plus concrete human companion asset/class pair has been established for the pinned build."
+        }
+      ]
+    },
+    {
+      "id": "visuals",
+      "label": "Visuals",
+      "features": [
+        {
+          "id": "visuals-navigation",
+          "label": "Visuals tab navigation",
+          "control": "navigation",
+          "status": "local-only",
+          "localAction": "Switch to an isolated Visuals category view."
+        },
+        {
+          "id": "hud-visible",
+          "label": "HUD Visible",
+          "control": "toggle",
+          "status": "pilot-live-verified",
+          "capability": "visuals:hud-visible",
+          "liveVerified": true
+        }
+      ]
+    },
+    {
+      "id": "quests",
+      "label": "Quests",
+      "features": [
+        {
+          "id": "quests-navigation",
+          "label": "Quests tab navigation",
+          "control": "navigation",
+          "status": "local-only",
+          "localAction": "Switch to an isolated Quests category view."
+        },
+        {
+          "id": "quest-journal-readback",
+          "label": "Quest Journal readback",
+          "control": "readout",
+          "status": "pilot-live-verified",
+          "capability": "quests:journal-readback",
+          "liveVerified": true,
+          "note": "Read-only bounded display of open quests, tracked state, and objectives; live-verified on the pinned pilot build without exposing quest-state mutation APIs."
+        }
+      ]
+    },
+    {
+      "id": "settings",
+      "label": "Settings",
+      "features": [
+        {
+          "id": "settings-navigation",
+          "label": "Settings tab navigation",
+          "control": "navigation",
+          "status": "local-only",
+          "localAction": "Switch to an isolated Settings category view."
+        },
+        {
+          "id": "settings-storage",
+          "label": "Local app settings",
+          "control": "category-placeholder",
+          "status": "local-only",
+          "localAction": "Persist app preferences only; no game effect."
+        }
+      ]
+    }
+  ],
+  "appShell": [
+    {
+      "id": "drag-region",
+      "label": "Window drag region",
+      "control": "window",
+      "status": "local-only",
+      "localAction": "Move the frameless Electron window without intercepting interactive controls."
+    },
+    {
+      "id": "window-minimize",
+      "label": "Minimize window",
+      "control": "window",
+      "status": "local-only",
+      "localAction": "Minimize the Electron window."
+    },
+    {
+      "id": "window-close",
+      "label": "Close window",
+      "control": "window",
+      "status": "local-only",
+      "localAction": "Close the Electron window."
+    },
+    {
+      "id": "search-controls",
+      "label": "Search controls",
+      "control": "search",
+      "status": "local-only",
+      "localAction": "Filter visible app controls by label."
+    },
+    {
+      "id": "save-preset",
+      "label": "Save UI Preset",
+      "control": "action",
+      "status": "local-only",
+      "localAction": "Persist only the selected category and search view; never imitate or dispatch gameplay values."
+    },
+    {
+      "id": "select-preset",
+      "label": "Local UI preset selector",
+      "control": "select",
+      "status": "local-only",
+      "localAction": "Load only a locally persisted category and search view; never change gameplay state."
+    },
+    {
+      "id": "nav-player",
+      "label": "Player tab",
+      "control": "navigation",
+      "status": "local-only",
+      "localAction": "Show Player controls with a distinct Inventory section on the same isolated page."
+    },
+    {
+      "id": "nav-combat",
+      "label": "Combat tab",
+      "control": "navigation",
+      "status": "local-only",
+      "localAction": "Show Combat controls only."
+    },
+    {
+      "id": "nav-world",
+      "label": "World tab",
+      "control": "navigation",
+      "status": "local-only",
+      "localAction": "Show World controls only."
+    },
+    {
+      "id": "nav-teleport",
+      "label": "Teleport tab",
+      "control": "navigation",
+      "status": "local-only",
+      "localAction": "Show Teleport controls only."
+    },
+    {
+      "id": "nav-visuals",
+      "label": "Visuals tab",
+      "control": "navigation",
+      "status": "local-only",
+      "localAction": "Show Visuals controls only."
+    },
+    {
+      "id": "nav-npc",
+      "label": "NPC tab",
+      "control": "navigation",
+      "status": "local-only",
+      "localAction": "Show NPC and Quick Spawn controls only."
+    },
+    {
+      "id": "nav-quests",
+      "label": "Quests tab",
+      "control": "navigation",
+      "status": "local-only",
+      "localAction": "Show Quests controls only."
+    },
+    {
+      "id": "nav-settings",
+      "label": "Settings tab",
+      "control": "navigation",
+      "status": "local-only",
+      "localAction": "Show Settings controls only."
+    }
+  ],
+  "hotkeys": [
+    {
+      "id": "f10-menu-toggle",
+      "keys": "F10",
+      "label": "Show / Hide Menu",
+      "status": "local-only",
+      "scope": "global Electron shortcut",
+      "hotkeyLiveVerified": true,
+      "liveEvidence": "qa/pilot-evidence/dawnwalker-0.3.10-hotkeys-live-20260903T070604Z.json (SHA256 38616500F68E74E5DC9689BF516435152654A90D5EE450FB347B28E3E2E4D9E2): visible -> OS-minimized -> restored/visible from game focus, followed by native game exit",
+      "requiredDisposition": "Supersedes the prototype's renderer F10 binding; renderer must not consume F10. The global shortcut passed live Computer-use QA under promoted 0.3.10 but remains local menu behavior, not gameplay proof."
+    },
+    {
+      "id": "insert-menu-toggle-legacy",
+      "keys": "Insert",
+      "label": "Legacy Show / Hide Menu",
+      "status": "local-only",
+      "scope": "prototype only",
+      "requiredDisposition": "Remove or leave unbound when F10 becomes the global menu shortcut."
+    },
+    {
+      "id": "f5-quick-save",
+      "keys": "F5",
+      "label": "Quick Save Location",
+      "status": "pending-reflection"
+    },
+    {
+      "id": "f6-quick-teleport",
+      "keys": "F6",
+      "label": "Quick Teleport",
+      "status": "pending-reflection"
+    },
+    {
+      "id": "f7-god-mode",
+      "keys": "F7",
+      "label": "God Mode Toggle",
+      "status": "pending-reflection"
+    },
+    {
+      "id": "f8-kill-all",
+      "keys": "F8",
+      "label": "Kill All Enemies",
+      "status": "pending-reflection"
+    },
+    {
+      "id": "f9-add-gold",
+      "keys": "F9",
+      "label": "Add 10,000 Gold",
+      "status": "pilot-live-verified",
+      "capability": "player:add-gold",
+      "capabilityLiveVerified": true,
+      "persistenceVerified": true,
+      "hotkeyLiveVerified": true,
+      "enabled": true,
+      "scope": "global Electron shortcut -> isolated preload event -> renderer Add Gold action -> main-process authorization -> exact bridge readback",
+      "liveEvidence": "qa/pilot-evidence/dawnwalker-0.3.10-hotkeys-live-20260903T070604Z.json (SHA256 38616500F68E74E5DC9689BF516435152654A90D5EE450FB347B28E3E2E4D9E2): F9 from game focus produced exact 0 -> 10000 menu readback and helper inverse restored 10000 -> 0, with normal exit and 61/61 original-save files restored at zero path/length/SHA diffs",
+      "requiredDisposition": "Promoted 0.3.10 proved F9 through the same bounded Add Gold path. Runtime interaction eligibility, exact bridge version/boot identity, capability advertisement, per-capability in-flight locking, main-process reauthorization, and exact nonnegative-int32 readback remain mandatory. The evidence is pilot-only and productionProof is false."
+    },
+    {
+      "id": "f10-unlock-skills-legacy",
+      "keys": "F10",
+      "label": "Legacy Unlock All Skills",
+      "status": "pending-reflection",
+      "requiredDisposition": "Remove or remap because F10 is reserved for the global menu toggle."
+    },
+    {
+      "id": "home-reset-player",
+      "keys": "Home",
+      "label": "Reset Player",
+      "status": "pending-reflection"
+    }
+  ]
+}

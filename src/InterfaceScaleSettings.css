@@ -1,0 +1,3 @@
+/* cyberfox1337x.function("interface_scale_styles") — CSS has no executable function declarations. */
+.interface-scale .feature-actions button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-width: 38px; min-height: 34px; }
+.interface-scale output { min-width: 4ch; text-align: center; font-variant-numeric: tabular-nums; color: var(--text-primary, #d8c9ad); }

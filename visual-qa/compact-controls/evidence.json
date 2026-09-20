@@ -1,0 +1,874 @@
+{
+  "errors": [],
+  "categories": [
+    {
+      "name": "Player",
+      "count": 13,
+      "controls": 46,
+      "viewport": [
+        1672,
+        941
+      ],
+      "client": [
+        1381,
+        583
+      ],
+      "scroll": [
+        1381,
+        2002
+      ],
+      "alignment": {
+        "scale": 1,
+        "cards": [
+          {
+            "id": "DWCombatControls",
+            "top": 337,
+            "bottom": 551.875,
+            "left": 278,
+            "right": 725.65625
+          },
+          {
+            "id": "DWPlayer",
+            "top": 337,
+            "bottom": 551.875,
+            "left": 730.65625,
+            "right": 1178.328125
+          },
+          {
+            "id": "DWSkills",
+            "top": 337,
+            "bottom": 551.875,
+            "left": 1183.328125,
+            "right": 1630.984375
+          }
+        ],
+        "gaps": [
+          5,
+          5
+        ]
+      }
+    },
+    {
+      "name": "Combat",
+      "count": 3,
+      "controls": 4,
+      "viewport": [
+        1672,
+        941
+      ],
+      "client": [
+        1391,
+        583
+      ],
+      "scroll": [
+        1391,
+        583
+      ],
+      "alignment": {
+        "scale": 1,
+        "cards": [
+          {
+            "id": "DWActivationControl",
+            "top": 337,
+            "bottom": 492.65625,
+            "left": 278,
+            "right": 729
+          },
+          {
+            "id": "DWCooldownControl",
+            "top": 337,
+            "bottom": 492.65625,
+            "left": 734,
+            "right": 1185
+          },
+          {
+            "id": "DWParryAssist",
+            "top": 337,
+            "bottom": 492.65625,
+            "left": 1190,
+            "right": 1641
+          }
+        ],
+        "gaps": [
+          5,
+          5
+        ]
+      }
+    },
+    {
+      "name": "World",
+      "count": 2,
+      "controls": 5,
+      "viewport": [
+        1672,
+        941
+      ],
+      "client": [
+        1138,
+        583
+      ],
+      "scroll": [
+        1138,
+        583
+      ]
+    },
+    {
+      "name": "Teleport",
+      "count": 1,
+      "controls": 2,
+      "viewport": [
+        1672,
+        941
+      ],
+      "client": [
+        1391,
+        583
+      ],
+      "scroll": [
+        1391,
+        583
+      ]
+    },
+    {
+      "name": "Settings",
+      "count": 1,
+      "controls": 1,
+      "viewport": [
+        1672,
+        941
+      ],
+      "client": [
+        1381,
+        583
+      ],
+      "scroll": [
+        1381,
+        1595
+      ]
+    }
+  ],
+  "expandedLayouts": [
+    {
+      "width": 1366,
+      "height": 768,
+      "viewport": [
+        1366,
+        768
+      ],
+      "client": [
+        1381,
+        583
+      ],
+      "scroll": [
+        1381,
+        2172
+      ],
+      "sectionId": "DWCombatControls",
+      "clipped": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "viewport": [
+        1366,
+        768
+      ],
+      "client": [
+        1381,
+        583
+      ],
+      "scroll": [
+        1381,
+        2172
+      ],
+      "sectionId": "DWPlayer",
+      "clipped": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "viewport": [
+        1366,
+        768
+      ],
+      "client": [
+        1381,
+        583
+      ],
+      "scroll": [
+        1381,
+        2172
+      ],
+      "sectionId": "DWSkills",
+      "clipped": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "viewport": [
+        1366,
+        768
+      ],
+      "client": [
+        1381,
+        583
+      ],
+      "scroll": [
+        1381,
+        2172
+      ],
+      "sectionId": "DWXP",
+      "clipped": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "viewport": [
+        1366,
+        768
+      ],
+      "client": [
+        1381,
+        583
+      ],
+      "scroll": [
+        1381,
+        2172
+      ],
+      "sectionId": "DWMutation",
+      "clipped": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "viewport": [
+        1366,
+        768
+      ],
+      "client": [
+        1381,
+        583
+      ],
+      "scroll": [
+        1381,
+        2172
+      ],
+      "sectionId": "DWTraitGrant",
+      "clipped": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "viewport": [
+        1366,
+        768
+      ],
+      "client": [
+        1381,
+        583
+      ],
+      "scroll": [
+        1381,
+        2172
+      ],
+      "sectionId": "DWUltimateControls",
+      "clipped": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "viewport": [
+        1366,
+        768
+      ],
+      "client": [
+        1381,
+        583
+      ],
+      "scroll": [
+        1381,
+        2172
+      ],
+      "sectionId": "DWRespec",
+      "clipped": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "viewport": [
+        1366,
+        768
+      ],
+      "client": [
+        1381,
+        583
+      ],
+      "scroll": [
+        1381,
+        2172
+      ],
+      "sectionId": "DWCurrency",
+      "clipped": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "viewport": [
+        1366,
+        768
+      ],
+      "client": [
+        1381,
+        583
+      ],
+      "scroll": [
+        1381,
+        2172
+      ],
+      "sectionId": "DWMaterials",
+      "clipped": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "viewport": [
+        1366,
+        768
+      ],
+      "client": [
+        1381,
+        583
+      ],
+      "scroll": [
+        1381,
+        2172
+      ],
+      "sectionId": "DWManuals",
+      "clipped": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "viewport": [
+        1366,
+        768
+      ],
+      "client": [
+        1381,
+        583
+      ],
+      "scroll": [
+        1381,
+        2172
+      ],
+      "sectionId": "DWKeys",
+      "clipped": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "viewport": [
+        1366,
+        768
+      ],
+      "client": [
+        1381,
+        583
+      ],
+      "scroll": [
+        1381,
+        2172
+      ],
+      "sectionId": "DWItems",
+      "clipped": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "viewport": [
+        1366,
+        768
+      ],
+      "client": [
+        1391,
+        583
+      ],
+      "scroll": [
+        1391,
+        583
+      ],
+      "sectionId": "DWActivationControl",
+      "clipped": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "viewport": [
+        1366,
+        768
+      ],
+      "client": [
+        1391,
+        583
+      ],
+      "scroll": [
+        1391,
+        583
+      ],
+      "sectionId": "DWCooldownControl",
+      "clipped": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "viewport": [
+        1366,
+        768
+      ],
+      "client": [
+        1391,
+        583
+      ],
+      "scroll": [
+        1391,
+        583
+      ],
+      "sectionId": "DWParryAssist",
+      "clipped": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "viewport": [
+        1366,
+        768
+      ],
+      "client": [
+        1138,
+        583
+      ],
+      "scroll": [
+        1138,
+        583
+      ],
+      "sectionId": "DWInfamyControl",
+      "clipped": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "viewport": [
+        1366,
+        768
+      ],
+      "client": [
+        1138,
+        583
+      ],
+      "scroll": [
+        1138,
+        583
+      ],
+      "sectionId": "DWTimeControl",
+      "clipped": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "viewport": [
+        1366,
+        768
+      ],
+      "client": [
+        1391,
+        583
+      ],
+      "scroll": [
+        1391,
+        583
+      ],
+      "sectionId": "DWShrines",
+      "clipped": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "viewport": [
+        1366,
+        768
+      ],
+      "client": [
+        1381,
+        583
+      ],
+      "scroll": [
+        1381,
+        2284
+      ],
+      "sectionId": "DWMenuWarnings",
+      "clipped": []
+    },
+    {
+      "width": 1100,
+      "height": 620,
+      "viewport": [
+        1100,
+        620
+      ],
+      "client": [
+        1381,
+        583
+      ],
+      "scroll": [
+        1381,
+        2239
+      ],
+      "sectionId": "DWCombatControls",
+      "clipped": []
+    },
+    {
+      "width": 1100,
+      "height": 620,
+      "viewport": [
+        1100,
+        620
+      ],
+      "client": [
+        1381,
+        583
+      ],
+      "scroll": [
+        1381,
+        2239
+      ],
+      "sectionId": "DWPlayer",
+      "clipped": []
+    },
+    {
+      "width": 1100,
+      "height": 620,
+      "viewport": [
+        1100,
+        620
+      ],
+      "client": [
+        1381,
+        583
+      ],
+      "scroll": [
+        1381,
+        2239
+      ],
+      "sectionId": "DWSkills",
+      "clipped": []
+    },
+    {
+      "width": 1100,
+      "height": 620,
+      "viewport": [
+        1100,
+        620
+      ],
+      "client": [
+        1381,
+        583
+      ],
+      "scroll": [
+        1381,
+        2239
+      ],
+      "sectionId": "DWXP",
+      "clipped": []
+    },
+    {
+      "width": 1100,
+      "height": 620,
+      "viewport": [
+        1100,
+        620
+      ],
+      "client": [
+        1381,
+        583
+      ],
+      "scroll": [
+        1381,
+        2239
+      ],
+      "sectionId": "DWMutation",
+      "clipped": []
+    },
+    {
+      "width": 1100,
+      "height": 620,
+      "viewport": [
+        1100,
+        620
+      ],
+      "client": [
+        1381,
+        583
+      ],
+      "scroll": [
+        1381,
+        2239
+      ],
+      "sectionId": "DWTraitGrant",
+      "clipped": []
+    },
+    {
+      "width": 1100,
+      "height": 620,
+      "viewport": [
+        1100,
+        620
+      ],
+      "client": [
+        1381,
+        583
+      ],
+      "scroll": [
+        1381,
+        2239
+      ],
+      "sectionId": "DWUltimateControls",
+      "clipped": []
+    },
+    {
+      "width": 1100,
+      "height": 620,
+      "viewport": [
+        1100,
+        620
+      ],
+      "client": [
+        1381,
+        583
+      ],
+      "scroll": [
+        1381,
+        2239
+      ],
+      "sectionId": "DWRespec",
+      "clipped": []
+    },
+    {
+      "width": 1100,
+      "height": 620,
+      "viewport": [
+        1100,
+        620
+      ],
+      "client": [
+        1381,
+        583
+      ],
+      "scroll": [
+        1381,
+        2239
+      ],
+      "sectionId": "DWCurrency",
+      "clipped": []
+    },
+    {
+      "width": 1100,
+      "height": 620,
+      "viewport": [
+        1100,
+        620
+      ],
+      "client": [
+        1381,
+        583
+      ],
+      "scroll": [
+        1381,
+        2239
+      ],
+      "sectionId": "DWMaterials",
+      "clipped": []
+    },
+    {
+      "width": 1100,
+      "height": 620,
+      "viewport": [
+        1100,
+        620
+      ],
+      "client": [
+        1381,
+        583
+      ],
+      "scroll": [
+        1381,
+        2239
+      ],
+      "sectionId": "DWManuals",
+      "clipped": []
+    },
+    {
+      "width": 1100,
+      "height": 620,
+      "viewport": [
+        1100,
+        620
+      ],
+      "client": [
+        1381,
+        583
+      ],
+      "scroll": [
+        1381,
+        2239
+      ],
+      "sectionId": "DWKeys",
+      "clipped": []
+    },
+    {
+      "width": 1100,
+      "height": 620,
+      "viewport": [
+        1100,
+        620
+      ],
+      "client": [
+        1381,
+        583
+      ],
+      "scroll": [
+        1381,
+        2239
+      ],
+      "sectionId": "DWItems",
+      "clipped": []
+    },
+    {
+      "width": 1100,
+      "height": 620,
+      "viewport": [
+        1100,
+        620
+      ],
+      "client": [
+        1391,
+        583
+      ],
+      "scroll": [
+        1391,
+        583
+      ],
+      "sectionId": "DWActivationControl",
+      "clipped": []
+    },
+    {
+      "width": 1100,
+      "height": 620,
+      "viewport": [
+        1100,
+        620
+      ],
+      "client": [
+        1391,
+        583
+      ],
+      "scroll": [
+        1391,
+        583
+      ],
+      "sectionId": "DWCooldownControl",
+      "clipped": []
+    },
+    {
+      "width": 1100,
+      "height": 620,
+      "viewport": [
+        1100,
+        620
+      ],
+      "client": [
+        1391,
+        583
+      ],
+      "scroll": [
+        1391,
+        583
+      ],
+      "sectionId": "DWParryAssist",
+      "clipped": []
+    },
+    {
+      "width": 1100,
+      "height": 620,
+      "viewport": [
+        1100,
+        620
+      ],
+      "client": [
+        1138,
+        583
+      ],
+      "scroll": [
+        1138,
+        583
+      ],
+      "sectionId": "DWInfamyControl",
+      "clipped": []
+    },
+    {
+      "width": 1100,
+      "height": 620,
+      "viewport": [
+        1100,
+        620
+      ],
+      "client": [
+        1138,
+        583
+      ],
+      "scroll": [
+        1138,
+        583
+      ],
+      "sectionId": "DWTimeControl",
+      "clipped": []
+    },
+    {
+      "width": 1100,
+      "height": 620,
+      "viewport": [
+        1100,
+        620
+      ],
+      "client": [
+        1391,
+        583
+      ],
+      "scroll": [
+        1391,
+        583
+      ],
+      "sectionId": "DWShrines",
+      "clipped": []
+    },
+    {
+      "width": 1100,
+      "height": 620,
+      "viewport": [
+        1100,
+        620
+      ],
+      "client": [
+        1381,
+        583
+      ],
+      "scroll": [
+        1381,
+        2618
+      ],
+      "sectionId": "DWMenuWarnings",
+      "clipped": []
+    }
+  ],
+  "playerCoreVisible": true,
+  "liveConnection": true
+}

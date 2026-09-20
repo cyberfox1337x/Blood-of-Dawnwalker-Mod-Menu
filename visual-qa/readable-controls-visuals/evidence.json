@@ -1,0 +1,56 @@
+{
+  "errors": [],
+  "layouts": [
+    {
+      "width": 1672,
+      "height": 941,
+      "viewport": [
+        1672,
+        941
+      ],
+      "client": [
+        1391,
+        583
+      ],
+      "scroll": [
+        1391,
+        583
+      ],
+      "clipped": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "viewport": [
+        1366,
+        768
+      ],
+      "client": [
+        1391,
+        583
+      ],
+      "scroll": [
+        1391,
+        583
+      ],
+      "clipped": []
+    },
+    {
+      "width": 1100,
+      "height": 620,
+      "viewport": [
+        1100,
+        620
+      ],
+      "client": [
+        1391,
+        583
+      ],
+      "scroll": [
+        1391,
+        583
+      ],
+      "clipped": []
+    }
+  ]
+}

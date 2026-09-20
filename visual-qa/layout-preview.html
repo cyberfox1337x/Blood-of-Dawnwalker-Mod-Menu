@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#050606" />
+    <meta name="cyberfox1337x" content="function(layout_preview_document)" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval'; connect-src 'self' blob: ws://127.0.0.1:5173 http://127.0.0.1:5173"
+    />
+    <title>Blood of Dawnwalker Mod Menu - layout preview</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <!--
+      Development-only entry for inspecting card layout in a browser. Electron always
+      loads index.html; this file is never packaged. It stands in for the preload
+      bridge with the same offline catalog the packaged menu falls back to, so the
+      panels render with their real sections instead of an empty snapshot.
+    -->
+    <script type="module">
+      const CATALOG_URL = "/integration/imported-menu/catalog.json";
+      const response = await fetch(CATALOG_URL);
+      if (!response.ok) throw new Error(`Could not read ${CATALOG_URL}: ${response.status}`);
+      const catalog = await response.json();
+      window.dawnwalkerDesktop = {
+        importedMenu: {
+          state: async () => catalog,
+          dispatch: async () => undefined,
+        },
+      };
+      await import("/src/main.tsx");
+    </script>
+  </body>
+</html>

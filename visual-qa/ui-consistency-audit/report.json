@@ -1,0 +1,3329 @@
+{
+  "errors": [],
+  "connected": true,
+  "sizes": [
+    {
+      "width": 1672,
+      "height": 941,
+      "categories": [
+        {
+          "id": "player",
+          "selects": [
+            {
+              "label": "Reward sizeSelect…Very smallSmallMediumL",
+              "owner": "imported-menu",
+              "appearance": "base-select",
+              "fontFamily": "\"Segoe UI\", sans-serif",
+              "fontPx": 14,
+              "color": "rgb(213, 208, 200)",
+              "background": "rgb(8, 10, 9)",
+              "borderColor": "rgb(65, 67, 59)",
+              "borderRadius": "3px",
+              "heightPx": 29.6,
+              "disabled": false,
+              "optionCount": 6
+            },
+            {
+              "label": "PerkSelect…Adrenaline Rush — rank 0/4  [",
+              "owner": "imported-menu",
+              "appearance": "base-select",
+              "fontFamily": "\"Segoe UI\", sans-serif",
+              "fontPx": 14,
+              "color": "rgb(213, 208, 200)",
+              "background": "rgb(8, 10, 9)",
+              "borderColor": "rgb(65, 67, 59)",
+              "borderRadius": "3px",
+              "heightPx": 29.6,
+              "disabled": false,
+              "optionCount": 113
+            },
+            {
+              "label": "Ultimate to grantSelect…Witchcraft — Aet",
+              "owner": "imported-menu",
+              "appearance": "base-select",
+              "fontFamily": "\"Segoe UI\", sans-serif",
+              "fontPx": 14,
+              "color": "rgb(213, 208, 200)",
+              "background": "rgb(8, 10, 9)",
+              "borderColor": "rgb(65, 67, 59)",
+              "borderRadius": "3px",
+              "heightPx": 29.6,
+              "disabled": false,
+              "optionCount": 10
+            },
+            {
+              "label": "MaterialSelect…AconiteAetheric EssenceAn",
+              "owner": "imported-menu",
+              "appearance": "base-select",
+              "fontFamily": "\"Segoe UI\", sans-serif",
+              "fontPx": 14,
+              "color": "rgb(213, 208, 200)",
+              "background": "rgb(8, 10, 9)",
+              "borderColor": "rgb(65, 67, 59)",
+              "borderRadius": "3px",
+              "heightPx": 29.6,
+              "disabled": false,
+              "optionCount": 47
+            },
+            {
+              "label": "ManualSelect…Adrenaline Rush ManualAethe",
+              "owner": "imported-menu",
+              "appearance": "base-select",
+              "fontFamily": "\"Segoe UI\", sans-serif",
+              "fontPx": 14,
+              "color": "rgb(213, 208, 200)",
+              "background": "rgb(8, 10, 9)",
+              "borderColor": "rgb(65, 67, 59)",
+              "borderRadius": "3px",
+              "heightPx": 29.6,
+              "disabled": false,
+              "optionCount": 51
+            },
+            {
+              "label": "Key itemSelect…Aged Key  [ItemKeyDataAss",
+              "owner": "imported-menu",
+              "appearance": "base-select",
+              "fontFamily": "\"Segoe UI\", sans-serif",
+              "fontPx": 14,
+              "color": "rgb(213, 208, 200)",
+              "background": "rgb(8, 10, 9)",
+              "borderColor": "rgb(65, 67, 59)",
+              "borderRadius": "3px",
+              "heightPx": 29.6,
+              "disabled": false,
+              "optionCount": 42
+            },
+            {
+              "label": "CategorySelect…AllWeaponsClothingConsuma",
+              "owner": "imported-menu",
+              "appearance": "base-select",
+              "fontFamily": "\"Segoe UI\", sans-serif",
+              "fontPx": 14,
+              "color": "rgb(213, 208, 200)",
+              "background": "rgb(8, 10, 9)",
+              "borderColor": "rgb(65, 67, 59)",
+              "borderRadius": "3px",
+              "heightPx": 29.6,
+              "disabled": false,
+              "optionCount": 8
+            },
+            {
+              "label": "ItemSelect…[DB] Anca Knife  [Weapons][DB",
+              "owner": "imported-menu",
+              "appearance": "base-select",
+              "fontFamily": "\"Segoe UI\", sans-serif",
+              "fontPx": 14,
+              "color": "rgb(213, 208, 200)",
+              "background": "rgb(8, 10, 9)",
+              "borderColor": "rgb(65, 67, 59)",
+              "borderRadius": "3px",
+              "heightPx": 29.6,
+              "disabled": false,
+              "optionCount": 828
+            }
+          ],
+          "spacing": {
+            "cards": [
+              {
+                "id": "player-secondary-controls",
+                "width": 1353,
+                "height": 270.4,
+                "topPad": 8,
+                "bottomPad": 8,
+                "left": 278,
+                "top": 277,
+                "bottom": 547.4
+              },
+              {
+                "id": "capability-notice",
+                "width": 1333,
+                "height": 59.6,
+                "topPad": 9,
+                "bottomPad": 9,
+                "left": 288,
+                "top": 410.8,
+                "bottom": 470.4
+              },
+              {
+                "id": "DWCombatControls",
+                "width": 447,
+                "height": 126.9,
+                "topPad": 1,
+                "bottomPad": 10,
+                "left": 278,
+                "top": 619.6,
+                "bottom": 746.5
+              },
+              {
+                "id": "DWPlayer",
+                "width": 447,
+                "height": 236.9,
+                "topPad": 1,
+                "bottomPad": 10,
+                "left": 278,
+                "top": 752.5,
+                "bottom": 989.4
+              },
+              {
+                "id": "DWSkills",
+                "width": 447,
+                "height": 173.1,
+                "topPad": 1,
+                "bottomPad": 10,
+                "left": 278,
+                "top": 995.4,
+                "bottom": 1168.5
+              },
+              {
+                "id": "DWXP",
+                "width": 447,
+                "height": 136.5,
+                "topPad": 1,
+                "bottomPad": 10,
+                "left": 278,
+                "top": 1174.5,
+                "bottom": 1311.1
+              },
+              {
+                "id": "DWMutation",
+                "width": 447,
+                "height": 393.9,
+                "topPad": 1,
+                "bottomPad": 10,
+                "left": 731,
+                "top": 619.6,
+                "bottom": 1013.4
+              },
+              {
+                "id": "DWTraitGrant",
+                "width": 447,
+                "height": 243.3,
+                "topPad": 1,
+                "bottomPad": 10,
+                "left": 731,
+                "top": 1019.4,
+                "bottom": 1262.8
+              },
+              {
+                "id": "DWUltimateControls",
+                "width": 447,
+                "height": 196.1,
+                "topPad": 1,
+                "bottomPad": 10,
+                "left": 1184,
+                "top": 619.6,
+                "bottom": 815.7
+              },
+              {
+                "id": "DWRespec",
+                "width": 447,
+                "height": 616.4,
+                "topPad": 1,
+                "bottomPad": 10,
+                "left": 1184,
+                "top": 821.7,
+                "bottom": 1438.1
+              },
+              {
+                "id": "DWCurrency",
+                "width": 447,
+                "height": 136.5,
+                "topPad": 1,
+                "bottomPad": 10,
+                "left": 278,
+                "top": 1537.7,
+                "bottom": 1674.2
+              },
+              {
+                "id": "DWMaterials",
+                "width": 447,
+                "height": 206.7,
+                "topPad": 1,
+                "bottomPad": 10,
+                "left": 278,
+                "top": 1680.2,
+                "bottom": 1886.9
+              },
+              {
+                "id": "DWManuals",
+                "width": 447,
+                "height": 240.9,
+                "topPad": 1,
+                "bottomPad": 10,
+                "left": 731,
+                "top": 1537.7,
+                "bottom": 1778.6
+              },
+              {
+                "id": "DWKeys",
+                "width": 447,
+                "height": 240.9,
+                "topPad": 1,
+                "bottomPad": 10,
+                "left": 731,
+                "top": 1784.6,
+                "bottom": 2025.5
+              },
+              {
+                "id": "DWItems",
+                "width": 447,
+                "height": 341.7,
+                "topPad": 1,
+                "bottomPad": 10,
+                "left": 1184,
+                "top": 1537.7,
+                "bottom": 1879.4
+              },
+              {
+                "id": "player-secondary-controls",
+                "width": 1353,
+                "height": 236.2,
+                "topPad": 8,
+                "bottomPad": 8,
+                "left": 278,
+                "top": 2037.5,
+                "bottom": 2273.7
+              },
+              {
+                "id": "capability-notice",
+                "width": 1333,
+                "height": 59.6,
+                "topPad": 9,
+                "bottomPad": 9,
+                "left": 288,
+                "top": 2139.5,
+                "bottom": 2199.1
+              },
+              {
+                "id": "capability-notice",
+                "width": 1333,
+                "height": 59.6,
+                "topPad": 9,
+                "bottomPad": 9,
+                "left": 288,
+                "top": 2206.1,
+                "bottom": 2265.7
+              }
+            ],
+            "gaps": [
+              {
+                "from": "player-secondary-controls",
+                "to": "DWCombatControls",
+                "gap": 72.2
+              },
+              {
+                "from": "capability-notice",
+                "to": "capability-notice",
+                "gap": 1669.1
+              },
+              {
+                "from": "DWCombatControls",
+                "to": "DWPlayer",
+                "gap": 6
+              },
+              {
+                "from": "DWPlayer",
+                "to": "DWSkills",
+                "gap": 6
+              },
+              {
+                "from": "DWSkills",
+                "to": "DWXP",
+                "gap": 6
+              },
+              {
+                "from": "DWXP",
+                "to": "DWCurrency",
+                "gap": 226.6
+              },
+              {
+                "from": "DWMutation",
+                "to": "DWTraitGrant",
+                "gap": 6
+              },
+              {
+                "from": "DWTraitGrant",
+                "to": "DWManuals",
+                "gap": 274.9
+              },
+              {
+                "from": "DWUltimateControls",
+                "to": "DWRespec",
+                "gap": 6
+              },
+              {
+                "from": "DWRespec",
+                "to": "DWItems",
+                "gap": 99.6
+              },
+              {
+                "from": "DWCurrency",
+                "to": "DWMaterials",
+                "gap": 6
+              },
+              {
+                "from": "DWMaterials",
+                "to": "player-secondary-controls",
+                "gap": 150.6
+              },
+              {
+                "from": "DWManuals",
+                "to": "DWKeys",
+                "gap": 6
+              },
+              {
+                "from": "capability-notice",
+                "to": "capability-notice",
+                "gap": 7
+              }
+            ],
+            "trailing": -1423.7,
+            "scroll": [
+              1381,
+              2017
+            ],
+            "client": [
+              1381,
+              583
+            ]
+          },
+          "controls": [
+            {
+              "tag": "button",
+              "type": "button",
+              "label": "God Mode: unverified",
+              "disabled": true,
+              "capability": "player:god-mode",
+              "visible": true
+            },
+            {
+              "tag": "button",
+              "type": "button",
+              "label": "Infinite Health: unverified",
+              "disabled": true,
+              "capability": "player:infinite-health",
+              "visible": true
+            },
+            {
+              "tag": "button",
+              "type": "button",
+              "label": "Unlimited Stamina: unverified",
+              "disabled": true,
+              "capability": "player:unlimited-stamina",
+              "visible": true
+            },
+            {
+              "tag": "button",
+              "type": "button",
+              "label": "Sprint No Drain: unverified",
+              "disabled": true,
+              "capability": "player:sprint-no-drain",
+              "visible": true
+            },
+            {
+              "tag": "input",
+              "type": "range",
+              "label": "Blood Energy",
+              "disabled": true,
+              "capability": "player:blood-energy",
+              "visible": true
+            },
+            {
+              "tag": "button",
+              "type": "button",
+              "label": "Decrease Trait Points",
+              "disabled": true,
+              "capability": "player:trait-points",
+              "visible": true
+            },
+            {
+              "tag": "button",
+              "type": "button",
+              "label": "Increase Trait Points",
+              "disabled": true,
+              "capability": "player:trait-points",
+              "visible": true
+            },
+            {
+              "tag": "button",
+              "type": "button",
+              "label": "Decrease Target level",
+              "disabled": true,
+              "capability": "player:add-level",
+              "visible": true
+            },
+            {
+              "tag": "button",
+              "type": "button",
+              "label": "Increase Target level",
+              "disabled": true,
+              "capability": "player:add-level",
+              "visible": true
+            },
+            {
+              "tag": "button",
+              "type": "button",
+              "label": "Add Level",
+              "disabled": true,
+              "capability": "player:add-level",
+              "visible": true
+            },
+            {
+              "tag": "input",
+              "type": "text",
+              "label": "Trait id",
+              "disabled": true,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "button",
+              "type": "button",
+              "label": "Unblock Trait",
+              "disabled": true,
+              "capability": "player:unblock-trait",
+              "visible": true
+            },
+            {
+              "tag": "button",
+              "type": "button",
+              "label": "Refresh game lists & status",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "input",
+              "type": "checkbox",
+              "label": "Rapid stamina refillOFF",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "meter",
+              "type": "",
+              "label": "♡  Health100%",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "meter",
+              "type": "",
+              "label": "ϟ  Stamina100%",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "meter",
+              "type": "",
+              "label": "❀  Activation Charge0 / 1",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "button",
+              "type": "button",
+              "label": "Refill stamina now",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "button",
+              "type": "button",
+              "label": "Refresh status",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "input",
+              "type": "number",
+              "label": "Skill point amount",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "button",
+              "type": "button",
+              "label": "Add",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "button",
+              "type": "button",
+              "label": "Remove",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "button",
+              "type": "button",
+              "label": "Clear available points",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "select",
+              "type": "",
+              "label": "Select…Very smallSmallMediumLargeVery large",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "button",
+              "type": "button",
+              "label": "Add XP",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "input",
+              "type": "number",
+              "label": "Corruption level",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "button",
+              "type": "button",
+              "label": "Set exact Corruption level",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "input",
+              "type": "number",
+              "label": "Corruption amount (raw units)",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "button",
+              "type": "button",
+              "label": "Increase corruption",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "button",
+              "type": "button",
+              "label": "Reduce corruption charges",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "button",
+              "type": "button",
+              "label": "+1 raw charge",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "button",
+              "type": "button",
+              "label": "-1 raw charge",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "button",
+              "type": "button",
+              "label": "Refresh corruption status",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "input",
+              "type": "search",
+              "label": "Search Perk",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "select",
+              "type": "",
+              "label": "Select…Adrenaline Rush — rank 0/4  [CombatFocus_Passive_Adre",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "input",
+              "type": "number",
+              "label": "Target rank",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "button",
+              "type": "button",
+              "label": "Grant selected perk",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "button",
+              "type": "button",
+              "label": "Refresh perk list",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "select",
+              "type": "",
+              "label": "Select…Witchcraft — Aether CascadeWitchcraft — Entwined Torm",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "button",
+              "type": "button",
+              "label": "Grant selected Ultimate",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "button",
+              "type": "button",
+              "label": "Unlock Everything / Max All Traits",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "button",
+              "type": "button",
+              "label": "Preview Light Respec",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "button",
+              "type": "button",
+              "label": "Preview Medium Respec",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "button",
+              "type": "button",
+              "label": "Preview Full Respec",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "button",
+              "type": "button",
+              "label": "Confirm respec (changes skills)",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "button",
+              "type": "button",
+              "label": "Cancel preview",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "input",
+              "type": "number",
+              "label": "Coin amount",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "button",
+              "type": "button",
+              "label": "Add coins",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "button",
+              "type": "button",
+              "label": "Remove coins",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "input",
+              "type": "search",
+              "label": "Search Material",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "select",
+              "type": "",
+              "label": "Select…AconiteAetheric EssenceAnimal BonesBear LiverBoar Fat",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "input",
+              "type": "number",
+              "label": "Quantity",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "button",
+              "type": "button",
+              "label": "Add material",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "input",
+              "type": "search",
+              "label": "Search Manual",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "select",
+              "type": "",
+              "label": "Select…Adrenaline Rush ManualAether Flow ManualAmalgam Manua",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "button",
+              "type": "button",
+              "label": "Give selected manual",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "input",
+              "type": "search",
+              "label": "Search Key item",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "select",
+              "type": "",
+              "label": "Select…Aged Key  [ItemKeyDataAsset]Ancient Key  [ItemKeyData",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "button",
+              "type": "button",
+              "label": "Give selected key",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "select",
+              "type": "",
+              "label": "Select…AllWeaponsClothingConsumablesMaterialsRecipesJunk",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "input",
+              "type": "search",
+              "label": "Search Item",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "select",
+              "type": "",
+              "label": "Select…[DB] Anca Knife  [Weapons][DB] Heavy Weapon  [Weapons",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "input",
+              "type": "number",
+              "label": "Quantity",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "input",
+              "type": "number",
+              "label": "Item level",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "button",
+              "type": "button",
+              "label": "Give selected item",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "button",
+              "type": "button",
+              "label": "Give all Weapons + Clothing (one each)",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "button",
+              "type": "button",
+              "label": "Decrease Gold amount",
+              "disabled": true,
+              "capability": "player:add-gold",
+              "visible": true
+            },
+            {
+              "tag": "button",
+              "type": "button",
+              "label": "Increase Gold amount",
+              "disabled": true,
+              "capability": "player:add-gold",
+              "visible": true
+            },
+            {
+              "tag": "button",
+              "type": "button",
+              "label": "Add Gold",
+              "disabled": true,
+              "capability": "player:add-gold",
+              "visible": true
+            },
+            {
+              "tag": "input",
+              "type": "text",
+              "label": "Item asset path",
+              "disabled": true,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "button",
+              "type": "button",
+              "label": "Decrease Item quantity",
+              "disabled": true,
+              "capability": "inventory:add-item",
+              "visible": true
+            },
+            {
+              "tag": "button",
+              "type": "button",
+              "label": "Increase Item quantity",
+              "disabled": true,
+              "capability": "inventory:add-item",
+              "visible": true
+            },
+            {
+              "tag": "button",
+              "type": "button",
+              "label": "Add Item",
+              "disabled": true,
+              "capability": "inventory:add-item",
+              "visible": true
+            }
+          ]
+        },
+        {
+          "id": "combat",
+          "selects": [
+            {
+              "label": "RPG Difficulty",
+              "owner": "select-wrap",
+              "appearance": "base-select",
+              "fontFamily": "\"Segoe UI\", sans-serif",
+              "fontPx": 14,
+              "color": "rgb(165, 156, 144)",
+              "background": "rgb(8, 10, 10)",
+              "borderColor": "rgb(52, 54, 51)",
+              "borderRadius": "3px",
+              "heightPx": 26,
+              "disabled": true,
+              "optionCount": 5
+            },
+            {
+              "label": "Action Difficulty",
+              "owner": "select-wrap",
+              "appearance": "base-select",
+              "fontFamily": "\"Segoe UI\", sans-serif",
+              "fontPx": 14,
+              "color": "rgb(165, 156, 144)",
+              "background": "rgb(8, 10, 10)",
+              "borderColor": "rgb(52, 54, 51)",
+              "borderRadius": "3px",
+              "heightPx": 26,
+              "disabled": true,
+              "optionCount": 5
+            }
+          ],
+          "spacing": {
+            "cards": [
+              {
+                "id": "DWActivationControl",
+                "width": 450.3,
+                "height": 146.5,
+                "topPad": 1,
+                "bottomPad": 10,
+                "left": 278,
+                "top": 342.2,
+                "bottom": 488.7
+              },
+              {
+                "id": "DWCooldownControl",
+                "width": 450.3,
+                "height": 126.9,
+                "topPad": 1,
+                "bottomPad": 10,
+                "left": 734.3,
+                "top": 342.2,
+                "bottom": 469.1
+              },
+              {
+                "id": "DWParryAssist",
+                "width": 450.3,
+                "height": 190.7,
+                "topPad": 1,
+                "bottomPad": 10,
+                "left": 1190.7,
+                "top": 342.2,
+                "bottom": 532.9
+              },
+              {
+                "id": "feature-tools",
+                "width": 1363,
+                "height": 83.2,
+                "topPad": 9,
+                "bottomPad": 9,
+                "left": 278,
+                "top": 539.9,
+                "bottom": 623.1
+              },
+              {
+                "id": "capability-notice",
+                "width": 446.3,
+                "height": 98.8,
+                "topPad": 9,
+                "bottomPad": 28.6,
+                "left": 278,
+                "top": 667.1,
+                "bottom": 765.9
+              },
+              {
+                "id": "capability-notice",
+                "width": 446.3,
+                "height": 98.8,
+                "topPad": 9,
+                "bottomPad": 9,
+                "left": 736.3,
+                "top": 667.1,
+                "bottom": 765.9
+              },
+              {
+                "id": "capability-notice",
+                "width": 446.3,
+                "height": 98.8,
+                "topPad": 9,
+                "bottomPad": 28.6,
+                "left": 1194.7,
+                "top": 667.1,
+                "bottom": 765.9
+              },
+              {
+                "id": "capability-notice",
+                "width": 1363,
+                "height": 59.6,
+                "topPad": 9,
+                "bottomPad": 9,
+                "left": 278,
+                "top": 772.9,
+                "bottom": 832.5
+              }
+            ],
+            "gaps": [
+              {
+                "from": "DWActivationControl",
+                "to": "feature-tools",
+                "gap": 51.2
+              },
+              {
+                "from": "feature-tools",
+                "to": "capability-notice",
+                "gap": 44
+              },
+              {
+                "from": "capability-notice",
+                "to": "capability-notice",
+                "gap": 7
+              }
+            ],
+            "trailing": 17.5,
+            "scroll": [
+              1391,
+              583
+            ],
+            "client": [
+              1391,
+              583
+            ]
+          },
+          "controls": [
+            {
+              "tag": "button",
+              "type": "button",
+              "label": "Refresh game lists & status",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "input",
+              "type": "checkbox",
+              "label": "Quick fill activation chargeOFF",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "input",
+              "type": "checkbox",
+              "label": "No ability cooldown (quick reset)OFF",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "input",
+              "type": "checkbox",
+              "label": "Auto parry while blockingOFF",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "button",
+              "type": "button",
+              "label": "Infinite Blood Energy: unverified",
+              "disabled": true,
+              "capability": "combat:infinite-blood-energy",
+              "visible": true
+            },
+            {
+              "tag": "select",
+              "type": "",
+              "label": "RPG Difficulty",
+              "disabled": true,
+              "capability": "combat:rpg-difficulty",
+              "visible": true
+            },
+            {
+              "tag": "select",
+              "type": "",
+              "label": "Action Difficulty",
+              "disabled": true,
+              "capability": "combat:action-difficulty",
+              "visible": true
+            }
+          ]
+        },
+        {
+          "id": "world",
+          "selects": [],
+          "spacing": {
+            "cards": [
+              {
+                "id": "DWInfamyControl",
+                "width": 544,
+                "height": 163.1,
+                "topPad": 1,
+                "bottomPad": 10,
+                "left": 286,
+                "top": 352.2,
+                "bottom": 515.3
+              },
+              {
+                "id": "DWTimeControl",
+                "width": 544,
+                "height": 226.9,
+                "topPad": 1,
+                "bottomPad": 10,
+                "left": 836,
+                "top": 352.2,
+                "bottom": 579.1
+              },
+              {
+                "id": "capability-notice",
+                "width": 1094,
+                "height": 105.6,
+                "topPad": 19,
+                "bottomPad": 19,
+                "left": 286,
+                "top": 633.1,
+                "bottom": 738.7
+              }
+            ],
+            "gaps": [
+              {
+                "from": "DWInfamyControl",
+                "to": "capability-notice",
+                "gap": 117.8
+              }
+            ],
+            "trailing": 111.3,
+            "scroll": [
+              1138,
+              583
+            ],
+            "client": [
+              1138,
+              583
+            ]
+          },
+          "controls": [
+            {
+              "tag": "button",
+              "type": "button",
+              "label": "Refresh game lists & status",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "button",
+              "type": "button",
+              "label": "Increase Infamy (+100 points)",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "button",
+              "type": "button",
+              "label": "Decrease Infamy (-100 points)",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "button",
+              "type": "button",
+              "label": "Advance 1 segment",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "button",
+              "type": "button",
+              "label": "Rewind 1 segment",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "input",
+              "type": "range",
+              "label": "Game Speed",
+              "disabled": true,
+              "capability": "world:game-speed",
+              "visible": true
+            }
+          ]
+        },
+        {
+          "id": "teleport",
+          "selects": [
+            {
+              "label": "Saved location",
+              "owner": "select-wrap",
+              "appearance": "base-select",
+              "fontFamily": "\"Cormorant Garamond\", Georgia, serif",
+              "fontPx": 13,
+              "color": "rgb(165, 156, 144)",
+              "background": "rgb(8, 10, 10)",
+              "borderColor": "rgb(52, 54, 51)",
+              "borderRadius": "3px",
+              "heightPx": 26,
+              "disabled": true,
+              "optionCount": 1
+            }
+          ],
+          "spacing": {
+            "cards": [
+              {
+                "id": "DWShrines",
+                "width": 1347,
+                "height": 101.9,
+                "topPad": 1,
+                "bottomPad": 10,
+                "left": 286,
+                "top": 340.3,
+                "bottom": 442.2
+              },
+              {
+                "id": "capability-notice",
+                "width": 1347,
+                "height": 85.3,
+                "topPad": 19,
+                "bottomPad": 19,
+                "left": 286,
+                "top": 502.2,
+                "bottom": 587.5
+              }
+            ],
+            "gaps": [
+              {
+                "from": "DWShrines",
+                "to": "capability-notice",
+                "gap": 60
+              }
+            ],
+            "trailing": 262.6,
+            "scroll": [
+              1391,
+              583
+            ],
+            "client": [
+              1391,
+              583
+            ]
+          },
+          "controls": [
+            {
+              "tag": "button",
+              "type": "button",
+              "label": "Refresh game lists & status",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "button",
+              "type": "button",
+              "label": "Unlock all shrine travel points",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "input",
+              "type": "",
+              "label": "Saved location name",
+              "disabled": true,
+              "capability": "teleport:save-location",
+              "visible": true
+            },
+            {
+              "tag": "button",
+              "type": "button",
+              "label": "Save",
+              "disabled": true,
+              "capability": "teleport:save-location",
+              "visible": true
+            },
+            {
+              "tag": "select",
+              "type": "",
+              "label": "Saved location",
+              "disabled": true,
+              "capability": "teleport:teleport-saved-location",
+              "visible": true
+            },
+            {
+              "tag": "button",
+              "type": "button",
+              "label": "Teleport",
+              "disabled": true,
+              "capability": "teleport:teleport-saved-location",
+              "visible": true
+            }
+          ]
+        },
+        {
+          "id": "visuals",
+          "selects": [],
+          "spacing": {
+            "cards": [],
+            "gaps": [],
+            "trailing": 0,
+            "scroll": [
+              1391,
+              583
+            ],
+            "client": [
+              1391,
+              583
+            ]
+          },
+          "controls": [
+            {
+              "tag": "button",
+              "type": "",
+              "label": "Eyes Close-Up",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "button",
+              "type": "",
+              "label": "Head & Shoulders",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "button",
+              "type": "",
+              "label": "Full Body",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "button",
+              "type": "",
+              "label": "Orbit",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "button",
+              "type": "",
+              "label": "Move",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "button",
+              "type": "",
+              "label": "Reset View",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "button",
+              "type": "",
+              "label": "Blue",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "button",
+              "type": "",
+              "label": "Green",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "button",
+              "type": "",
+              "label": "Hazel",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "button",
+              "type": "",
+              "label": "Brown",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "button",
+              "type": "",
+              "label": "Amber",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "button",
+              "type": "",
+              "label": "Crimson",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "input",
+              "type": "color",
+              "label": "Character iris color",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "button",
+              "type": "",
+              "label": "Restore Natural Eyes",
+              "disabled": true,
+              "capability": "",
+              "visible": true
+            }
+          ]
+        },
+        {
+          "id": "npc",
+          "selects": [],
+          "spacing": {
+            "cards": [
+              {
+                "id": "capability-notice",
+                "width": 1347,
+                "height": 124.3,
+                "topPad": 19,
+                "bottomPad": 19,
+                "left": 286,
+                "top": 275.4,
+                "bottom": 399.7
+              }
+            ],
+            "gaps": [],
+            "trailing": 450.7,
+            "scroll": [
+              1391,
+              583
+            ],
+            "client": [
+              1391,
+              583
+            ]
+          },
+          "controls": []
+        },
+        {
+          "id": "quests",
+          "selects": [],
+          "spacing": {
+            "cards": [
+              {
+                "id": "capability-notice",
+                "width": 1347,
+                "height": 124.3,
+                "topPad": 19,
+                "bottomPad": 19,
+                "left": 286,
+                "top": 287,
+                "bottom": 411.3
+              }
+            ],
+            "gaps": [],
+            "trailing": 438.7,
+            "scroll": [
+              1391,
+              583
+            ],
+            "client": [
+              1391,
+              583
+            ]
+          },
+          "controls": []
+        },
+        {
+          "id": "save-editor",
+          "selects": [
+            {
+              "label": "Selected save",
+              "owner": "feature-tools",
+              "appearance": "base-select",
+              "fontFamily": "\"Cormorant Garamond\", Georgia, serif",
+              "fontPx": 16,
+              "color": "rgb(223, 213, 200)",
+              "background": "rgb(17, 16, 16)",
+              "borderColor": "rgb(97, 64, 58)",
+              "borderRadius": "3px",
+              "heightPx": 36,
+              "disabled": false,
+              "optionCount": 14
+            }
+          ],
+          "spacing": {
+            "cards": [
+              {
+                "id": "feature-tools",
+                "width": 1347,
+                "height": 188.5,
+                "topPad": 21,
+                "bottomPad": 36,
+                "left": 286,
+                "top": 287,
+                "bottom": 475.5
+              }
+            ],
+            "gaps": [],
+            "trailing": 374.5,
+            "scroll": [
+              1391,
+              583
+            ],
+            "client": [
+              1391,
+              583
+            ]
+          },
+          "controls": [
+            {
+              "tag": "select",
+              "type": "",
+              "label": "Selected save",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "button",
+              "type": "button",
+              "label": "Refresh saves",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            }
+          ]
+        },
+        {
+          "id": "settings",
+          "selects": [],
+          "spacing": {
+            "cards": [
+              {
+                "id": "DWMenuWarnings",
+                "width": 1337,
+                "height": 512.6,
+                "topPad": 1,
+                "bottomPad": 10,
+                "left": 286,
+                "top": 352.2,
+                "bottom": 864.8
+              },
+              {
+                "id": "feature-tools",
+                "width": 1337,
+                "height": 912.5,
+                "topPad": 21,
+                "bottomPad": 36,
+                "left": 286,
+                "top": 928.8,
+                "bottom": 1841.3
+              }
+            ],
+            "gaps": [
+              {
+                "from": "DWMenuWarnings",
+                "to": "feature-tools",
+                "gap": 64
+              }
+            ],
+            "trailing": -991.3,
+            "scroll": [
+              1381,
+              1594
+            ],
+            "client": [
+              1381,
+              583
+            ]
+          },
+          "controls": [
+            {
+              "tag": "button",
+              "type": "button",
+              "label": "Refresh game lists & status",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            },
+            {
+              "tag": "button",
+              "type": "button",
+              "label": "Reset UI View",
+              "disabled": false,
+              "capability": "",
+              "visible": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "categories": [
+        {
+          "id": "player",
+          "selects": [
+            {
+              "label": "Reward sizeSelect…Very smallSmallMediumL",
+              "owner": "imported-menu",
+              "appearance": "base-select",
+              "fontFamily": "\"Segoe UI\", sans-serif",
+              "fontPx": 14,
+              "color": "rgb(213, 208, 200)",
+              "background": "rgb(8, 10, 9)",
+              "borderColor": "rgb(65, 67, 59)",
+              "borderRadius": "3px",
+              "heightPx": 34,
+              "disabled": false,
+              "optionCount": 6
+            },
+            {
+              "label": "PerkSelect…Adrenaline Rush — rank 0/4  [",
+              "owner": "imported-menu",
+              "appearance": "base-select",
+              "fontFamily": "\"Segoe UI\", sans-serif",
+              "fontPx": 14,
+              "color": "rgb(213, 208, 200)",
+              "background": "rgb(8, 10, 9)",
+              "borderColor": "rgb(65, 67, 59)",
+              "borderRadius": "3px",
+              "heightPx": 34,
+              "disabled": false,
+              "optionCount": 113
+            },
+            {
+              "label": "Ultimate to grantSelect…Witchcraft — Aet",
+              "owner": "imported-menu",
+              "appearance": "base-select",
+              "fontFamily": "\"Segoe UI\", sans-serif",
+              "fontPx": 14,
+              "color": "rgb(213, 208, 200)",
+              "background": "rgb(8, 10, 9)",
+              "borderColor": "rgb(65, 67, 59)",
+              "borderRadius": "3px",
+              "heightPx": 58,
+              "disabled": false,
+              "optionCount": 10
+            },
+            {
+              "label": "MaterialSelect…AconiteAetheric EssenceAn",
+              "owner": "imported-menu",
+              "appearance": "base-select",
+              "fontFamily": "\"Segoe UI\", sans-serif",
+              "fontPx": 14,
+              "color": "rgb(213, 208, 200)",
+              "background": "rgb(8, 10, 9)",
+              "borderColor": "rgb(65, 67, 59)",
+              "borderRadius": "3px",
+              "heightPx": 34,
+              "disabled": false,
+              "optionCount": 47
+            },
+            {
+              "label": "ManualSelect…Adrenaline Rush ManualAethe",
+              "owner": "imported-menu",
+              "appearance": "base-select",
+              "fontFamily": "\"Segoe UI\", sans-serif",
+              "fontPx": 14,
+              "color": "rgb(213, 208, 200)",
+              "background": "rgb(8, 10, 9)",
+              "borderColor": "rgb(65, 67, 59)",
+              "borderRadius": "3px",
+              "heightPx": 34,
+              "disabled": false,
+              "optionCount": 51
+            },
+            {
+              "label": "Key itemSelect…Aged Key  [ItemKeyDataAss",
+              "owner": "imported-menu",
+              "appearance": "base-select",
+              "fontFamily": "\"Segoe UI\", sans-serif",
+              "fontPx": 14,
+              "color": "rgb(213, 208, 200)",
+              "background": "rgb(8, 10, 9)",
+              "borderColor": "rgb(65, 67, 59)",
+              "borderRadius": "3px",
+              "heightPx": 34,
+              "disabled": false,
+              "optionCount": 42
+            },
+            {
+              "label": "CategorySelect…AllWeaponsClothingConsuma",
+              "owner": "imported-menu",
+              "appearance": "base-select",
+              "fontFamily": "\"Segoe UI\", sans-serif",
+              "fontPx": 14,
+              "color": "rgb(213, 208, 200)",
+              "background": "rgb(8, 10, 9)",
+              "borderColor": "rgb(65, 67, 59)",
+              "borderRadius": "3px",
+              "heightPx": 34,
+              "disabled": false,
+              "optionCount": 8
+            },
+            {
+              "label": "ItemSelect…[DB] Anca Knife  [Weapons][DB",
+              "owner": "imported-menu",
+              "appearance": "base-select",
+              "fontFamily": "\"Segoe UI\", sans-serif",
+              "fontPx": 14,
+              "color": "rgb(213, 208, 200)",
+              "background": "rgb(8, 10, 9)",
+              "borderColor": "rgb(65, 67, 59)",
+              "borderRadius": "3px",
+              "heightPx": 34,
+              "disabled": false,
+              "optionCount": 828
+            }
+          ],
+          "spacing": {
+            "cards": [
+              {
+                "id": "player-secondary-controls",
+                "width": 1353,
+                "height": 375.9,
+                "topPad": 8,
+                "bottomPad": 8,
+                "left": 278.8,
+                "top": 277,
+                "bottom": 652.9
+              },
+              {
+                "id": "capability-notice",
+                "width": 1333,
+                "height": 64.9,
+                "topPad": 9,
+                "bottomPad": 9,
+                "left": 288.8,
+                "top": 456,
+                "bottom": 520.9
+              },
+              {
+                "id": "DWCombatControls",
+                "width": 447,
+                "height": 164,
+                "topPad": 1,
+                "bottomPad": 10,
+                "left": 278.8,
+                "top": 734.7,
+                "bottom": 898.7
+              },
+              {
+                "id": "DWPlayer",
+                "width": 447,
+                "height": 297.6,
+                "topPad": 1,
+                "bottomPad": 10,
+                "left": 278.8,
+                "top": 904.7,
+                "bottom": 1202.3
+              },
+              {
+                "id": "DWSkills",
+                "width": 447,
+                "height": 196.5,
+                "topPad": 1,
+                "bottomPad": 10,
+                "left": 278.8,
+                "top": 1208.3,
+                "bottom": 1404.7
+              },
+              {
+                "id": "DWXP",
+                "width": 447,
+                "height": 154.7,
+                "topPad": 1,
+                "bottomPad": 10,
+                "left": 278.8,
+                "top": 1410.8,
+                "bottom": 1565.5
+              },
+              {
+                "id": "DWMutation",
+                "width": 447,
+                "height": 478.1,
+                "topPad": 1,
+                "bottomPad": 10,
+                "left": 731.8,
+                "top": 734.7,
+                "bottom": 1212.8
+              },
+              {
+                "id": "DWTraitGrant",
+                "width": 447,
+                "height": 299.5,
+                "topPad": 1,
+                "bottomPad": 10,
+                "left": 731.8,
+                "top": 1218.8,
+                "bottom": 1518.3
+              },
+              {
+                "id": "DWUltimateControls",
+                "width": 447,
+                "height": 269.9,
+                "topPad": 1,
+                "bottomPad": 10,
+                "left": 731.8,
+                "top": 1524.3,
+                "bottom": 1794.2
+              },
+              {
+                "id": "DWRespec",
+                "width": 447,
+                "height": 822.1,
+                "topPad": 1,
+                "bottomPad": 10,
+                "left": 1184.8,
+                "top": 734.7,
+                "bottom": 1556.7
+              },
+              {
+                "id": "DWCurrency",
+                "width": 447,
+                "height": 154.7,
+                "topPad": 1,
+                "bottomPad": 10,
+                "left": 278.8,
+                "top": 1903.7,
+                "bottom": 2058.4
+              },
+              {
+                "id": "DWMaterials",
+                "width": 447,
+                "height": 233.8,
+                "topPad": 1,
+                "bottomPad": 10,
+                "left": 278.8,
+                "top": 2064.4,
+                "bottom": 2298.2
+              },
+              {
+                "id": "DWManuals",
+                "width": 447,
+                "height": 276.8,
+                "topPad": 1,
+                "bottomPad": 10,
+                "left": 731.8,
+                "top": 1903.7,
+                "bottom": 2180.5
+              },
+              {
+                "id": "DWKeys",
+                "width": 447,
+                "height": 276.8,
+                "topPad": 1,
+                "bottomPad": 10,
+                "left": 731.8,
+                "top": 2186.5,
+                "bottom": 2463.3
+              },
+              {
+                "id": "DWItems",
+                "width": 447,
+                "height": 391.6,
+                "topPad": 1,
+                "bottomPad": 10,
+                "left": 1184.8,
+                "top": 1903.7,
+                "bottom": 2295.3
+              },
+              {
+                "id": "player-secondary-controls",
+                "width": 1353,
+                "height": 301.7,
+                "topPad": 8,
+                "bottomPad": 8,
+                "left": 278.8,
+                "top": 2475.3,
+                "bottom": 2777
+              },
+              {
+                "id": "capability-notice",
+                "width": 1333,
+                "height": 64.9,
+                "topPad": 9,
+                "bottomPad": 9,
+                "left": 288.8,
+                "top": 2632.3,
+                "bottom": 2697.2
+              },
+              {
+                "id": "capability-notice",
+                "width": 1333,
+                "height": 64.9,
+                "topPad": 9,
+                "bottomPad": 9,
+                "left": 288.8,
+                "top": 2704.2,
+                "bottom": 2769
+              }
+            ],
+            "gaps": [
+              {
+                "from": "player-secondary-controls",
+                "to": "DWCombatControls",
+                "gap": 81.8
+              },
+              {
+                "from": "capability-notice",
+                "to": "capability-notice",
+                "gap": 2111.4
+              },
+              {
+                "from": "DWCombatControls",
+                "to": "DWPlayer",
+                "gap": 6
+              },
+              {
+                "from": "DWPlayer",
+                "to": "DWSkills",
+                "gap": 6
+              },
+              {
+                "from": "DWSkills",
+                "to": "DWXP",
+                "gap": 6.1
+              },
+              {
+                "from": "DWXP",
+                "to": "DWCurrency",
+                "gap": 338.2
+              },
+              {
+                "from": "DWMutation",
+                "to": "DWTraitGrant",
+                "gap": 6
+              },
+              {
+                "from": "DWTraitGrant",
+                "to": "DWUltimateControls",
+                "gap": 6
+              },
+              {
+                "from": "DWUltimateControls",
+                "to": "DWManuals",
+                "gap": 109.5
+              },
+              {
+                "from": "DWRespec",
+                "to": "DWItems",
+                "gap": 347
+              },
+              {
+                "from": "DWCurrency",
+                "to": "DWMaterials",
+                "gap": 6
+              },
+              {
+                "from": "DWMaterials",
+                "to": "player-secondary-controls",
+                "gap": 177.1
+              },
+              {
+                "from": "DWManuals",
+                "to": "DWKeys",
+                "gap": 6
+              },
+              {
+                "from": "capability-notice",
+                "to": "capability-notice",
+                "gap": 7
+              }
+            ],
+            "trailing": -1927,
+            "scroll": [
+              1381,
+              2520
+            ],
+            "client": [
+              1381,
+              583
+            ]
+          }
+        },
+        {
+          "id": "combat",
+          "selects": [
+            {
+              "label": "RPG Difficulty",
+              "owner": "select-wrap",
+              "appearance": "base-select",
+              "fontFamily": "\"Segoe UI\", sans-serif",
+              "fontPx": 14,
+              "color": "rgb(165, 156, 144)",
+              "background": "rgb(8, 10, 10)",
+              "borderColor": "rgb(52, 54, 51)",
+              "borderRadius": "3px",
+              "heightPx": 37.2,
+              "disabled": true,
+              "optionCount": 5
+            },
+            {
+              "label": "Action Difficulty",
+              "owner": "select-wrap",
+              "appearance": "base-select",
+              "fontFamily": "\"Segoe UI\", sans-serif",
+              "fontPx": 14,
+              "color": "rgb(165, 156, 144)",
+              "background": "rgb(8, 10, 10)",
+              "borderColor": "rgb(52, 54, 51)",
+              "borderRadius": "3px",
+              "heightPx": 37.2,
+              "disabled": true,
+              "optionCount": 5
+            }
+          ],
+          "spacing": {
+            "cards": [
+              {
+                "id": "DWActivationControl",
+                "width": 447,
+                "height": 164,
+                "topPad": 1,
+                "bottomPad": 10,
+                "left": 278.8,
+                "top": 351.8,
+                "bottom": 515.8
+              },
+              {
+                "id": "DWCooldownControl",
+                "width": 447,
+                "height": 164,
+                "topPad": 1,
+                "bottomPad": 10,
+                "left": 731.8,
+                "top": 351.8,
+                "bottom": 515.8
+              },
+              {
+                "id": "DWParryAssist",
+                "width": 447,
+                "height": 241.1,
+                "topPad": 1,
+                "bottomPad": 10,
+                "left": 1184.8,
+                "top": 351.8,
+                "bottom": 592.8
+              },
+              {
+                "id": "feature-tools",
+                "width": 1353,
+                "height": 92.9,
+                "topPad": 9,
+                "bottomPad": 9,
+                "left": 278.8,
+                "top": 599.8,
+                "bottom": 692.7
+              },
+              {
+                "id": "capability-notice",
+                "width": 443,
+                "height": 136.9,
+                "topPad": 9,
+                "bottomPad": 57,
+                "left": 278.8,
+                "top": 745.9,
+                "bottom": 882.8
+              },
+              {
+                "id": "capability-notice",
+                "width": 443,
+                "height": 136.9,
+                "topPad": 9,
+                "bottomPad": 9,
+                "left": 733.8,
+                "top": 745.9,
+                "bottom": 882.8
+              },
+              {
+                "id": "capability-notice",
+                "width": 443,
+                "height": 136.9,
+                "topPad": 9,
+                "bottomPad": 57,
+                "left": 1188.8,
+                "top": 745.9,
+                "bottom": 882.8
+              },
+              {
+                "id": "capability-notice",
+                "width": 1353,
+                "height": 64.9,
+                "topPad": 9,
+                "bottomPad": 9,
+                "left": 278.8,
+                "top": 889.8,
+                "bottom": 954.7
+              }
+            ],
+            "gaps": [
+              {
+                "from": "DWActivationControl",
+                "to": "feature-tools",
+                "gap": 84
+              },
+              {
+                "from": "feature-tools",
+                "to": "capability-notice",
+                "gap": 53.2
+              },
+              {
+                "from": "capability-notice",
+                "to": "capability-notice",
+                "gap": 7
+              }
+            ],
+            "trailing": -104.7,
+            "scroll": [
+              1381,
+              698
+            ],
+            "client": [
+              1381,
+              583
+            ]
+          }
+        },
+        {
+          "id": "world",
+          "selects": [],
+          "spacing": {
+            "cards": [
+              {
+                "id": "DWInfamyControl",
+                "width": 539,
+                "height": 234.5,
+                "topPad": 1,
+                "bottomPad": 10,
+                "left": 286.8,
+                "top": 361.8,
+                "bottom": 596.3
+              },
+              {
+                "id": "DWTimeControl",
+                "width": 539,
+                "height": 311.6,
+                "topPad": 1,
+                "bottomPad": 10,
+                "left": 831.8,
+                "top": 361.8,
+                "bottom": 673.4
+              },
+              {
+                "id": "capability-notice",
+                "width": 1084,
+                "height": 127.7,
+                "topPad": 19,
+                "bottomPad": 19,
+                "left": 286.8,
+                "top": 744.4,
+                "bottom": 872.1
+              }
+            ],
+            "gaps": [
+              {
+                "from": "DWInfamyControl",
+                "to": "capability-notice",
+                "gap": 148.1
+              }
+            ],
+            "trailing": -22.1,
+            "scroll": [
+              1128,
+              625
+            ],
+            "client": [
+              1128,
+              583
+            ]
+          }
+        },
+        {
+          "id": "teleport",
+          "selects": [
+            {
+              "label": "Saved location",
+              "owner": "select-wrap",
+              "appearance": "base-select",
+              "fontFamily": "\"Cormorant Garamond\", Georgia, serif",
+              "fontPx": 15,
+              "color": "rgb(165, 156, 144)",
+              "background": "rgb(8, 10, 10)",
+              "borderColor": "rgb(52, 54, 51)",
+              "borderRadius": "3px",
+              "heightPx": 37.2,
+              "disabled": true,
+              "optionCount": 1
+            }
+          ],
+          "spacing": {
+            "cards": [
+              {
+                "id": "DWShrines",
+                "width": 1347,
+                "height": 115.7,
+                "topPad": 1,
+                "bottomPad": 10,
+                "left": 286.8,
+                "top": 349.9,
+                "bottom": 465.6
+              },
+              {
+                "id": "capability-notice",
+                "width": 1347,
+                "height": 101.1,
+                "topPad": 19,
+                "bottomPad": 19,
+                "left": 286.8,
+                "top": 605.6,
+                "bottom": 706.7
+              }
+            ],
+            "gaps": [
+              {
+                "from": "DWShrines",
+                "to": "capability-notice",
+                "gap": 140
+              }
+            ],
+            "trailing": 143.4,
+            "scroll": [
+              1391,
+              583
+            ],
+            "client": [
+              1391,
+              583
+            ]
+          }
+        },
+        {
+          "id": "visuals",
+          "selects": [],
+          "spacing": {
+            "cards": [],
+            "gaps": [],
+            "trailing": 0,
+            "scroll": [
+              1391,
+              583
+            ],
+            "client": [
+              1391,
+              583
+            ]
+          }
+        },
+        {
+          "id": "npc",
+          "selects": [],
+          "spacing": {
+            "cards": [
+              {
+                "id": "capability-notice",
+                "width": 1347,
+                "height": 145.7,
+                "topPad": 19,
+                "bottomPad": 19,
+                "left": 286.8,
+                "top": 275.3,
+                "bottom": 421
+              }
+            ],
+            "gaps": [],
+            "trailing": 429.3,
+            "scroll": [
+              1391,
+              583
+            ],
+            "client": [
+              1391,
+              583
+            ]
+          }
+        },
+        {
+          "id": "quests",
+          "selects": [],
+          "spacing": {
+            "cards": [
+              {
+                "id": "capability-notice",
+                "width": 1347,
+                "height": 145.7,
+                "topPad": 19,
+                "bottomPad": 19,
+                "left": 286.8,
+                "top": 287,
+                "bottom": 432.7
+              }
+            ],
+            "gaps": [],
+            "trailing": 417.3,
+            "scroll": [
+              1391,
+              583
+            ],
+            "client": [
+              1391,
+              583
+            ]
+          }
+        },
+        {
+          "id": "save-editor",
+          "selects": [
+            {
+              "label": "Selected save",
+              "owner": "feature-tools",
+              "appearance": "base-select",
+              "fontFamily": "\"Cormorant Garamond\", Georgia, serif",
+              "fontPx": 15,
+              "color": "rgb(223, 213, 200)",
+              "background": "rgb(17, 16, 16)",
+              "borderColor": "rgb(97, 64, 58)",
+              "borderRadius": "3px",
+              "heightPx": 40.6,
+              "disabled": false,
+              "optionCount": 14
+            }
+          ],
+          "spacing": {
+            "cards": [
+              {
+                "id": "feature-tools",
+                "width": 1347,
+                "height": 291.6,
+                "topPad": 21,
+                "bottomPad": 36,
+                "left": 286.8,
+                "top": 287,
+                "bottom": 578.6
+              }
+            ],
+            "gaps": [],
+            "trailing": 271.4,
+            "scroll": [
+              1391,
+              583
+            ],
+            "client": [
+              1391,
+              583
+            ]
+          }
+        },
+        {
+          "id": "settings",
+          "selects": [],
+          "spacing": {
+            "cards": [
+              {
+                "id": "DWMenuWarnings",
+                "width": 1337,
+                "height": 653.3,
+                "topPad": 1,
+                "bottomPad": 10,
+                "left": 286.8,
+                "top": 361.8,
+                "bottom": 1015.1
+              },
+              {
+                "id": "feature-tools",
+                "width": 1337,
+                "height": 1602,
+                "topPad": 21,
+                "bottomPad": 36,
+                "left": 286.8,
+                "top": 1079.1,
+                "bottom": 2681.1
+              }
+            ],
+            "gaps": [
+              {
+                "from": "DWMenuWarnings",
+                "to": "feature-tools",
+                "gap": 64
+              }
+            ],
+            "trailing": -1831.1,
+            "scroll": [
+              1381,
+              2434
+            ],
+            "client": [
+              1381,
+              583
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "width": 1100,
+      "height": 620,
+      "categories": [
+        {
+          "id": "player",
+          "selects": [
+            {
+              "label": "Reward sizeSelect…Very smallSmallMediumL",
+              "owner": "imported-menu",
+              "appearance": "base-select",
+              "fontFamily": "\"Segoe UI\", sans-serif",
+              "fontPx": 14,
+              "color": "rgb(213, 208, 200)",
+              "background": "rgb(8, 10, 9)",
+              "borderColor": "rgb(65, 67, 59)",
+              "borderRadius": "3px",
+              "heightPx": 39.8,
+              "disabled": false,
+              "optionCount": 6
+            },
+            {
+              "label": "PerkSelect…Adrenaline Rush — rank 0/4  [",
+              "owner": "imported-menu",
+              "appearance": "base-select",
+              "fontFamily": "\"Segoe UI\", sans-serif",
+              "fontPx": 14,
+              "color": "rgb(213, 208, 200)",
+              "background": "rgb(8, 10, 9)",
+              "borderColor": "rgb(65, 67, 59)",
+              "borderRadius": "3px",
+              "heightPx": 39.8,
+              "disabled": false,
+              "optionCount": 113
+            },
+            {
+              "label": "Ultimate to grantSelect…Witchcraft — Aet",
+              "owner": "imported-menu",
+              "appearance": "base-select",
+              "fontFamily": "\"Segoe UI\", sans-serif",
+              "fontPx": 14,
+              "color": "rgb(213, 208, 200)",
+              "background": "rgb(8, 10, 9)",
+              "borderColor": "rgb(65, 67, 59)",
+              "borderRadius": "3px",
+              "heightPx": 39.8,
+              "disabled": false,
+              "optionCount": 10
+            },
+            {
+              "label": "MaterialSelect…AconiteAetheric EssenceAn",
+              "owner": "imported-menu",
+              "appearance": "base-select",
+              "fontFamily": "\"Segoe UI\", sans-serif",
+              "fontPx": 14,
+              "color": "rgb(213, 208, 200)",
+              "background": "rgb(8, 10, 9)",
+              "borderColor": "rgb(65, 67, 59)",
+              "borderRadius": "3px",
+              "heightPx": 39.8,
+              "disabled": false,
+              "optionCount": 47
+            },
+            {
+              "label": "ManualSelect…Adrenaline Rush ManualAethe",
+              "owner": "imported-menu",
+              "appearance": "base-select",
+              "fontFamily": "\"Segoe UI\", sans-serif",
+              "fontPx": 14,
+              "color": "rgb(213, 208, 200)",
+              "background": "rgb(8, 10, 9)",
+              "borderColor": "rgb(65, 67, 59)",
+              "borderRadius": "3px",
+              "heightPx": 39.8,
+              "disabled": false,
+              "optionCount": 51
+            },
+            {
+              "label": "Key itemSelect…Aged Key  [ItemKeyDataAss",
+              "owner": "imported-menu",
+              "appearance": "base-select",
+              "fontFamily": "\"Segoe UI\", sans-serif",
+              "fontPx": 14,
+              "color": "rgb(213, 208, 200)",
+              "background": "rgb(8, 10, 9)",
+              "borderColor": "rgb(65, 67, 59)",
+              "borderRadius": "3px",
+              "heightPx": 39.8,
+              "disabled": false,
+              "optionCount": 42
+            },
+            {
+              "label": "CategorySelect…AllWeaponsClothingConsuma",
+              "owner": "imported-menu",
+              "appearance": "base-select",
+              "fontFamily": "\"Segoe UI\", sans-serif",
+              "fontPx": 14,
+              "color": "rgb(213, 208, 200)",
+              "background": "rgb(8, 10, 9)",
+              "borderColor": "rgb(65, 67, 59)",
+              "borderRadius": "3px",
+              "heightPx": 39.8,
+              "disabled": false,
+              "optionCount": 8
+            },
+            {
+              "label": "ItemSelect…[DB] Anca Knife  [Weapons][DB",
+              "owner": "imported-menu",
+              "appearance": "base-select",
+              "fontFamily": "\"Segoe UI\", sans-serif",
+              "fontPx": 14,
+              "color": "rgb(213, 208, 200)",
+              "background": "rgb(8, 10, 9)",
+              "borderColor": "rgb(65, 67, 59)",
+              "borderRadius": "3px",
+              "heightPx": 39.8,
+              "disabled": false,
+              "optionCount": 828
+            }
+          ],
+          "spacing": {
+            "cards": [
+              {
+                "id": "player-secondary-controls",
+                "width": 1353,
+                "height": 399,
+                "topPad": 8,
+                "bottomPad": 8,
+                "left": 278,
+                "top": 277.7,
+                "bottom": 676.7
+              },
+              {
+                "id": "capability-notice",
+                "width": 1333,
+                "height": 70.6,
+                "topPad": 9,
+                "bottomPad": 9,
+                "left": 288,
+                "top": 474,
+                "bottom": 544.7
+              },
+              {
+                "id": "DWCombatControls",
+                "width": 673.5,
+                "height": 157,
+                "topPad": 1,
+                "bottomPad": 10,
+                "left": 278,
+                "top": 773,
+                "bottom": 930.1
+              },
+              {
+                "id": "DWPlayer",
+                "width": 673.5,
+                "height": 325.6,
+                "topPad": 1,
+                "bottomPad": 10,
+                "left": 278,
+                "top": 936.1,
+                "bottom": 1261.7
+              },
+              {
+                "id": "DWSkills",
+                "width": 673.5,
+                "height": 231.2,
+                "topPad": 1,
+                "bottomPad": 10,
+                "left": 278,
+                "top": 1267.7,
+                "bottom": 1498.9
+              },
+              {
+                "id": "DWXP",
+                "width": 673.5,
+                "height": 180.6,
+                "topPad": 1,
+                "bottomPad": 10,
+                "left": 278,
+                "top": 1504.9,
+                "bottom": 1685.5
+              },
+              {
+                "id": "DWMutation",
+                "width": 673.5,
+                "height": 541.1,
+                "topPad": 1,
+                "bottomPad": 10,
+                "left": 278,
+                "top": 1691.5,
+                "bottom": 2232.6
+              },
+              {
+                "id": "DWTraitGrant",
+                "width": 673.5,
+                "height": 321.8,
+                "topPad": 1,
+                "bottomPad": 10,
+                "left": 957.5,
+                "top": 773,
+                "bottom": 1094.8
+              },
+              {
+                "id": "DWUltimateControls",
+                "width": 673.5,
+                "height": 261,
+                "topPad": 1,
+                "bottomPad": 10,
+                "left": 957.5,
+                "top": 1100.8,
+                "bottom": 1361.8
+              },
+              {
+                "id": "DWRespec",
+                "width": 673.5,
+                "height": 879.5,
+                "topPad": 1,
+                "bottomPad": 10,
+                "left": 957.5,
+                "top": 1367.8,
+                "bottom": 2247.4
+              },
+              {
+                "id": "DWCurrency",
+                "width": 673.5,
+                "height": 180.6,
+                "topPad": 1,
+                "bottomPad": 10,
+                "left": 278,
+                "top": 2369.4,
+                "bottom": 2550
+              },
+              {
+                "id": "DWMaterials",
+                "width": 673.5,
+                "height": 271.2,
+                "topPad": 1,
+                "bottomPad": 10,
+                "left": 278,
+                "top": 2556,
+                "bottom": 2827.2
+              },
+              {
+                "id": "DWManuals",
+                "width": 673.5,
+                "height": 325.8,
+                "topPad": 1,
+                "bottomPad": 10,
+                "left": 278,
+                "top": 2833.2,
+                "bottom": 3159
+              },
+              {
+                "id": "DWKeys",
+                "width": 673.5,
+                "height": 325.8,
+                "topPad": 1,
+                "bottomPad": 10,
+                "left": 957.5,
+                "top": 2369.4,
+                "bottom": 2695.2
+              },
+              {
+                "id": "DWItems",
+                "width": 673.5,
+                "height": 460.9,
+                "topPad": 1,
+                "bottomPad": 10,
+                "left": 957.5,
+                "top": 2701.2,
+                "bottom": 3162.1
+              },
+              {
+                "id": "player-secondary-controls",
+                "width": 1353,
+                "height": 313.2,
+                "topPad": 8,
+                "bottomPad": 8,
+                "left": 278,
+                "top": 3178.5,
+                "bottom": 3491.8
+              },
+              {
+                "id": "capability-notice",
+                "width": 1333,
+                "height": 70.6,
+                "topPad": 9,
+                "bottomPad": 9,
+                "left": 288,
+                "top": 3335.5,
+                "bottom": 3406.2
+              },
+              {
+                "id": "capability-notice",
+                "width": 1333,
+                "height": 70.6,
+                "topPad": 9,
+                "bottomPad": 9,
+                "left": 288,
+                "top": 3413.2,
+                "bottom": 3483.8
+              }
+            ],
+            "gaps": [
+              {
+                "from": "player-secondary-controls",
+                "to": "DWCombatControls",
+                "gap": 96.3
+              },
+              {
+                "from": "capability-notice",
+                "to": "capability-notice",
+                "gap": 2790.8
+              },
+              {
+                "from": "DWCombatControls",
+                "to": "DWPlayer",
+                "gap": 6
+              },
+              {
+                "from": "DWPlayer",
+                "to": "DWSkills",
+                "gap": 6
+              },
+              {
+                "from": "DWSkills",
+                "to": "DWXP",
+                "gap": 6
+              },
+              {
+                "from": "DWXP",
+                "to": "DWMutation",
+                "gap": 6
+              },
+              {
+                "from": "DWMutation",
+                "to": "DWCurrency",
+                "gap": 136.8
+              },
+              {
+                "from": "DWTraitGrant",
+                "to": "DWUltimateControls",
+                "gap": 6
+              },
+              {
+                "from": "DWUltimateControls",
+                "to": "DWRespec",
+                "gap": 6
+              },
+              {
+                "from": "DWRespec",
+                "to": "DWKeys",
+                "gap": 122
+              },
+              {
+                "from": "DWCurrency",
+                "to": "DWMaterials",
+                "gap": 6
+              },
+              {
+                "from": "DWMaterials",
+                "to": "DWManuals",
+                "gap": 6
+              },
+              {
+                "from": "DWManuals",
+                "to": "player-secondary-controls",
+                "gap": 19.5
+              },
+              {
+                "from": "DWKeys",
+                "to": "DWItems",
+                "gap": 6
+              },
+              {
+                "from": "capability-notice",
+                "to": "capability-notice",
+                "gap": 7
+              }
+            ],
+            "trailing": -2641.1,
+            "scroll": [
+              1381,
+              3234
+            ],
+            "client": [
+              1381,
+              583
+            ]
+          }
+        },
+        {
+          "id": "combat",
+          "selects": [
+            {
+              "label": "RPG Difficulty",
+              "owner": "select-wrap",
+              "appearance": "base-select",
+              "fontFamily": "\"Segoe UI\", sans-serif",
+              "fontPx": 14,
+              "color": "rgb(165, 156, 144)",
+              "background": "rgb(8, 10, 10)",
+              "borderColor": "rgb(52, 54, 51)",
+              "borderRadius": "3px",
+              "heightPx": 46.6,
+              "disabled": true,
+              "optionCount": 5
+            },
+            {
+              "label": "Action Difficulty",
+              "owner": "select-wrap",
+              "appearance": "base-select",
+              "fontFamily": "\"Segoe UI\", sans-serif",
+              "fontPx": 14,
+              "color": "rgb(165, 156, 144)",
+              "background": "rgb(8, 10, 10)",
+              "borderColor": "rgb(52, 54, 51)",
+              "borderRadius": "3px",
+              "heightPx": 46.6,
+              "disabled": true,
+              "optionCount": 5
+            }
+          ],
+          "spacing": {
+            "cards": [
+              {
+                "id": "DWActivationControl",
+                "width": 673.5,
+                "height": 186.8,
+                "topPad": 1,
+                "bottomPad": 10,
+                "left": 278,
+                "top": 367.1,
+                "bottom": 553.9
+              },
+              {
+                "id": "DWCooldownControl",
+                "width": 673.5,
+                "height": 157,
+                "topPad": 1,
+                "bottomPad": 10,
+                "left": 278,
+                "top": 559.9,
+                "bottom": 716.9
+              },
+              {
+                "id": "DWParryAssist",
+                "width": 673.5,
+                "height": 251.4,
+                "topPad": 1,
+                "bottomPad": 10,
+                "left": 957.5,
+                "top": 367.1,
+                "bottom": 618.5
+              },
+              {
+                "id": "feature-tools",
+                "width": 1353,
+                "height": 104.4,
+                "topPad": 9,
+                "bottomPad": 9,
+                "left": 278,
+                "top": 723.9,
+                "bottom": 828.3
+              },
+              {
+                "id": "capability-notice",
+                "width": 670.5,
+                "height": 100.4,
+                "topPad": 9,
+                "bottomPad": 9,
+                "left": 960.5,
+                "top": 891,
+                "bottom": 991.4
+              },
+              {
+                "id": "capability-notice",
+                "width": 670.5,
+                "height": 130.2,
+                "topPad": 9,
+                "bottomPad": 9,
+                "left": 278,
+                "top": 998.4,
+                "bottom": 1128.6
+              },
+              {
+                "id": "capability-notice",
+                "width": 670.5,
+                "height": 130.2,
+                "topPad": 9,
+                "bottomPad": 38.8,
+                "left": 960.5,
+                "top": 998.4,
+                "bottom": 1128.6
+              },
+              {
+                "id": "capability-notice",
+                "width": 1353,
+                "height": 70.6,
+                "topPad": 9,
+                "bottomPad": 9,
+                "left": 278,
+                "top": 1135.6,
+                "bottom": 1206.2
+              }
+            ],
+            "gaps": [
+              {
+                "from": "DWActivationControl",
+                "to": "DWCooldownControl",
+                "gap": 6
+              },
+              {
+                "from": "DWCooldownControl",
+                "to": "feature-tools",
+                "gap": 7
+              },
+              {
+                "from": "feature-tools",
+                "to": "capability-notice",
+                "gap": 170.1
+              },
+              {
+                "from": "capability-notice",
+                "to": "capability-notice",
+                "gap": 7
+              },
+              {
+                "from": "capability-notice",
+                "to": "capability-notice",
+                "gap": 7
+              }
+            ],
+            "trailing": -355.5,
+            "scroll": [
+              1381,
+              949
+            ],
+            "client": [
+              1381,
+              583
+            ]
+          }
+        },
+        {
+          "id": "world",
+          "selects": [],
+          "spacing": {
+            "cards": [
+              {
+                "id": "DWInfamyControl",
+                "width": 539,
+                "height": 280.8,
+                "topPad": 1,
+                "bottomPad": 10,
+                "left": 286,
+                "top": 377.1,
+                "bottom": 657.9
+              },
+              {
+                "id": "DWTimeControl",
+                "width": 539,
+                "height": 375.1,
+                "topPad": 1,
+                "bottomPad": 10,
+                "left": 831,
+                "top": 377.1,
+                "bottom": 752.2
+              },
+              {
+                "id": "capability-notice",
+                "width": 1084,
+                "height": 147.3,
+                "topPad": 19,
+                "bottomPad": 19,
+                "left": 286,
+                "top": 823.2,
+                "bottom": 970.6
+              }
+            ],
+            "gaps": [
+              {
+                "from": "DWInfamyControl",
+                "to": "capability-notice",
+                "gap": 165.3
+              }
+            ],
+            "trailing": -119.9,
+            "scroll": [
+              1128,
+              723
+            ],
+            "client": [
+              1128,
+              583
+            ]
+          }
+        },
+        {
+          "id": "teleport",
+          "selects": [
+            {
+              "label": "Saved location",
+              "owner": "select-wrap",
+              "appearance": "base-select",
+              "fontFamily": "\"Cormorant Garamond\", Georgia, serif",
+              "fontPx": 15,
+              "color": "rgb(165, 156, 144)",
+              "background": "rgb(8, 10, 10)",
+              "borderColor": "rgb(52, 54, 51)",
+              "borderRadius": "3px",
+              "heightPx": 46.6,
+              "disabled": true,
+              "optionCount": 1
+            }
+          ],
+          "spacing": {
+            "cards": [
+              {
+                "id": "DWShrines",
+                "width": 1347,
+                "height": 135.9,
+                "topPad": 1,
+                "bottomPad": 10,
+                "left": 286,
+                "top": 365.1,
+                "bottom": 501
+              },
+              {
+                "id": "capability-notice",
+                "width": 1347,
+                "height": 114.3,
+                "topPad": 19,
+                "bottomPad": 19,
+                "left": 286,
+                "top": 641,
+                "bottom": 755.3
+              }
+            ],
+            "gaps": [
+              {
+                "from": "DWShrines",
+                "to": "capability-notice",
+                "gap": 140
+              }
+            ],
+            "trailing": 95.4,
+            "scroll": [
+              1391,
+              583
+            ],
+            "client": [
+              1391,
+              583
+            ]
+          }
+        },
+        {
+          "id": "visuals",
+          "selects": [],
+          "spacing": {
+            "cards": [],
+            "gaps": [],
+            "trailing": 0,
+            "scroll": [
+              1391,
+              583
+            ],
+            "client": [
+              1391,
+              583
+            ]
+          }
+        },
+        {
+          "id": "npc",
+          "selects": [],
+          "spacing": {
+            "cards": [
+              {
+                "id": "capability-notice",
+                "width": 1347,
+                "height": 165.3,
+                "topPad": 19,
+                "bottomPad": 19,
+                "left": 286,
+                "top": 276,
+                "bottom": 441.3
+              }
+            ],
+            "gaps": [],
+            "trailing": 409.7,
+            "scroll": [
+              1391,
+              583
+            ],
+            "client": [
+              1391,
+              583
+            ]
+          }
+        },
+        {
+          "id": "quests",
+          "selects": [],
+          "spacing": {
+            "cards": [
+              {
+                "id": "capability-notice",
+                "width": 1347,
+                "height": 165.3,
+                "topPad": 19,
+                "bottomPad": 19,
+                "left": 286,
+                "top": 287.7,
+                "bottom": 453
+              }
+            ],
+            "gaps": [],
+            "trailing": 397.7,
+            "scroll": [
+              1391,
+              583
+            ],
+            "client": [
+              1391,
+              583
+            ]
+          }
+        },
+        {
+          "id": "save-editor",
+          "selects": [
+            {
+              "label": "Selected save",
+              "owner": "feature-tools",
+              "appearance": "base-select",
+              "fontFamily": "\"Cormorant Garamond\", Georgia, serif",
+              "fontPx": 15,
+              "color": "rgb(223, 213, 200)",
+              "background": "rgb(17, 16, 16)",
+              "borderColor": "rgb(97, 64, 58)",
+              "borderRadius": "3px",
+              "heightPx": 47,
+              "disabled": false,
+              "optionCount": 14
+            }
+          ],
+          "spacing": {
+            "cards": [
+              {
+                "id": "feature-tools",
+                "width": 1347,
+                "height": 330.5,
+                "topPad": 21,
+                "bottomPad": 36,
+                "left": 286,
+                "top": 287.7,
+                "bottom": 618.2
+              }
+            ],
+            "gaps": [],
+            "trailing": 232.5,
+            "scroll": [
+              1391,
+              583
+            ],
+            "client": [
+              1391,
+              583
+            ]
+          }
+        },
+        {
+          "id": "settings",
+          "selects": [],
+          "spacing": {
+            "cards": [
+              {
+                "id": "DWMenuWarnings",
+                "width": 1337,
+                "height": 875,
+                "topPad": 1,
+                "bottomPad": 10,
+                "left": 286,
+                "top": 377.1,
+                "bottom": 1252.1
+              },
+              {
+                "id": "feature-tools",
+                "width": 1337,
+                "height": 1935.7,
+                "topPad": 21,
+                "bottomPad": 36,
+                "left": 286,
+                "top": 1316.1,
+                "bottom": 3251.8
+              }
+            ],
+            "gaps": [
+              {
+                "from": "DWMenuWarnings",
+                "to": "feature-tools",
+                "gap": 64
+              }
+            ],
+            "trailing": -2401.1,
+            "scroll": [
+              1381,
+              3004
+            ],
+            "client": [
+              1381,
+              583
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

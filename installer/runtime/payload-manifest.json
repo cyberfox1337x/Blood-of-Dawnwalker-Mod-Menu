@@ -1,0 +1,2091 @@
+﻿{
+    "cyberfox1337x":  "function(dawnwalker_runtime_payload_manifest)",
+    "schemaVersion":  1,
+    "applicationVersion":  "0.1.0",
+    "phase":  "discovery",
+    "bridgeVersion":  "0.1.0-discovery",
+    "gameplayCapabilities":  [
+
+                             ],
+    "steamAppId":  "3751260",
+    "steamBuildId":  "25107392",
+    "shippingExecutableSha256":  "45B7C2949F519ED3E45F7FBDB7127A03373FE44B34ABB58E3C987C5054E2409E",
+    "officialBuildContract":  {
+                                  "packagePath":  "official-build.json",
+                                  "bytes":  3826,
+                                  "sha256":  "C53F85403688BBB41D8306425C68C751A77ADA0BA8459DFA2D0CF451DE3112DA"
+                              },
+    "ue4ssRelease":  "v3.0.1-1111-g97b7e501",
+    "ue4ssArchive":  {
+                         "packagePath":  "vendor/zDEV-UE4SS_v3.0.1-1111-g97b7e501.zip",
+                         "bytes":  44605660,
+                         "sha256":  "8C2E28BB1479CBEA7BF5A3C16E027580D9E71D21606971B5BD103A20BA94C617",
+                         "source":  "https://github.com/UE4SS-RE/RE-UE4SS/releases/tag/experimental-latest",
+                         "channel":  "official-experimental-zDEV",
+                         "license":  "MIT"
+                     },
+    "requiredRuntimeDependencies":  [
+                                        {
+                                            "relativePath":  "ue4ss/Mods/shared/UEHelpers/UEHelpers.lua",
+                                            "bytes":  10237,
+                                            "sha256":  "7476F02EEF0C87BFEAB169F2FFE2E704363FAEAAE4BF9F1BDA574B1E34F4A0E9",
+                                            "source":  "pinned-ue4ss-archive"
+                                        }
+                                    ],
+    "allowedWriteTargetsRelativeToWin64":  [
+                                               "dwmapi.dll",
+                                               "ue4ss"
+                                           ],
+    "conflictingProxyNames":  [
+                                  "xinput1_3.dll",
+                                  "version.dll",
+                                  "winmm.dll",
+                                  "dxgi.dll",
+                                  "dinput8.dll"
+                              ],
+    "requiredSettings":  [
+                             {
+                                 "section":  "Overrides",
+                                 "key":  "ControllingModsTxt",
+                                 "value":  "ue4ss/Mods/mods.txt"
+                             },
+                             {
+                                 "section":  "General",
+                                 "key":  "EnableHotReloadSystem",
+                                 "value":  "0"
+                             },
+                             {
+                                 "section":  "General",
+                                 "key":  "EnableAutoReloadingLuaMods",
+                                 "value":  "0"
+                             },
+                             {
+                                 "section":  "General",
+                                 "key":  "UseCache",
+                                 "value":  "0"
+                             },
+                             {
+                                 "section":  "General",
+                                 "key":  "bUseUObjectArrayCache",
+                                 "value":  "false"
+                             },
+                             {
+                                 "section":  "General",
+                                 "key":  "bForceGUObjectArrayForIteration",
+                                 "value":  "true"
+                             },
+                             {
+                                 "section":  "General",
+                                 "key":  "DoEarlyScan",
+                                 "value":  "0"
+                             },
+                             {
+                                 "section":  "EngineVersionOverride",
+                                 "key":  "MajorVersion",
+                                 "value":  "5"
+                             },
+                             {
+                                 "section":  "EngineVersionOverride",
+                                 "key":  "MinorVersion",
+                                 "value":  "5"
+                             },
+                             {
+                                 "section":  "ObjectDumper",
+                                 "key":  "LoadAllAssetsBeforeDumpingObjects",
+                                 "value":  "0"
+                             },
+                             {
+                                 "section":  "CXXHeaderGenerator",
+                                 "key":  "LoadAllAssetsBeforeGeneratingCXXHeaders",
+                                 "value":  "0"
+                             },
+                             {
+                                 "section":  "Debug",
+                                 "key":  "ConsoleEnabled",
+                                 "value":  "1"
+                             },
+                             {
+                                 "section":  "Debug",
+                                 "key":  "GuiConsoleEnabled",
+                                 "value":  "0"
+                             },
+                             {
+                                 "section":  "Debug",
+                                 "key":  "GuiConsoleVisible",
+                                 "value":  "0"
+                             },
+                             {
+                                 "section":  "Debug",
+                                 "key":  "ToggleGuiKey",
+                                 "value":  "O"
+                             },
+                             {
+                                 "section":  "Hooks",
+                                 "key":  "HookProcessInternal",
+                                 "value":  "0"
+                             },
+                             {
+                                 "section":  "Hooks",
+                                 "key":  "HookProcessLocalScriptFunction",
+                                 "value":  "0"
+                             },
+                             {
+                                 "section":  "Hooks",
+                                 "key":  "HookInitGameState",
+                                 "value":  "0"
+                             },
+                             {
+                                 "section":  "Hooks",
+                                 "key":  "HookLoadMap",
+                                 "value":  "0"
+                             },
+                             {
+                                 "section":  "Hooks",
+                                 "key":  "HookCallFunctionByNameWithArguments",
+                                 "value":  "0"
+                             },
+                             {
+                                 "section":  "Hooks",
+                                 "key":  "HookBeginPlay",
+                                 "value":  "0"
+                             },
+                             {
+                                 "section":  "Hooks",
+                                 "key":  "HookEndPlay",
+                                 "value":  "0"
+                             },
+                             {
+                                 "section":  "Hooks",
+                                 "key":  "HookLocalPlayerExec",
+                                 "value":  "0"
+                             },
+                             {
+                                 "section":  "Hooks",
+                                 "key":  "HookAActorTick",
+                                 "value":  "0"
+                             },
+                             {
+                                 "section":  "Hooks",
+                                 "key":  "HookEngineTick",
+                                 "value":  "0"
+                             },
+                             {
+                                 "section":  "Hooks",
+                                 "key":  "HookGameViewportClientTick",
+                                 "value":  "0"
+                             },
+                             {
+                                 "section":  "Hooks",
+                                 "key":  "HookUObjectProcessEvent",
+                                 "value":  "0"
+                             },
+                             {
+                                 "section":  "Hooks",
+                                 "key":  "HookProcessConsoleExec",
+                                 "value":  "0"
+                             },
+                             {
+                                 "section":  "Hooks",
+                                 "key":  "HookUStructLink",
+                                 "value":  "0"
+                             },
+                             {
+                                 "section":  "CrashDump",
+                                 "key":  "EnableDumping",
+                                 "value":  "0"
+                             },
+                             {
+                                 "section":  "CrashDump",
+                                 "key":  "FullMemoryDump",
+                                 "value":  "0"
+                             }
+                         ],
+    "requiredModRegistry":  [
+                                {
+                                    "name":  "KismetDebuggerMod",
+                                    "value":  "0"
+                                },
+                                {
+                                    "name":  "EventViewerMod",
+                                    "value":  "0"
+                                },
+                                {
+                                    "name":  "CheatManagerEnablerMod",
+                                    "value":  "0"
+                                },
+                                {
+                                    "name":  "ActorDumperMod",
+                                    "value":  "0"
+                                },
+                                {
+                                    "name":  "ConsoleCommandsMod",
+                                    "value":  "0"
+                                },
+                                {
+                                    "name":  "ConsoleEnablerMod",
+                                    "value":  "0"
+                                },
+                                {
+                                    "name":  "SplitScreenMod",
+                                    "value":  "0"
+                                },
+                                {
+                                    "name":  "LineTraceMod",
+                                    "value":  "0"
+                                },
+                                {
+                                    "name":  "BPML_GenericFunctions",
+                                    "value":  "0"
+                                },
+                                {
+                                    "name":  "BPModLoaderMod",
+                                    "value":  "0"
+                                },
+                                {
+                                    "name":  "jsbLuaProfilerMod",
+                                    "value":  "0"
+                                },
+                                {
+                                    "name":  "DawnwalkerModBridge",
+                                    "value":  "0"
+                                },
+                                {
+                                    "name":  "Keybinds",
+                                    "value":  "0"
+                                }
+                            ],
+    "overlays":  [
+                     {
+                         "packagePath":  "overrides/ue4ss/UE4SS-settings.ini",
+                         "targetPath":  "ue4ss/UE4SS-settings.ini",
+                         "sha256":  "A550AD7A10316067D278C75CEBB3964E363B9379E727FD20282FCAD0EF79FEA4"
+                     },
+                     {
+                         "packagePath":  "overrides/ue4ss/Mods/mods.txt",
+                         "targetPath":  "ue4ss/Mods/mods.txt",
+                         "sha256":  "E366BD4DB5247D98CD81F9B37F3ED3ADE5C867E735F2F4498D97B6A3BA45926E"
+                     },
+                     {
+                         "packagePath":  "overrides/ue4ss/Mods/DawnwalkerModBridge/Scripts/main.lua",
+                         "targetPath":  "ue4ss/Mods/DawnwalkerModBridge/Scripts/main.lua",
+                         "sha256":  "13E3115612EDDF4A482BBA3C895ED6776A6C60A7C1FCB0F1070E1B72BB7C1857"
+                     }
+                 ],
+    "payloadFiles":  [
+                         {
+                             "relativePath":  "dwmapi.dll",
+                             "bytes":  279552,
+                             "sha256":  "74EFB8F6F368830EC80BE031B4E1EEE7006F228B9EDD5C1877FE27A8E29DC6CD"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Changelog.md",
+                             "bytes":  68863,
+                             "sha256":  "2475EC05FB759B33CEEADB57BCD36CA417A78EE2BCD628D6CFD2DFDDC0B57A4A"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Abiotic Factor/MemberVariableLayout.ini",
+                             "bytes":  11194,
+                             "sha256":  "D320C92863A38FB8AA40F86A3F9341599F580E3C3C77F2D881FC6BE2FC12D623"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Abiotic Factor/Readme.md",
+                             "bytes":  314,
+                             "sha256":  "D1EFF72178A8D374A4B1BB9DEE2A9FFB656910D319038737C5F78E685461090A"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Abiotic Factor/VTableLayout.ini",
+                             "bytes":  18051,
+                             "sha256":  "CC1136EA3EC02E634E93B0C05C6714318926F23924D7A9DFFAAD9C2C842370A9"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Atomic Heart/MemberVariableLayout.ini",
+                             "bytes":  4143,
+                             "sha256":  "F2C435FC8C48FE13DC4CC3777A6316509A905C209F636117A52C8127FACE6574"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Atomic Heart/UE4SS-settings.ini",
+                             "bytes":  6988,
+                             "sha256":  "DD7CF9C93FF577DE74E9DF1E6BC6E37328A8EADA70E4D1AA000F9BBED2FC7E50"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Borderlands 3/UE4SS-settings.ini",
+                             "bytes":  5740,
+                             "sha256":  "98FEB22E546EABF4A041427DDC8C3548C33982A2302C96E024A868B08BFA38F2"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Borderlands 3/VTableLayout.ini",
+                             "bytes":  4376,
+                             "sha256":  "C1470D666A5EA67BEA28FC6C650FFD2EE693858BB8D7CFE4B57E2323FF5818F7"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Conan Exiles Enhanced/UE4SS-settings.ini",
+                             "bytes":  8456,
+                             "sha256":  "3479681A41B45943B89AEA29D71692E1441A0D845DBC4474A3604904BF66516D"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Conan Exiles Enhanced/VTableLayout.ini",
+                             "bytes":  56847,
+                             "sha256":  "333B8D13189578CD9851EF377B481C5949A3A48E0BD5B09B84A5C6449580D649"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Crash Bandicoot 4/UE4SS-settings.ini",
+                             "bytes":  7443,
+                             "sha256":  "7C0AC77541CFAC408D2DB691A3A5D0AAC8D0816AA24FE69A6E4125D251E430EA"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Crash Bandicoot 4/VTableLayout.ini",
+                             "bytes":  14942,
+                             "sha256":  "41E08FF47EEEF81677AE2E82BA004872EDE3E84C156D81B40A98895BB50D855A"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Deadly Days Roadtrip/Readme.md",
+                             "bytes":  242,
+                             "sha256":  "4C056AC653B46CA471ADD64CD4957A1883638690C16B8D0D4935787664B8410E"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Deadly Days Roadtrip/UE4SS_Signatures/FText_Constructor.lua",
+                             "bytes":  959,
+                             "sha256":  "E6BDBD1B6B3E63EA79C6C2697C7B500E0CF9E2A1624ACA34E61EC2B808203A8A"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Deadly Days Roadtrip/UE4SS_Signatures/StaticConstructObject.lua",
+                             "bytes":  170,
+                             "sha256":  "DF1E05AAB1835CEA9C8AC896D97E15A28960985835B67ECE466C45DA9A2472B4"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Deadly Days Roadtrip/UE4SS-settings.ini",
+                             "bytes":  7262,
+                             "sha256":  "1C6C751E513A2A4F4F491666F08A0B93B195485C2BA9E7891C951EEC6672D452"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Drainsim/UE4SS_Signatures/StaticConstructObject.lua",
+                             "bytes":  211,
+                             "sha256":  "E9B780AA311DEA52C29818C414A2085DC0C4EA56136514202F8B44C00C5D7A59"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Drainsim/UE4SS-settings.ini",
+                             "bytes":  7866,
+                             "sha256":  "53DFDB9E7D90E8DC858272CE9D878000B795620D02D742BAC0B9A378048237B5"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Far Far West/UE4SS_Signatures/FName_Constructor.lua",
+                             "bytes":  1069,
+                             "sha256":  "6C443517834C725F3269F7E0CEF75A0C9ACCD8181EBEE453B038982CC83A1D8A"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Far Far West/UE4SS_Signatures/GNatives.lua",
+                             "bytes":  696,
+                             "sha256":  "F6671BDA68B1EB0D787410FBB01ACAF9F46E4C041DB0A8B4AF51D6468802A9AB"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Far Far West/UE4SS_Signatures/ProcessLocalScriptFunction.lua",
+                             "bytes":  472,
+                             "sha256":  "DEB79248A54D7B41D28E981ABF257B8408621315C64502D8F69F370AB99025C2"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Far Far West/UE4SS-settings.ini",
+                             "bytes":  8145,
+                             "sha256":  "EB881EE3635318AB0208F1E28B4BACE0E551100181792D30C2AFF7A51E6779A8"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Final Fantasy 7 Rebirth/MemberVariableLayout.ini",
+                             "bytes":  10579,
+                             "sha256":  "9D49285EAA54C33247B0B8B8D58C42F5AC34A90A431A0FDBFA14CA3ACABA01FD"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Final Fantasy 7 Rebirth/UE4SS_Signatures/CallFunctionByNameWithArguments.lua",
+                             "bytes":  250,
+                             "sha256":  "AB461E5C0B579478E326032F37E56360B66402B0C9D72C079348CD9A69CC22EE"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Final Fantasy 7 Rebirth/UE4SS_Signatures/FName_Constructor.lua",
+                             "bytes":  253,
+                             "sha256":  "875310835D43DE0E2B333FA11673DD7DE546C29F86FAA863030F477E9633AA45"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Final Fantasy 7 Rebirth/UE4SS_Signatures/FText_Constructor.lua",
+                             "bytes":  306,
+                             "sha256":  "C825A9795110E423A1CABD103F362CA45F13F8CF24B4AA6BBB2B6A2572B7B858"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Final Fantasy 7 Rebirth/UE4SS_Signatures/GNatives.lua",
+                             "bytes":  338,
+                             "sha256":  "18C69C1714612436DEF49F9E5AD43781D8976FFB22A0CEDCBEF92D21C929568C"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Final Fantasy 7 Rebirth/UE4SS_Signatures/GUObjectArray.lua",
+                             "bytes":  297,
+                             "sha256":  "5CA1E7FC948B55D724F321B4DB0C0EA21AA6817EEC98DE04888F82903DEA47DB"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Final Fantasy 7 Rebirth/UE4SS_Signatures/GUObjectHashTables.lua",
+                             "bytes":  194,
+                             "sha256":  "37A0138B2372AFFF5206EB6AE5966071B67D9891FB215E8CFE6CB1C2BEE600E0"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Final Fantasy 7 Rebirth/UE4SS_Signatures/ProcessLocalScriptFunction.lua",
+                             "bytes":  340,
+                             "sha256":  "DCADE4086E5739D68DA0E7338B8E05D8FE3303B6F456A18D696C4D04641F4BE8"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Final Fantasy 7 Rebirth/UE4SS-settings.ini",
+                             "bytes":  7403,
+                             "sha256":  "EA33CCD6F77C06F844364EDB18F601E469E144789BAC1F6F6C147628FDF20DD5"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Final Fantasy 7 Rebirth/VTableLayout.ini",
+                             "bytes":  15913,
+                             "sha256":  "941BF4A89E71F9CA229AF74BE8DC34DB6B5053FD35059239CA10D533F9319CD9"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Final Fantasy 7 Remake/MemberVariableLayout.ini",
+                             "bytes":  7449,
+                             "sha256":  "41260292DF844A1E7B4B96A7B04ACFAD5938471D44448757B5CEEAF4A1826F50"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Final Fantasy 7 Remake/UE4SS_Signatures/GUObjectArray.lua",
+                             "bytes":  315,
+                             "sha256":  "1A13AEA51AB3EF120D761C64378C35D14C52144D5941D89340948C4E52653BA4"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Final Fantasy 7 Remake/UE4SS-settings.ini",
+                             "bytes":  7542,
+                             "sha256":  "E99DBE01778FD7A03B6A8EB3F86F3260EB5DB1140E1C5F10C41A62B5F1E76F1F"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Final Fantasy 7 Remake/VTableLayout.ini",
+                             "bytes":  13781,
+                             "sha256":  "35498D2B29870EC6C617241294EFE7706BDABEAF0458C98725E0E0FBB7D063B8"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Fuser/VTableLayout.ini",
+                             "bytes":  4805,
+                             "sha256":  "987D5B9A82A446C58FCC633EA2B86A0E9E287DD799EC7C941FF00D077B785EB4"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Ghost Wire Tokyo/UE4SS_Signatures/GUObjectArray.lua",
+                             "bytes":  295,
+                             "sha256":  "C2C06DF8CBC96E28875B0E5C3ABD6B1C95D6984F69F303F6F252BF21B59971CB"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Ghost Wire Tokyo/UE4SS_Signatures/GUObjectHashTables.lua",
+                             "bytes":  241,
+                             "sha256":  "F99BAF76C3587CD61D5F2DF8288D5E2C928E269C78CF6248F60CC5986C73522E"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Ghost Wire Tokyo/UE4SS_Signatures/ProcessLocalScriptFunction.lua",
+                             "bytes":  192,
+                             "sha256":  "C8614756A37E9F500A842C7FEAA56590FC23545973AD7EE25375743ACDDA6EF3"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Halo Campaign Evolved/README.md",
+                             "bytes":  118,
+                             "sha256":  "BD25ACAF228AEC6A4F4520D5BAA659BC3F23295B2783629F47F95D308E260605"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Halo Campaign Evolved/UE4SS_Signatures/FName_Constructor.lua",
+                             "bytes":  223,
+                             "sha256":  "8729FD8E0166DD32088D366AE83A4F0978A1A106129AEE62F1EC0690DCD10A5D"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Halo Campaign Evolved/UE4SS_Signatures/gamepass/GUObjectHashTables.lua",
+                             "bytes":  541,
+                             "sha256":  "16410E64B1550AEEE40C04F247CD1AD34BDD0A95F0392FBD2002F3DCBA3DA327"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Halo Campaign Evolved/UE4SS_Signatures/GUObjectArray.lua",
+                             "bytes":  375,
+                             "sha256":  "C99383208B213BBC9F9699B85B76701A4F3802DB85116822921C840391A9923B"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Halo Campaign Evolved/UE4SS_Signatures/GUObjectHashTables.lua",
+                             "bytes":  241,
+                             "sha256":  "D945356C728F22F2CFFE1278210B63EB3364406579D2BFEE2B5F9A1B985A5510"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Halo Campaign Evolved/UE4SS_Signatures/ProcessLocalScriptFunction.lua",
+                             "bytes":  405,
+                             "sha256":  "E4E2DE61844A327966F1F5C919A3C6B3A0645CE1C99DF125E1059DA063B9127C"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Halo Campaign Evolved/UE4SS-settings.ini",
+                             "bytes":  7870,
+                             "sha256":  "BE1E123A96C653682B822D553B7DD36906110B57CA785BDFF9006B97DCC2354A"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Kingdom Hearts 3/MemberVariableLayout.ini",
+                             "bytes":  5132,
+                             "sha256":  "3ABDF1278380A00177E52DB3110E720ECC705D0D9341DC235E182D9CD9835122"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Kingdom Hearts 3/UE4SS_Signatures/FName_Constructor.lua",
+                             "bytes":  202,
+                             "sha256":  "A8C46A61FBB87393341FCBE75309B27EB0F707CA04561043B5722ADAAC78661B"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Kingdom Hearts 3/UE4SS_Signatures/FName_ToString.lua",
+                             "bytes":  263,
+                             "sha256":  "67A8135368908840DFE6F890589BD596386A8C5A9CB1E002F35141F478930E95"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Kingdom Hearts 3/UE4SS_Signatures/StaticConstructObject.lua",
+                             "bytes":  183,
+                             "sha256":  "01A5830D86440A07588CEF1798AFA47001097EEA7853B263D9B7441F84E5D35D"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Kingdom Hearts 3/UE4SS-settings.ini",
+                             "bytes":  7003,
+                             "sha256":  "B69A442A96EA9DCFAE2DB2CD3D0838617D6E78CEAD55B288A9205BFB0357CE58"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Kingdom Hearts 3/VTableLayout.ini",
+                             "bytes":  4098,
+                             "sha256":  "1AD267B3B14E161EB9A1F83C9109E7D2740561E5B647229D2EC78CF3509C6C02"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Lies of P/UE4SS_Signatures/FText_Constructor.lua",
+                             "bytes":  200,
+                             "sha256":  "ACDC3EDD000BDD0611E56E95DCBB7A0F1A02563B83BFB4ECEAC059B2BCE982D4"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Lies of P/UE4SS_Signatures/StaticConstructObject.lua",
+                             "bytes":  319,
+                             "sha256":  "6A886E6260416A03FD2093E0DB4F09F9B32B84D1582A66166B1EA38DB76A503A"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Lies of P/UE4SS-settings.ini",
+                             "bytes":  6982,
+                             "sha256":  "88872CF6B3D7AD79465F79ABF160D11BF96FA925C2D8F8EB3089569917E8A00F"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Little Nightmares 3 - Demo/UE4SS_Signatures/GUObjectArray.lua",
+                             "bytes":  380,
+                             "sha256":  "275ADE3E1ED57F7C953393F338AB84EB675716546C8C98951E77D6E0424CD5D4"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Project Silverfish/UE4SS_Signatures/FText_Constructor.lua",
+                             "bytes":  607,
+                             "sha256":  "DA8A9C02EBF629F8E1DD112C6584D647CDAFEB0C3A8B29E7F88C1D76BC9067D3"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Project Silverfish/UE4SS-settings.ini",
+                             "bytes":  7262,
+                             "sha256":  "8497312E6A21A5DE52ADF00E8234AF8FB37E1028F69BD8389408D93C89022E7B"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Psychonauts 2/VTableLayout.ini",
+                             "bytes":  15680,
+                             "sha256":  "24302053A255662A8FD2E285228F0FD3403CCEDD0B5C92A0230FCFCAEC424F4D"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Readme.md",
+                             "bytes":  605,
+                             "sha256":  "C8325358B2D471EF749024A81DB791E14E80890DE2AF1099BF4CC08ADD62BCF8"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Returnal/UE4SS_Signatures/FName_Constructor.lua",
+                             "bytes":  56,
+                             "sha256":  "31A75FD06789CD2F261872CA05DAEE18261787F1AD3465D5BD89EFF3A0A35208"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Returnal/UE4SS_Signatures/FName_ToString.lua",
+                             "bytes":  58,
+                             "sha256":  "2313A32D81422539E6D5342C71EAD2F5571405618F7A55B79D471EB9B51B9C4F"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Returnal/UE4SS_Signatures/FText_Constructor.lua",
+                             "bytes":  53,
+                             "sha256":  "1A7D19EC76BDFE5894A5F74CD161AA271E9EA0985620F07EBCBF349F10C67D49"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Returnal/UE4SS_Signatures/GMalloc.lua",
+                             "bytes":  47,
+                             "sha256":  "AD23286500CE6966DB3BC461BA728936E32F3EDD32C274AF60E02C84FFF3B781"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Returnal/UE4SS_Signatures/GNatives.lua",
+                             "bytes":  71,
+                             "sha256":  "BF1DD581FE993ACDE99BA480212B4364AC4432A7D2D0A5CE99443D60CC28AC93"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Returnal/UE4SS_Signatures/GUObjectArray.lua",
+                             "bytes":  55,
+                             "sha256":  "2AFA5C2B3BCBB2AB016FC5B0663E4D8FC29F6E116F72DCC5EE1266CBFA50917A"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Returnal/UE4SS_Signatures/StaticConstructObject.lua",
+                             "bytes":  169,
+                             "sha256":  "13856B531D44ED1B1776535209DF44734F034F098212D326CF873169FD5F00D5"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Returnal/UE4SS-settings.ini",
+                             "bytes":  7147,
+                             "sha256":  "2FCCBED48697FEBAA407C4DFD84814BA935F6EC4C5BE6F4ED74CF1687C2E0B62"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Satisfactory/MemberVariableLayout.ini",
+                             "bytes":  39552,
+                             "sha256":  "1E578F1867600753BB070ADA6224FA0E5E8C79EC4BB0A5BFB3743C078B14A489"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Satisfactory/UE4SS_Signatures/FName_Constructor.lua",
+                             "bytes":  168,
+                             "sha256":  "C3D658691528FCFFA79AD515F14F593EAF92AECE96BEA212EB1E45725E7E0A0C"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Satisfactory/UE4SS_Signatures/FName_ToString.lua",
+                             "bytes":  168,
+                             "sha256":  "20F501F4235D3031BCEED32B2269BDB8596440BDA1A3FB75043EB5DFD3A8628B"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Satisfactory/UE4SS_Signatures/GameEngineTick.lua",
+                             "bytes":  85,
+                             "sha256":  "42241759B9ADAEF58893BB1B4B0E5B5D915629A5B8E57AD5A628DA53FC515A24"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Satisfactory/UE4SS_Signatures/GMalloc.lua",
+                             "bytes":  228,
+                             "sha256":  "3DCF9CC06A251610C2A619DC83AD862E9F53363FF4029B26FFFC53924DD5E14A"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Satisfactory/UE4SS_Signatures/GNatives.lua",
+                             "bytes":  202,
+                             "sha256":  "5E26EBBB741922A4A0C8A5798B1AAB3080C887F9AB89DB771F3165259651A3BA"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Satisfactory/UE4SS_Signatures/GUObjectArray.lua",
+                             "bytes":  124,
+                             "sha256":  "5A4D81D77B91BEE1B475D30280603BBD9ACD3EE30850E55309D8FDD6FDC07B70"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Satisfactory/UE4SS_Signatures/StaticConstructObject.lua",
+                             "bytes":  468,
+                             "sha256":  "12C1D07072599DB4F6F1C99BF7DC6D2C6017F15A6880F0AE1F90282749D8CB40"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Satisfactory/UE4SS-settings.ini",
+                             "bytes":  7444,
+                             "sha256":  "CCCE82FE91F5124B5283338A8B1BFD889433F4198E2C35764672FF4ADA1FD4A7"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Satisfactory/VTableLayout.ini",
+                             "bytes":  57037,
+                             "sha256":  "3207F2D41B4D1F97B247024C3A8A19E527EE4F54B4551B31AEB172B7B95C9FB0"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/SCP 5K/Readme.md",
+                             "bytes":  98,
+                             "sha256":  "8FF188CC3CA0937F966C9812E71CDEF02A79E0561399926A91B4DA94EC6F9F92"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/SCP 5K/UE4SS_Signatures/FName_Constructor.lua",
+                             "bytes":  203,
+                             "sha256":  "AAE5A57952CE793F3BAB5D25A713473E8B607A157A90633A95071325E85982F9"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/SCP 5K/UE4SS_Signatures/FName_ToString.lua",
+                             "bytes":  173,
+                             "sha256":  "863259A563EA183D43E6E66737158C4EF1AC4BDB1DC1DB5353FD4CBD2B08814C"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Silent Hill F/MemberVariableLayout.ini",
+                             "bytes":  11195,
+                             "sha256":  "BFC199D15BF17BF0C24994E93C791931A6681443DFCF4993A290743102B4AFAA"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Split Fiction/MemberVariableLayout.ini",
+                             "bytes":  11373,
+                             "sha256":  "FA4717A92381389493F41FA8633A16E2A3DD1A4782DC3F6E886A105C7138FD07"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Split Fiction/UE4SS_Signatures/FText_Constructor.lua",
+                             "bytes":  276,
+                             "sha256":  "E13CAC3DE11EF1A86D85AF27B5F6BDE30900E4003DB01F4FC96590A5D850463E"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Split Fiction/UE4SS_Signatures/Gnatives.lua",
+                             "bytes":  282,
+                             "sha256":  "7FC3A558E370989D025953F780772EFC206DF8E38E92E8B46EFB0335BF6EAEC8"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Split Fiction/UE4SS_Signatures/GUObjectArray.lua",
+                             "bytes":  338,
+                             "sha256":  "A2F5EF4151AB1262347025325ADE9EF88AB21BBE9C3DCE720493E912932C0A6C"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Split Fiction/UE4SS-settings.ini",
+                             "bytes":  7540,
+                             "sha256":  "525B5127E6980439048D512940574F9EE9ED5EFEA32BA6A607940D2E4695C8D8"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Split Fiction/VTableLayout.ini",
+                             "bytes":  18327,
+                             "sha256":  "BDA9DD6AD6AAA25937DF85FF9B573070BA3FB46CE447EE3B1B0F75BA08280FBC"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Star Wars Jedi Fallen Order/MemberVariableLayout.ini",
+                             "bytes":  4094,
+                             "sha256":  "649729F986EDF3655B23707598A9926903C5F34D5899F2059462E9F265C15934"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Star Wars Jedi Survivor/MemberVariableLayout.ini",
+                             "bytes":  4108,
+                             "sha256":  "A1E5402AE27EB54F19E5FA2D5ABFF2DE053DCA6B12F4294C137F0469D6F0F1FA"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Star Wars Jedi Survivor/UE4SS-settings.ini",
+                             "bytes":  8085,
+                             "sha256":  "BA138D5F247A2470A449DF81DFB27124D954F8E4D67BFDCB61B4B16405EAD6AD"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Star Wars Jedi Survivor/VTableLayout.ini",
+                             "bytes":  16346,
+                             "sha256":  "A20F60197480F274E1AB949564DE9C71BDF2D03480E2445770A9FE01375DBACE"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/StarRupture/UE4SS_Signatures/StaticConstructObject.lua",
+                             "bytes":  289,
+                             "sha256":  "92E19AC4AFCA7449671EFA2D522C09224B6A45109E2CAABA230454AB49FC2B03"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/StarRupture/UE4SS-settings.ini",
+                             "bytes":  7867,
+                             "sha256":  "88573DC4DFAAB4C2BE25EE2F2C5AEC7035AAD9E570D43465E40FF769AAB6C626"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/The Outer Worlds 2/Readme.md",
+                             "bytes":  131,
+                             "sha256":  "6FB1A147FD898B96B44D024F2097B5CAE26DF57FC7B57BCAB795117B09DE30E6"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/The Outer Worlds 2/UE4SS-settings.ini",
+                             "bytes":  7082,
+                             "sha256":  "180990786528B59C32899C7D6D56CE3EB17BFC226307254F1B3BC51966C67B94"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/The Outer Worlds 2/VTableLayout.ini",
+                             "bytes":  18293,
+                             "sha256":  "6B14C3BC45FBB642FB5D1498E2F9F0CC08751108A572EB311DDD775655207DD2"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/The Outer Worlds Spacer\u0027s Choice/MemberVariableLayout.ini",
+                             "bytes":  11384,
+                             "sha256":  "82BC42F9D1A1533248F7062C3A018F239B44AE1D8FF3ADAA8E2DC8BCB0ED2B86"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/The Outer Worlds Spacer\u0027s Choice/Readme.md",
+                             "bytes":  111,
+                             "sha256":  "B65870D3142B8163D965439C279026BC587EC605F9837A154ECBE08AB16E9121"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/The Outer Worlds Spacer\u0027s Choice/UE4SS_Signatures/FName_Constructor.lua",
+                             "bytes":  200,
+                             "sha256":  "5ACC527931B699EBAA659E9D952830A7B24A118731FF1F5ED19B72A072F1D35A"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/The Outer Worlds Spacer\u0027s Choice/UE4SS-settings.ini",
+                             "bytes":  5738,
+                             "sha256":  "A50974EF9C528911899CD6D37C69DF847E5B7FF30C6295B73AB80D8675BB37A5"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/The Outer Worlds Spacer\u0027s Choice/VTableLayout.ini",
+                             "bytes":  16761,
+                             "sha256":  "87F466685C0C2AF184855B70C22B43C8ED8AAF1697A3E8222BD0D0724D541B3C"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/The Outer Worlds/MemberVariableLayout.ini",
+                             "bytes":  4342,
+                             "sha256":  "4AFAFFE331BA840917B1FB4469EFFDDBE72B93FFC8D4355C1E9FBB882C39F5D2"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/The Outer Worlds/Readme.md",
+                             "bytes":  111,
+                             "sha256":  "B65870D3142B8163D965439C279026BC587EC605F9837A154ECBE08AB16E9121"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/The Outer Worlds/UE4SS-settings.ini",
+                             "bytes":  5736,
+                             "sha256":  "04C24ED0FCD85C0F8C4ECA02C679D4F7DC0F94433E3E25B6A7E1CD403AA33FE5"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/The Outer Worlds/VTableLayout.ini",
+                             "bytes":  4619,
+                             "sha256":  "9328366DFD4CDBB8B58932BA37FF68666B544A5267F7688E29A5832550263905"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/The Quarry/UE4SS_Signatures/StaticConstructObject.lua",
+                             "bytes":  278,
+                             "sha256":  "3EC02968EEAF58B0A39FE5EF6FA4B6BDF91DC69C6584C03BB9EEDE8C88FFAA83"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/The Quarry/UE4SS-settings.ini",
+                             "bytes":  7868,
+                             "sha256":  "2839B611632C44467E370CAAD7C965FDA5B554B1D3B9DADF5BC2C68F6155D470"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/The Quarry/VTableLayout.ini",
+                             "bytes":  45620,
+                             "sha256":  "89C5A9B5097B55C5275D7728EBF9C330650123AEC3BE2E18F13D8EEC20B2FEC6"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Tokyo Xtreme Racer/UE4SS_Signatures/StaticConstructObject.lua",
+                             "bytes":  178,
+                             "sha256":  "DC3D993D91ABF51666D4A9F9061D8991FC15C8048081F35FC66C5E75646C60C5"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Vein/MemberVariableLayout.ini",
+                             "bytes":  11879,
+                             "sha256":  "1656CDC82A204E4D738E4E5210C10869E5E54E24BD4760CC3A79E5AE5A69DCAD"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Vein/UE4SS_Signatures/FText_Constructor.lua",
+                             "bytes":  157,
+                             "sha256":  "5585F24988E8E779E629BBC40795E7A6D904DF0E4103CCD05E3273C849713524"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Vein/UE4SS_Signatures/StaticConstructObject.lua",
+                             "bytes":  277,
+                             "sha256":  "0F8610B472C2A21D91DF7FD24E395BD25F7688035436730164DDD0AE65F0A2FC"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Vein/UE4SS-settings.ini",
+                             "bytes":  7446,
+                             "sha256":  "5C14E40B298F196ED6B94DA9C869DC9E78DBDA6A152DA1D5B676D4FC40DFC12A"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Vein/VTableLayout.ini",
+                             "bytes":  19438,
+                             "sha256":  "2BD8E6F88C9838E5FA7E5C6D540605727164BBE2F3AD40BA839BEF4277454311"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Walking Dead Saints \u0026 Sinners/UE4SS_Signatures/FName_Constructor.lua",
+                             "bytes":  188,
+                             "sha256":  "8627D4A505C5FFB0F041E16284E6AAC41301D132AE08117B0F87F025C50E3815"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Walking Dead Saints \u0026 Sinners/UE4SS_Signatures/FName_ToString.lua",
+                             "bytes":  212,
+                             "sha256":  "FD7A4B387687E7C9FCEDB8D7B8430D2EE41118C9AE15039EA410B334389B3F8A"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Walking Dead Saints \u0026 Sinners/UE4SS_Signatures/StaticConstructObject.lua",
+                             "bytes":  188,
+                             "sha256":  "B3120FADF2CB517976B4178FAA81B8F145B561AA052B399A0B45D548D7C9A7F5"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Whiskerwood/UE4SS_Signatures/FText_Constructor.lua",
+                             "bytes":  148,
+                             "sha256":  "7881E53CEB6EDA43CFEB16395CB6F2E5FDEDC5DACFBD76328378B3D2B7506DE7"
+                         },
+                         {
+                             "relativePath":  "ue4ss/CustomGameConfigs/Whiskerwood/UE4SS_Signatures/StaticConstructObject.lua",
+                             "bytes":  178,
+                             "sha256":  "DC3D993D91ABF51666D4A9F9061D8991FC15C8048081F35FC66C5E75646C60C5"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Default_UVTD_Configs/Config/class_inheritance.json",
+                             "bytes":  146,
+                             "sha256":  "A4458FF3459D6942EA794C5D6B1509B297BC4E92D22274F3BF86ACA6568923A1"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Default_UVTD_Configs/Config/class_rename_map.json",
+                             "bytes":  103,
+                             "sha256":  "F103796B831C9860F9B89B9ADD92AB1BF721AF4BD0175744E3AD37771AEB0589"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Default_UVTD_Configs/Config/member_rename_map.json",
+                             "bytes":  2615,
+                             "sha256":  "784F131B930E4354ACBEFA2EB312E079A18764037A86624E497D7CBF8A395B1B"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Default_UVTD_Configs/Config/object_items.json",
+                             "bytes":  6638,
+                             "sha256":  "F4C23A9B6083AD05FD9D74C2C0B2E793D81D1104CAFF9F1A7FAC810D7DD6D12C"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Default_UVTD_Configs/Config/pdbs_to_dump.json",
+                             "bytes":  638,
+                             "sha256":  "7FE6F8331F17FC9C2628652A934847A1EB1AE2117B5EB56D07F6DC72CA4C1F6D"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Default_UVTD_Configs/Config/private_variables.json",
+                             "bytes":  194,
+                             "sha256":  "320E893734AA617F56EDC7B8C9B489C58FEA2B8A3DE01DF2D7C4F199A1438A00"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Default_UVTD_Configs/Config/suffix_definitions.json",
+                             "bytes":  259,
+                             "sha256":  "25A83558D2525D405EC6FAEE8571A3970A9132E6586C6E18DE9FD822EE94E26E"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Default_UVTD_Configs/Config/types_filter.json",
+                             "bytes":  3653,
+                             "sha256":  "F24E5605B4E9DA8FF6B3185C74828B8B9209BBEF13CF8E284921BAD6BDF95265"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Default_UVTD_Configs/Config/types_not_to_dump.json",
+                             "bytes":  2535,
+                             "sha256":  "CA3856F8677AEF3931AFEF2A20883C27BF8D0BB7D787C9646261133DC18EA289"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Default_UVTD_Configs/Config/uprefix_to_fprefix.json",
+                             "bytes":  337,
+                             "sha256":  "CD29CEDDAF7B367974E0C0E684B871EB105C58AC7A3A5C365629D98267C6C5BD"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Default_UVTD_Configs/Config/valid_udt_names.json",
+                             "bytes":  1768,
+                             "sha256":  "B3EEA5CEC3B4ABB356DC0E789C4A90FF7B6B84844335A6F4F2BF4F87D5BB83F5"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Default_UVTD_Configs/Config/virtual_generator_includes.json",
+                             "bytes":  378,
+                             "sha256":  "52AAD2AD02FA3511939C3710875ECD9809214A94F1CE93E2887693D4F15780A9"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/contributing.md",
+                             "bytes":  5439,
+                             "sha256":  "60AC16B12C8D92C91FD1AFA825E914B005F201D5B5CAFD7A4864043662EC87C2"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/cpp-api.md",
+                             "bytes":  550,
+                             "sha256":  "1AE1A8D264E9F75ADA809516A20514B5F4E092C00C0AE3441E3C76449022FE96"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/cpp-api/bp-macros.md",
+                             "bytes":  7437,
+                             "sha256":  "38151F3AA94F7F5DADC77F8FCC51CB908E08DA1D1D8AC716AB03B3325328D366"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/cpp-api/cpp-examples.md",
+                             "bytes":  619,
+                             "sha256":  "6DDEA6B1C3A82621C21D87D7D47CC1FC003E50A4FC33F33738B039D79634D5B6"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/custom-game-configs.md",
+                             "bytes":  1407,
+                             "sha256":  "377CEFB691D4DB69DD1E5F0A77E321C387735C90F361C699D7AE00FE773DC9B4"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/devlogs.md",
+                             "bytes":  404,
+                             "sha256":  "0DEC4F43CB7F69B04036BB5BCAC26A989815643F28B29095C8876E32C0B569DC"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/devlogs/datatables-in-ue4ss.md",
+                             "bytes":  13718,
+                             "sha256":  "CAAD8D4DFFF345CDF986E0B9A6624DED30F14F0641AAF8AD29294378F164E76E"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/feature-overview/blueprint-modloader.md",
+                             "bytes":  422,
+                             "sha256":  "408ECF521D4C517FAD7A734DF5D516553BE8EF337793A40ADE8C456F14B9530C"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/feature-overview/dumpers.md",
+                             "bytes":  9236,
+                             "sha256":  "185D17257E4B62337FF2DB26CC440F078DF9F0D4E8D70CAC9E641C79DDE5BE37"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/feature-overview/experimental.md",
+                             "bytes":  3,
+                             "sha256":  "A9E0BA49B003E1CC40B7F9A9B55F0C87992858AEB7BF4136DA63A3C2DDDB98A0"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/feature-overview/live-view.md",
+                             "bytes":  8039,
+                             "sha256":  "F2CCD58EE055CAF4E05407B73A54F14405F76F6811767750B716ED1C57C27314"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/feature-overview/sdk-generator.md",
+                             "bytes":  4451,
+                             "sha256":  "D4E25DC3BD8E5C7E76935F629A7C3A05E02A4736852460C2C81212AF0A5A4584"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/feature-overview/universal-mods.md",
+                             "bytes":  3,
+                             "sha256":  "A9E0BA49B003E1CC40B7F9A9B55F0C87992858AEB7BF4136DA63A3C2DDDB98A0"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/guides/accessing-ue-properties-c++.md",
+                             "bytes":  5736,
+                             "sha256":  "682DF76A061EB78D4F8C92EA6E0CDF008609E525E15B5D609464166BF652D573"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/guides/creating-a-c++-mod.md",
+                             "bytes":  6120,
+                             "sha256":  "34BA5818E3064C845C408C907F78B63A1D6EA8654D0A248FEBC06B2A98D9F3AC"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/guides/creating-a-lua-mod.md",
+                             "bytes":  7252,
+                             "sha256":  "D537D8CA866A805C0B0050691B1ABCD13E8BEC53986CB18376D001DB5BB482C6"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/guides/creating-gui-tabs-with-c++-mod.md",
+                             "bytes":  4080,
+                             "sha256":  "470854406A59983DC40F51589F16C60016BC38B7998BC713F30F06BD5BFC19C2"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/guides/debugging-a-c++-mod.md",
+                             "bytes":  1912,
+                             "sha256":  "572DA8983F629D0EE0437D78C4A56A0C740933266D050062E24F714966DF4F5F"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/guides/fixing-compatibility-problems.md",
+                             "bytes":  6493,
+                             "sha256":  "F0E24F22B3FF2EC5F37C200F0D50D5DA356D3510F0B6CDB6913F9743EA5771C8"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/guides/fixing-compatibility-problems-advanced.md",
+                             "bytes":  11482,
+                             "sha256":  "D13B193DF416ED8D3807DA619BD03734EDD57FCE6A9442898F2CAA18D13E0AE1"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/guides/generating-uht-compatible-headers.md",
+                             "bytes":  22541,
+                             "sha256":  "1AC8DD719AF912F7D576483578F693C9F2AF56227EDAF446365080CD82EE32C1"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/guides/installing-a-c++-mod.md",
+                             "bytes":  2627,
+                             "sha256":  "F9944AA8DC17C2FA11368DE03BB5F7ABF54EF5047EC63FA2C4F6FA2266C4F0D5"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/guides/using-custom-lua-bindings.md",
+                             "bytes":  2664,
+                             "sha256":  "281997B3EC5B1BE3333EA4ECE6EAF8375D96E8B8D9C09252D9A224DEE407807E"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/installation-guide.md",
+                             "bytes":  10501,
+                             "sha256":  "E6CB8719587442F45E80DEF5964D357FADB417E8B85BF27E8860FD3F710C0AB9"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api.md",
+                             "bytes":  34519,
+                             "sha256":  "572541CF8A9D865062706335429E23CF3374A78B1A4A77BF9E3773692477267D"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/classes/aactor.md",
+                             "bytes":  322,
+                             "sha256":  "43282173CFA242B456C1B02E3C39A38627D75166A687D84E07DE1ED42890F63C"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/classes/arrayproperty.md",
+                             "bytes":  174,
+                             "sha256":  "9E2964413A41D2539A34EC50563985969C68939EDBBABE3C4900C176AA726497"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/classes/boolproperty.md",
+                             "bytes":  289,
+                             "sha256":  "FA3BCFB8A4A3F93267F8E32878B64E2EE91E506A1965215291ED3A7F4FDBAF3B"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/classes/delegateproperty.md",
+                             "bytes":  1589,
+                             "sha256":  "7D588E98F935A3DADBE38D233E74D17E97E37729FA079B64F573E76C8A17ABCE"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/classes/fansistring.md",
+                             "bytes":  2720,
+                             "sha256":  "EA2CBF2E494E5313FD19C08807180976151FA45C880F2CB64EB729BC37DDC288"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/classes/fieldclass.md",
+                             "bytes":  174,
+                             "sha256":  "6FF0984D5AA14A90CBC1A05E0C45F1568782935F78BADED32AC50C478769A9A3"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/classes/fname.md",
+                             "bytes":  314,
+                             "sha256":  "10730997C37575F0BE7C166276DF6664542D15D245EB6EF6A91A8DFE7B9A0235"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/classes/foutputdevice.md",
+                             "bytes":  178,
+                             "sha256":  "C543FD6EF66B3D07ED43BD9C3964C59DEE6CF35953F92494A11915997938E791"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/classes/fstring.md",
+                             "bytes":  2180,
+                             "sha256":  "1EAF5EEDF490FB68665155BAE975B8039F6D48AC7EDD84496AA95AB8FCDCE405"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/classes/ftext.md",
+                             "bytes":  251,
+                             "sha256":  "6E3715442A5F7CAAF94CBEDF26A207A6BEEF3F9A8B59E3FBAFBA3DCD2A763E19"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/classes/futf8string.md",
+                             "bytes":  4285,
+                             "sha256":  "9D3D983A78EC2E2B91F423C842E8C8DF25A87094A66D1DBD3A2F1CDE789B2028"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/classes/fweakobjectptr.md",
+                             "bytes":  295,
+                             "sha256":  "558EE9AE8BFEE4EB44D20825D83DAB4860E49A4DB120D87A768DF0E5C8D19C60"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/classes/localobject.md",
+                             "bytes":  592,
+                             "sha256":  "BE377131C55FA897A83BE417640B42ED44899FFB5373DA2D1D42B5C9F483C4EC"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/classes/localunrealparam.md",
+                             "bytes":  1098,
+                             "sha256":  "2E083888D8DF9B5F9B5C5BE4FE83D0D03AD7DD2C2F257B90DE31325810D13D2F"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/classes/mod.md",
+                             "bytes":  2296,
+                             "sha256":  "FEBBF45F1CA3666AD19147B1B2DB2B1C433A32A9F164CB51D5B9675F9DC6F39E"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/classes/multicastdelegateproperty.md",
+                             "bytes":  3435,
+                             "sha256":  "FBE332DCC060F7B07C453A0DDB7A91683278556FB22ADF5E9D8D564AC6854C96"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/classes/multicastsparsedelegateproperty.md",
+                             "bytes":  3985,
+                             "sha256":  "56036B0AFF57FE2C0A3A73768A293D06EAC963C5CB1DBC9C748E08A92EC10A3B"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/classes/objectproperty.md",
+                             "bytes":  184,
+                             "sha256":  "796044437A30E4C18847EF2087E5E2853C583AD832B13D90ADF027FC03A8B4E1"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/classes/property.md",
+                             "bytes":  903,
+                             "sha256":  "4937B0C3E526DABC5F0883D10F827974C462D68D87831B0739A76C822EEEE59C"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/classes/remoteobject.md",
+                             "bytes":  653,
+                             "sha256":  "89578C3783DDABDCEB620894EF36FD71B709998B5639109003759001D9E5E36A"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/classes/remoteunrealparam.md",
+                             "bytes":  1104,
+                             "sha256":  "48C5DBA87CC649A1C520A8E443D1B5B5961278752999F7B9CBD6307D9E065046"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/classes/structproperty.md",
+                             "bytes":  200,
+                             "sha256":  "3088FAB1182D82255EAC39F992967F80CC25F1FD70AE9BF0BBE285AC4FF2974C"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/classes/tarray.md",
+                             "bytes":  1625,
+                             "sha256":  "3C8304C28DEE899FFD2937DA818F613B98C61CC2B5766907AA6FB15DA31C7F2C"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/classes/threadid.md",
+                             "bytes":  166,
+                             "sha256":  "39E08402C6A509BC4192E510C7C40E68B0BC1B39B76C997EAA0E05304D933398"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/classes/tmap.md",
+                             "bytes":  1239,
+                             "sha256":  "7ECCF4F5A1803C5E5EE0C4ACAF379BB4963D3DC20D21E40087E9A7C45F2B54E2"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/classes/tset.md",
+                             "bytes":  1413,
+                             "sha256":  "A3F5C8AA729FEC08FC6D0215060CF551F4F8B0CCF1FAF52490AD8C7B46B44C01"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/classes/uclass.md",
+                             "bytes":  297,
+                             "sha256":  "4764A95FACCE16ED7014C2C00BB7C9D27C9D333A9BBA1C7F1C77338C751B9287"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/classes/udatatable.md",
+                             "bytes":  2956,
+                             "sha256":  "443411B2D10F4DDBA017D0DEC3D95B1E09D3AE3ADA853D5BAD4EEE026BC08326"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/classes/ue4ss.md",
+                             "bytes":  808,
+                             "sha256":  "F7A807E9C6B0FCE29D7B3D2E3F8903985333800A09F4D65CEFC7A48AE323961B"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/classes/uenum.md",
+                             "bytes":  1500,
+                             "sha256":  "BF4068C4D88EA740D3BA71CDFB22F8BB004C89BA743D959E425E88CBFA59C732"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/classes/ufunction.md",
+                             "bytes":  569,
+                             "sha256":  "E8C5D858A471509B21299368F8829D2B8F0CA4C8A94271878BC24896DB7B323C"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/classes/unrealversion.md",
+                             "bytes":  1219,
+                             "sha256":  "47ED9AD80E47F9EA4B06B4DFF72FA71FC05D1576D0FCEBCF87539C743A91628F"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/classes/uobject.md",
+                             "bytes":  6214,
+                             "sha256":  "9A5BDD47BD0A8BF2C5BF5A5F770A9BE59DE34CD0632038B9C0E8E09DCB8D8197"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/classes/uobjectreflection.md",
+                             "bytes":  175,
+                             "sha256":  "4E4F8CF31834E269A297F31336BCC5CF13C38F8236A1FD10AB306696EBAEF9A8"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/classes/uscriptstruct.md",
+                             "bytes":  1815,
+                             "sha256":  "A3018FC85120DE8965E7A7784A2A440012537438E38291CCBE1382374812CAAD"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/classes/ustruct.md",
+                             "bytes":  600,
+                             "sha256":  "4C0C8EE9EEF13B489EACC31966905A36DD7E57517DDCBE769E764E97D6D5E321"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/classes/uworld.md",
+                             "bytes":  373,
+                             "sha256":  "B7306CF11848B7061B52F777BAE58E138525DAFC436FB660EEFD7D27BBE1725B"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/examples.md",
+                             "bytes":  1087,
+                             "sha256":  "713A9ACD5ECFAC0B6733C2D77D493E7607EF5FB42E657D1B94F0BE5D9A74EF21"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/global-functions/createinvalidobject.md",
+                             "bytes":  774,
+                             "sha256":  "E37113BCFCBFCDB3E0771029DD2DD5B0F5600CB9E4D34FF7D349E89388B47A62"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/global-functions/delayedactions.md",
+                             "bytes":  9814,
+                             "sha256":  "400552582A81BC4B94374B0A4A5B3A2285B3D85940AEC6522FE06C7A1E17E1C5"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/global-functions/dumpallactors.md",
+                             "bytes":  333,
+                             "sha256":  "6BD6DD3B93827B2B219293ECE8D5A43906770E677E958B2A27E3DE0814445E56"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/global-functions/dumpallobjects.md",
+                             "bytes":  298,
+                             "sha256":  "5050D2F54148BD994C8365BDE2D849B4D5BF3B39F7B279E7FD1F556506239DBB"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/global-functions/dumpjmap.md",
+                             "bytes":  1084,
+                             "sha256":  "F2C06B8995F1AFF6074283E4FD969331D413BE4DF6FB64B9044F765E617841C5"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/global-functions/dumpstaticmeshes.md",
+                             "bytes":  371,
+                             "sha256":  "CB17633BBDA808AF5CEE0645F53A7A52D91D3985B98D36FEDB59065D3B1B2399"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/global-functions/dumpusmap.md",
+                             "bytes":  627,
+                             "sha256":  "03E425A81867028E519A2D2A34CFB2FB2AA916873A535447E6B3B2D4E8759AE2"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/global-functions/executeasync.md",
+                             "bytes":  1059,
+                             "sha256":  "FF3B3B309A495D243A3EA7EAA54BBD277C344C554EA8ED91DF39809E7AD2BC42"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/global-functions/executeingamethread.md",
+                             "bytes":  1610,
+                             "sha256":  "83A68386E44605AA20553F8430F97F67EF9F74F96EF6CF760232FD4419514145"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/global-functions/executewithdelay.md",
+                             "bytes":  515,
+                             "sha256":  "CC50E46DD80B72FDE18BBBD7467331E5592EC2BD76A364737F85F23312B46366"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/global-functions/findallof.md",
+                             "bytes":  5710,
+                             "sha256":  "8CC65402A9775CC8A574CA034DA36C23D08DC9CA1B054ADAC6C680579B756AC2"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/global-functions/findfirstof.md",
+                             "bytes":  699,
+                             "sha256":  "5C48B380F9BDD5880DA02CFE74771F60A101F2F291E1920562B45E204E622D62"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/global-functions/findobject.md",
+                             "bytes":  1926,
+                             "sha256":  "635770F3EF02D47BACD3F937B2811A8D86E8233D45FEC157BBC7520C27E2DB6E"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/global-functions/findobjects.md",
+                             "bytes":  1082,
+                             "sha256":  "B6A6B0EA501322216EA6BAFB6F4BEFAC2ED2C28C1F6C538D1198232FAB34B8FD"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/global-functions/fname.md",
+                             "bytes":  1869,
+                             "sha256":  "F1ED3592817DD7333F93950DDF3F60D54F8DD8D0B709E00C4AAEC08AB0F947A4"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/global-functions/foreachuobject.md",
+                             "bytes":  1035,
+                             "sha256":  "5B1C0C374AC4D03DBD7C57BE05665CF423B8AC148227D8DF760A910C6B494E20"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/global-functions/ftext.md",
+                             "bytes":  928,
+                             "sha256":  "14498DCD702CA32D5A01124718866BF50D707B0911E1A2543B68FDB6C6DD9FF6"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/global-functions/generateluatypes.md",
+                             "bytes":  379,
+                             "sha256":  "BCCE7D25C40C422ED153F264C66DF1883684D1838810CA1D1B9313092DA884DF"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/global-functions/generatesdk.md",
+                             "bytes":  296,
+                             "sha256":  "E2FF798E75963A1AE4B53867A0206D273ADCAD071BD0BB3807CA4BDADA6478F8"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/global-functions/generateuhtcompatibleheaders.md",
+                             "bytes":  460,
+                             "sha256":  "D01E59157F3241BE3A7EFF999E9F24F492E8F6192BF59BD440DD114021C90C30"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/global-functions/getasyncthreadid.md",
+                             "bytes":  529,
+                             "sha256":  "5D0A88643A06CD9946563BF48724D06693130F0F00D16D21E811C3F2C253DF4E"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/global-functions/getcurrentthreadid.md",
+                             "bytes":  487,
+                             "sha256":  "757A815131F8295A813EBC3012CE1BA1B597DF7CA5CAB4D63C57932D00DC8E5A"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/global-functions/getgamethreadid.md",
+                             "bytes":  776,
+                             "sha256":  "4EF5A47D2FBF513E460E7A00626517FDCC045901FBDA8CFA262D853CC0293FF5"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/global-functions/getmainmodthreadid.md",
+                             "bytes":  432,
+                             "sha256":  "CC418FCD3C65E5C1DAE723C7477CDD3BE120B6AF0665F1B246FFF72B5C86F9FC"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/global-functions/isinasyncthread.md",
+                             "bytes":  715,
+                             "sha256":  "EBB14AAAB20B493849C6546B4D097395EE4A4590FEF927D92A07B96B1087BA23"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/global-functions/isingamethread.md",
+                             "bytes":  665,
+                             "sha256":  "73463375C787CE95E9B5BA04867D8AB722C00ECE76BC4B9590E02080B466D6A4"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/global-functions/isinmainmodthread.md",
+                             "bytes":  540,
+                             "sha256":  "4C7654A51F20BAE4CFF69FF6D8C0C691292E1535C85E3342ECD371F4F7B10DB6"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/global-functions/iskeybindregistered.md",
+                             "bytes":  583,
+                             "sha256":  "FDA3B01E1786F4266D7C7D9E60D4496FF4D91456FD1F04623B018C55EA8243C0"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/global-functions/iterategamedirectories.md",
+                             "bytes":  785,
+                             "sha256":  "8CAFB416406CEC192BD0B8C994F9B209BF27B1C23D843A31004B84D8A3DE7B3F"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/global-functions/loadasset.md",
+                             "bytes":  640,
+                             "sha256":  "98EA7BB0DB1011D9EA33C1C828B568A435F187469C6E16ADFB415BFE1D2B678B"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/global-functions/loadexport.md",
+                             "bytes":  542,
+                             "sha256":  "6E845F4C2AB795A988F2F1BE0C0359A4E117A95A35776807ADAAF03509B862CA"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/global-functions/loopasync.md",
+                             "bytes":  1273,
+                             "sha256":  "1AFF96EA1E540E00DD67B3C4E2040B77B92A69CEB247726884CD1EB47BE67DDB"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/global-functions/modmanagement.md",
+                             "bytes":  1837,
+                             "sha256":  "9FD454604E16C672915A0FD4E38B2272A80E737EAB4AB046D9141C86195DFFF0"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/global-functions/notifyonnewobject.md",
+                             "bytes":  2971,
+                             "sha256":  "523E583FC8DF6FE2BF989D4E20850E0DE215873FC8ACD1897A4C4C3C1DEE51F3"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/global-functions/print.md",
+                             "bytes":  510,
+                             "sha256":  "42803A2AD5C7B2DF863ADAC0842F85A7B7DDA40D1ED001ADAD5C5E9456E20056"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/global-functions/registerbeginplayposthook.md",
+                             "bytes":  584,
+                             "sha256":  "5C49ADF772DA1F0B765D5B1DDDE06C41D9F48982694201E5E6FE0BB06778375E"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/global-functions/registerbeginplayprehook.md",
+                             "bytes":  582,
+                             "sha256":  "4EEC9C57122FC715FB664B7CC5809E9AB175F5E0EA390154D1A459C75D5BDD4B"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/global-functions/registercallfunctionbynamewithargumentsposthook.md",
+                             "bytes":  1535,
+                             "sha256":  "9AF1A3161C552C90B86769681F729DF0ED51CD08A5C7712506DEACFD5EBE694A"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/global-functions/registercallfunctionbynamewithargumentsprehook.md",
+                             "bytes":  1530,
+                             "sha256":  "5AE29220B4DEF22BE52D19D403A810CAC6651041A9C7AA16FE87F5C0256DB59D"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/global-functions/registerconsolecommandglobalhandler.md",
+                             "bytes":  1763,
+                             "sha256":  "D301B022F60358FBBC619884F8BC33193C7B0D885A7AAF41F468EB5A41D1081F"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/global-functions/registerconsolecommandhandler.md",
+                             "bytes":  1634,
+                             "sha256":  "8737E06C89665245B362FC6E4A10E65C5925EB1E3BF8AE5EC9135D591A86EEE0"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/global-functions/registercustomevent.md",
+                             "bytes":  465,
+                             "sha256":  "C089BE9664A652DCF9E74C8CCCACDD5EE13AD7E0354952C135EE8570879939C1"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/global-functions/registercustomproperty.md",
+                             "bytes":  1320,
+                             "sha256":  "BAE22D9C0D5AAB925C5F5C15B348D7C9C98C09742240D2DF5BAE70C918CF64FB"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/global-functions/registerhook.md",
+                             "bytes":  3401,
+                             "sha256":  "75987E59088BF2EFAF96A1567FFABDF86FE05E36985AD28AD5B08B896E71C97D"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/global-functions/registerinitgamestateposthook.md",
+                             "bytes":  624,
+                             "sha256":  "C7495FBC6077DC2529A629B66CAE3D6467A3A1C2ADE2B49FDE3F6D940B75230E"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/global-functions/registerinitgamestateprehook.md",
+                             "bytes":  622,
+                             "sha256":  "68D5271EF7BE415256023F85BA15378950CED7339512B3F845AC0514AF6A9C2D"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/global-functions/registerkeybind.md",
+                             "bytes":  1648,
+                             "sha256":  "8D9BE112EE1A06DC7196F48AD0233AA09AC5CF1AA7B678FBD6AB929AA389A607"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/global-functions/registerprocessconsoleexecposthook.md",
+                             "bytes":  2587,
+                             "sha256":  "6E132B6035A84A41AE8C280B85711ED5ED3003FC665C041C21B14BBFA06EC192"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/global-functions/registerprocessconsoleexecprehook.md",
+                             "bytes":  2584,
+                             "sha256":  "90480CBBE5649084571BB1270A2033E44E937E3FC662872BFB66E69EA1430757"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/global-functions/registerulocalplayerexecposthook.md",
+                             "bytes":  1628,
+                             "sha256":  "1FF9AFB141ED35EBCC410365F9CAE36A1DD5A302D30CB4B5488E0DA79557A98F"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/global-functions/registerulocalplayerexecprehook.md",
+                             "bytes":  1627,
+                             "sha256":  "7CE4AC9DB97E454778E8C7CDABC6A4D0A0CFEDC7574C6B53653119ED26A7EA0D"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/global-functions/staticconstructobject.md",
+                             "bytes":  2363,
+                             "sha256":  "E3C5348980C163F77274932E9C27DA8504EF33BD7720455ADDEB304673D91BAD"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/global-functions/staticfindobject.md",
+                             "bytes":  1461,
+                             "sha256":  "14A5B800F2AF7D807685D046224550C3C8987466DE94376DD31B87024D36E7F0"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/global-functions/unregisterhook.md",
+                             "bytes":  587,
+                             "sha256":  "303C07087D1475635C512EC9E6DEC1B81F4CD1A4B5DACD118E1673383C25F706"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/table-definitions/arraypropertyinfo.md",
+                             "bytes":  497,
+                             "sha256":  "842EB750C8D027F55E65E51074A800D237340A42743E899BF024E63DD0B608B6"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/table-definitions/custompropertyinfo.md",
+                             "bytes":  1848,
+                             "sha256":  "71C223F8712ECB21CA31E2CA56D353A132A9064F242B0A4079FDD1E0326F2BE6"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/table-definitions/efindname.md",
+                             "bytes":  134,
+                             "sha256":  "C2CD941DD855A23701ECAB461934F82955D79F8E48AC61D0113949A37A9E2F11"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/table-definitions/egamethreadmethod.md",
+                             "bytes":  1557,
+                             "sha256":  "BEB64BAC351AB9CBDBDDA9B7DBF6BA080FCAFFF2900A17979D34563D43D718A6"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/table-definitions/einternalobjectflags.md",
+                             "bytes":  628,
+                             "sha256":  "40BC9D21A46DC747759FFE6BE5531634777E05173FCFE028DB9905B1F1812B57"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/table-definitions/eobjectflags.md",
+                             "bytes":  1598,
+                             "sha256":  "77AAB8540678A5164AA68E98DE035EBD3A011FFF548987E5F907264FC2317451"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/table-definitions/key.md",
+                             "bytes":  1642,
+                             "sha256":  "00719719D68309274CFE030B1016F2677193084E528099D5EBA349F67B8FD6EB"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/table-definitions/modifierkey.md",
+                             "bytes":  379,
+                             "sha256":  "5A9526A0692B39018887B558C4E7533598571D95338AD158D5D3DCFB55655788"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/table-definitions/offsetinternalinfo.md",
+                             "bytes":  589,
+                             "sha256":  "FEE582CBD0694C11A2D2417249A83C3E4E9C21477CE38406929B298BBFD32FF0"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/lua-api/table-definitions/propertytypes.md",
+                             "bytes":  1634,
+                             "sha256":  "E4C490D5914150723683DC14754E717A95F754636BA342FFC772BD7F241AA615"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/patternsleuth-games.md",
+                             "bytes":  53618,
+                             "sha256":  "AF35E0C9FCE9A22C501CDE640CCFA93E736B3E32D015C6FBBAE1C46D5D85ACCC"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/SUMMARY.md",
+                             "bytes":  8048,
+                             "sha256":  "730869F3FEAE21E8B7C17245ACE7F916BA3A82A17C233D582AC0789622787D30"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Docs/upgrade-guide.md",
+                             "bytes":  23441,
+                             "sha256":  "5ABBB8BD33E1BF995C3BA800E9A7AA82355F964E4478198B84BD6A3FD7F31CB3"
+                         },
+                         {
+                             "relativePath":  "ue4ss/LICENSE",
+                             "bytes":  1085,
+                             "sha256":  "99E1D8F8B7CB68E8B2313380AE3B0C8115E39DFBC443FCF21FD67AB74CE1D57E"
+                         },
+                         {
+                             "relativePath":  "ue4ss/MapGenBP/Content/MapGen/MapCreator.uasset",
+                             "bytes":  120715,
+                             "sha256":  "18FE5A4F7ED094C90345FC7F6FCC63926E3F20C380291A21BE6B08B1182B4F22"
+                         },
+                         {
+                             "relativePath":  "ue4ss/MapGenBP/Content/MapGen/MapSpawnStruct.uasset",
+                             "bytes":  5734,
+                             "sha256":  "2F5977CA8E0DB41A044019147B1138DE4F78F8EBD9743FF9707C26F52E09462E"
+                         },
+                         {
+                             "relativePath":  "ue4ss/MapGenBP/Content/MapGen/MeshStruct.uasset",
+                             "bytes":  3796,
+                             "sha256":  "074C41907987BD49289F3E54FFBDB24B39103FA9D4021A1965EB92CE93C32593"
+                         },
+                         {
+                             "relativePath":  "ue4ss/MapGenBP/Readme.md",
+                             "bytes":  332,
+                             "sha256":  "946855254DB7DF17B468768BE69624ECC85CF9B7F075F28E75B3B4ED3EA2F4C1"
+                         },
+                         {
+                             "relativePath":  "ue4ss/MemberVarLayoutTemplates/MemberVariableLayout.ini",
+                             "bytes":  173498,
+                             "sha256":  "F62898EB3CD755D2D1116C9CF547705E357CC138DFB7B83B856585A5748328C6"
+                         },
+                         {
+                             "relativePath":  "ue4ss/MemberVarLayoutTemplates/MemberVariableLayout_4_07_Template.ini",
+                             "bytes":  28717,
+                             "sha256":  "43E4DB545247BC482B79E6346C2520090F0FA9A0F3711AF220163F9505EF5BE5"
+                         },
+                         {
+                             "relativePath":  "ue4ss/MemberVarLayoutTemplates/MemberVariableLayout_4_08_Template.ini",
+                             "bytes":  30119,
+                             "sha256":  "408CF425A64F7A21327F87E88B2D4C9629FA9A51641212CE8E9977334342FD24"
+                         },
+                         {
+                             "relativePath":  "ue4ss/MemberVarLayoutTemplates/MemberVariableLayout_4_09_Template.ini",
+                             "bytes":  30112,
+                             "sha256":  "15CB45A69DD9A8A28172967211A02495EC62284BE7415430894C840BCD88C05E"
+                         },
+                         {
+                             "relativePath":  "ue4ss/MemberVarLayoutTemplates/MemberVariableLayout_4_10_Template.ini",
+                             "bytes":  30186,
+                             "sha256":  "B14EB9A8EFDA4013621C6AB14140AA0100F25771E90B3758B584786F0179F3C0"
+                         },
+                         {
+                             "relativePath":  "ue4ss/MemberVarLayoutTemplates/MemberVariableLayout_4_11_Template.ini",
+                             "bytes":  31064,
+                             "sha256":  "A83672C0C83F91314328A7657CD198D6701A86BA7491BCA90AA77C1C48A21B30"
+                         },
+                         {
+                             "relativePath":  "ue4ss/MemberVarLayoutTemplates/MemberVariableLayout_4_12_Template.ini",
+                             "bytes":  31463,
+                             "sha256":  "4BE39FFFEFD999F54C031E0FD10AEF561D1B795B3EB606F2EB2602D41FDF2539"
+                         },
+                         {
+                             "relativePath":  "ue4ss/MemberVarLayoutTemplates/MemberVariableLayout_4_13_Template.ini",
+                             "bytes":  31900,
+                             "sha256":  "1B9CD22A52375DADCB6D497E9277FEECFB5EBE1221C838C6BA40BDAF78092B47"
+                         },
+                         {
+                             "relativePath":  "ue4ss/MemberVarLayoutTemplates/MemberVariableLayout_4_14_Template.ini",
+                             "bytes":  32578,
+                             "sha256":  "30C383E1BC56F1CCD58FB5C64B87A80AA36052FA76D171AF20C8D510E27F0489"
+                         },
+                         {
+                             "relativePath":  "ue4ss/MemberVarLayoutTemplates/MemberVariableLayout_4_15_Template.ini",
+                             "bytes":  32994,
+                             "sha256":  "93AA4842441B3CACA2F0945B48D7168A62D905B925B2C868F902B912EDAB0C21"
+                         },
+                         {
+                             "relativePath":  "ue4ss/MemberVarLayoutTemplates/MemberVariableLayout_4_16_Template.ini",
+                             "bytes":  33388,
+                             "sha256":  "3215F1AB4119D490FE3EE08B7222456CE3DE0A52B9695B63FB29430ABB6A6888"
+                         },
+                         {
+                             "relativePath":  "ue4ss/MemberVarLayoutTemplates/MemberVariableLayout_4_17_Template.ini",
+                             "bytes":  33478,
+                             "sha256":  "D99C46C7F83F503724D212966EB636879436AF1BEBFF3B332B6D2BEDC81252D7"
+                         },
+                         {
+                             "relativePath":  "ue4ss/MemberVarLayoutTemplates/MemberVariableLayout_4_18_Template.ini",
+                             "bytes":  32958,
+                             "sha256":  "7522C2AE0AF667AECEA3B93CD3C2A26896D9ABFFD4643879B3A3BF14E93D0EA2"
+                         },
+                         {
+                             "relativePath":  "ue4ss/MemberVarLayoutTemplates/MemberVariableLayout_4_19_Template.ini",
+                             "bytes":  33014,
+                             "sha256":  "CDE4A578D35A3BB6BEFEE610556C4CB67193649DFD79CDFFC04CEFF7C82B70A6"
+                         },
+                         {
+                             "relativePath":  "ue4ss/MemberVarLayoutTemplates/MemberVariableLayout_4_20_Template.ini",
+                             "bytes":  33650,
+                             "sha256":  "069B5D6364EFCD4C72657D8BDDD9BDF8EB9192FAF43C8F06D6BD091FDAA38460"
+                         },
+                         {
+                             "relativePath":  "ue4ss/MemberVarLayoutTemplates/MemberVariableLayout_4_21_Template.ini",
+                             "bytes":  34048,
+                             "sha256":  "B4DCC0F9E30D8D5D6C5BC658F79670ECA84C2DD04E6E43F086596B25BB42661B"
+                         },
+                         {
+                             "relativePath":  "ue4ss/MemberVarLayoutTemplates/MemberVariableLayout_4_22_Template.ini",
+                             "bytes":  33363,
+                             "sha256":  "6F90EED8CFF96FBCD5A245C66C9A94DA0EDE30826FBF24049653F696F2C692A4"
+                         },
+                         {
+                             "relativePath":  "ue4ss/MemberVarLayoutTemplates/MemberVariableLayout_4_23_Template.ini",
+                             "bytes":  34061,
+                             "sha256":  "587F1728E875237CFE7F13F18460E5807C20A0CDA953D13861880CFB38E02BA0"
+                         },
+                         {
+                             "relativePath":  "ue4ss/MemberVarLayoutTemplates/MemberVariableLayout_4_24_Template.ini",
+                             "bytes":  34506,
+                             "sha256":  "7DB56AEF8B96E1D56A74C1B78535386431DAC3D12BE9CA2114406A500720FC2E"
+                         },
+                         {
+                             "relativePath":  "ue4ss/MemberVarLayoutTemplates/MemberVariableLayout_4_25_Template.ini",
+                             "bytes":  36229,
+                             "sha256":  "1C364024B8C66B1C4AA3C49E593AEB4CE9F81D87398BB7FB3DC5D71B7F80DDD0"
+                         },
+                         {
+                             "relativePath":  "ue4ss/MemberVarLayoutTemplates/MemberVariableLayout_4_26_Template.ini",
+                             "bytes":  36461,
+                             "sha256":  "7048969110EE85E29DB3F455E5F3C1ED290EEC40CB3A28BC2B8CEB5C07FCF02B"
+                         },
+                         {
+                             "relativePath":  "ue4ss/MemberVarLayoutTemplates/MemberVariableLayout_4_27_CasePreserving_Template.ini",
+                             "bytes":  36729,
+                             "sha256":  "24736B9F7F02993FF92EE5A3256ADA22523B123D55C87B6061B620BB1D50D5AF"
+                         },
+                         {
+                             "relativePath":  "ue4ss/MemberVarLayoutTemplates/MemberVariableLayout_4_27_Template.ini",
+                             "bytes":  36626,
+                             "sha256":  "F9A20C49EC3D9BF05E752363C1BE2B6A5F627AF923497FB134397BB8C44D0E33"
+                         },
+                         {
+                             "relativePath":  "ue4ss/MemberVarLayoutTemplates/MemberVariableLayout_5_00_Template.ini",
+                             "bytes":  37597,
+                             "sha256":  "52D77520CB83FB1789442C36CBF554377A592AB38A87B12346AA552E1EE717DE"
+                         },
+                         {
+                             "relativePath":  "ue4ss/MemberVarLayoutTemplates/MemberVariableLayout_5_01_Template.ini",
+                             "bytes":  38452,
+                             "sha256":  "4B269B23DAF6FBB45377F2F062F458F8B2DE95A756F0660F7A26640D6A597F30"
+                         },
+                         {
+                             "relativePath":  "ue4ss/MemberVarLayoutTemplates/MemberVariableLayout_5_02_Template.ini",
+                             "bytes":  38655,
+                             "sha256":  "D4444FDD147BF1207609CEBB86C15368398C289F31AD7663B84FB858D434B152"
+                         },
+                         {
+                             "relativePath":  "ue4ss/MemberVarLayoutTemplates/MemberVariableLayout_5_03_Template.ini",
+                             "bytes":  38752,
+                             "sha256":  "0CE2C450DE3CD01FD90C1A68C2B4AB2514137065BD0734232530E1E418032890"
+                         },
+                         {
+                             "relativePath":  "ue4ss/MemberVarLayoutTemplates/MemberVariableLayout_5_04_Template.ini",
+                             "bytes":  39032,
+                             "sha256":  "2A443E4D775393374F1806793B53AE8363C42C664BDAAC6AFAC4E388A387F31C"
+                         },
+                         {
+                             "relativePath":  "ue4ss/MemberVarLayoutTemplates/MemberVariableLayout_5_05_Template.ini",
+                             "bytes":  39353,
+                             "sha256":  "1F67E4EF46DA108D844E99300EA0ACAB6018F6038CBA8EDB71ECC47D2574102C"
+                         },
+                         {
+                             "relativePath":  "ue4ss/MemberVarLayoutTemplates/MemberVariableLayout_5_06_Template.ini",
+                             "bytes":  39867,
+                             "sha256":  "E91017C4B5593A4B61D16178352D625D497B4F371C7560269A604F24F59CBB99"
+                         },
+                         {
+                             "relativePath":  "ue4ss/MemberVarLayoutTemplates/MemberVariableLayout_5_07_Template.ini",
+                             "bytes":  40775,
+                             "sha256":  "0AB432E2033CBF15ACE1E47CAD9AD8913667667D8FF7B9F70815B8C95DC6A4DE"
+                         },
+                         {
+                             "relativePath":  "ue4ss/MemberVarLayoutTemplates/MemberVariableLayout_5_08_Template.ini",
+                             "bytes":  40187,
+                             "sha256":  "A29404B2817E0150543919F516B0DCB50E7C4BFCD7A3FBA8B9B936FB9ABD3984"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Mods/ActorDumperMod/Scripts/main.lua",
+                             "bytes":  613,
+                             "sha256":  "BE09F35A72FCFB274DFEAE4E9507295B0BB0EC89C9A8CEBC0B207AB790A82503"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Mods/BPML_GenericFunctions/Scripts/main.lua",
+                             "bytes":  2950,
+                             "sha256":  "DF87C361CDFC231AC8017FF9B930C323FAC09F436CA4C41D48E952FF4B38D38F"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Mods/BPModLoaderMod/load_order.txt",
+                             "bytes":  265,
+                             "sha256":  "E260B9B0D8D472EE3EBAB77204C838F3D2AAD8A9D5F08B9B8CB6B42B7B5418B9"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Mods/BPModLoaderMod/Scripts/main.lua",
+                             "bytes":  11254,
+                             "sha256":  "C4D6602DC57559029E0E709650E43F33354BCB23F1A5DF2EBE84D4651EBD08A3"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Mods/CheatManagerEnablerMod/Scripts/main.lua",
+                             "bytes":  1439,
+                             "sha256":  "15C7722168EB8966ED454E900E04DE4B0ADE42657905D8016C0E0660C119CD9E"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Mods/ConsoleCommandsMod/Scripts/dump_object.lua",
+                             "bytes":  13093,
+                             "sha256":  "365B7E8A803F8AE917F54F6C852854C681E388227DD1F94B0EA3F6FB938B5086"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Mods/ConsoleCommandsMod/Scripts/main.lua",
+                             "bytes":  297,
+                             "sha256":  "5BF33CD4EF9F6A155FE5F7842218A6486C2C227858FFD99806E75D81D0DA9F27"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Mods/ConsoleCommandsMod/Scripts/set.lua",
+                             "bytes":  2056,
+                             "sha256":  "876E7DE49F0E30A4329C081472BC7D5E1948459C774B7ABBB8BE4B6323F16EC8"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Mods/ConsoleCommandsMod/Scripts/summon_unloaded_assets.lua",
+                             "bytes":  489,
+                             "sha256":  "194B557404B6078767F8B57B836AA44D084CF6F3F2CBDE71A6831857567F8103"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Mods/ConsoleEnablerMod/Scripts/main.lua",
+                             "bytes":  3261,
+                             "sha256":  "2517EA80A074BC5E6F00C55263C1867BF8E74C6B8665A79217ADB53FDBE04343"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Mods/DawnwalkerModBridge/Scripts/main.lua",
+                             "bytes":  3924,
+                             "sha256":  "13E3115612EDDF4A482BBA3C895ED6776A6C60A7C1FCB0F1070E1B72BB7C1857"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Mods/EventViewerMod/dlls/main.dll",
+                             "bytes":  607744,
+                             "sha256":  "D49891C9591794E971AFC133A6BE1B0F95014F61303C0098103CDEE19FF420FC"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Mods/EventViewerMod/dlls/main.pdb",
+                             "bytes":  9629696,
+                             "sha256":  "B1272820578AFDA9B82ABB38D33C4E02AB641B3FAC1658D31EDF09AC46F376DD"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Mods/jsbLuaProfilerMod/Scripts/main.lua",
+                             "bytes":  579,
+                             "sha256":  "ABC04F3DFA1D8BB2BE81999D0560272F5156B3643DC892B2D0D071A18BC585A3"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Mods/Keybinds/Scripts/main.lua",
+                             "bytes":  4190,
+                             "sha256":  "297DD6F7F560E1CEBC15CD4509AD481495D9179F5758A8034BE4C417A369803A"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Mods/KismetDebuggerMod/dlls/main.dll",
+                             "bytes":  726016,
+                             "sha256":  "40E249876F310434CDC1007362BB7C3C7F26D952360C3FDD992050967E33F91A"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Mods/KismetDebuggerMod/dlls/main.pdb",
+                             "bytes":  9572352,
+                             "sha256":  "364072DCBA81E112F42807B5F43E47C38F877F7B52F1F4519793558112CFDAC6"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Mods/LineTraceMod/Scripts/main.lua",
+                             "bytes":  2721,
+                             "sha256":  "05C181A5CC3CB24E0BD7496D6BBC14A1111D0A1E731A2526203B41B07D972DAE"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Mods/mods.json",
+                             "bytes":  1022,
+                             "sha256":  "D6D0BCA5E4C8ADF5892C3988A09B098A3AEB4ECC4C709E2833A3496B53C9A0FE"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Mods/mods.txt",
+                             "bytes":  535,
+                             "sha256":  "E366BD4DB5247D98CD81F9B37F3ED3ADE5C867E735F2F4498D97B6A3BA45926E"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Mods/shared/jsbProfiler/jsbProfi.lua",
+                             "bytes":  14548,
+                             "sha256":  "A6C51686E582A819A2376EE7E452D7F847D997C32BC3DD9F9814B24D74DFF968"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Mods/shared/Types.lua",
+                             "bytes":  57252,
+                             "sha256":  "D246B8B26EE7EE38E8CD12BD7530E60B318DFD45E05260B8D75EA35BDB482A9B"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Mods/shared/UEHelpers/UEHelpers.lua",
+                             "bytes":  10237,
+                             "sha256":  "7476F02EEF0C87BFEAB169F2FFE2E704363FAEAAE4BF9F1BDA574B1E34F4A0E9"
+                         },
+                         {
+                             "relativePath":  "ue4ss/Mods/SplitScreenMod/Scripts/main.lua",
+                             "bytes":  4380,
+                             "sha256":  "05094AB61F016EBFCB651A0271A4C614884881B847090E6A74E6A51754E088DB"
+                         },
+                         {
+                             "relativePath":  "ue4ss/README.md",
+                             "bytes":  17250,
+                             "sha256":  "58B722B333AD8097A64EA04823009D722A413142DF2624BCE32A1F318593625D"
+                         },
+                         {
+                             "relativePath":  "ue4ss/UE4SS.dll",
+                             "bytes":  20390400,
+                             "sha256":  "FB1839EE91F71F83D508D44A2763A15AC1BB0C5FB4E504AC0FCFCA64376A054A"
+                         },
+                         {
+                             "relativePath":  "ue4ss/UE4SS.pdb",
+                             "bytes":  124456960,
+                             "sha256":  "5662DF43EEA2C16C07406FF3277F20C36B9FE49F80C84A64CF9749E7884021DD"
+                         },
+                         {
+                             "relativePath":  "ue4ss/UE4SS_SDK_Backends/UE4SS.json",
+                             "bytes":  8032,
+                             "sha256":  "6B8C1725FF59A318B812D5952F63107778B4CEB22B882B297A3666EE9E06C8FF"
+                         },
+                         {
+                             "relativePath":  "ue4ss/UE4SS_Signatures/FName_ToString.lua.example",
+                             "bytes":  438,
+                             "sha256":  "7DD96CBA27D68A41416338FBF11E10E63E944B5F87CBAFAEC3404F95B2993598"
+                         },
+                         {
+                             "relativePath":  "ue4ss/UE4SS_Signatures/GUObjectArray.lua.example",
+                             "bytes":  400,
+                             "sha256":  "89835E908F3074BF45619B67D66AAA08FDDB77FBEA4E9DC5ABAF966E76341948"
+                         },
+                         {
+                             "relativePath":  "ue4ss/UE4SS-settings.ini",
+                             "bytes":  1982,
+                             "sha256":  "A550AD7A10316067D278C75CEBB3964E363B9379E727FD20282FCAD0EF79FEA4"
+                         },
+                         {
+                             "relativePath":  "ue4ss/VTableLayoutTemplates/VTableLayout_4_07_Template.ini",
+                             "bytes":  33011,
+                             "sha256":  "6A4D3D0C855C9AE807C75F94432B2C5878447438276E6547D868FF1F84BE378E"
+                         },
+                         {
+                             "relativePath":  "ue4ss/VTableLayoutTemplates/VTableLayout_4_08_Template.ini",
+                             "bytes":  33422,
+                             "sha256":  "4B4FF44AD179D24E9FDAD5F35EDB14114F9ED1FBAFB579710D249810AE76A903"
+                         },
+                         {
+                             "relativePath":  "ue4ss/VTableLayoutTemplates/VTableLayout_4_09_Template.ini",
+                             "bytes":  34031,
+                             "sha256":  "7B05A910854D422D5D5E4AB0636E6BEEB13E968836852BCE798CF38773F27B3F"
+                         },
+                         {
+                             "relativePath":  "ue4ss/VTableLayoutTemplates/VTableLayout_4_10_Template.ini",
+                             "bytes":  34031,
+                             "sha256":  "7B05A910854D422D5D5E4AB0636E6BEEB13E968836852BCE798CF38773F27B3F"
+                         },
+                         {
+                             "relativePath":  "ue4ss/VTableLayoutTemplates/VTableLayout_4_11_Template.ini",
+                             "bytes":  35664,
+                             "sha256":  "764340ABDFDAC25BCEB84939FD245F5C03F1AF3CBA116FDEFD9A544293B4409B"
+                         },
+                         {
+                             "relativePath":  "ue4ss/VTableLayoutTemplates/VTableLayout_4_12_Template.ini",
+                             "bytes":  36579,
+                             "sha256":  "9D1A4C5A1BC3AAA44F96CCE1F77B4A47F6EB69D55BF7ECF7EA2FABFEE913DD16"
+                         },
+                         {
+                             "relativePath":  "ue4ss/VTableLayoutTemplates/VTableLayout_4_13_Template.ini",
+                             "bytes":  38311,
+                             "sha256":  "FF4859B4A648A7B255D47025536CFF20CB1160AC27951BE44A41C9080C3D6E60"
+                         },
+                         {
+                             "relativePath":  "ue4ss/VTableLayoutTemplates/VTableLayout_4_14_Template.ini",
+                             "bytes":  39204,
+                             "sha256":  "BA96EFE299D33D1D457910281717FBCF2C952429485E3DEC234F1310860F1E98"
+                         },
+                         {
+                             "relativePath":  "ue4ss/VTableLayoutTemplates/VTableLayout_4_15_Template.ini",
+                             "bytes":  39874,
+                             "sha256":  "12995C6EFE31D128C65A8B3A9EBD12C896776BF09DC90474988C41FD367C60A0"
+                         },
+                         {
+                             "relativePath":  "ue4ss/VTableLayoutTemplates/VTableLayout_4_16_Template.ini",
+                             "bytes":  40588,
+                             "sha256":  "A239AB8BD5F051FBDCC0CA418B7A169D935A7E5E55BC26DA391FFAC98621F401"
+                         },
+                         {
+                             "relativePath":  "ue4ss/VTableLayoutTemplates/VTableLayout_4_17_Template.ini",
+                             "bytes":  40727,
+                             "sha256":  "CE846302C39D4BC617CB33E5582B5B81894ED55DCA97C86B767F0DA9162440FF"
+                         },
+                         {
+                             "relativePath":  "ue4ss/VTableLayoutTemplates/VTableLayout_4_18_Template.ini",
+                             "bytes":  39901,
+                             "sha256":  "3F35ADD22B3E26A9E1E5F649C2048BC8AF26D54BD5F202F9B64A22EB58BB0BA0"
+                         },
+                         {
+                             "relativePath":  "ue4ss/VTableLayoutTemplates/VTableLayout_4_19_Template.ini",
+                             "bytes":  40332,
+                             "sha256":  "6A6DECB989A7E3039A4FF615BCD37802CBB5F415A84AE15372C35408911C5F75"
+                         },
+                         {
+                             "relativePath":  "ue4ss/VTableLayoutTemplates/VTableLayout_4_20_Template.ini",
+                             "bytes":  41709,
+                             "sha256":  "5A9113D21D14F13C88A0EF77C9C54186DA2FC2DA8496E92C6780C91BD91BBCFA"
+                         },
+                         {
+                             "relativePath":  "ue4ss/VTableLayoutTemplates/VTableLayout_4_21_Template.ini",
+                             "bytes":  42179,
+                             "sha256":  "2A29551B79D190218C2F44394D285AFD4C58D0020A389E47C3DA6DFDA167BE4A"
+                         },
+                         {
+                             "relativePath":  "ue4ss/VTableLayoutTemplates/VTableLayout_4_22_Template.ini",
+                             "bytes":  42423,
+                             "sha256":  "74472D6A2E34DFD53476C9108DE7B3894B4D7C75DB7B2E634F3DA6571213CEBA"
+                         },
+                         {
+                             "relativePath":  "ue4ss/VTableLayoutTemplates/VTableLayout_4_23_Template.ini",
+                             "bytes":  43476,
+                             "sha256":  "F2EE1A7BEB9B8FF867E9F40D5EA3B177EDEA7E01CABD3A2D7F48955523588AA1"
+                         },
+                         {
+                             "relativePath":  "ue4ss/VTableLayoutTemplates/VTableLayout_4_24_Template.ini",
+                             "bytes":  43598,
+                             "sha256":  "11B39C931EDD8025B1BE036A26B28F39DBC1E5FFFEABB6FD9EC5BAD1AF3DD53C"
+                         },
+                         {
+                             "relativePath":  "ue4ss/VTableLayoutTemplates/VTableLayout_4_25_Template.ini",
+                             "bytes":  45261,
+                             "sha256":  "56BE09A9E7C7EA4414ECA6DD7BE5AD646CD309306DBA64FC011D5C9079B96E41"
+                         },
+                         {
+                             "relativePath":  "ue4ss/VTableLayoutTemplates/VTableLayout_4_26_Template.ini",
+                             "bytes":  45590,
+                             "sha256":  "CB9D29FA7EAA7997CB2C051CA329B456E40D0CEEA0E4EC33F1DE8D82750F4405"
+                         },
+                         {
+                             "relativePath":  "ue4ss/VTableLayoutTemplates/VTableLayout_4_27_CasePreserving_Template.ini",
+                             "bytes":  46054,
+                             "sha256":  "A47FC96735051F612782C9F3DD774BFE18E907ADECF792EB6A48C967DCBDAA5B"
+                         },
+                         {
+                             "relativePath":  "ue4ss/VTableLayoutTemplates/VTableLayout_4_27_Template.ini",
+                             "bytes":  46054,
+                             "sha256":  "A47FC96735051F612782C9F3DD774BFE18E907ADECF792EB6A48C967DCBDAA5B"
+                         },
+                         {
+                             "relativePath":  "ue4ss/VTableLayoutTemplates/VTableLayout_5_00_Template.ini",
+                             "bytes":  49305,
+                             "sha256":  "8B324880020BCC3F26A14CED067A976BEC5CE9259672F07D3831A9212FD4AC01"
+                         },
+                         {
+                             "relativePath":  "ue4ss/VTableLayoutTemplates/VTableLayout_5_01_Template.ini",
+                             "bytes":  50188,
+                             "sha256":  "455765710ECC492239904F3B45CD5F1172A74915D34B32211016E424D219FD69"
+                         },
+                         {
+                             "relativePath":  "ue4ss/VTableLayoutTemplates/VTableLayout_5_02_Template.ini",
+                             "bytes":  50932,
+                             "sha256":  "023995DD95960C64DFC842EFBE8F9DC33AB4DE618A07DE7811A537B62A173A0A"
+                         },
+                         {
+                             "relativePath":  "ue4ss/VTableLayoutTemplates/VTableLayout_5_03_Template.ini",
+                             "bytes":  52213,
+                             "sha256":  "86B91C47756E6FC971DD9396E0BD0F31AC6F763A13D3CDB9C9B125016A45A912"
+                         },
+                         {
+                             "relativePath":  "ue4ss/VTableLayoutTemplates/VTableLayout_5_04_Template.ini",
+                             "bytes":  52517,
+                             "sha256":  "305038A2F697ABB7487A6AAE9804EE8CA03C369D3D313CDE083B0B571EA33996"
+                         },
+                         {
+                             "relativePath":  "ue4ss/VTableLayoutTemplates/VTableLayout_5_05_Template.ini",
+                             "bytes":  55606,
+                             "sha256":  "7FC8290AB0FD6B8BE75C4E382B85DACCDACB176ECA50EE8C81A87CDE2515FF05"
+                         },
+                         {
+                             "relativePath":  "ue4ss/VTableLayoutTemplates/VTableLayout_5_06_Template.ini",
+                             "bytes":  56669,
+                             "sha256":  "CF466351C7612EC2086165F2676758E3A85340838498159477C4DA2DF7903CF8"
+                         },
+                         {
+                             "relativePath":  "ue4ss/VTableLayoutTemplates/VTableLayout_5_07_Template.ini",
+                             "bytes":  54496,
+                             "sha256":  "CD6745F8E5C7F8537FFE397162788458CA32FA19D59BE128C2F799F302EC6053"
+                         },
+                         {
+                             "relativePath":  "ue4ss/VTableLayoutTemplates/VTableLayout_5_08_Template.ini",
+                             "bytes":  51926,
+                             "sha256":  "B8A37CBA2025723A4FF34AF3F01D31C39ED3DC5ED0ADCD131D0E7A8A91813F9F"
+                         }
+                     ]
+}

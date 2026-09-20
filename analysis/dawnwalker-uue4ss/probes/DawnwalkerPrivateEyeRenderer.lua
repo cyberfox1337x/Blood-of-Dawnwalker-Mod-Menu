@@ -1,0 +1,773 @@
+local cyberfox1337x = { function_signature = function(_module_name) end }
+cyberfox1337x.function_signature("dawnwalker_private_eye_renderer")
+
+-- Uninstalled lifecycle prototype. Uses only native classes and already loaded player assets.
+local Renderer = {}
+local Geometry = require("DawnwalkerEyePreviewGeometry")
+local BUILD_ID = "25129649"
+local EXECUTABLE_SHA256 = "7AD7D09645B0589DC0FF78B53AA1A7B18ECA79B1B7F888B403AB41D88AC7E853"
+local ROOT = "C:/Users/Cyberfox1337/Documents/ChatGPT/The Blood of DawnWalker/qa/eye-appearance/native-frames"
+local SOURCE_FIELDS = { "HeadMesh", "HairMesh", "EyebrowMeshComponent", "BeardMeshComponent", "TorsoMesh" }
+local OFFSET_Z = 100000
+
+
+
+local function require_condition(condition, message)
+    if condition ~= true then error(message, 0) end
+end
+
+local function number(value, label)
+    require_condition(type(value) == "number" and value == value and math.abs(value) < math.huge, label .. " is not finite")
+    return value
+end
+
+local function vector(value)
+    return { X = number(value.X, "X"), Y = number(value.Y, "Y"), Z = number(value.Z, "Z") }
+end
+
+local function rotation(value)
+    return { pitch = number(value.pitch, "pitch"), Yaw = number(value.Yaw, "Yaw"), Roll = number(value.Roll, "Roll") }
+end
+
+local function transform(value)
+    return { Translation = vector(value.Translation), Scale3D = vector(value.Scale3D), Rotation = {
+        X = number(value.Rotation.X, "rotation X"), Y = number(value.Rotation.Y, "rotation Y"),
+        Z = number(value.Rotation.Z, "rotation Z"), W = number(value.Rotation.W, "rotation W") } }
+end
+
+local function valid(object)
+    return object ~= nil and object:IsValid() == true
+end
+
+local function flag(value, expected)
+    return expected and (value == true or value == 1) or not expected and (value == false or value == 0)
+end
+
+local function private_lighting(component)
+    local channels = component.LightingChannels
+    return flag(channels.bChannel0, false) and flag(channels.bChannel1, false) and flag(channels.bChannel2, true)
+end
+
+local function record(object, class, label)
+    require_condition(valid(object) and object:IsA(class) == true, label .. " is unavailable or has the wrong class")
+    local name, address = object:GetFullName(), object:GetAddress()
+    require_condition(type(name) == "string" and #name <= 1024 and not name:find("Default__", 1, true), label .. " is not an instance")
+    require_condition(number(address, label .. " address") > 0, label .. " address is invalid")
+    return { address = tostring(address), name = name }
+end
+
+local function same(object, previous)
+    return previous ~= nil and valid(object) and tostring(object:GetAddress()) == previous.address and object:GetFullName() == previous.name
+end
+
+local function copy(value)
+    if type(value) ~= "table" then return value end
+    local result = {}
+    for key, child in pairs(value) do result[key] = copy(child) end
+    return result
+end
+
+local function equal(left, right)
+    if type(left) ~= type(right) then return false end
+    if type(left) ~= "table" then return left == right end
+    for key, child in pairs(left) do if not equal(child, right[key]) then return false end end
+    for key in pairs(right) do if left[key] == nil then return false end end
+    return true
+end
+
+local function equal_fields(left, right)
+    for key, expected in pairs(right) do if math.abs(number(left[key], key) - expected) > 0.00001 then return false end end
+    return true
+end
+
+local function static(deps, name, class)
+    local object = deps.static_find_object(name)
+    require_condition(valid(object) and object:IsA(class) == true, "Loaded native dependency is unavailable: " .. name)
+    return object
+end
+
+local function array(array, maximum, label)
+    local ok, count = pcall(function() return array:GetArrayNum() end)
+    if not ok then count = #array end
+    require_condition(type(count) == "number" and count % 1 == 0 and count >= 0 and count <= maximum, label .. " exceeds its bound")
+    local values = {}
+    for index = 1, count do
+        local value = array[index]
+        local unwrapped, raw = pcall(function() return value:get() end)
+        if unwrapped then value = raw end
+        require_condition(value ~= nil, label .. " contains a missing entry")
+        values[#values + 1] = value
+    end
+    return values
+end
+
+local function snapshot_sources(deps)
+    local player = deps.get_player()
+    local snapshot = { player = record(player, "/Script/Dawnwalker.DawnwalkerPlayerCharacter", "player"), meshes = {} }
+    snapshot.world = record(player:GetWorld(), "/Script/Engine.World", "world")
+    snapshot.form, snapshot.wolf = player.Form, player:IsInWolfForm()
+    require_condition((snapshot.form == 0 or snapshot.form == 1) and snapshot.wolf == false, "Unsupported player form")
+    snapshot.location, snapshot.rotation = vector(player:K2_GetActorLocation()), rotation(player:K2_GetActorRotation())
+    local fields = {}
+    for _, field in ipairs(SOURCE_FIELDS) do
+        local source = player[field]
+        if valid(source) then
+            local identity = record(source, "/Script/Engine.SkeletalMeshComponent", field)
+            require_condition(same(source:GetOwner(), snapshot.player), field .. " is not owned by the current player")
+            local asset = source:GetSkeletalMeshAsset()
+            if valid(asset) then
+                local entry = { source = source, identity = identity, field = field, asset = asset,
+                    asset_identity = record(asset, "/Script/Engine.SkeletalMesh", field .. " asset"),
+                    transform = transform(source:K2_GetComponentToWorld()), materials = {}, material_objects = {} }
+                local count = source:GetNumMaterials()
+                require_condition(type(count) == "number" and count % 1 == 0 and count >= 1 and count <= 16, field .. " material count is outside bounds")
+                for slot = 0, count - 1 do
+                    local material = source:GetMaterial(slot)
+                    entry.materials[#entry.materials + 1] = record(material, "/Script/Engine.MaterialInterface", field .. " material")
+                    entry.material_objects[#entry.material_objects + 1] = material
+                end
+                snapshot.meshes[#snapshot.meshes + 1] = entry
+                fields[field] = entry
+            end
+        end
+    end
+    require_condition(fields.HeadMesh ~= nil and fields.TorsoMesh ~= nil, "Actual loaded head and torso assets are required")
+    require_condition(type(deps.pivot_bone_name) == "string" and #deps.pivot_bone_name >= 1 and #deps.pivot_bone_name <= 128,
+        "An observed head/eye pivot bone is required")
+    local head, pivot_name = fields.HeadMesh.source, nil
+    local count = head:GetNumBones()
+    require_condition(type(count) == "number" and count % 1 == 0 and count >= 1 and count <= 2048, "Head skeleton exceeds the observation bound")
+    for index = 0, count - 1 do
+        local name = head:GetBoneName(index)
+        if name:ToString() == deps.pivot_bone_name then pivot_name = name; snapshot.pivot_index = index; break end
+    end
+    require_condition(pivot_name ~= nil and head:DoesSocketExist(pivot_name) == true, "Requested pivot was not found in this actual head skeleton")
+    snapshot.pivot = vector(head:GetSocketLocation(pivot_name))
+    snapshot.pivot_bone_name = deps.pivot_bone_name
+    snapshot.landmarks = Geometry.observe_landmarks(head)
+    require_condition(snapshot.landmarks.eye_pair_count == 1 and snapshot.landmarks.eye_pair ~= nil,
+        "This current head does not expose one unambiguous native left/right eye bone pair")
+    local bounds = fields.HeadMesh.asset:GetBounds()
+    snapshot.head_bounds = { origin = vector(bounds.Origin), extent = vector(bounds.BoxExtent), radius = number(bounds.SphereRadius, "head sphere radius") }
+    snapshot.head_transform = fields.HeadMesh.transform
+    snapshot.head = fields.HeadMesh
+    return player, snapshot
+end
+
+local function verify_sources(deps, snapshot, allow_movement)
+    local player = deps.get_player()
+    require_condition(same(player, snapshot.player) and same(player:GetWorld(), snapshot.world)
+        and player.Form == snapshot.form and player:IsInWolfForm() == snapshot.wolf, "Player/world/form changed during private preview")
+    if not allow_movement then
+        require_condition(equal_fields(vector(player:K2_GetActorLocation()), snapshot.location)
+            and equal_fields(rotation(player:K2_GetActorRotation()), snapshot.rotation), "Player transform changed during private preview")
+    end
+    require_condition(snapshot.eye_bindings ~= nil and deps.eye_bindings.verify(snapshot.eye_bindings, player, player.HeadMesh) == true,
+        "Live eye material ownership or generation changed")
+    for _, entry in ipairs(snapshot.meshes) do
+        require_condition(same(player[entry.field], entry.identity) and same(entry.source:GetOwner(), snapshot.player)
+            and same(entry.source:GetSkeletalMeshAsset(), entry.asset_identity), "Source mesh changed during private preview")
+        require_condition(entry.source:GetNumMaterials() == #entry.materials, "Source material count changed during private preview")
+        if not allow_movement then
+            require_condition(equal(transform(entry.source:K2_GetComponentToWorld()), entry.transform), "Source pose transform changed during capture")
+        end
+        for index, binding in ipairs(entry.materials) do
+            local tracked_eye = false
+            if entry.field == "HeadMesh" then
+                for _, eye in ipairs(snapshot.eye_bindings.bindings) do if eye.slot == index - 1 then tracked_eye = true end end
+            end
+            if not tracked_eye then require_condition(same(entry.source:GetMaterial(index - 1), binding), "Source material changed during private preview") end
+        end
+    end
+end
+
+local function no_inventory_doll(deps)
+    for _, doll in ipairs(array(deps.find_all_of("InventoryRenderDoll") or {}, 8, "inventory dolls")) do
+        if valid(doll) and not doll:GetFullName():find("Default__", 1, true) then error("Close the native inventory before testing independent preview lifetime", 0) end
+    end
+end
+
+local function existing_addresses(deps, class)
+    local addresses = {}
+    for _, object in ipairs(array(deps.find_all_of(class) or {}, 256, class)) do
+        if valid(object) then addresses[tostring(object:GetAddress())] = true end
+    end
+    return addresses
+end
+
+local function capture_settings(capture)
+    capture.bCaptureEveryFrame, capture.bCaptureOnMovement = false, false
+    capture.bMainViewCamera, capture.bMainViewFamily, capture.bMainViewResolution, capture.bRenderInMainRenderer = false, false, false, false
+    capture.bSuppressWorldPostProcessing, capture.PrimitiveRenderMode, capture.CaptureSource = true, 2, 2
+    capture.ProjectionType, capture.FOVAngle, capture.PostProcessBlendWeight = 0, 30, 0
+    capture:ClearShowOnlyComponents()
+end
+
+local function shifted(point)
+    return { X = point.X, Y = point.Y, Z = point.Z + OFFSET_Z }
+end
+
+local function derive_geometry(snapshot, player, math_library)
+    local scale = snapshot.head_transform.Scale3D
+    require_condition(scale.X > 0 and scale.Y > 0 and scale.Z > 0 and math.max(scale.X, scale.Y, scale.Z) <= 10,
+        "Native head scale is outside supported bounds")
+    local center = vector(math_library:TransformLocation(snapshot.head_transform, snapshot.head_bounds.origin))
+    return Geometry.build_views({ head_center = shifted(center), head_pivot = shifted(snapshot.pivot),
+        eye_left = shifted(snapshot.landmarks.eye_pair.left.location), eye_right = shifted(snapshot.landmarks.eye_pair.right.location),
+        head_radius = snapshot.head_bounds.radius * math.max(scale.X, scale.Y, scale.Z), forward = vector(player:GetActorForwardVector()) })
+end
+
+local function apply_view(capture, view, math_library)
+    local look_at = rotation(math_library:FindLookAtRotation(view.location, view.pivot))
+    capture.ProjectionType, capture.FOVAngle = 0, view.field_of_view
+    capture.bOverride_CustomNearClippingPlane, capture.CustomNearClippingPlane = true, view.near_clip
+    capture:K2_SetWorldLocationAndRotation(view.location, look_at, false, {}, true)
+    local actual_location, actual_rotation = vector(capture:K2_GetComponentLocation()), rotation(capture:K2_GetComponentRotation())
+    require_condition(equal_fields(actual_location, view.location) and equal_fields(actual_rotation, look_at)
+        and capture.ProjectionType == 0 and math.abs(capture.FOVAngle - view.field_of_view) < 0.00001
+        and flag(capture.bOverride_CustomNearClippingPlane, true) and capture.CustomNearClippingPlane == view.near_clip,
+        "Private camera projection or transform did not read back")
+    return actual_location, actual_rotation
+end
+
+local function configure_mesh(mesh, source, target_transform)
+    mesh:SetCollisionEnabled(0)
+    mesh:SetGenerateOverlapEvents(false)
+    mesh:SetVisibleInSceneCaptureOnly(true)
+    mesh:SetHiddenInSceneCapture(false)
+    mesh:SetCastShadow(false)
+    mesh:SetAffectDynamicIndirectLighting(false)
+    mesh:SetAffectDistanceFieldLighting(false)
+    mesh:SetVisibleInRayTracing(false)
+    mesh:SetLightingChannels(false, false, true)
+    mesh:SetSkeletalMeshAsset(source.asset)
+    for index, material in ipairs(source.material_objects) do mesh:SetMaterial(index - 1, material) end
+    mesh:SetLeaderPoseComponent(source.source, true, false)
+    mesh:K2_SetWorldTransform(target_transform, false, {}, true)
+end
+
+local function configure_light(light, location)
+    light:SetLightingChannels(false, false, true)
+    light:SetCastShadows(false)
+    light:SetLightColor({ R = 1, G = 1, B = 1, A = 1 }, false)
+    light:SetIntensityUnits(1)
+    light:SetIntensity(2000)
+    light:SetAttenuationRadius(800)
+    light:K2_SetWorldLocation(location, false, {}, true)
+end
+
+local function observe_scalar(getter)
+    local ok, value = pcall(getter)
+    if not ok then return { ok = false, reason = tostring(value):sub(1, 256) } end
+    local kind = type(value)
+    if kind == "nil" then return { ok = true, type = kind, value = "nil" } end
+    if kind == "number" then
+        if value ~= value or math.abs(value) == math.huge then return { ok = false, reason = "Non-finite native observation" } end
+    elseif kind ~= "boolean" and kind ~= "string" then return { ok = false, type = kind, reason = "Unsupported native scalar type" } end
+    return { ok = true, type = kind, value = value }
+end
+
+local function observe_actor(handle, deps)
+    local actor, result = handle.actor, { valid = valid(handle.actor) }
+    if not result.valid then result.actor_invalidated = true; return result end
+    result.identity_matches = same(actor, handle.actor_identity)
+    if not result.identity_matches then return result end
+    result.native_is_valid = observe_scalar(function()
+        local library = static(deps, "/Script/Engine.Default__KismetSystemLibrary", "/Script/Engine.KismetSystemLibrary")
+        local native_function = static(deps, "/Script/Engine.KismetSystemLibrary:IsValid", "/Script/CoreUObject.Function")
+        return library:CallFunction(native_function, actor)
+    end)
+    if result.native_is_valid.ok and flag(result.native_is_valid.value, false) then return result end
+    result.world_matches = same(actor:GetWorld(), handle.snapshot.world)
+    if not result.world_matches then return result end
+    result.being_destroyed = observe_scalar(function() return actor:IsActorBeingDestroyed() end)
+    result.destroyed_flag = observe_scalar(function() return actor.bActorIsBeingDestroyed end)
+    result.authority = observe_scalar(function() return actor:HasAuthority() end)
+    result.local_role = observe_scalar(function() return actor:GetLocalRole() end)
+    return result
+end
+
+local function refresh_pose(snapshot, player)
+    snapshot.location, snapshot.rotation = vector(player:K2_GetActorLocation()), rotation(player:K2_GetActorRotation())
+    for _, source in ipairs(snapshot.meshes) do source.transform = transform(source.source:K2_GetComponentToWorld()) end
+    local head = snapshot.head.source
+    require_condition(head:GetNumBones() == snapshot.landmarks.bone_count, "Native head skeleton changed")
+    local function socket(index, expected)
+        local name = head:GetBoneName(index)
+        require_condition(name:ToString() == expected and head:DoesSocketExist(name) == true, "Cached head landmark changed")
+        return vector(head:GetSocketLocation(name))
+    end
+    snapshot.pivot = socket(snapshot.pivot_index, snapshot.pivot_bone_name)
+    for _, side in ipairs({ "left", "right" }) do
+        local endpoint = snapshot.landmarks.eye_pair[side]
+        endpoint.location = socket(endpoint.index, endpoint.name)
+    end
+    snapshot.head_transform = snapshot.head.transform
+end
+
+local function view_geometry(geometry, view, player)
+    require_condition(type(view) == "table", "Preview view is required")
+    local profile = geometry.profiles[view.framing]
+    require_condition(profile ~= nil and number(view.yawDegrees, "preview yaw") >= -69 and view.yawDegrees <= 69,
+        "Preview framing or yaw is unsupported")
+    local distance = profile.default_distance / number(view.zoom, "preview zoom")
+    require_condition(view.zoom > 0 and distance >= profile.minimum_distance - 0.00001
+        and distance <= profile.maximum_distance + 0.00001, "Preview zoom exceeds native geometry bounds")
+    local forward = vector(player:GetActorForwardVector())
+    local length = math.sqrt(forward.X ^ 2 + forward.Y ^ 2)
+    require_condition(length >= 0.5 and length <= 1.5 and math.abs(forward.Z) <= 0.5, "Unsupported preview facing basis")
+    local angle, pivot = math.rad(view.yawDegrees), profile.pivot
+    local direction_x = (forward.X * math.cos(angle) - forward.Y * math.sin(angle)) / length
+    local direction_y = (forward.X * math.sin(angle) + forward.Y * math.cos(angle)) / length
+    return { pivot = vector(pivot), distance = distance, field_of_view = profile.field_of_view, near_clip = profile.near_clip,
+        location = { X = pivot.X + direction_x * distance, Y = pivot.Y + direction_y * distance, Z = pivot.Z } }
+end
+
+local function verify_capture(handle)
+    require_condition(not handle.closed and same(handle.actor, handle.actor_identity)
+        and same(handle.actor:GetWorld(), handle.snapshot.world)
+        and same(handle.actor.CaptureComponent2D, handle.capture_identity)
+        and same(handle.capture, handle.capture_identity) and same(handle.capture:GetOwner(), handle.actor_identity)
+        and same(handle.capture.TextureTarget, handle.target_identity), "Private capture ownership changed")
+    local capture, target = handle.capture, handle.target
+    require_condition(same(target, handle.target_identity) and same(target:GetOuter(), handle.snapshot.world)
+        and target.SizeX == 1024 and target.SizeY == 1024 and target.RenderTargetFormat == 3
+        and math.abs(target.TargetGamma - 2.2) < 0.00001 and flag(target.bForceLinearGamma, false), "Private render target changed")
+    require_condition(flag(capture.bCaptureEveryFrame, false) and flag(capture.bCaptureOnMovement, false)
+        and flag(capture.bMainViewCamera, false) and flag(capture.bMainViewFamily, false)
+        and flag(capture.bMainViewResolution, false) and flag(capture.bRenderInMainRenderer, false)
+        and flag(capture.bSuppressWorldPostProcessing, true) and capture.PrimitiveRenderMode == 2
+        and capture.CaptureSource == 2, "Private capture isolation changed")
+end
+
+local function verify_mesh(handle, entry)
+    local mesh, source = entry.object, entry.source
+    require_condition(same(mesh, entry.identity) and same(mesh:GetOwner(), handle.actor_identity)
+        and same(mesh:GetSkeletalMeshAsset(), source.asset_identity) and mesh:GetNumMaterials() == #source.materials,
+        "Private mesh identity, asset or material count changed")
+    require_condition(mesh:GetCollisionEnabled() == 0 and flag(mesh.bVisibleInSceneCaptureOnly, true)
+        and flag(mesh.bHiddenInSceneCapture, false) and private_lighting(mesh), "Private mesh isolation changed")
+    for index, original in ipairs(source.materials) do
+        local eye = entry.eyes and entry.eyes[index - 1]
+        if eye then
+            require_condition(same(mesh:GetMaterial(index - 1), eye.identity) and same(eye.object:GetOuter(), entry.identity)
+                and same(eye.object.Parent, eye.binding.original_identity), "Private eye material was replaced or reparented")
+        else require_condition(same(mesh:GetMaterial(index - 1), original), "Private non-eye material changed") end
+    end
+end
+
+local function verify_owned(deps, handle, allow_movement)
+    verify_capture(handle)
+    verify_sources(deps, handle.snapshot, allow_movement)
+    for _, entry in ipairs(handle.meshes) do verify_mesh(handle, entry) end
+    for _, entry in ipairs(handle.lights) do
+        require_condition(same(entry.object, entry.identity) and same(entry.object:GetOwner(), handle.actor_identity)
+            and private_lighting(entry.object), "Private light ownership or isolation changed")
+    end
+end
+
+local function create_eye_instances(deps, handle, entry)
+    entry.eyes = {}
+    for _, binding in ipairs(handle.snapshot.eye_bindings.bindings) do
+        require_condition(binding.slot == 3 or binding.slot == 4, "Unsupported native eye slot")
+        require_condition(entry.eyes[binding.slot] == nil and same(binding.original_material, binding.original_identity),
+            "Original eye binding changed")
+        local name = binding.native_name:ToString()
+        local outer_path = entry.identity.name:match("^%S+ (.+)$")
+        require_condition(outer_path ~= nil and type(name) == "string" and #name > 0 and #name <= 128,
+            "Native preview instance name is unavailable")
+        require_condition(not valid(deps.static_find_object(outer_path .. "." .. name)), "Preview material instance already exists")
+        verify_capture(handle)
+        verify_sources(deps, handle.snapshot, false)
+        local material = entry.object:CreateDynamicMaterialInstance(binding.slot, binding.original_material, binding.native_name)
+        local identity = record(material, "/Script/Engine.MaterialInstanceDynamic", "private preview eye instance")
+        -- These MIDs always derive from the original MIC, never a live player's MID.
+        for _, live in ipairs(handle.snapshot.eye_bindings.bindings) do
+            require_condition(identity.address ~= live.original_identity.address and identity.address ~= live.current_identity.address,
+                "Preview material aliases a live eye binding")
+        end
+        require_condition(same(material:GetOuter(), entry.identity) and same(material.Parent, binding.original_identity)
+            and same(entry.object:GetMaterial(binding.slot), identity), "Private eye instance ownership did not read back")
+        entry.eyes[binding.slot] = { object = material, identity = identity, binding = binding }
+    end
+end
+
+local function eye_settings(deps, handle, requested, write)
+    local canonical = deps.eye_bindings.validate_settings(requested, handle.snapshot.eye_bindings)
+    require_condition(type(canonical) == "table" and type(canonical.values) == "table" and #canonical.values <= 64,
+        "Eye binding registry returned invalid canonical settings")
+    local observed, consumed = { schemaId = canonical.schemaId, values = {} }, {}
+    for _, entry in ipairs(handle.meshes) do
+        for _, eye in pairs(entry.eyes or {}) do
+            for _, parameter in ipairs(eye.binding.parameters) do
+                local wanted, wanted_index
+                for index, candidate in ipairs(canonical.values) do
+                    if equal(candidate.parameter, parameter.parameter) then
+                        require_condition(wanted == nil, "Duplicate preview parameter")
+                        wanted, wanted_index = candidate.value, index
+                    end
+                end
+                require_condition(wanted ~= nil and wanted.kind == "scalar" and not consumed[wanted_index], "Unsupported preview eye value")
+                local scalar = number(wanted.value, "preview scalar")
+                require_condition(scalar >= parameter.min and scalar <= parameter.max, "Preview scalar exceeds observed native bounds")
+                verify_owned(deps, handle, false)
+                if write then eye.object:SetScalarParameterValueByInfo(parameter.native_info, scalar) end
+                local actual = number(eye.object:K2_GetScalarParameterValueByInfo(parameter.native_info), "native preview scalar")
+                require_condition(math.abs(actual - scalar) <= parameter.tolerance, "Private preview scalar did not read back")
+                consumed[wanted_index] = true
+                observed.values[wanted_index] = { parameter = copy(parameter.parameter), value = { kind = "scalar", value = actual } }
+            end
+        end
+    end
+    for index in ipairs(canonical.values) do require_condition(consumed[index] == true, "Preview parameter has no owned material receiver") end
+    return observed
+end
+
+local function cleanup(handle, deps)
+    if handle.cleanup_receipt then return handle.cleanup_receipt end
+    handle.closed = true
+    local receipt = { owned_cleanup_acknowledged = false, actor = handle.actor_identity, capture = handle.capture_identity,
+        target = handle.target_identity, target_outer = handle.target_outer, target_owned = handle.target_owned == true,
+        nonce = handle.nonce, boot_id = handle.boot_id, pending_frames = {},
+        display_configuration = copy(handle.display), destruction_acknowledged = false, target_release_requested = false }
+    for sequence, filename in pairs(handle.pending) do
+        receipt.pending_frames[#receipt.pending_frames + 1] = { sequence = sequence, file_name = filename }
+    end
+    table.sort(receipt.pending_frames, function(left, right) return left.sequence < right.sequence end)
+    local destroyed, destroy_error = pcall(function()
+        if not handle.created then return end
+        if not valid(handle.actor) then receipt.destruction_acknowledged = true; return end
+        require_condition(same(handle.actor, handle.actor_identity) and same(handle.actor:GetWorld(), handle.snapshot.world),
+            "Private actor identity changed before cleanup")
+        if valid(handle.capture) then
+            require_condition(same(handle.capture, handle.capture_identity) and same(handle.capture:GetOwner(), handle.actor_identity),
+                "Private capture ownership changed before cleanup")
+            handle.capture.bCaptureEveryFrame, handle.capture.bCaptureOnMovement = false, false
+            handle.capture.TextureTarget = nil
+        end
+        if not handle.finish_attempted then
+            handle.finish_attempted = true
+            handle.gameplay:FinishSpawningActor(handle.actor, handle.spawn, 0)
+            handle.spawn_finished = true
+        end
+        receipt.actor_before_destroy = observe_actor(handle, deps)
+        receipt.destroy_call_return = observe_scalar(function() return handle.actor:K2_DestroyActor() end)
+        receipt.actor_after_destroy = observe_actor(handle, deps)
+        require_condition(receipt.destroy_call_return.ok, "Private actor destroy call raised an error")
+        receipt.destruction_acknowledged = not valid(handle.actor) or flag(handle.actor:IsActorBeingDestroyed(), true)
+        require_condition(receipt.destruction_acknowledged, "Private actor destruction is not yet acknowledged")
+    end)
+    local released, release_error = pcall(function()
+        if not handle.target_owned or not valid(handle.target) then return end
+        require_condition(same(handle.target, handle.target_identity), "Private target identity changed before release")
+        require_condition(not valid(handle.capture) or (same(handle.capture, handle.capture_identity) and not valid(handle.capture.TextureTarget)),
+            "Private target remains bound to a capture")
+        handle.render:ReleaseRenderTarget2D(handle.target)
+        receipt.target_release_requested = true
+    end)
+    receipt.actor_invalidated = handle.created == true and not valid(handle.actor)
+    receipt.destruction_pending = handle.created == true and valid(handle.actor) and receipt.destruction_acknowledged
+    receipt.owned_cleanup_acknowledged = destroyed and released and (not handle.created or receipt.destruction_acknowledged)
+        and (not handle.target_owned or not valid(handle.target) or receipt.target_release_requested)
+    receipt.cleanup_error = destroyed and nil or tostring(destroy_error):sub(1, 512)
+    receipt.release_error = released and nil or tostring(release_error):sub(1, 512)
+    if receipt.owned_cleanup_acknowledged then
+        -- No pixel buffers are stored here. Dropping private UObject wrappers lets
+        -- native actor/GC ownership retire the clone MIDs without touching the player.
+        handle.meshes, handle.lights, handle.last_readback, handle.last_evidence = {}, {}, nil, nil
+    end
+    handle.cleanup_receipt = receipt
+    return receipt
+end
+
+local function create_resources(deps, handle)
+    no_inventory_doll(deps)
+    local existing_actors, existing_targets = existing_addresses(deps, "SceneCapture2D"), existing_addresses(deps, "TextureRenderTarget2D")
+    local player, snapshot = snapshot_sources(deps)
+    snapshot.eye_bindings = deps.eye_bindings.inspect(player, player.HeadMesh)
+    require_condition(snapshot.eye_bindings.identity_key == handle.identity_key, "Current native eye generation differs from requested preview")
+    handle.snapshot = snapshot
+    handle.render = static(deps, "/Script/Engine.Default__KismetRenderingLibrary", "/Script/Engine.KismetRenderingLibrary")
+    handle.gameplay = static(deps, "/Script/Engine.Default__GameplayStatics", "/Script/Engine.GameplayStatics")
+    handle.math_library = static(deps, "/Script/Engine.Default__KismetMathLibrary", "/Script/Engine.KismetMathLibrary")
+    handle.geometry = derive_geometry(snapshot, player, handle.math_library)
+    local actor_class = static(deps, "/Script/Engine.SceneCapture2D", "/Script/CoreUObject.Class")
+    local mesh_class = static(deps, "/Script/Engine.SkeletalMeshComponent", "/Script/CoreUObject.Class")
+    local light_class = static(deps, "/Script/Engine.PointLightComponent", "/Script/CoreUObject.Class")
+    handle.spawn = { Rotation = { X = 0, Y = 0, Z = 0, W = 1 }, Scale3D = { X = 1, Y = 1, Z = 1 }, Translation = shifted(snapshot.location) }
+    handle.actor = handle.gameplay:BeginDeferredActorSpawnFromClass(player:GetWorld(), actor_class, handle.spawn, 1, nil, 0)
+    handle.actor_identity = record(handle.actor, "/Script/Engine.SceneCapture2D", "new private capture actor")
+    require_condition(not existing_actors[handle.actor_identity.address], "Native factory returned an existing capture actor")
+    handle.created = true
+    require_condition(handle.actor_identity.address ~= snapshot.player.address and same(handle.actor:GetWorld(), snapshot.world), "Private actor aliases player or world differs")
+    handle.capture = handle.actor.CaptureComponent2D
+    handle.capture_identity = record(handle.capture, "/Script/Engine.SceneCaptureComponent2D", "new private capture")
+    require_condition(same(handle.capture:GetOwner(), handle.actor_identity) and not valid(handle.capture.TextureTarget), "Private capture references an existing target")
+    capture_settings(handle.capture)
+    handle.actor:SetActorEnableCollision(false)
+    handle.finish_attempted = true
+    handle.gameplay:FinishSpawningActor(handle.actor, handle.spawn, 0)
+    handle.spawn_finished = true
+    require_condition(same(handle.actor, handle.actor_identity) and same(handle.actor.CaptureComponent2D, handle.capture_identity)
+        and same(handle.capture:GetOwner(), handle.actor_identity) and not valid(handle.capture.TextureTarget), "Private actor changed during construction")
+    handle.target = handle.render:CreateRenderTarget2D(player:GetWorld(), 1024, 1024, 3, { R = 0.018, G = 0.018, B = 0.018, A = 1 }, false, false)
+    handle.target_identity = record(handle.target, "/Script/Engine.TextureRenderTarget2D", "new private target")
+    require_condition(not existing_targets[handle.target_identity.address], "Native target factory returned a preexisting target")
+    handle.target_owned = true
+    handle.target_outer = record(handle.target:GetOuter(), "/Script/Engine.World", "new private target outer")
+    require_condition(equal(handle.target_outer, snapshot.world), "New private target does not belong to its requested world")
+    require_condition(handle.target.SizeX == 1024 and handle.target.SizeY == 1024 and handle.target.RenderTargetFormat == 3, "Private target dimensions or format differ")
+    handle.display = { requested_gamma = 2.2, requested_force_linear_gamma = false,
+        gamma_before = observe_scalar(function() return handle.target.TargetGamma end),
+        force_linear_before = observe_scalar(function() return handle.target.bForceLinearGamma end) }
+    local display_ok, display_error = pcall(function()
+        handle.target.TargetGamma = 2.2
+        require_condition(handle.display.force_linear_before.ok and (handle.display.force_linear_before.type == "number"
+            or handle.display.force_linear_before.type == "boolean"), "Target force-linear flag is not a native boolean/byte")
+        handle.target.bForceLinearGamma = handle.display.force_linear_before.type == "number" and 0 or false
+    end)
+    handle.display.gamma_after = observe_scalar(function() return handle.target.TargetGamma end)
+    handle.display.force_linear_after = observe_scalar(function() return handle.target.bForceLinearGamma end)
+    handle.display.write_ok = display_ok
+    handle.display.write_error = display_ok and nil or tostring(display_error):sub(1, 256)
+    require_condition(display_ok, "Private target display configuration write failed")
+    handle.capture.TextureTarget = handle.target
+    verify_capture(handle)
+    for _, source in ipairs(snapshot.meshes) do
+        verify_sources(deps, snapshot, false)
+        local copied = transform(source.transform)
+        copied.Translation.Z = copied.Translation.Z + OFFSET_Z
+        local mesh = handle.actor:AddComponentByClass(mesh_class, true, handle.spawn, true)
+        local identity = record(mesh, "/Script/Engine.SkeletalMeshComponent", "private " .. source.field)
+        require_condition(identity.address ~= source.identity.address and same(mesh:GetOwner(), handle.actor_identity), "Clone aliases source or lacks private ownership")
+        local entry = { object = mesh, identity = identity, source = source }
+        handle.meshes[#handle.meshes + 1] = entry
+        configure_mesh(mesh, source, copied)
+        handle.actor:FinishAddComponent(mesh, true, handle.spawn)
+        mesh:K2_SetWorldTransform(copied, false, {}, true)
+        if source.field == "HeadMesh" then create_eye_instances(deps, handle, entry) end
+        verify_mesh(handle, entry)
+        handle.capture:ShowOnlyComponent(mesh)
+    end
+    local pivot, forward = shifted(snapshot.pivot), vector(player:GetActorForwardVector())
+    for _, sign in ipairs({ -1, 1 }) do
+        verify_owned(deps, handle, false)
+        local light = handle.actor:AddComponentByClass(light_class, true, handle.spawn, true)
+        local identity = record(light, "/Script/Engine.PointLightComponent", "private fill light")
+        require_condition(same(light:GetOwner(), handle.actor_identity), "Fill light lacks private ownership")
+        handle.lights[#handle.lights + 1] = { object = light, identity = identity, sign = sign }
+        local location = { X = pivot.X + forward.X * 100 - forward.Y * sign * 100,
+            Y = pivot.Y + forward.Y * 100 + forward.X * sign * 100, Z = pivot.Z + 60 }
+        configure_light(light, location)
+        handle.actor:FinishAddComponent(light, true, handle.spawn)
+        light:K2_SetWorldLocation(location, false, {}, true)
+    end
+    verify_owned(deps, handle, false)
+end
+
+function Renderer.new(deps)
+    require_condition(type(deps) == "table" and deps.intent == "eye-private-preview-session", "Explicit persistent private preview intent required")
+    require_condition(type(deps.identity) == "table" and deps.identity.build_id == BUILD_ID
+        and deps.identity.executable_sha256 == EXECUTABLE_SHA256, "Current-build identity mismatch")
+    for _, name in ipairs({ "is_in_game_thread", "monotonic_ms", "get_player", "find_all_of", "static_find_object", "output_exists" }) do
+        require_condition(type(deps[name]) == "function", "Missing native preview dependency: " .. name)
+    end
+    require_condition(type(deps.eye_bindings) == "table" and type(deps.eye_bindings.inspect) == "function"
+        and type(deps.eye_bindings.verify) == "function" and type(deps.eye_bindings.validate_settings) == "function", "Native eye registry is required")
+    require_condition(type(deps.nonce) == "string" and #deps.nonce == 32 and deps.nonce:match("^%x+$") ~= nil
+        and type(deps.boot_id) == "string" and #deps.boot_id <= 64 and deps.boot_id:match("^%d+%-%d+$") ~= nil, "Invalid renderer identity")
+    local directory = type(deps.output_directory) == "string" and deps.output_directory:gsub("\\", "/"):gsub("/+$", "") or ""
+    require_condition(directory:lower() == (ROOT .. "/" .. deps.boot_id):lower(), "Private preview directory differs from its boot")
+    local adapters, handle, attempted, failed_cleanup = {}, nil, false, nil
+    local function guard()
+        require_condition(deps.is_in_game_thread() == true, "Private native preview requires the game thread")
+    end
+    local function owned(candidate)
+        guard()
+        require_condition(candidate ~= nil and candidate == handle and not candidate.closed, "Unknown or closed private preview handle")
+    end
+    local function current_binding()
+        guard()
+        local player = deps.get_player()
+        return deps.eye_bindings.inspect(player, player.HeadMesh)
+    end
+    adapters.is_game_thread, adapters.monotonic_ms = deps.is_in_game_thread, deps.monotonic_ms
+    function adapters.inspect_identity() return current_binding().identity_key end
+    function adapters.validate_settings(settings)
+        return type(deps.eye_bindings.validate_settings(settings, current_binding())) == "table"
+    end
+    function adapters.validate_view(view)
+        guard()
+        local player = deps.get_player()
+        local geometry
+        if handle and not handle.closed then geometry = handle.geometry
+        else
+            local snapshot
+            player, snapshot = snapshot_sources(deps)
+            geometry = derive_geometry(snapshot, player, static(deps, "/Script/Engine.Default__KismetMathLibrary", "/Script/Engine.KismetMathLibrary"))
+        end
+        return view_geometry(geometry, view, player) ~= nil
+    end
+    function adapters.create_preview(identity_key)
+        guard()
+        require_condition(not attempted, "This native renderer nonce already attempted creation")
+        attempted = true
+        local candidate = { identity_key = identity_key, nonce = deps.nonce:lower(), boot_id = deps.boot_id,
+            meshes = {}, lights = {}, pending = {}, sequence = 0 }
+        local ok, failure = pcall(create_resources, deps, candidate)
+        if not ok then
+            failed_cleanup = cleanup(candidate, deps)
+            error("Private construction failed: " .. tostring(failure):sub(1, 512)
+                .. "; cleanup acknowledged=" .. tostring(failed_cleanup.owned_cleanup_acknowledged), 0)
+        end
+        handle = candidate
+        return candidate
+    end
+    function adapters.verify_private_preview(candidate, identity_key)
+        owned(candidate)
+        require_condition(identity_key == candidate.identity_key, "Private preview generation differs")
+        verify_owned(deps, candidate, true)
+        return true
+    end
+    function adapters.can_capture(candidate)
+        owned(candidate)
+        local count = 0
+        for _ in pairs(candidate.pending) do count = count + 1 end
+        return count < 2
+    end
+    function adapters.update_preview(candidate, desired)
+        owned(candidate)
+        verify_owned(deps, candidate, true)
+        local player = deps.get_player()
+        refresh_pose(candidate.snapshot, player)
+        candidate.geometry = derive_geometry(candidate.snapshot, player, candidate.math_library)
+        local view = view_geometry(candidate.geometry, desired.view, player)
+        for _, entry in ipairs(candidate.meshes) do
+            verify_owned(deps, candidate, false)
+            local copied = transform(entry.source.transform)
+            copied.Translation.Z = copied.Translation.Z + OFFSET_Z
+            entry.object:K2_SetWorldTransform(copied, false, {}, true)
+        end
+        local pivot, forward = shifted(candidate.snapshot.pivot), vector(player:GetActorForwardVector())
+        for _, entry in ipairs(candidate.lights) do
+            verify_owned(deps, candidate, false)
+            entry.object:K2_SetWorldLocation({ X = pivot.X + forward.X * 100 - forward.Y * entry.sign * 100,
+                Y = pivot.Y + forward.Y * 100 + forward.X * entry.sign * 100, Z = pivot.Z + 60 }, false, {}, true)
+        end
+        local settings = eye_settings(deps, candidate, desired.settings, true)
+        verify_owned(deps, candidate, false)
+        local location, look_at = apply_view(candidate.capture, view, candidate.math_library)
+        verify_owned(deps, candidate, false)
+        local readback = { identity_key = candidate.identity_key, baseline_id = candidate.snapshot.eye_bindings.baseline_id,
+            view_revision = desired.view_revision, eye_revision = desired.eye_revision, view = copy(desired.view), settings = settings,
+            camera_location = location, camera_rotation = look_at, field_of_view = view.field_of_view, near_clip = view.near_clip }
+        candidate.last_readback = readback
+        return readback
+    end
+    function adapters.validate_readback(readback, desired, candidate)
+        owned(candidate)
+        return readback == candidate.last_readback and readback.identity_key == candidate.identity_key
+            and readback.view_revision == desired.view_revision and readback.eye_revision == desired.eye_revision
+            and equal(readback.view, desired.view) and equal(readback.settings, eye_settings(deps, candidate, desired.settings, false))
+    end
+    local function verify_camera(candidate, readback)
+        local capture = candidate.capture
+        require_condition(equal_fields(vector(capture:K2_GetComponentLocation()), readback.camera_location)
+            and equal_fields(rotation(capture:K2_GetComponentRotation()), readback.camera_rotation)
+            and capture.ProjectionType == 0 and math.abs(capture.FOVAngle - readback.field_of_view) < 0.00001
+            and flag(capture.bOverride_CustomNearClippingPlane, true) and capture.CustomNearClippingPlane == readback.near_clip,
+            "Private camera changed during frame export")
+    end
+    function adapters.capture_preview(candidate, readback, sequence)
+        owned(candidate)
+        require_condition(readback == candidate.last_readback and sequence == candidate.sequence + 1
+            and sequence >= 1 and sequence <= 1200 and sequence % 1 == 0 and adapters.can_capture(candidate), "Capture sequence or backlog limit rejected")
+        verify_owned(deps, candidate, false)
+        verify_camera(candidate, readback)
+        local filename = "eye-live-" .. candidate.nonce .. "-" .. string.format("%04d", sequence) .. ".png"
+        require_condition(deps.output_exists(directory .. "/" .. filename) == false, "Private frame path already exists or cannot be checked")
+        -- A failed export may have left a partial file. Consume the sequence before
+        -- invoking native IO, retain its receipt, and never overwrite that path.
+        candidate.sequence = sequence
+        candidate.pending[sequence] = filename
+        -- This is the observed native game-world clock around the call interval,
+        -- not the lease clock or a GPU completion timestamp. It can be equal
+        -- before/after a synchronous operation inside one engine tick.
+        local started = number(candidate.gameplay:GetRealTimeSeconds(deps.get_player():GetWorld()), "native export call start") * 1000
+        require_condition(started >= 0 and started <= 9007199254740991, "Native export clock is outside its representable range")
+        candidate.capture:CaptureScene()
+        candidate.render:ExportRenderTarget(deps.get_player():GetWorld(), candidate.target, directory, filename)
+        local completed = number(candidate.gameplay:GetRealTimeSeconds(deps.get_player():GetWorld()), "native export call completion") * 1000
+        require_condition(completed >= started and completed <= 9007199254740991
+            and deps.output_exists(directory .. "/" .. filename) == true, "Native export clock or bounded frame file could not be verified")
+        verify_owned(deps, candidate, false)
+        verify_camera(candidate, readback)
+        local settings = eye_settings(deps, candidate, readback.settings, false)
+        local evidence = { kind = "native-private-eye-session-evidence", nonce = candidate.nonce, boot_id = deps.boot_id,
+            identity_key = candidate.identity_key, baseline_id = readback.baseline_id, sequence = sequence, file_name = filename,
+            actor = copy(candidate.actor_identity), capture = copy(candidate.capture_identity), target = copy(candidate.target_identity),
+            target_outer = copy(candidate.target_outer), width = 1024, height = 1024, render_target_format = 3, capture_source = 2,
+            target_gamma = candidate.target.TargetGamma, view_revision = readback.view_revision, eye_revision = readback.eye_revision,
+            view = copy(readback.view), settings = settings, camera_location = copy(readback.camera_location), camera_rotation = copy(readback.camera_rotation),
+            field_of_view = readback.field_of_view, near_clip = readback.near_clip,
+            native_clock_id = "ue-gameplay-real-time-seconds:" .. deps.boot_id .. ":" .. candidate.snapshot.world.address,
+            export_call_started_monotonic_ms = started, export_call_completed_monotonic_ms = completed,
+            capture_timestamp_known = false, frame_verified = false, preview_verified = false, gameplay_verified = false }
+        candidate.last_evidence = evidence
+        return evidence
+    end
+    function adapters.validate_capture_evidence(evidence, readback, sequence, candidate)
+        owned(candidate)
+        return evidence == candidate.last_evidence and evidence.sequence == sequence and sequence == candidate.sequence
+            and evidence.identity_key == candidate.identity_key and evidence.file_name == candidate.pending[sequence]
+            and evidence.view_revision == readback.view_revision and evidence.eye_revision == readback.eye_revision
+            and equal(evidence.settings, readback.settings) and equal(evidence.view, readback.view)
+    end
+    function adapters.release_preview(candidate)
+        guard()
+        require_condition(candidate ~= nil and candidate == handle, "Unknown private preview cleanup handle")
+        return cleanup(candidate, deps)
+    end
+    local api = { adapters = adapters }
+    function api.describe()
+        owned(handle)
+        verify_owned(deps, handle, true)
+        local zoom_bounds, sources = {}, {}
+        for framing, profile in pairs(handle.geometry.profiles) do
+            zoom_bounds[framing] = { min = profile.default_distance / profile.maximum_distance,
+                max = profile.default_distance / profile.minimum_distance, initial = 1 }
+        end
+        for _, entry in ipairs(handle.snapshot.meshes) do
+            sources[#sources + 1] = { field = entry.field, mesh = copy(entry.identity), asset = copy(entry.asset_identity) }
+        end
+        return { kind = "native-private-eye-preview-descriptor", nonce = handle.nonce, boot_id = deps.boot_id,
+            identity_key = handle.identity_key, baseline_id = handle.snapshot.eye_bindings.baseline_id,
+            schema_id = handle.snapshot.eye_bindings.schema_id, actor = copy(handle.actor_identity),
+            capture = copy(handle.capture_identity), target = copy(handle.target_identity), target_outer = copy(handle.target_outer),
+            player = copy(handle.snapshot.player), world = copy(handle.snapshot.world), form = handle.snapshot.form,
+            is_wolf_form = handle.snapshot.wolf, source_meshes = sources, width = 1024, height = 1024,
+            render_target_format = 3, capture_source = 2, display_configuration = copy(handle.display),
+            yaw_min = -69, yaw_max = 69, zoom_bounds = zoom_bounds,
+            production_ready = false, preview_verified = false, gameplay_verified = false }
+    end
+    function api.acknowledge(sequence, filename)
+        guard()
+        require_condition(handle ~= nil and handle.pending[sequence] == filename, "Unknown native frame acknowledgement")
+        require_condition(deps.output_exists(directory .. "/" .. filename) == false, "Host must consume and remove the exact frame before acknowledgement")
+        handle.pending[sequence] = nil
+        if handle.last_evidence and handle.last_evidence.sequence == sequence then handle.last_evidence = nil end
+        return true
+    end
+    function api.inspect_cleanup() return failed_cleanup or (handle and handle.cleanup_receipt) end
+    function api.observe_cleanup()
+        guard()
+        require_condition(handle ~= nil and handle.closed and handle.cleanup_receipt ~= nil, "No closed native renderer to observe")
+        -- A later host-owned engine-frame callback may inspect this evidence.
+        -- It does not retroactively turn an unconfirmed release into success.
+        return { nonce = handle.nonce, boot_id = deps.boot_id, actor = copy(handle.actor_identity),
+            actor_state = observe_actor(handle, deps), production_ready = false }
+    end
+    return api
+end
+
+return Renderer

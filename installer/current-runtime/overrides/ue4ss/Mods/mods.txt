@@ -1,0 +1,4 @@
+﻿; cyberfox1337x.function("dawnwalker_imported_mod_registry")
+DawnwalkerImportedMenu : 1
+DawnwalkerModBridge : 0
+Keybinds : 0

@@ -1,0 +1,63 @@
+# --- build output and dependencies ---
+node_modules/
+dist/
+dist-electron/
+*.tsbuildinfo
+*.log
+
+# --- packaged builds: every electron-builder output directory ---
+release/
+release-*/
+build-out-menu/
+Nexus-Upload-*/
+nexus-staging-*/
+.tmp/
+${directory}/
+
+# --- local tool state: every dot-directory at the repository root ---
+/.*/
+
+# --- internal working notes exchanged during development; not part of the public source ---
+AGENTS.md
+HANDOFF*.md
+*_HANDOFF*.md
+GPT-6-ASTRA-MIGRATION-PLAN.md
+
+# --- 3D source files (Blender) and the unused, possibly game-derived preview model ---
+character-from-glb/
+character-fullbody/
+public/models/coen-fullbody.glb
+
+# --- game reflection dumps (derived from the game binaries, multi-GB SQLite); keep only the written notes ---
+Dawnwalker_RE/*
+!Dawnwalker_RE/*.md
+
+# --- nested vendor clone of RE-UE4SS (has its own .git); the blocker note stays ---
+integration/native-player-controls/vendor/
+
+# --- research workspace: keep probes, tests, templates, codec and the write-ups; drop captured dumps and staging ---
+analysis/dawnwalker-uue4ss/state/
+analysis/dawnwalker-uue4ss/captured-dump/
+analysis/dawnwalker-uue4ss/stage/
+analysis/dawnwalker-uue4ss/stage-zdev/
+analysis/dawnwalker-uue4ss/vendor/
+
+# --- QA evidence (27 GB: minidumps, save backups, screenshots). Keep only what npm scripts and the README reference ---
+qa/*
+!qa/dawnwalker-imported-release-proof.json
+!qa/player-current-build/
+qa/player-current-build/*
+!qa/player-current-build/*.mjs
+!qa/player-current-build/RUNBOOK.md
+!qa/final-product-20260919/
+qa/final-product-20260919/*
+!qa/final-product-20260919/*.md
+!qa/validation-20260918/
+qa/validation-20260918/*
+!qa/validation-20260918/*.md
+visual-qa/**/*.png
+
+# --- personal save data must never be committed ---
+*.sav
+*.dsav
+*.dmp

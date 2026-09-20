@@ -1,0 +1,273 @@
+{
+  "errors": [],
+  "categories": [
+    {
+      "name": "Player",
+      "count": 13,
+      "controls": 46
+    },
+    {
+      "name": "Combat",
+      "count": 3,
+      "controls": 4
+    },
+    {
+      "name": "World",
+      "count": 2,
+      "controls": 5
+    },
+    {
+      "name": "Teleport",
+      "count": 1,
+      "controls": 2
+    },
+    {
+      "name": "Settings",
+      "count": 1,
+      "controls": 1
+    }
+  ],
+  "expandedLayouts": [
+    {
+      "width": 1366,
+      "height": 768,
+      "sectionId": "DWUltimateControls",
+      "clipped": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "sectionId": "DWTraitGrant",
+      "clipped": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "sectionId": "DWPlayer",
+      "clipped": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "sectionId": "DWSkills",
+      "clipped": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "sectionId": "DWXP",
+      "clipped": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "sectionId": "DWMutation",
+      "clipped": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "sectionId": "DWCombatControls",
+      "clipped": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "sectionId": "DWRespec",
+      "clipped": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "sectionId": "DWCurrency",
+      "clipped": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "sectionId": "DWMaterials",
+      "clipped": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "sectionId": "DWManuals",
+      "clipped": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "sectionId": "DWKeys",
+      "clipped": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "sectionId": "DWItems",
+      "clipped": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "sectionId": "DWActivationControl",
+      "clipped": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "sectionId": "DWCooldownControl",
+      "clipped": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "sectionId": "DWParryAssist",
+      "clipped": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "sectionId": "DWInfamyControl",
+      "clipped": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "sectionId": "DWTimeControl",
+      "clipped": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "sectionId": "DWShrines",
+      "clipped": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "sectionId": "DWMenuWarnings",
+      "clipped": []
+    },
+    {
+      "width": 1100,
+      "height": 620,
+      "sectionId": "DWUltimateControls",
+      "clipped": []
+    },
+    {
+      "width": 1100,
+      "height": 620,
+      "sectionId": "DWTraitGrant",
+      "clipped": []
+    },
+    {
+      "width": 1100,
+      "height": 620,
+      "sectionId": "DWPlayer",
+      "clipped": []
+    },
+    {
+      "width": 1100,
+      "height": 620,
+      "sectionId": "DWSkills",
+      "clipped": []
+    },
+    {
+      "width": 1100,
+      "height": 620,
+      "sectionId": "DWXP",
+      "clipped": []
+    },
+    {
+      "width": 1100,
+      "height": 620,
+      "sectionId": "DWMutation",
+      "clipped": []
+    },
+    {
+      "width": 1100,
+      "height": 620,
+      "sectionId": "DWCombatControls",
+      "clipped": []
+    },
+    {
+      "width": 1100,
+      "height": 620,
+      "sectionId": "DWRespec",
+      "clipped": []
+    },
+    {
+      "width": 1100,
+      "height": 620,
+      "sectionId": "DWCurrency",
+      "clipped": []
+    },
+    {
+      "width": 1100,
+      "height": 620,
+      "sectionId": "DWMaterials",
+      "clipped": []
+    },
+    {
+      "width": 1100,
+      "height": 620,
+      "sectionId": "DWManuals",
+      "clipped": []
+    },
+    {
+      "width": 1100,
+      "height": 620,
+      "sectionId": "DWKeys",
+      "clipped": []
+    },
+    {
+      "width": 1100,
+      "height": 620,
+      "sectionId": "DWItems",
+      "clipped": []
+    },
+    {
+      "width": 1100,
+      "height": 620,
+      "sectionId": "DWActivationControl",
+      "clipped": []
+    },
+    {
+      "width": 1100,
+      "height": 620,
+      "sectionId": "DWCooldownControl",
+      "clipped": []
+    },
+    {
+      "width": 1100,
+      "height": 620,
+      "sectionId": "DWParryAssist",
+      "clipped": []
+    },
+    {
+      "width": 1100,
+      "height": 620,
+      "sectionId": "DWInfamyControl",
+      "clipped": []
+    },
+    {
+      "width": 1100,
+      "height": 620,
+      "sectionId": "DWTimeControl",
+      "clipped": []
+    },
+    {
+      "width": 1100,
+      "height": 620,
+      "sectionId": "DWShrines",
+      "clipped": []
+    },
+    {
+      "width": 1100,
+      "height": 620,
+      "sectionId": "DWMenuWarnings",
+      "clipped": []
+    }
+  ],
+  "playerCoreVisible": true
+}

@@ -1,0 +1,27 @@
+{
+  "errors": [],
+  "gameplayVerified": false,
+  "switches": [
+    {
+      "label": "God Mode: off",
+      "checked": "false",
+      "disabled": true
+    },
+    {
+      "label": "Infinite Health: off",
+      "checked": "false",
+      "disabled": true
+    },
+    {
+      "label": "Unlimited Stamina: off",
+      "checked": "false",
+      "disabled": true
+    },
+    {
+      "label": "Sprint No Drain: off",
+      "checked": "false",
+      "disabled": true
+    }
+  ],
+  "text": "PLAYER\nPlayer controls unavailable\nStart Dawnwalker and load an offline single-player save.\nGod Mode\nKeeps health, stamina and blood energy full.\nUnavailable\nInfinite Health\nUnavailable\nUnlimited Stamina\nUnavailable\nSprint No Drain\nUnavailable\nSPRINT NO DRAIN REQUIRES A VERIFIED NATIVE SETTER\n\nSprint-only stamina control is not verified yet. When available, Unlimited Stamina also prevents sprint drain.\n\nTechnical details\nBlood Energy\n—\nTrait Points\n—\nAdd Level one-way\n2\nSet\nUnblock Trait one-way\nUnblock\nINVENTORY\nAdd Gold\nBalance —\n10000\nAdd\nAdd Item\n1\nAdd\nUNLIMITED WEIGHT TARGET UNDER CORRECTION\n\nUnlimited Weight is unavailable while carry capacity and restoration are being verified.\n\nTechnical details\nOTHER INVENTORY CONTRACTS REMAIN LOCKED\n\nAdditional inventory changes are unavailable until they pass save and restoration tests.\n\nTechnical details"
+}

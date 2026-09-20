@@ -1,0 +1,15 @@
+; cyberfox1337x.function("dawnwalker_bridge_pilot_mod_registry")
+; Only the scoped Dawnwalker bridge pilot is enabled.
+KismetDebuggerMod : 0
+EventViewerMod : 0
+CheatManagerEnablerMod : 0
+ActorDumperMod : 0
+ConsoleCommandsMod : 0
+ConsoleEnablerMod : 0
+SplitScreenMod : 0
+LineTraceMod : 0
+BPML_GenericFunctions : 0
+BPModLoaderMod : 0
+jsbLuaProfilerMod : 0
+Keybinds : 0
+DawnwalkerModBridge : 1
