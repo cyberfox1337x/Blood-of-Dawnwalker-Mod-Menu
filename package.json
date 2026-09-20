@@ -2,7 +2,7 @@
   "name": "blood-of-dawnwalker-mod-menu",
   "private": true,
   "version": "0.1.0",
-  "description": "Offline single-player desktop and runtime mod menu for The Blood of Dawnwalker.",
+  "description": "Single-player desktop and runtime mod menu for The Blood of Dawnwalker.",
   "author": "cyberfox1337x",
   "type": "module",
   "main": "dist-electron/main.js",
