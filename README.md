@@ -2,6 +2,8 @@
 
 `cyberfox1337x.function("dawnwalker_mod_menu_readme")`
 
+[![Electron](https://img.shields.io/badge/Electron-44-47848F?logo=electron&logoColor=white)](https://www.electronjs.org/) [![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)](https://react.dev/) [![Vite](https://img.shields.io/badge/Vite-7-646CFF?logo=vite&logoColor=white)](https://vite.dev/) [![TypeScript](https://img.shields.io/badge/TypeScript-5.8-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/) [![Three.js](https://img.shields.io/badge/Three.js-r185-000000?logo=threedotjs&logoColor=white)](https://threejs.org/) [![Lua](https://img.shields.io/badge/Lua-UE4SS-2C2D72?logo=lua&logoColor=white)](https://github.com/UE4SS-RE/RE-UE4SS) [![Vitest](https://img.shields.io/badge/Vitest-675%20tests-6E9F18?logo=vitest&logoColor=white)](vitest.config.ts) [![Platform](https://img.shields.io/badge/Windows-x64-0078D4?logo=windows&logoColor=white)](#requirements) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 **A single-player desktop mod menu for _The Blood of Dawnwalker_ (Steam, Windows x64).**
 
 A frameless Electron + React control panel talks to a UE4SS Lua runtime inside the game over a local, session-bound bridge. Every control shows a live readback from the game and refuses an operation it cannot verify, instead of reporting a change that never happened. Nothing in the game's install is patched: no executable edits, no `.pak` files, no anti-cheat or DRM interaction. The installer is transactional: it records backups, verifies the exact game build, and restores the original files on uninstall.
