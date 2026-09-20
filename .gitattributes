@@ -1,0 +1,8 @@
+# GitHub Linguist: count JSON as a language (it is hidden as "data" by default).
+*.json linguist-detectable=true
+
+# Tool-generated JSON (lockfile, payload manifests, QA evidence) should not skew the language bar.
+package-lock.json linguist-generated=true
+installer/**/payload-manifest.json linguist-generated=true
+qa/dawnwalker-imported-release-proof.json linguist-generated=true
+visual-qa/**/*.json linguist-generated=true
